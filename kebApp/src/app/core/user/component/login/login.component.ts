@@ -32,12 +32,15 @@ export class LoginComponent implements OnInit {
 	}
 
 	/**
+	 * Sa
 	 * Log the users in the application and redirect him to application
 	 */
 	login(){
-		console.log( this.firstnameForm.value );
-		console.log( this.passForm.value );
-		//this.userService.searchUser(  )
+		let a = this.firstnameForm.value;
+		let b = this.passForm.value;
+		
+		console.log(a , b);
+		this.userService.searchUser(this.firstnameForm.value , this.passForm.value );
 	}	
 
 	

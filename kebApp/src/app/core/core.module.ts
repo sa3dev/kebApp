@@ -7,6 +7,7 @@ import {CorerootingModule} from './corerooting.module';
 
 import {LoginComponent} from './user/component/login/login.component';
 import {RegisterComponent} from './user/component/register/register.component';
+import { AdminUserComponent } from './user/component/admin-user/admin-user.component';
 
 
 
@@ -19,7 +20,7 @@ import {RegisterComponent} from './user/component/register/register.component';
 	],
 	exports: [RouterModule],
 
-	declarations: [LoginComponent, RegisterComponent]
+	declarations: [LoginComponent, RegisterComponent , AdminUserComponent]
 
 })
 export class CoreModule { }
