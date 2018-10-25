@@ -1,3 +1,82 @@
-<p>
-  register works!
-</p>
+<section class="slice-lg has-bg-cover bg-size-cover" style="background-position: bottom center;">
+  <div class="container">
+    <div class="row justify-content-center cols-xs-space">
+      <div class="col-lg-6">
+        <div class="form-card form-card--style-2 z-depth-2-top">
+          <div class="form-header text-center">
+            <div class="form-header-icon">
+              <i class="icon ion-log-in"></i>
+            </div>
+          </div>
+          <div class="form-body">
+            <div class="text-center px-2">
+              <h4 class="heading heading-4 strong-400 mb-4">Créer un nouveau compte</h4>
+            </div>
+
+            <form class="form-default mt-4" (ngSubmit)="signup()" [formGroup]="loginForm" data-toggle="validator">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Prénom</label>
+                    <input type="text" class="form-control form-control-lg" name="firstName" id="firstName"
+                      formControlName="firstName" required>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Nom</label>
+                    <input type="text" class="form-control form-control-lg" name="lastName" id="lastName"
+                      formControlName="lastName" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Identifiant</label>
+                    <input type="text" class="form-control form-control-lg" name="nickName" id="nickName"
+                      formControlName="nickName" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Email</label>
+                    <input type="email" class="form-control form-control-lg" name="email" id="email" formControlName="email"
+                      required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="control-label">Mot de passe</label>
+                    <input type="password" class="form-control form-control-lg" name="password" id="password"
+                      formControlName="password" required>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group has-feedback">
+                    <label class="control-label">Confirmer le mot de passe</label>
+                    <input type="password" class="form-control form-control-lg" name="passwordCheck" id="passwordCheck"
+                      formControlName="passwordCheck" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-1 ">
+                <small class="">Votre compte devra être validé par un administrateur</small>
+              </div>
+
+              <button type="submit" class="btn btn-styled  btn-base-1 mt-4">
+                Créer votre compte
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
