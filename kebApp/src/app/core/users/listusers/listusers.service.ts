@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { apiURL } from '../../../config';
 import { User } from '../user.model';
 import { Observable } from 'rxjs';
-import { catchError, tap, handleError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -52,7 +51,7 @@ export class ListusersService {
     const url = `${apiURL}/${id}`;
     this.httpClient.delete(url)
       .subscribe(data => {
-        console.log("voila tu sautes", data),
+        console.log("voila tu sautes", data)
       },
         error => {
         console.log("Rrror", error);
