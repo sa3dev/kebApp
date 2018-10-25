@@ -3,6 +3,7 @@ import { ListusersService } from './listusers.service';
 import { Observable } from 'rxjs';
 import { User } from '../user.model';
 import { finalize } from 'rxjs/operators';
+import { Router } from '@angular/router'
 
 
 @Component({
@@ -13,7 +14,8 @@ import { finalize } from 'rxjs/operators';
 export class ListusersComponent implements OnInit {
   listUsers: User[];
 
-  constructor(private listuserService: ListusersService) { }
+  constructor(private listuserService: ListusersService,
+    private router: Router) { }
 
   ngOnInit() {
     this.getListUsers();
@@ -31,6 +33,6 @@ export class ListusersComponent implements OnInit {
   }
   onDelete(id) {
     this.listuserService.deleteUser(id)
-    this.getListUsers();
+    this.router.navigate[('/register')]
   }
 }
