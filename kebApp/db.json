@@ -1,13 +1,21 @@
 {
- "users": [
-     {
-     "id": 1,
-     "first_name": "Christophe",
-     "last_name": "Germain",
-     "nick_name": "ChristopheG",
-     "email": "g@g.g",
-     "password": "mdpmdp",
-     "token": "admin"
-     }
- ]   
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Christophe",
+      "last_name": "Germain",
+      "nick_name": "ChristopheG",
+      "email": "g@g.g",
+      "password": "mdpmdp",
+      "token": "admin"
+    },
+    {
+      "first_name": "PE",
+      "last_name": "DE",
+      "nick_name": "PeD",
+      "email": "PeD@Den.com",
+      "password": "mdpmdp",
+      "id": 2
+    }
+  ]
 }
