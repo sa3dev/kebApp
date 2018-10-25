@@ -1,5 +1,7 @@
 # KebApp - filrouge
 
+**/!\ DOCUMENTER**
+
 ## Pitch
 Un restaurant qui gère les réservations de ses clients lesquelles influent sur les stocks. Pour chaque réservation on crée un compte client pour l'associer à sa réservation. Les stocks génèrent des factures toutes prêtes lorsqu'il manque certains produits.
 
@@ -29,3 +31,11 @@ Créer un compte client à chaque réservation / l'associer à chacune de ses r�
 
 ## Gestion des droits
 Le patron a accès à toutes les fonctions, les ''employés'' uniquement à la réservation.
+
+## Conventions d'écriture
+Tout les noms doivent être en anglais.
+
+- Tous les noms de fichier sont **en minuscule**
+- Les variables sont en **camelCase** : `const maVariableDeBeauGosse`
+- Les classes en **KebabCase** : `export class AuthenticationService`
+- Pas de répétition du type de fichier dans le nom de fichier `ng g module inventaire` (--> inventaire.module.ts) et non pas `ng g module inventaire.module` (--> inventaire.module.module.ts)
