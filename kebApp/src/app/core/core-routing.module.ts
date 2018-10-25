@@ -10,7 +10,7 @@ import { LoginService } from './users/login/login.service';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'users', canActivate: [LoginService], component: ListusersComponent },
+  { path: 'users', component: ListusersComponent },
   { path: 'register', component: RegisterComponent }
 ];
 

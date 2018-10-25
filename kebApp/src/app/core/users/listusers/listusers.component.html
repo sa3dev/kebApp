@@ -1,5 +1,6 @@
 <div class="container">
   <h1 class="p-5">Liste des utilisateurs </h1>
+  <button class="btn btn-primary" (click)="refresh()">Actualiser</button>
   <table class="table">
     <thead>
       <tr>
@@ -17,12 +18,11 @@
         <th scope="row">{{ user.id }}</th>
         <td> {{ user.first_name}} </td>
         <td> {{user.last_name}} </td>
-        <td> {{user.nickName}} </td>
+        <td> {{user.nick_name}} </td>
         <td> {{user.email}} </td>
         <td><button class="btn btn-success" (click)=onEdit(user.id)>Editer</button></td>
         <td><button class="btn btn-danger" (click)=onDelete(user.id)>Supprimer</button></td>
       </tr>
-
     </tbody>
   </table>
 </div>
