@@ -25,14 +25,15 @@ export class ListusersComponent implements OnInit {
     this.listuserService.getListUsers().subscribe(users => this.listUsers = users);
   }
 
-  onEdit(id) {
 
-  }
   refresh(){    
     this.getListUsers();
   }
   onDelete(id) {
     this.listuserService.deleteUser(id)
     this.router.navigate[('/register')]
+  }
+  onEdit(id) {
+
   }
 }

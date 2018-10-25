@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-// import for API calls
+// Import for API calls
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { apiURL } from '../../../config';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
 import { User } from '../user.model';
+// Import the router to navigate
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +31,7 @@ export class LoginService {
       data => {
         if(data.length === 1){
           this.isAuth = true;
-          this.router.navigate(['/users'])
+          this.router.navigate(['/users']);
         }
         else {
           this.isAuth = false;
