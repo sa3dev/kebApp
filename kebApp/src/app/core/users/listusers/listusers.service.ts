@@ -14,8 +14,11 @@ export class ListusersService {
   ) { }
 
   getListUsers(): Observable<User[]> {
-    return this.httpClient.get<User[]>(apiURL);
+    return this.httpClient.get<User[]>(apiURL)
   }
+
+
+
 
   putUser(user: User) {
     const url = `${apiURL}/${user.id}`;
@@ -47,7 +50,10 @@ export class ListusersService {
   deleteUser(id: number): void {
     const url = `${apiURL}/${id}`;
     this.httpClient.delete(url)
-      .subscribe(error => {
+      .subscribe(data => {
+        console.log("voila tu sautes", data)
+      },
+        error => {
         console.log("Rrror", error);
       }
       );

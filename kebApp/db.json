@@ -8,14 +8,6 @@
       "email": "g@g.g",
       "password": "mdpmdp",
       "token": "admin"
-    },
-    {
-      "first_name": "PE",
-      "last_name": "DE",
-      "nick_name": "PeD",
-      "email": "PeD@Den.com",
-      "password": "mdpmdp",
-      "id": 2
     }
   ]
 }
