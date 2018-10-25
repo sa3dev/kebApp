@@ -1,4 +1,5 @@
 export class User {
+
     id :number;
     first_name :string;
     last_name :string;
@@ -7,4 +8,5 @@ export class User {
     password :string;
     token :string;
     role:string;
+
 }
