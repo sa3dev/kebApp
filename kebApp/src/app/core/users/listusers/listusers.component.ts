@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ListusersService } from './listusers.service';
-import { Observable } from 'rxjs';
 import { User } from '../user.model';
-import { finalize } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
+
 
 
 @Component({
@@ -10,28 +10,30 @@ import { finalize } from 'rxjs/operators';
   templateUrl: './listusers.component.html',
   styleUrls: ['./listusers.component.scss']
 })
-export class ListusersComponent implements OnInit {
-  listUsers: User[];
+export class ListusersComponent implements OnInit, OnDestroy { 
+
+  users: User[];
+  usersSubscription: Subscription;
 
   constructor(private listuserService: ListusersService) { }
 
   ngOnInit() {
-    this.getListUsers();
+    this.usersSubscription = this.listuserService.usersSubject.subscribe(
+      (users: User[]) => {
+        this.users = users;
+      }
+    )
+    this.listuserService.getListUsers();
   }
 
-  getListUsers():void {
-    this.listuserService.getListUsers().subscribe(users => this.listUsers = users);
-  }
-
-
-  refresh(){    
-    this.getListUsers();
-  }
   onDelete(id) {
-    this.listuserService.deleteUser(id)
-    this.getListUsers();
+    this.listuserService.deleteUser(id);
   }
   onEdit(id) {
 
   }
+  ngOnDestroy() {
+    this.usersSubscription.unsubscribe();
+  }
 }
+
