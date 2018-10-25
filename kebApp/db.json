@@ -1,0 +1,13 @@
+{
+ "users": [
+     {
+     "id": 1,
+     "first_name": "Christophe",
+     "last_name": "Germain",
+     "nick_name": "ChristopheG",
+     "email": "g@g.g",
+     "password": "mdpmdp",
+     "token": "admin"
+     }
+ ]   
+}
