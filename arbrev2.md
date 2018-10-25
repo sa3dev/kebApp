@@ -1,50 +1,58 @@
 src/
-    core/
-        personnage/
-            personnage.model
-            personnage.service
-                use api.service
-            personnage.module
-        api/
-            api.service
-                use httpClient
-        user/
-            components/
-                login.component
-                userbar.component
-            user.model
-            user.service            
-            user.module
-        core.module
-    jedi/
-        components/
-            jedi.list.component
-            jedi.component
-            jedi.popin
-        jedi.model
-            extend personnage.model
-        jedi.service
-            use personnage.service
-        jedi.module
-        jedi.route
-    sith/
-        components/
-            sith.list.component
-            sith.component
-            sith.popin
-        sith.model
-            extend personnage.model
-        sith.service
-            use personnage.service
-        sith.module
-        sith.route
-    shared
-        components/
-            layout.component
-            modal.component
-            flex.dualcol.component
-        pipes/
-            date.pipe
-        directives/
-            
-        shared.module
+   core/
+       header.component/
+       api/
+           api.service
+               use httpClient
+       user/
+           components/
+               login.component
+               userbar.component
+           user.model
+           user.service
+           user.module
+       service/
+
+       core.module
+
+   Reservation/
+       components/
+           calendrier.component/
+           calendrierDetail.component/
+       reservation.model
+       reservation.service
+       reservation.module
+ 
+ 
+   Stock(inventaire)/
+       stock.component
+       stock.model
+       stock.service
+       stock.module
+       produit/ ?? placement dans le core ??
+           produit.component
+           produit.model
+           produit.service
+           produit.module
+
+   Fournisseur(inventaire)/
+       fournisseur.component
+       fournisseur.model
+       fournisseur.service
+       fournisseur.module
+       produit/ ?? placement dans le core ??
+           produit.component
+           produit.model
+           produit.service
+           produit.module
+
+   Carte/
+       carte.component
+       carte.module
+       produit/ ?? placement dans le core ??
+           produit.component
+           produit.model
+           produit.service
+           produit.module
+
+   shared/
