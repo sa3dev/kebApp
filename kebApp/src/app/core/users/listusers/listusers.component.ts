@@ -28,4 +28,7 @@ export class ListusersComponent implements OnInit {
   onDelete(id) {
     this.listuserService.deleteUser(id)
   }
+  onEdit(id) {
+
+  }
 }
