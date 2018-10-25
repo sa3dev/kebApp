@@ -10,12 +10,18 @@ import { RegisterComponent } from './users/register/register.component';
 import { RouterModule } from '@angular/router';
 import { CoreRoutingModule } from './core-routing.module';
 
+// Import Forms modules and do not forget motherf****** ReactiveFormsModule
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   declarations: [
     ListusersComponent,

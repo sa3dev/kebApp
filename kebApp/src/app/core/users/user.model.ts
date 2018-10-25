@@ -1,2 +1,2 @@
-export class UserModel {
+export class User {
 }
