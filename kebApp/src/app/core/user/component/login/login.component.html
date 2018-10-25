@@ -1,16 +1,18 @@
 
 <!-- Form Login -->
 <div class="container">
+
+	<h2>Login :</h2>
 	<div class="row">
 		<form (ngSubmit)="login()" [formGroup]="loginForm">
 			<div>
 				<label for="">Username</label>
-				<input type="text" formControlName="username" >
+				<input type="text"  formControlName="first_name" required>
 			</div>
 
 			<div>
 				<label for="">Pass</label>
-				<input type="password" formControlName="password">
+				<input type="password" formControlName="password" required>
 			</div>
 
 			<input type="submit" value="Login" >

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 
 import {Routes, RouterModule} from '@angular/router';
 import { LoginComponent } from './user/component/login/login.component';
+
 import {RegisterComponent} from './user/component/register/register.component';
 const routes:Routes=[
   {
@@ -18,6 +19,7 @@ const routes:Routes=[
     path:'register',
     component:RegisterComponent
   }
+
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
