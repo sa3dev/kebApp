@@ -1,3 +1,18 @@
-<p>
-  admin-user works!
-</p>
+<div class="container">
+
+	<h2>Hello Admin </h2>
+
+	<ul class="list-group">
+		<li *ngFor="let user of ListUsers | async"
+			class="list-group-item">
+			{{ user.first_name }} - {{ user.id }}
+
+		<div class="rigth">
+			<button type="button" class="btn btn-success right" (click)="editer( user.id )" >Editer</button>
+			<button type="button" class="btn btn-danger right"  (click)="supprimer( user.id )" >Delete</button>
+		</div>
+
+		</li>
+	</ul>
+
+</div>

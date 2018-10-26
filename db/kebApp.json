@@ -1,0 +1,78 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "admin",
+      "last_name": "admin",
+      "nick_name": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "token": "4de5",
+      "role": "admin"
+    },
+    {
+      "id": 2,
+      "first_name": "florent",
+      "last_name": "fardel",
+      "nick_name": "ffardel",
+      "email": "fardel@gmail.com",
+      "password": "123456",
+      "token": "54fMpd",
+      "role": "user"
+    },
+    {
+      "first_name": "léon",
+      "last_name": "Demeyere",
+      "nick_name": "jirlo",
+      "email": "leon.demeyere@hotmail.fr",
+      "password": "riku",
+      "role": "admin",
+      "id": 3
+    },
+    {
+      "first_name": "léon",
+      "last_name": "Demeyere",
+      "nick_name": "riku",
+      "email": "leele.lele@gmail.com",
+      "password": "riku",
+      "role": "admin",
+      "id": 4
+    },
+    {
+      "first_name": "léon",
+      "last_name": "Demeyere",
+      "nick_name": "lele",
+      "email": "zzz",
+      "password": "riku",
+      "role": "admin",
+      "id": 5
+    },
+    {
+      "first_name": "léon",
+      "last_name": "Demeyere",
+      "nick_name": "cc",
+      "email": "cc.dd@gmail.com",
+      "password": "riku",
+      "role": "admin",
+      "id": 6
+    },
+    {
+      "first_name": "léon",
+      "last_name": "Demeyere",
+      "nick_name": "zz",
+      "email": "vador@gmail.com",
+      "password": "ccc",
+      "role": "simple",
+      "id": 7
+    },
+    {
+      "first_name": "said",
+      "last_name": "Argoug",
+      "nick_name": "Saidvoisin",
+      "email": "Said.argoug@hotmail.fr",
+      "password": "123456",
+      "role": "admin",
+      "id": 8
+    }
+  ]
+}
