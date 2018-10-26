@@ -1,0 +1,37 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Christophe",
+      "last_name": "Germain",
+      "nick_name": "ChristopheG",
+      "email": "g@g.g",
+      "password": "mdpmdp",
+      "token": "admin"
+    },
+    {
+      "first_name": "José",
+      "last_name": "Starr",
+      "nick_name": "José",
+      "email": "g@g.g",
+      "password": "mdpmdp",
+      "id": 2
+    },
+    {
+      "first_name": "José",
+      "last_name": "Starr",
+      "nick_name": "José",
+      "email": "g@g.g",
+      "password": "mdpmdp",
+      "id": 3
+    },
+    {
+      "first_name": "Claire",
+      "last_name": "Grzeskowiak",
+      "nick_name": "",
+      "email": "",
+      "password": "",
+      "id": 4
+    }
+  ]
+}
