@@ -70,7 +70,7 @@
                 <small class="">Votre compte devra être validé par un administrateur</small>
               </div>
 
-              <button type="submit" class="btn btn-styled  btn-base-1 mt-4">
+              <button type="submit" class="btn btn-styled  btn-base-1 mt-4" [disabled]="loginForm.invalid">
                 Créer votre compte
               </button>
             </form>
