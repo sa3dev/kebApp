@@ -1,8 +1,8 @@
 
 <div class="container">
-  <h2>Inscription</h2>
+  <h2>Register</h2>
 	<div class="row">
-		<form (ngSubmit)="inscription()" [formGroup]="loginForm">
+		<form (ngSubmit)="register()" [formGroup]="loginForm">
 			<div>
 				<label for="firtsName">Prenom :</label>
 				<input type="text" id="firtsName" formControlName="firtsName" >
@@ -14,10 +14,12 @@
       <div>
           <label for="identifiant">Identifiant :</label>
           <input type="text" id="identifiant" formControlName="identifiant" >
+          <span *ngIf="boolIdentifiant">Identifiant invalid deja utiliser !</span>
       </div>
       <div>
           <label for="email">Email :</label>
           <input type="email" id="email" formControlName="email" >
+          <span *ngIf="boolEmail">Email invalid deja utiliser !</span>
       </div>
       <label for="role">Role :</label>
       <select id="role" formControlName="role">
@@ -25,15 +27,20 @@
         <option value="simple" >Simple</option>
       </select>
 			<div>
-				<label for="password">mdp</label>
+				<label for="password">mdp :</label>
 				<input type="password" id="password" formControlName="password">
       </div>
       <div>
-          <label for="confirmPassword">Confirmer le mdp</label>
+          <label for="confirmPassword">Confirmer le mdp :</label>
           <input type="password" id="confirmPassword" formControlName="confirmPassword">
+          <span *ngIf="boolMdp">Veuillez recrire le mdp  ce n'est pas le même </span>
       </div>
 
-			<input type="submit" value="Login" >
-		</form>
+			<input type="submit" value="Login" [disabled]="loginForm.invalid" >
+        </form>
+        <p *ngIf="valide"> Inscription valider</p>
 	</div>
 </div>
+<br/>
+
+
