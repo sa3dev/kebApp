@@ -5,12 +5,14 @@ import { LoginComponent } from './users/login/login.component';
 import { ListusersComponent } from './users/listusers/listusers.component';
 import { RegisterComponent } from './users/register/register.component';
 import { LoginService } from './users/login/login.service';
+import { CalendarComponent } from './calendar/calendar.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'users', component: ListusersComponent },
+  { path: 'calendar', component: CalendarComponent },
   { path: 'register', component: RegisterComponent }
 ];
 

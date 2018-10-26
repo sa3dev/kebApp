@@ -6,9 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 
 
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
