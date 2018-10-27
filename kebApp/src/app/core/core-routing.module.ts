@@ -4,8 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './users/login/login.component';
 import { ListusersComponent } from './users/listusers/listusers.component';
 import { RegisterComponent } from './users/register/register.component';
-import { LoginService } from './users/login/login.service';
-import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarComponent } from './../calendar/calendar.component';
 
 
 const routes: Routes = [

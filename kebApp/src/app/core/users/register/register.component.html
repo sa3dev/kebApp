@@ -13,6 +13,22 @@
               <h4 class="heading heading-4 strong-400 mb-4">Créer un nouveau compte</h4>
             </div>
 
+            <div *ngIf="firstNameCtrl.invalid && (firstNameCtrl.dirty || firstNameCtrl.touched)" class="alert alert-danger">
+              <div *ngIf="firstNameCtrl.errors.required">Le Prénom est requis.</div>
+            </div>
+            <div *ngIf="lastNameCtrl.invalid && (firstNameCtrl.dirty || lastNameCtrl.touched)" class="alert alert-danger">
+              <div *ngIf="lastNameCtrl.errors.required">Le nom est requis.</div>
+            </div>
+            <div *ngIf="nickNameCtrl.invalid && (nickNameCtrl.dirty || nickNameCtrl.touched)" class="alert alert-danger">
+              <div *ngIf="nickNameCtrl.errors.required">Le pseudo est requis.</div>
+              <div *ngIf="nickNameCtrl.errors.minlength">Le pseudo doit contenir au moins 4 caractéres.</div>
+            </div>
+            <div *ngIf="passwordCtrl.invalid && (passwordCtrl.dirty || passwordCtrl.touched)" class="alert alert-danger">
+              <div *ngIf="passwordCtrl.errors.required">Le mot de passe est obligatoire.</div>
+              <div *ngIf="passwordCtrl.errors.minlength">Le mot de passe doit contenir au moins 6 caractéres.</div>
+            </div>
+
+
             <form class="form-default mt-4" (ngSubmit)="signup()" [formGroup]="loginForm" data-toggle="validator">
               <div class="row">
                 <div class="col-md-6">
@@ -70,7 +86,7 @@
                 <small class="">Votre compte devra être validé par un administrateur</small>
               </div>
 
-              <button type="submit" class="btn btn-styled  btn-base-1 mt-4" [disabled]="loginForm.invalid">
+              <button type="submit" class="btn btn-styled  btn-base-1 mt-4">
                 Créer votre compte
               </button>
             </form>

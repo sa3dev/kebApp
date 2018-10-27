@@ -26,12 +26,20 @@
       "id": 3
     },
     {
-      "first_name": "Claire",
-      "last_name": "Grzeskowiak",
-      "nick_name": "",
-      "email": "",
-      "password": "",
+      "first_name": "Guillaume",
+      "last_name": "Delory",
+      "nick_name": "ko",
+      "email": "g.delory62@gmail.com",
+      "password": "mdpmdp",
       "id": 4
+    },
+    {
+      "first_name": "Guillaume",
+      "last_name": "Delory",
+      "nick_name": "José",
+      "email": "g.delory62@gmail.com",
+      "password": "mdpmdp",
+      "id": 5
     }
   ]
 }

@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 // Import for API calls
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { apiURL } from '../../../config';
-import { Observable } from 'rxjs';
 import { User } from '../user.model';
 // Import the router to navigate
 import { Router } from '@angular/router';
@@ -14,7 +13,7 @@ export class LoginService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  private isAuth: boolean = false;
+  private isAuth: boolean = true;
 
   canActivate(){
     return this.isAuth;
