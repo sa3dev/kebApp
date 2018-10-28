@@ -5,13 +5,15 @@ import { LoginComponent } from './users/login/login.component';
 import { ListusersComponent } from './users/listusers/listusers.component';
 import { RegisterComponent } from './users/register/register.component';
 import { LoginService } from './users/login/login.service';
+import { ProductsComponent } from './products/products.component';
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'users', component: ListusersComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'register', component: RegisterComponent },
+  { path: 'products', component: ProductsComponent }
 ];
 
 @NgModule({

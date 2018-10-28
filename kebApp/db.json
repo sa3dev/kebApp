@@ -33,5 +33,35 @@
       "password": "",
       "id": 4
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "pomme de terres",
+      "price": 33,
+      "quantity": 90,
+      "supplier": "MacCain"
+    },
+    {
+      "id": 2,
+      "name": "mayonnaise",
+      "price": 15,
+      "quantity": 160,
+      "supplier": "Riyal"
+    },
+    {
+      "id": 3,
+      "name": "steak de bœuf",
+      "price": 200,
+      "quantity": 30,
+      "supplier": "Henri Boucher"
+    },
+    {
+      "id": 4,
+      "name": "tomates",
+      "price": 54,
+      "quantity": 230,
+      "supplier": "Noël Flantier"
+    }
   ]
 }

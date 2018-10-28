@@ -1,0 +1,17 @@
+<h2>Liste des produits</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nom du produit</th>
+      <th>Prix</th>
+      <th>Quantité</th>
+    </tr>
+  </thead>
+  <tr *ngFor="let product of products">
+    <td>{{product.name}}</td>
+    <td>{{product.price}}</td>
+    <td>{{product.quantity}}</td>
+    <button (click)="deleteProduct(product.id)">suppr</button>
+  </tr>
+</table>
+<button (click)='updateProduct(1, name, olive)'>Modifier nom</button>
