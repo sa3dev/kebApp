@@ -39,7 +39,7 @@ export class RegisterComponent implements OnInit {
     });
   }
   signup() {
-    if (this.passwordCtrl.value === this.passwordCheckCtrl.value) {
+    if (this.passwordCtrl.value === this.passwordCheckCtrl.value && this.loginForm.valid) {
       const user = new User();
       user.first_name = this.firstNameCtrl.value;
       user.last_name = this.lastNameCtrl.value;

@@ -12,7 +12,6 @@
             <div class="text-center px-2">
               <h4 class="heading heading-4 strong-400 mb-4">Créer un nouveau compte</h4>
             </div>
-
             <div *ngIf="firstNameCtrl.invalid && (firstNameCtrl.dirty || firstNameCtrl.touched)" class="alert alert-danger">
               <div *ngIf="firstNameCtrl.errors.required">Le Prénom est requis.</div>
             </div>
@@ -86,7 +85,7 @@
                 <small class="">Votre compte devra être validé par un administrateur</small>
               </div>
 
-              <button type="submit" class="btn btn-styled  btn-base-1 mt-4">
+              <button type="submit" class="btn btn-styled  btn-base-1 mt-4" [disabled]="loginForm.invalid">
                 Créer votre compte
               </button>
             </form>

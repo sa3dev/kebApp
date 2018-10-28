@@ -1,45 +1,36 @@
 {
   "users": [
     {
-      "id": 1,
-      "first_name": "Christophe",
-      "last_name": "Germain",
-      "nick_name": "ChristopheG",
-      "email": "g@g.g",
-      "password": "mdpmdp",
-      "token": "admin"
-    },
-    {
-      "first_name": "José",
-      "last_name": "Starr",
-      "nick_name": "José",
-      "email": "g@g.g",
-      "password": "mdpmdp",
-      "id": 2
-    },
-    {
-      "first_name": "José",
-      "last_name": "Starr",
-      "nick_name": "José",
-      "email": "g@g.g",
-      "password": "mdpmdp",
-      "id": 3
-    },
-    {
-      "first_name": "Guillaume",
-      "last_name": "Delory",
-      "nick_name": "ko",
-      "email": "g.delory62@gmail.com",
-      "password": "mdpmdp",
-      "id": 4
-    },
-    {
       "first_name": "Guillaume",
       "last_name": "Delory",
       "nick_name": "José",
       "email": "g.delory62@gmail.com",
       "password": "mdpmdp",
-      "id": 5
+      "id": 6
+    },
+    {
+      "first_name": "Guillaume",
+      "last_name": "Delory",
+      "nick_name": "joseto",
+      "email": "g.delory62@gmail.com",
+      "password": "mdpmdp",
+      "id": 8
+    },
+    {
+      "first_name": "Guillaume",
+      "last_name": "Delory",
+      "nick_name": "Roger",
+      "email": "g.delory62@gmail.com",
+      "password": "mdpmdp",
+      "id": 9
+    },
+    {
+      "first_name": "Guillaume",
+      "last_name": "Delory",
+      "nick_name": "Toto",
+      "email": "g.delory62@gmail.com",
+      "password": "mdpmdp",
+      "id": 10
     }
   ]
 }

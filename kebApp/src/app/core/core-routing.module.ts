@@ -5,14 +5,16 @@ import { LoginComponent } from './users/login/login.component';
 import { ListusersComponent } from './users/listusers/listusers.component';
 import { RegisterComponent } from './users/register/register.component';
 import { CalendarComponent } from './../calendar/calendar.component';
+import { LoginService } from './users/login/login.service';
+
 
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'users', component: ListusersComponent },
   { path: 'calendar', component: CalendarComponent },
-  { path: 'register', component: RegisterComponent }
+  { path: 'users', canActivate: [LoginService], component: ListusersComponent },
+  { path: 'register',canActivate: [LoginService], component: RegisterComponent }
 ];
 
 @NgModule({
