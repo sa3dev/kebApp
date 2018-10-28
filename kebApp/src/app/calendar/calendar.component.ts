@@ -1,8 +1,10 @@
-import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef } from '@angular/core';
-import { startOfDay, endOfDay, subDays, addDays, endOfMonth, isSameDay, isSameMonth, addHours } from 'date-fns';
-import { Subject } from 'rxjs';
-import { CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
+import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
+import { startOfDay, subDays, isSameDay, isSameMonth, addHours, subHours } from 'date-fns';
+import { Subject, Subscription } from 'rxjs';
+import { CalendarEvent, CalendarEventTimesChangedEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { CalendarService } from './services/calendar.service';
+import { Reservation } from './model/event'
 
 const colors: any = {
   red: {
@@ -18,21 +20,20 @@ const colors: any = {
     secondary: '#FDF1BA'
   }
 };
+
+
 @Component({
   selector: 'app-calendar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss']
 })
-export class CalendarComponent {
+export class CalendarComponent implements OnInit {
   @ViewChild('modalContent')
   modalContent: TemplateRef<any>;
   locale: string = 'fr';
-
   view: CalendarView = CalendarView.Month;
   weekStartsOn: number = DAYS_OF_WEEK.MONDAY;
-
-
   CalendarView = CalendarView;
 
   viewDate: Date = new Date();
@@ -41,61 +42,27 @@ export class CalendarComponent {
     action: string;
     event: CalendarEvent;
   };
-  actions: CalendarEventAction[] = [
-    {
-      label: '<i class="fa fa-fw fa-pencil"></i>',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.handleEvent('Edited', event);
-      }
-    },
-    {
-      label: '<i class="fa fa-fw fa-times"></i>',
-      onClick: ({ event }: { event: CalendarEvent }): void => {
-        this.events = this.events.filter(iEvent => iEvent !== event);
-        this.handleEvent('Deleted', event);
-      }
-    }
-  ];
+
 
   refresh: Subject<any> = new Subject();
 
-  events: CalendarEvent[] = [
-    {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'Un événement de 3 jours',
-      color: colors.red,
-      actions: this.actions,
-      allDay: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    },
-    {
-      start: startOfDay(new Date()),
-      title: 'Un événement sans date',
-      color: colors.yellow,
-      actions: this.actions
-    },
-    {
-      start: addHours(startOfDay(new Date()), 2),
-      end: new Date(),
-      title: 'Un événement Drag and Drop',
-      color: colors.yellow,
-      actions: this.actions,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      },
-      draggable: true
-    }
-  ];
+  events: Reservation[];
+  reservationSubscription: Subscription;
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) { }
+  constructor(private modal: NgbModal,
+    private calendarService: CalendarService) { }
+
+    ngOnInit() {
+      this.reservationSubscription = this.calendarService.reservationsSubject.subscribe(
+        (events: Reservation[]) => {
+          this.events = events;
+      })
+      this.calendarService.getListReservations();
+    }
+    
+
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {
       this.viewDate = date;
@@ -128,16 +95,23 @@ export class CalendarComponent {
 
   addEvent(): void {
     this.events.push({
-      title: 'Nouvel événement',
+      id: Math.floor(Math.random()*1000),
+      title: 'Nouvelle réservation',
       start: startOfDay(new Date()),
-      end: endOfDay(new Date()),
-      color: colors.red,
       draggable: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true
-      }
+      capacity: 1,
     });
     this.refresh.next();
+  }
+  onConfirm(reservation) {
+    const newReservation :Reservation = reservation;
+    this.calendarService.createEvent(newReservation);    
+  }
+
+  onDelete(id) {
+    this.calendarService.deleteEVent(id)
+  };
+  ngOnDestroy(){
+    this.reservationSubscription.unsubscribe();
   }
 }

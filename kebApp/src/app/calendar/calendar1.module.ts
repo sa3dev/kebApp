@@ -5,13 +5,14 @@ import { CommonModule } from '@angular/common';
 import { CalendarComponent } from './calendar.component';
 
 // Import Forms modules and ReactiveFormsModule
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 // Import Calendar modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
+import 'flatpickr/dist/flatpickr.css';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Import for translate calendar in french
@@ -20,11 +21,11 @@ import localeFr from '@angular/common/locales/fr'
 
 registerLocaleData(localeFr);
 
+
 @NgModule({
   imports: [
     CommonModule,
     NgbModalModule,
-    ReactiveFormsModule,
     FlatpickrModule.forRoot(),
     FormsModule, 
     BrowserAnimationsModule,
@@ -38,3 +39,4 @@ registerLocaleData(localeFr);
   ]
 })
 export class Calendar1Module { }
+

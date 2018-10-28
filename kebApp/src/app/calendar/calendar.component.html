@@ -5,16 +5,6 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div class="modal-body">
-    <div>
-      Action:
-      <pre>{{ modalData?.action }}</pre>
-    </div>
-    <div>
-      Event:
-      <pre>{{ modalData?.event | json }}</pre>
-    </div>
-  </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-outline-secondary" (click)="close()">OK</button>
   </div>
@@ -65,8 +55,8 @@
   </mwl-calendar-day-view>
 </div>
 <br><br><br>
-<strong *ngIf="clickedDate">You clicked on this day: {{ clickedDate | date:'medium' }}</strong>
-<h3>
+<div class="container">
+  <h3>
   Editer les réservations
   <button class="btn btn-primary pull-right" (click)="addEvent()">
     Ajouter une réservation
@@ -79,36 +69,35 @@
   <thead>
     <tr>
       <th>Nom</th>
-      <th>Primary color</th>
-      <th>Starts at</th>
-      <th>Ends at</th>
-      <th>Remove</th>
+      <th>Nombre de personnes</th>
+      <th>Jour</th>
+      <th>Confirmer</th>
+      <th>Supprimer la réservation</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr *ngFor="let event of events; let index = index">
+    <tr *ngFor="let reservation of events; let index = index">
       <td>
-        <input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()">
+        <input type="text" class="form-control" [(ngModel)]="reservation.title" (keyup)="refresh.next()">
       </td>
       <td>
-        <input type="color" [(ngModel)]="event.color.primary" (change)="refresh.next()">
+        <input type="number" class="form-control" [(ngModel)]="reservation.capacity" (keyup)="refresh.next()">
       </td>
       <td>
-        <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.start" (ngModelChange)="refresh.next()"
+        <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="reservation.start" (ngModelChange)="refresh.next()"
           [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
           placeholder="Not set">
       </td>
       <td>
-        <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.end" (ngModelChange)="refresh.next()"
-          [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
-          placeholder="Not set">
+        <button class="btn btn-success" (click)="onConfirm(reservation)">Confirmer</button>
       </td>
       <td>
-        <button class="btn btn-danger" (click)="events.splice(index, 1); refresh.next()">
+        <button class="btn btn-danger" (click)="onDelete(reservation.id); refresh.next()">
           Supprimer
         </button>
       </td>
     </tr>
   </tbody>
 </table> 
+</div>
