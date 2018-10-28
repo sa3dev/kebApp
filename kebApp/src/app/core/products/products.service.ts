@@ -27,11 +27,14 @@ export class ProductsService {
   /**
    * Function to update the property of a value from a certain product (selected by its id)
    * @param id id of the product
-   * @param property product that you wish to modify
+   * @param property product's property that you wish to modify
    * @param value new value for the property defined in the second argument
+   * 
    */
   updateProduct(id: number, property, value) {
-    this.http.get<Product>(apiURLProducts + id).subscribe(data => console.log(data.property = value))
-    //this.http.patch(apiURLProducts + id, response.property = value).subscribe(data => console.log("PUT Request is successlful and data is " + data, error => console.log("Error in the updateProduct method " + error)))
+
+    this.http.patch(apiURLProducts + id, {
+      property: value,
+    }).subscribe(data => console.log(data), error => console.log("Error in the updateProduct method " + error))
   }
 }

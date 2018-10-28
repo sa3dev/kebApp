@@ -37,10 +37,11 @@
   "products": [
     {
       "id": 1,
-      "name": "pomme de terres",
+      "name": "olive",
       "price": 33,
       "quantity": 90,
-      "supplier": "MacCain"
+      "supplier": "MacCain",
+      "property": "olive"
     },
     {
       "id": 2,
