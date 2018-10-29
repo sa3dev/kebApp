@@ -39,6 +39,14 @@
       "email": "pat@pat.pat",
       "password": "mdpmdp",
       "id": 11
+    },
+    {
+      "first_name": "José",
+      "last_name": "Stall",
+      "nick_name": "Rosé",
+      "email": "g@g.g",
+      "password": "mdpmdp",
+      "id": 12
     }
   ],
   "reservations": [
@@ -55,6 +63,13 @@
       "start": "2018-10-30T11:00:00.000Z",
       "draggable": true,
       "capacity": 9
+    },
+    {
+      "id": 602,
+      "title": "Roger",
+      "start": "2018-10-30T11:00:00.000Z",
+      "draggable": true,
+      "capacity": 25
     }
   ]
 }
