@@ -17,12 +17,16 @@ export class RegisterComponent implements OnInit {
   public passwordCtrl: FormControl;
   public passwordCheckCtrl: FormControl;
   public loginForm: FormGroup;
-
+  public boolEmail:boolean;
+  public boolIdentifiant:boolean;
+  
   constructor(private fb: FormBuilder,
     private router: Router,
     private registerService: RegisterService, ) { }
 
   ngOnInit() {
+    this.boolEmail=false;
+    this.boolIdentifiant=false;
     this.firstNameCtrl = this.fb.control('', Validators.required);
     this.lastNameCtrl = this.fb.control('', Validators.required);
     this.nickNameCtrl = this.fb.control('', [Validators.required, Validators.minLength(4)]);
@@ -40,6 +44,7 @@ export class RegisterComponent implements OnInit {
     });
   }
   signup() {
+    
     if (this.passwordCtrl.value === this.passwordCheckCtrl.value && this.loginForm.valid) {
       const user = new User();
       user.first_name = this.firstNameCtrl.value;
@@ -47,7 +52,38 @@ export class RegisterComponent implements OnInit {
       user.nick_name = this.nickNameCtrl.value;
       user.email = this.emailCtrl.value;
       user.password = this.passwordCtrl.value;
-      this.registerService.createUser(user);
+      this.boolEmail=false;
+    this.boolIdentifiant=false;
+      this.registerService.verifDoublon(user.email, user.nick_name).subscribe(
+        (data:User[])=>{
+          if(data.length>0){
+            for(let dataUser of data){
+              if(dataUser.email===user.email){
+                this.boolEmail=true;
+                
+              }
+              if(dataUser.nick_name===user.nick_name){
+                this.boolIdentifiant=true;
+                
+              }
+            }
+            console.log("nop");
+          }else{
+            //if(this.confirmPassword.value===this.password.value){
+              
+              this.registerService.createUser(user);
+             // this.valide=true;
+            /*}else{
+              this.boolMdp=true;
+             
+            }*/
+          }
+        },
+        (error)=>{
+          console.log(error);
+        }
+        );
+      //this.registerService.createUser(user);
     }
   }
 }
