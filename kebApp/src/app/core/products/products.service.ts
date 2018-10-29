@@ -38,4 +38,11 @@ export class ProductsService {
       newproperty: value,
     }).subscribe(data => console.log(data), error => console.log("Error in the updateProduct method " + error))
   }
+  /**
+   * A function to add a product to our list of products
+   * @param product the product of type Product that you want to add to the list of products
+   */
+  addProduct(product:Product){
+    this.http.post(apiURLProducts, product);
+  }
 }

@@ -63,6 +63,15 @@
       "email": "zizi.heyhey@gmail.com",
       "password": "rikuriku",
       "id": 14
+    },
+    {
+
+      "first_name": "admin",
+      "last_name": "admin",
+      "nick_name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "id": 5
     }
   ],
   "reservations": [
