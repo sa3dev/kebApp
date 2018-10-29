@@ -52,7 +52,7 @@ export class RegisterComponent implements OnInit {
       user.email = this.emailCtrl.value;
       user.password = this.passwordCtrl.value;
       this.boolEmail=false;
-    this.boolIdentifiant=false;
+      this.boolIdentifiant=false;
       this.registerService.verifDoublon(user.email, user.nick_name).subscribe(
         (data:User[])=>{
           if(data.length>0){

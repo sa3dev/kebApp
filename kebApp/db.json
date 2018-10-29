@@ -57,15 +57,6 @@
       "id": 13
     },
     {
-      "first_name": "Léon",
-      "last_name": "Demeyere",
-      "nick_name": "zizi",
-      "email": "zizi.heyhey@gmail.com",
-      "password": "rikuriku",
-      "id": 14
-    },
-    {
-
       "first_name": "admin",
       "last_name": "admin",
       "nick_name": "admin",
@@ -120,6 +111,56 @@
       "price": 54,
       "quantity": 230,
       "supplier": "Noël Flantier"
+    }
+  ],
+  "fournisseurs": [
+    {
+      "id": 1,
+      "nom": "kebab&Co",
+      "adresse": "22 rue de la broche",
+      "telephone": "0695979938",
+      "ville": "halluin",
+      "cp": "59250"
+    },
+    {
+      "id": 2,
+      "nom": "Patata&Co",
+      "adresse": "22 rue de la patate",
+      "telephone": "0695979999",
+      "ville": "tourcoing",
+      "cp": "59200"
+    },
+    {
+      "id": 3,
+      "nom": "Patata&Co",
+      "adresse": "22 rue de la patate",
+      "telephone": "0695979999",
+      "ville": "tourcoing",
+      "cp": "59200"
+    },
+    {
+      "id": 4,
+      "nom": "coucou",
+      "adresse": "22 rue de la patate",
+      "telephone": "0695979999",
+      "ville": "tourcoing",
+      "cp": "59200"
+    },
+    {
+      "nom": "fromage du chnord",
+      "telephone": 695982211,
+      "ville": "roubaix",
+      "adresse": "2 rue de la fricandelle",
+      "cp": 59100,
+      "id": 5
+    },
+    {
+      "nom": "christophe",
+      "telephone": 684154026,
+      "ville": "la madeleine",
+      "adresse": "22 rue germain",
+      "cp": 59110,
+      "id": 6
     }
   ]
 }

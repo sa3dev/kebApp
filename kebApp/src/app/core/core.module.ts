@@ -15,7 +15,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Calendar1Module } from '../calendar/calendar1.module';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
-
+import {FournisseurModule} from '../fournisseur/fournisseur.module';
 
 
 @NgModule({
@@ -25,7 +25,8 @@ import { ProductsComponent } from './products/products.component';
     CoreRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    Calendar1Module
+    Calendar1Module,
+    FournisseurModule
   ],
   declarations: [
     ListusersComponent,
