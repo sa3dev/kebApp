@@ -8,6 +8,7 @@ import { apiURLProducts } from "../../config";
 })
 export class ProductsService {
 
+  newproperty:string;
   constructor(private http: HttpClient) { }
   /**
    * Function to get the list of products that returns an Observable of Product[]
@@ -31,10 +32,10 @@ export class ProductsService {
    * @param value new value for the property defined in the second argument
    * 
    */
-  updateProduct(id: number, property, value) {
-
+  updateProduct(id: number, property:string, value) {
+    this.newproperty = property
     this.http.patch(apiURLProducts + id, {
-      property: value,
+      newproperty: value,
     }).subscribe(data => console.log(data), error => console.log("Error in the updateProduct method " + error))
   }
 }

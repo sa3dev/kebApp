@@ -37,18 +37,12 @@
   "products": [
     {
       "id": 1,
-      "name": "olive",
+      "name": "pommes de terre",
       "price": 33,
       "quantity": 90,
       "supplier": "MacCain",
-      "property": "olive"
-    },
-    {
-      "id": 2,
-      "name": "mayonnaise",
-      "price": 15,
-      "quantity": 160,
-      "supplier": "Riyal"
+      "property": "olive",
+      "newproperty": "olive"
     },
     {
       "id": 3,
