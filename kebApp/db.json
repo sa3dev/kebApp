@@ -18,20 +18,12 @@
       "id": 2
     },
     {
-      "first_name": "José",
-      "last_name": "Starr",
-      "nick_name": "José",
-      "email": "g@g.g",
-      "password": "mdpmdp",
-      "id": 3
-    },
-    {
-      "first_name": "Claire",
-      "last_name": "Grzeskowiak",
-      "nick_name": "",
-      "email": "",
-      "password": "",
-      "id": 4
+      "first_name": "admin",
+      "last_name": "admin",
+      "nick_name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "id": 5
     }
   ]
 }
