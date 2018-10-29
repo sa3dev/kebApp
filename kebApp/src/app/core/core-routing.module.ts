@@ -11,11 +11,21 @@ import { StockComponent } from '../stock/stock.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', 
+    redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'calendar', component: CalendarComponent },
-  { path: 'users', canActivate: [LoginService], component: ListusersComponent },
-  { path: 'register',canActivate: [LoginService], component: RegisterComponent },
+  
+  { 
+    path: 'users', 
+    canActivate: [LoginService], 
+    component: ListusersComponent 
+  },
+  { 
+    path: 'register',
+    canActivate: [LoginService], 
+    component: RegisterComponent 
+  },
   { path: 'products', component: ProductsComponent },
   { path: 'inventaire' , component: StockComponent }
 ];

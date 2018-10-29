@@ -13,6 +13,7 @@ export class RegisterService {
     private httpClient: HttpClient,
     private router: Router
   ) { }
+  
   createUser(user: User) {
     this.httpClient.post(apiURL,
       user)

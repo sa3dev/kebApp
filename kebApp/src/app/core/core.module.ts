@@ -16,7 +16,8 @@ import { Calendar1Module } from '../calendar/calendar1.module';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
 
-
+//import stocok Module
+import { StockModule} from '../stock/stock.module';
 
 @NgModule({
   imports: [
@@ -25,14 +26,16 @@ import { ProductsComponent } from './products/products.component';
     CoreRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    Calendar1Module
+    Calendar1Module,
+    StockModule
   ],
   declarations: [
     ListusersComponent,
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    ProductsComponent
+    ProductsComponent,
+    
 ],
     exports: [CoreRoutingModule, HeaderComponent]
 })
