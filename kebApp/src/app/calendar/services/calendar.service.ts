@@ -24,6 +24,7 @@ export class CalendarService {
     this.httpClient.get<Reservation[]>(eventUrl).subscribe(
       data => {
         this.events = data ;
+        this.events.map( data => data.start = new Date(data.start));
         this.emitReservations();
       },
       error => {
@@ -34,22 +35,6 @@ export class CalendarService {
    emitReservations() {
      this.reservationsSubject.next(this.events);
    }
-  //   reservationOfTheDay(value: Date) {
-  //     this.httpClient.get<Reservation[]>(eventUrl).subscribe(
-  //       data => {
-  //         this.events = data;
-  //       }
-  //     )
-
-  //   // return this.events.filter((reservation: Reservation) => {
-  //   //         if (reservation.start == value) {
-  //   //           console.log("nom" + reservation.title)
-  //   //           return true;
-  //   //         } else {
-  //   //           return false;
-  //   //         }
-  //   //  })
-  // }
 
   createEvent(reservation: Reservation) {
     this.httpClient.post(eventUrl,

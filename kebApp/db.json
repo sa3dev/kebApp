@@ -108,6 +108,13 @@
       "start": "2018-10-28T23:00:00.000Z",
       "draggable": true,
       "capacity": 7
+    },
+    {
+      "id": 213,
+      "title": "Brahim",
+      "start": "2018-10-29T19:24:00.000Z",
+      "draggable": true,
+      "capacity": 8
     }
   ],
   "products": [

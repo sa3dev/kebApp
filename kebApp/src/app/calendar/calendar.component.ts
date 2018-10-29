@@ -100,9 +100,9 @@ export class CalendarComponent implements OnInit {
 
   addEvent(): void {
     this.events.push({
-      id: Math.floor(Math.random()*1000),
-      title: 'Nouvelle réservation',
-      start: startOfDay(new Date()),
+      id: Math.floor(Math.random()*10000),
+      title: '',
+      start: new Date(),
       draggable: true,
       capacity: 1,
     });

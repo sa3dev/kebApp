@@ -1,4 +1,4 @@
-<h1 class="text-center">Réservation du jour {{ reservationDay | date: 'dd/MM/yyyy' }}</h1>
+<h1 class="text-center py-5">Réservation du jour {{ reservationDay | date: 'dd/MM/yyyy' }}</h1>
 
 <div class="container">
   <table class="table table-bordered">
@@ -8,13 +8,12 @@
       <th>Nom</th>
       <th>Nombre de personnes</th>
       <th>Jour</th>
-      <th>Confirmer</th>
-      <th>Supprimer la réservation</th>
+      <th>Action</th>
     </tr>
   </thead>
 
   <tbody>
-    <tr *ngFor="let reservation of events; let index = index">
+    <tr *ngFor="let reservation of eventsOfTheDay; let index = index">
       <td>
         <input type="text" class="form-control" [(ngModel)]="reservation.title" (keyup)="refresh.next()">
       </td>
@@ -27,10 +26,7 @@
           placeholder="Not set">
       </td>
       <td>
-        <button class="btn btn-success" (click)="onConfirm(reservation)">Confirmer</button>
-      </td>
-      <td>
-        <button class="btn btn-danger" (click)="onDelete(reservation.id); refresh.next()">
+        <button class="btn btn-danger mx-auto" (click)="onDelete(reservation.id); refresh.next()">
           Supprimer
         </button>
       </td>

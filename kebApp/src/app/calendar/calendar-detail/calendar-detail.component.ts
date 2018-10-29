@@ -14,7 +14,7 @@ import { Reservation } from '../model/event'
 })
 export class CalendarDetailComponent implements OnInit {
   reservationDay: Date;
-  events: Reservation[];
+  eventsOfTheDay: Reservation[];
   reservationSubscription: Subscription;
 
   constructor(
@@ -26,14 +26,12 @@ export class CalendarDetailComponent implements OnInit {
     this.reservationDay = this.calendarDetailService.reservationDate;
     if (this.reservationDay === undefined ) {
       this.reservationDay = new Date();
-    }
-    this.reservationSubscription = this.calendarService.reservationsSubject.subscribe(
+    };
+    this.reservationSubscription = this.calendarDetailService.reservationsSubject.subscribe(
       (events: Reservation[]) => {
-        this.events = events;
+        this.eventsOfTheDay = events;
       })
-    this.calendarService.getListReservations();
-
+    this.calendarDetailService.getListReservationsOfTheDay(this.reservationDay);
    }
-    
-
+   
 }
