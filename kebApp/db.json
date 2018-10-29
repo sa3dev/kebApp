@@ -41,12 +41,12 @@
       "id": 11
     },
     {
-      "first_name": "José",
-      "last_name": "Stall",
-      "nick_name": "Rosé",
-      "email": "g@g.g",
-      "password": "mdpmdp",
-      "id": 12
+      "first_name": "admin",
+      "last_name": "admin",
+      "nick_name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "id": 5
     }
   ],
   "reservations": [
