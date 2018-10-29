@@ -41,6 +41,31 @@
       "id": 11
     },
     {
+      "first_name": "José",
+      "last_name": "Stall",
+      "nick_name": "Rosé",
+      "email": "g@g.g",
+      "password": "mdpmdp",
+      "id": 12
+    },
+    {
+      "first_name": "Léon",
+      "last_name": "Demeyere",
+      "nick_name": "jirlo",
+      "email": "leon.demeyere@hotmail.fr",
+      "password": "riku!!",
+      "id": 13
+    },
+    {
+      "first_name": "Léon",
+      "last_name": "Demeyere",
+      "nick_name": "zizi",
+      "email": "zizi.heyhey@gmail.com",
+      "password": "rikuriku",
+      "id": 14
+    },
+    {
+
       "first_name": "admin",
       "last_name": "admin",
       "nick_name": "admin",
@@ -70,6 +95,13 @@
       "start": "2018-10-30T11:00:00.000Z",
       "draggable": true,
       "capacity": 25
+    },
+    {
+      "id": 541,
+      "title": "Rober",
+      "start": "2018-10-29T18:00:00.000Z",
+      "draggable": true,
+      "capacity": 12
     }
   ],
   "products": [
