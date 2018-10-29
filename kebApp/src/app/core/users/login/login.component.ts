@@ -12,6 +12,7 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  private submitted:boolean;
 
   constructor(private fb:FormBuilder, private router:Router, private loginservice:LoginService) {}
 
@@ -20,6 +21,7 @@ export class LoginComponent implements OnInit {
   private loginForm:FormGroup;
 
   ngOnInit() {
+    this.submitted = false;
     this.usernameCtrl = this.fb.control('', Validators.required);
     this.passwordCtrl = this.fb.control('', Validators.required);
     this.loginForm = this.fb.group(
@@ -31,6 +33,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.submitted = true;
     // We delegate the login method to logUser() method in login.service.ts
     this.loginservice.logUser(this.usernameCtrl.value, this.passwordCtrl.value);
   }

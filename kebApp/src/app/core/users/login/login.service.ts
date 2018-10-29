@@ -2,22 +2,23 @@ import { Injectable } from '@angular/core';
 // Import for API calls
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { apiURL } from '../../../config';
-import { Observable } from 'rxjs';
 import { User } from '../user.model';
 // Import the router to navigate
 import { Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
+  isLoginSubject = new BehaviorSubject<boolean>(false);
 
   constructor(private http: HttpClient, private router: Router) { }
-
-  private isAuth: boolean = false;
+  
 
   canActivate(){
-    return this.isAuth;
+    return this.isLoginSubject.asObservable();
   }
 
   logUser(username: string, password: string) {
@@ -30,16 +31,26 @@ export class LoginService {
       // If success, we check that there's only one user
       data => {
         if(data.length === 1){
-          this.isAuth = true;
+console.log(data)
+          this.isLoginSubject.next(true);
           this.router.navigate(['/users']);
         }
         else {
-          this.isAuth = false;
+          this.isLoginSubject.next(false);
         }
       }, 
       // If error, we keep isAuth to false and log the error
-      (error) => {this.isAuth = false ; console.log("Error during login : " + error)}
+      (error) => {this.isLoginSubject.next(false) ; console.log("Error during login : " + error)}
     );
+  }
+
+  isLoggedIn() : Observable<boolean> {
+    return this.isLoginSubject.asObservable();
+   }
+
+  logOUt() {
+    this.isLoginSubject.next(false);
+    this.router.navigate(['/login']);
   }
   
 }

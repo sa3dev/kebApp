@@ -2,10 +2,19 @@
   <div class="text-center">
     <h3>Se connecter</h3>
     <form class="form-signin mx-auto" (ngSubmit)="login()" [formGroup]="loginForm">
-      <label for="username"></label> <input class="form-control" type="text" name="username" placeholder="Identifiant ou adresse email"
-        id="username" formControlName="username" required>
+        <div *ngIf="submitted && !isAuth" class="alert alert-danger">
+            <div >Identifiant ou mot de passe incorrect.</div>
+          </div>
+      <label for="username"></label> <input class="form-control" type="text" name="username" placeholder="Identifiant"
+        id="username" formControlName="username" required [ngClass]="{ 'is-invalid': submitted && usernameCtrl.errors }">
+        <div *ngIf="submitted && usernameCtrl.invalid" class="invalid-feedback">
+          <div *ngIf="usernameCtrl.errors.required">L'identifiant est requis</div>
+      </div>
       <label for="password"></label> <input class="form-control" type="password" name="password" placeholder="Mot de passe"
-        id="password" formControlName="password" required>
+        id="password" formControlName="password" required  [ngClass]="{ 'is-invalid': submitted && passwordCtrl.errors }">
+        <div *ngIf="submitted && passwordCtrl.invalid" class="invalid-feedback">
+          <div *ngIf="passwordCtrl.errors.required">Le mot de passe est requis</div>
+      </div>
       <button class="btn btn-block btn-primary my-4" type="submit">Connexion</button>
       <a [routerLink]="['/register']">Créer un compte</a>
     </form>
