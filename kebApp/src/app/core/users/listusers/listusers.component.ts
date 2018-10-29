@@ -28,11 +28,10 @@ export class ListusersComponent implements OnInit, OnDestroy {
   onDelete(id) {
     this.listuserService.deleteUser(id);
   }
-  onEdit(id) {
+  onEdit(user) {
 
   }
   ngOnDestroy() {
     this.usersSubscription.unsubscribe();
   }
 }
-
