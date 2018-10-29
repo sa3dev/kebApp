@@ -75,12 +75,10 @@
   "products": [
     {
       "id": 1,
-      "name": "pommes de terre",
-      "price": 33,
-      "quantity": 90,
-      "supplier": "MacCain",
-      "property": "olive",
-      "newproperty": "olive"
+      "name": "olive",
+      "price": 60,
+      "quantity": 150,
+      "supplier": "Henri Boucher"
     },
     {
       "id": 3,
