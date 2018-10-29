@@ -1,0 +1,24 @@
+<h2>Menus du restaurant</h2>
+<table>
+  <thead>
+    <tr>
+      <td>Nom du menu</td>
+      <td>Prix de revient</td>
+      <td>Prix de vente</td>
+      <td>Marge</td>
+      <td>Liste des ingrédients</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let menu of menus">
+      <td *ngIf="edit">{{menu.name}}</td>
+      <input *ngIf="!edit" type="text" (keyup.enter)="updateProduct(id, name, valeurnetréeparl'utilsiateur)" ngModel="name">
+      <td *ngIf="edit">{{menu.costPrice | price}}</td>
+      <input *ngIf="edit" type="text" (keyup.enter)="updateProduct(id, name, valeurnetréeparl'utilsiateur)" ngModel="name">
+      <td>{{menu.sellPrice | price}}</td>
+      <td>{{menu.sellPrice - menu.costPrice | price }}</td>
+      <td>{{menu.ingredients}}&nbsp;</td>
+    </tr>
+  </tbody>
+</table>
+

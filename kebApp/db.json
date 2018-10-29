@@ -19,14 +19,6 @@
     {
       "first_name": "Guillaume",
       "last_name": "Delory",
-      "nick_name": "Roger",
-      "email": "g.delory62@gmail.com",
-      "password": "mdpmdp",
-      "id": 9
-    },
-    {
-      "first_name": "Guillaume",
-      "last_name": "Delory",
       "nick_name": "Toto",
       "email": "g.delory62@gmail.com",
       "password": "mdpmdp",
@@ -65,13 +57,20 @@
       "id": 14
     },
     {
-
       "first_name": "admin",
       "last_name": "admin",
       "nick_name": "admin",
       "email": "admin@gmail.com",
       "password": "123456",
       "id": 5
+    },
+    {
+      "first_name": "José",
+      "last_name": "Vega",
+      "nick_name": "toto",
+      "email": "g@g.gg",
+      "password": "mdpmdp",
+      "id": 15
     }
   ],
   "reservations": [
@@ -102,15 +101,24 @@
       "start": "2018-10-29T18:00:00.000Z",
       "draggable": true,
       "capacity": 12
+    },
+    {
+      "id": 644,
+      "title": "Christophe",
+      "start": "2018-10-28T23:00:00.000Z",
+      "draggable": true,
+      "capacity": 7
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "olive",
-      "price": 60,
-      "quantity": 150,
-      "supplier": "Henri Boucher"
+      "name": "pommes de terre",
+      "price": 33,
+      "quantity": 90,
+      "supplier": "MacCain",
+      "property": "olive",
+      "newproperty": "olive"
     },
     {
       "id": 3,
@@ -125,6 +133,41 @@
       "price": 54,
       "quantity": 230,
       "supplier": "Noël Flantier"
+    }
+  ],
+  "menus": [
+    {
+      "id":1,
+      "name": "Menu burger",
+      "costPrice": 600,
+      "sellPrice": 850,
+      "ingredients": [
+        "pain burger",
+        "steak de boeuf",
+        "pommes de terre"
+      ]
+    },
+    {
+      "id":2,
+      "name": "Menu kebab galette",
+      "costPrice": 550,
+      "sellPrice": 800,
+      "ingredients": [
+        "pain burger",
+        "steak de boeuf",
+        "pommes de terre"
+      ]
+    },
+    {
+      "id":3,
+      "name": "Menu kebab faluche",
+      "costPrice": 350,
+      "sellPrice": 600,
+      "ingredients": [
+        "pain faluche",
+        "brochette d'agneau",
+        "pommes de terre"
+      ]
     }
   ]
 }
