@@ -2,11 +2,10 @@
 <div class="container">
   <h2>Register</h2>
 	<div class="row">
-		<form (ngSubmit)="register()" [formGroup]="loginForm">
+		<form (ngSubmit)=" ()" [formGroup]="loginForm">
 			<div>
 				<label for="firtsName">Prenom :</label>
 				<input type="text" id="firtsName" formControlName="firtsName" >
-<<<<<<< HEAD
       </div>
       <div>
           <label for="lastName">Nom :</label>
@@ -36,34 +35,6 @@
           <input type="password" id="confirmPassword" formControlName="confirmPassword">
           <span *ngIf="boolMdp">Veuillez recrire le mdp  ce n'est pas le même </span>
       </div>
-=======
-        </div>
-        <div>
-            <label for="lastName">Nom :</label>
-            <input type="text" id="lastName" formControlName="lastName" >
-        </div>
-        <div>
-            <label for="identifiant">Identifiant :</label>
-            <input type="text" id="identifiant" formControlName="identifiant" >
-        </div>
-        <div>
-            <label for="email">Email :</label>
-            <input type="email" id="email" formControlName="email" >
-        </div>
-            <label for="role">Role :</label>
-            <select id="role" formControlName="role">
-                <option value="admin" selected>Admin</option>
-                <option value="simple" >Simple</option>
-            </select>
-        <div>
-            <label for="password">mdp</label>
-            <input type="password" id="password" formControlName="password">
-        </div>
-        <div>
-            <label for="confirmPassword">Confirmer le mdp</label>
-            <input type="password" id="confirmPassword" formControlName="confirmPassword">
-        </div>
->>>>>>> 4ebda1bc7c886ace5d2d62c2bec4c2af37c9fbc6
 
 			<input type="submit" value="Login" [disabled]="loginForm.invalid" >
         </form>
