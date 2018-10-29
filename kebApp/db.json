@@ -19,14 +19,6 @@
     {
       "first_name": "Guillaume",
       "last_name": "Delory",
-      "nick_name": "Roger",
-      "email": "g.delory62@gmail.com",
-      "password": "mdpmdp",
-      "id": 9
-    },
-    {
-      "first_name": "Guillaume",
-      "last_name": "Delory",
       "nick_name": "Toto",
       "email": "g.delory62@gmail.com",
       "password": "mdpmdp",
@@ -39,6 +31,46 @@
       "email": "pat@pat.pat",
       "password": "mdpmdp",
       "id": 11
+    },
+    {
+      "first_name": "José",
+      "last_name": "Stall",
+      "nick_name": "Rosé",
+      "email": "g@g.g",
+      "password": "mdpmdp",
+      "id": 12
+    },
+    {
+      "first_name": "Léon",
+      "last_name": "Demeyere",
+      "nick_name": "jirlo",
+      "email": "leon.demeyere@hotmail.fr",
+      "password": "riku!!",
+      "id": 13
+    },
+    {
+      "first_name": "Léon",
+      "last_name": "Demeyere",
+      "nick_name": "zizi",
+      "email": "zizi.heyhey@gmail.com",
+      "password": "rikuriku",
+      "id": 14
+    },
+    {
+      "first_name": "admin",
+      "last_name": "admin",
+      "nick_name": "admin",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "first_name": "José",
+      "last_name": "Vega",
+      "nick_name": "toto",
+      "email": "g@g.gg",
+      "password": "mdpmdp",
+      "id": 15
     }
   ],
   "reservations": [
@@ -55,6 +87,52 @@
       "start": "2018-10-30T11:00:00.000Z",
       "draggable": true,
       "capacity": 9
+    },
+    {
+      "id": 602,
+      "title": "Roger",
+      "start": "2018-10-30T11:00:00.000Z",
+      "draggable": true,
+      "capacity": 25
+    },
+    {
+      "id": 541,
+      "title": "Rober",
+      "start": "2018-10-29T18:00:00.000Z",
+      "draggable": true,
+      "capacity": 12
+    },
+    {
+      "id": 644,
+      "title": "Christophe",
+      "start": "2018-10-28T23:00:00.000Z",
+      "draggable": true,
+      "capacity": 7
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "pommes de terre",
+      "price": 33,
+      "quantity": 90,
+      "supplier": "MacCain",
+      "property": "olive",
+      "newproperty": "olive"
+    },
+    {
+      "id": 3,
+      "name": "steak de bœuf",
+      "price": 200,
+      "quantity": 30,
+      "supplier": "Henri Boucher"
+    },
+    {
+      "id": 4,
+      "name": "tomates",
+      "price": 54,
+      "quantity": 230,
+      "supplier": "Noël Flantier"
     }
   ]
 }

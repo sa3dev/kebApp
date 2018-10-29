@@ -1,10 +1,12 @@
-import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit, Input } from '@angular/core';
 import { startOfDay, subDays, isSameDay, isSameMonth, addHours, subHours } from 'date-fns';
 import { Subject, Subscription } from 'rxjs';
 import { CalendarEvent, CalendarEventTimesChangedEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarService } from './services/calendar.service';
-import { Reservation } from './model/event'
+import { Reservation } from './model/event';
+import { Router } from '@angular/router';
+import { CalendarDetailService } from './calendar-detail/service/calendar-detail.service';
 
 const colors: any = {
   red: {
@@ -35,6 +37,7 @@ export class CalendarComponent implements OnInit {
   view: CalendarView = CalendarView.Month;
   weekStartsOn: number = DAYS_OF_WEEK.MONDAY;
   CalendarView = CalendarView;
+  dayReservation: Date;
 
   viewDate: Date = new Date();
 
@@ -52,7 +55,9 @@ export class CalendarComponent implements OnInit {
   activeDayIsOpen: boolean = true;
 
   constructor(private modal: NgbModal,
-    private calendarService: CalendarService) { }
+    private calendarService: CalendarService,
+    private router: Router,
+    private calendarDetail: CalendarDetailService) { }
 
     ngOnInit() {
       this.reservationSubscription = this.calendarService.reservationsSubject.subscribe(
@@ -113,5 +118,9 @@ export class CalendarComponent implements OnInit {
   };
   ngOnDestroy(){
     this.reservationSubscription.unsubscribe();
+  }
+  ofTheDay(clickedDate) {
+    this.dayReservation = clickedDate;
+    this.calendarDetail.saveTheDate(this.dayReservation)
   }
 }

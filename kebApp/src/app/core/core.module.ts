@@ -10,10 +10,12 @@ import { RegisterComponent } from './users/register/register.component';
 import { RouterModule } from '@angular/router';
 import { CoreRoutingModule } from './core-routing.module';
 
-// Import Forms modules and do not forget motherf****** ReactiveFormsModule
+// Import Forms modules and other services but do not forget f****** ReactiveFormsModule
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { Calendar1Module } from '../calendar/calendar1.module';
 import { HeaderComponent } from './header/header.component';
+import { ProductsComponent } from './products/products.component';
+
 
 
 @NgModule({
@@ -29,8 +31,9 @@ import { HeaderComponent } from './header/header.component';
     ListusersComponent,
     LoginComponent,
     RegisterComponent,
-    HeaderComponent
-],
+    HeaderComponent,
+    ProductsComponent
+  ],
     exports: [CoreRoutingModule, HeaderComponent]
 })
 export class CoreModule { }

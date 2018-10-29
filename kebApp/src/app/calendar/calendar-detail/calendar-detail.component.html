@@ -1,0 +1,40 @@
+<h1 class="text-center">Réservation du jour {{ reservationDay | date: 'dd/MM/yyyy' }}</h1>
+
+<div class="container">
+  <table class="table table-bordered">
+
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Nombre de personnes</th>
+      <th>Jour</th>
+      <th>Confirmer</th>
+      <th>Supprimer la réservation</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let reservation of events; let index = index">
+      <td>
+        <input type="text" class="form-control" [(ngModel)]="reservation.title" (keyup)="refresh.next()">
+      </td>
+      <td>
+        <input type="number" class="form-control" [(ngModel)]="reservation.capacity" (keyup)="refresh.next()">
+      </td>
+      <td>
+        <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="reservation.start" (ngModelChange)="refresh.next()"
+          [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
+          placeholder="Not set">
+      </td>
+      <td>
+        <button class="btn btn-success" (click)="onConfirm(reservation)">Confirmer</button>
+      </td>
+      <td>
+        <button class="btn btn-danger" (click)="onDelete(reservation.id); refresh.next()">
+          Supprimer
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>

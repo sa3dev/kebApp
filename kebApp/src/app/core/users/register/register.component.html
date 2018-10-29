@@ -26,6 +26,12 @@
               <div *ngIf="passwordCtrl.errors.required">Le mot de passe est obligatoire.</div>
               <div *ngIf="passwordCtrl.errors.minlength">Le mot de passe doit contenir au moins 6 caractéres.</div>
             </div>
+            <div *ngIf="boolEmail" class="alert alert-danger">
+              <div>Cet email est deja utilisé !</div>
+            </div>
+            <div *ngIf="boolIdentifiant" class="alert alert-danger">
+              <div>Cette Identifiant est deja utilisé !</div>
+            </div>
 
 
             <form class="form-default mt-4" (ngSubmit)="signup()" [formGroup]="loginForm" data-toggle="validator">

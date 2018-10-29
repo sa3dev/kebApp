@@ -44,7 +44,7 @@
 <br>
 <div [ngSwitch]="view">
   <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" (dayClicked)="clickedDate = $event.day.date" [weekStartsOn]="weekStartsOn"
-    [locale]="locale" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+    [locale]="locale" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="ofTheDay(clickedDate)"
     (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-month-view>
   <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [locale]="locale" [weekStartsOn]="weekStartsOn"
@@ -57,7 +57,7 @@
 <br><br><br>
 <div class="container">
   <h3>
-  Editer les réservations
+  Ajouter une réservation
   <button class="btn btn-primary pull-right" (click)="addEvent()">
     Ajouter une réservation
   </button>

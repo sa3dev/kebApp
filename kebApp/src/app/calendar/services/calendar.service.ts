@@ -31,9 +31,25 @@ export class CalendarService {
       }
     )
   }
-  emitReservations() {
-    this.reservationsSubject.next(this.events);
-  }
+   emitReservations() {
+     this.reservationsSubject.next(this.events);
+   }
+  //   reservationOfTheDay(value: Date) {
+  //     this.httpClient.get<Reservation[]>(eventUrl).subscribe(
+  //       data => {
+  //         this.events = data;
+  //       }
+  //     )
+
+  //   // return this.events.filter((reservation: Reservation) => {
+  //   //         if (reservation.start == value) {
+  //   //           console.log("nom" + reservation.title)
+  //   //           return true;
+  //   //         } else {
+  //   //           return false;
+  //   //         }
+  //   //  })
+  // }
 
   createEvent(reservation: Reservation) {
     this.httpClient.post(eventUrl,
@@ -60,3 +76,4 @@ export class CalendarService {
   }
 }
  
+
