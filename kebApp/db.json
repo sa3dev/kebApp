@@ -71,5 +71,30 @@
       "draggable": true,
       "capacity": 25
     }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "pommes de terre",
+      "price": 33,
+      "quantity": 90,
+      "supplier": "MacCain",
+      "property": "olive",
+      "newproperty": "olive"
+    },
+    {
+      "id": 3,
+      "name": "steak de bœuf",
+      "price": 200,
+      "quantity": 30,
+      "supplier": "Henri Boucher"
+    },
+    {
+      "id": 4,
+      "name": "tomates",
+      "price": 54,
+      "quantity": 230,
+      "supplier": "Noël Flantier"
+    }
   ]
 }
