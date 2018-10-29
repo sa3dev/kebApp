@@ -33,7 +33,7 @@ import { ProductsComponent } from './products/products.component';
     RegisterComponent,
     HeaderComponent,
     ProductsComponent
-],
+  ],
     exports: [CoreRoutingModule, HeaderComponent]
 })
 export class CoreModule { }
