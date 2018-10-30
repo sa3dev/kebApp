@@ -185,32 +185,11 @@
       "supplier": "Noël Flantier"
     },
     {
-      "name": "fraise",
-      "price": 15,
-      "quantity": 15,
-      "supplier": "fraison entreprise",
-      "id": 5
-    },
-    {
       "name": "concombre",
       "price": 45,
       "quantity": 75,
       "supplier": "con entreprise",
       "id": 6
-    },
-    {
-      "name": "fdsfds",
-      "price": 15,
-      "quantity": 15,
-      "supplier": "reoti",
-      "id": 9
-    },
-    {
-      "name": "test12",
-      "price": 54,
-      "quantity": 54,
-      "supplier": "ffd",
-      "id": 18
     },
     {
       "name": "pomme de terre",
@@ -221,14 +200,6 @@
     }
   ],
   "fournisseurs": [
-    {
-      "id": 1,
-      "nom": "kebab&Co",
-      "adresse": "22 rue de la broche",
-      "telephone": "0695979938",
-      "ville": "roncq",
-      "cp": "59250"
-    },
     {
       "id": 3,
       "nom": "Patata&Co",
@@ -252,6 +223,14 @@
       "adresse": "2 rue de la fricandelle",
       "cp": 59100,
       "id": 5
+    },
+    {
+      "nom": "metro",
+      "telephone": 952487585,
+      "ville": "watrelos",
+      "adresse": "65 rue watrelos",
+      "cp": 59150,
+      "id": 6
     }
   ],
   "menus": [
