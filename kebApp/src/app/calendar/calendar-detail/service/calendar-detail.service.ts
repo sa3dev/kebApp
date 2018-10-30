@@ -4,6 +4,8 @@ import { Reservation } from '../../model/event';
 import { HttpClient } from '@angular/common/http';
 import { eventUrl } from '../../../config';
 import { Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 
 
 
@@ -27,21 +29,26 @@ export class CalendarDetailService {
   }
 
   getListReservationsOfTheDay(value: Date) {
-    this.httpClient.get<Reservation[]>(eventUrl).subscribe(
-      data => {
-        this.events = data;
-        this.events
-        .filter((event: Reservation) => {
-         return (value.toLocaleDateString() == new Date(event.start).toLocaleDateString())
-      },
+    this.httpClient.get<Reservation[]>(eventUrl).pipe(
+      map(
+        (events: Reservation[]) => events.filter(
+          (event: Reservation) => value.toLocaleDateString() == new Date(event.start).toLocaleDateString()  
+        )
+      )
+    ).subscribe(
+      (events:Reservation[]) => {
+        this.events = events;
+        this.emitReservationsOfTheDay()
+      },      
       error => {
         console.log(error);        
       }
     )
-    this.emitReservationsOfTheDay();
-  })
-}
+
+  }
+
 emitReservationsOfTheDay() {
+  console.log(this.events)
   this.reservationsSubject.next(this.events);
 }
 

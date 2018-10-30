@@ -77,7 +77,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let reservation of events; let index = index">
+    <tr  *ngFor="let reservation of events; let index = index">
       <td>
         <input type="text" class="form-control" [(ngModel)]="reservation.title" (keyup)="refresh.next()">
       </td>

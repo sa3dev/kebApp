@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
 import { startOfDay, subDays, isSameDay, isSameMonth, addHours, subHours } from 'date-fns';
 import { Subject, Subscription } from 'rxjs';
 import { CalendarEvent, CalendarEventTimesChangedEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
@@ -39,6 +39,7 @@ export class CalendarComponent implements OnInit {
   CalendarView = CalendarView;
   dayReservation: Date;
 
+
   viewDate: Date = new Date();
 
   modalData: {
@@ -59,12 +60,13 @@ export class CalendarComponent implements OnInit {
     private router: Router,
     private calendarDetail: CalendarDetailService) { }
 
-    ngOnInit() {
+    ngOnInit(){
+      this.refresh.next()
       this.reservationSubscription = this.calendarService.reservationsSubject.subscribe(
         (events: Reservation[]) => {
           this.events = events;
       })
-      this.calendarService.getListReservations();
+      this.calendarService.getListReservations();      
     }
     
 

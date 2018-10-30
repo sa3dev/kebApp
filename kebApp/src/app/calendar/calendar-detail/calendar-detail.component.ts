@@ -1,8 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CalendarDetailService } from './service/calendar-detail.service';
 import { Observable } from 'rxjs';
-import { CalendarService } from '../services/calendar.service';
 import { Reservation } from '../model/event'
 
 
@@ -12,14 +11,13 @@ import { Reservation } from '../model/event'
   templateUrl: './calendar-detail.component.html',
   styleUrls: ['./calendar-detail.component.scss']
 })
-export class CalendarDetailComponent implements OnInit {
+export class CalendarDetailComponent implements OnInit, OnDestroy {
   reservationDay: Date;
   eventsOfTheDay: Reservation[];
   reservationSubscription: Subscription;
 
   constructor(
     private calendarDetailService: CalendarDetailService,
-    private calendarService: CalendarService
   ) { }
 
   ngOnInit() {
@@ -33,5 +31,7 @@ export class CalendarDetailComponent implements OnInit {
       })
     this.calendarDetailService.getListReservationsOfTheDay(this.reservationDay);
    }
-   
+   ngOnDestroy(): void {
+    this.reservationSubscription.unsubscribe()
+   }
 }

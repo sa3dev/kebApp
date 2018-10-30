@@ -56,8 +56,7 @@ export class CalendarService {
     },
     error => { 
       console.log(error)
-    }
-    )
+    })
   }
 }
  
