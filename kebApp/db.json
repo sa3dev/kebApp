@@ -201,6 +201,14 @@
       "id": 9,
       "quantityPrev": 90
     },
+    { 
+      "name": "concombre",
+      "price": 45,
+      "quantity": 75,
+      "IDsupplier": 3,
+      "id": 6,
+      "quantityPrev": 10
+    },
     {
       "name": "pomme de terre",
       "price": 50,
