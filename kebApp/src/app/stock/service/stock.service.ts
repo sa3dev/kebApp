@@ -3,12 +3,17 @@ import { ProductsService } from '../../core/products/products.service';
 import { Product } from 'src/app/core/products/product.model';
 import { HttpClient } from '@angular/common/http';
 import { apiURLProducts } from '../../config';
+
+import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
  
 @Injectable({
   	providedIn: 'root'
 })
 export class StockService {
+
+	productsubject = new Subject<Product[]>(); // notre subject 
+	products : Product[];
 
 	constructor( 
 		private productService : ProductsService ,
@@ -17,7 +22,25 @@ export class StockService {
 		) { }
 
 	getProducts(){
-		this.productService.getProductsList();
+		this.productService.getProductsList().subscribe(
+			data => {
+				this.products = data ;
+				this.emitProduct();
+			},
+			error => {
+				console.log(error)
+			}
+		);;
+	}
+	UpdateProduct( product: Product ) {
+		const url = `${apiURLProducts}/${product.id }`; 
+		
+			this.httpClient.put(url, product)
+
+    }
+
+	emitProduct(){
+		this.productsubject.next(this.products); 
 	}
 
 	addProduct(product : Product) {
