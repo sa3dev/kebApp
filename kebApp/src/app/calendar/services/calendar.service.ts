@@ -6,9 +6,6 @@ import { Reservation } from '../model/event';
 import { Subject } from 'rxjs';
 
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -33,6 +30,8 @@ export class CalendarService {
     )
   }
    emitReservations() {
+     console.log('coucou');
+     
      this.reservationsSubject.next(this.events);
    }
 
@@ -42,17 +41,32 @@ export class CalendarService {
       .subscribe(
         data => {
           console.log("Event Request is successful ", data);
+          this.getListReservations();
         },
         error => {
           console.log("Rrror", error);
         }
       );
   }
+  updateEvent(reservation: Reservation) {
+    const url = `${eventUrl}/${reservation.id}`;
+    this.httpClient.put(url, reservation)
+      .subscribe(
+        data => {
+          console.log("Put Request is successful ", data);
+          this.getListReservations();
+        },
+        error => {
+          console.log("Rrror5", error);
+        }
+      );
+  }
+
   deleteEVent(id: number):void {
     const url = `${eventUrl}/${id}`;
     this.httpClient.delete(url).subscribe(data => {
-      this.getListReservations();
       console.log("réservations supprimé", data)
+      this.getListReservations()
     },
     error => { 
       console.log(error)

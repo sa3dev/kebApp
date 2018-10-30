@@ -44,14 +44,14 @@
 <br>
 <div [ngSwitch]="view">
   <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" (dayClicked)="clickedDate = $event.day.date" [weekStartsOn]="weekStartsOn"
-    [locale]="locale" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="ofTheDay(clickedDate)"
+    [locale]="locale"  [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="ofTheDay(clickedDate)"
     (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-month-view>
   <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [locale]="locale" [weekStartsOn]="weekStartsOn"
-    [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+    [events]="events"  (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-week-view>
   <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [locale]="locale" [events]="events"
-    [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+     (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-day-view>
 </div>
 <br><br><br>
@@ -77,23 +77,24 @@
   </thead>
 
   <tbody>
-    <tr  *ngFor="let reservation of events; let index = index">
+    <tr *ngFor="let reservation of events; let index = index">
       <td>
-        <input type="text" class="form-control" [(ngModel)]="reservation.title" (keyup)="refresh.next()">
+        <input type="text" class="form-control" [(ngModel)]="reservation.title">
       </td>
       <td>
-        <input type="number" class="form-control" [(ngModel)]="reservation.capacity" (keyup)="refresh.next()">
+        <input type="number" class="form-control" [(ngModel)]="reservation.capacity">
       </td>
       <td>
-        <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="reservation.start" (ngModelChange)="refresh.next()"
+        <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="reservation.start"
           [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
           placeholder="Not set">
       </td>
       <td>
-        <button class="btn btn-success" (click)="onConfirm(reservation)">Confirmer</button>
+        <button *ngIf="reservation.id" class="btn btn-success" (click)="onConfirm(reservation)">Modifier</button>
+        <button *ngIf="!reservation.id" class="btn btn-success" (click)="onConfirm(reservation)">Valider</button>
       </td>
       <td>
-        <button class="btn btn-danger" (click)="onDelete(reservation.id); refresh.next()">
+        <button class="btn btn-danger" (click)="onDelete(reservation.id)">
           Supprimer
         </button>
       </td>
