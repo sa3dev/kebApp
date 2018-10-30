@@ -38,12 +38,13 @@
   </div>
   <div *ngIf="ingredientsMenu.invalid && (ingredientsMenu.dirty || ingredientsMenu.touched)" class="alert alert-danger">
     <div *ngIf="ingredientsMenu.errors.required">La liste des ingrédients est requise.</div>
+  </div>
   <!-- </div>
   <div *ngIf="menuNameTaken" class="alert alert-danger">
     <div>Ce nom de menu est déjà utilisé !</div>
   </div> -->
 
-  <!-- Ze Form--> 
+  <!-- Ze Form-->
   <form class="form-default mt-4" (ngSubmit)="addMenu()" [formGroup]="addMenuForm" data-toggle="validator">
     <div class="row">
       <div class="col-md-6">
@@ -57,8 +58,8 @@
       <div class="col-md-6">
         <div class="form-group">
           <label class="control-label">Coût de revient</label>
-          <input type="number" class="form-control form-control-lg" name="costPriceMenu" id="costPriceMenu" formControlName="costPriceMenu"
-            required>
+          <input type="number" class="form-control form-control-lg" name="costPriceMenu" id="costPriceMenu"
+            formControlName="costPriceMenu" required>
         </div>
       </div>
     </div>
@@ -67,15 +68,15 @@
       <div class="col-md-6">
         <div class="form-group">
           <label class="control-label">Coût de vente</label>
-          <input type="number" class="form-control form-control-lg" name="sellPriceMenu" id="sellPriceMenu" formControlName="sellPriceMenu"
-            required>
+          <input type="number" class="form-control form-control-lg" name="sellPriceMenu" id="sellPriceMenu"
+            formControlName="sellPriceMenu" required>
         </div>
       </div>
       <div class="col-md-6">
         <div class="form-group">
           <label class="control-label">Ingrédients</label>
-          <input type="text" class="form-control form-control-lg" name="ingredientsMenu" id="ingredientsMenu" formControlName="ingredientsMenu"
-            required>
+          <input type="text" class="form-control form-control-lg" name="ingredientsMenu" id="ingredientsMenu"
+            formControlName="ingredientsMenu" required>
         </div>
       </div>
     </div>
@@ -84,8 +85,7 @@
       Ajouter ce menu
     </button>
   </form>
-</div>
-<!-- </div>
+  <!-- </div>
 </div>
 </div>
 </div>
