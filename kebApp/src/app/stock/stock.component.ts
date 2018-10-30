@@ -108,7 +108,7 @@ export class StockComponent implements OnInit {
 			prod.name = this.name.value;
 			prod.price = this.price.value;
 			prod.quantity = this.quantity.value;
-			prod.supplier = this.supplier.value;
+			prod.IDsupplier = this.supplier.value;
 			this.ProductService.addProduct( prod );
 
 			this.show = true;
