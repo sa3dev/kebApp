@@ -32,13 +32,14 @@ export class ListusersService {
     this.usersSubject.next(this.users);
   }
 
-  putUser(user: User) {
+  updateUser(user: User) {
     const url = `${apiURL}/${user.id}`;
     this.httpClient.put(url,
       user)
       .subscribe(
         data => {
           console.log("PUT Request is successful ", data);
+          this.getListUsers();
         },
         error => {
           console.log("Rrror", error);
