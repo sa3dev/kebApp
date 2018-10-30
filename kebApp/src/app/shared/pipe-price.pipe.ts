@@ -15,4 +15,5 @@ export class PricePipe implements PipeTransform {
       return montant;
 
   }
+  
 }

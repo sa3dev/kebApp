@@ -1,3 +1,21 @@
-<p>
-  detail-stock works!
-</p>
+<div class="container">
+	<h2>Détail du produit </h2>
+
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+			<th>Nom du produit</th>
+			<th>Prix</th>
+			<th>Quantité</th>
+			<th>Fournisseurs n°</th>
+			</tr>
+		</thead>
+		<tr (click)="retourStock()">
+			<td> {{ dataProduct.name  }}</td>
+			<td> {{ dataProduct.price  }}</td>
+			<td> {{ dataProduct.quantity  }} </td>
+			<td> {{ dataProduct.IDsupplier  }} </td>
+		</tr>
+	</table>
+	<button (click)="retourStock()"> Retour </button>
+</div>

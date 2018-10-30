@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { StockComponent } from './stock.component';
-
+import { DetailStockComponent } from './detail-stock/detail-stock.component';
 
 @NgModule({
   imports: [
@@ -12,6 +12,6 @@ import { StockComponent } from './stock.component';
     FormsModule,
   ],
   exports: [ RouterModule ],
-  declarations: [ StockComponent ]
+  declarations: [ StockComponent , DetailStockComponent ]
 })
 export class StockModule { }
