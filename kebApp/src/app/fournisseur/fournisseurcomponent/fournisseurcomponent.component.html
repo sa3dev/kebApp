@@ -1,4 +1,4 @@
-<div>
+<div *ngIf="!pageDetail">
   <div>
     <form (ngSubmit)="researchZ()" [formGroup]="formFournisseur"> 
         <label for="inputFour">Fournisseurs :</label>
@@ -38,11 +38,11 @@
             <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.telephone"></td>
             <td *ngIf="editF && i===editNumber"><button class="btn btn-success">Valider</button><button (click)="edit(i)" class="btn btn-infos">Edit</button></td>
               -->
-            <td *ngIf="!listEdit[i]">{{fournisseur.nom}}</td>
-            <td *ngIf="!listEdit[i]">{{fournisseur.adresse}}</td>
-            <td *ngIf="!listEdit[i]">{{fournisseur.ville}}</td>
-            <td *ngIf="!listEdit[i]">{{fournisseur.cp}}</td>
-            <td *ngIf="!listEdit[i]">{{fournisseur.telephone}}</td> 
+            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.nom}}</td>
+            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.adresse}}</td>
+            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.ville}}</td>
+            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.cp}}</td>
+            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.telephone}}</td> 
           
             <td *ngIf="!listEdit[i]"><button (click)="delete(fournisseur.id)" class="btn btn-danger">X</button> <button (click)="edit(i)" class="btn btn-info">Edit</button></td>
            <!-- <form  (ngSubmit)="editFournisseur()" [formGroup]="fomEdit">-->
@@ -89,4 +89,6 @@
       </div>
     </form>
   </div>
+  
 </div>
+<app-fournisseurdetails *ngIf="pageDetail" [fournisseur]="fournisseurDetail"></app-fournisseurdetails>

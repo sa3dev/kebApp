@@ -123,14 +123,6 @@
       "cp": "59250"
     },
     {
-      "id": 2,
-      "nom": "Patata&CoRBZ",
-      "adresse": "22 rue de la patate",
-      "telephone": "0695979999",
-      "ville": "tourcoing",
-      "cp": "59200"
-    },
-    {
       "id": 3,
       "nom": "Patata&Co",
       "adresse": "22 rue de la patate",
@@ -148,7 +140,7 @@
     },
     {
       "nom": "fromage du chnord qui pue",
-      "telephone": "695982210",
+      "telephone": "0695982210",
       "ville": "roubaix",
       "adresse": "2 rue de la fricandelle",
       "cp": 59100,

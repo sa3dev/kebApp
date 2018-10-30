@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Fournisseur } from '../fournisseur.model';
+import { FournisseurcomponentComponent } from '../fournisseurcomponent/fournisseurcomponent.component';
 
 @Component({
   selector: 'app-fournisseurdetails',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FournisseurdetailsComponent implements OnInit {
 
-  constructor() { }
+  @Input() fournisseur: Fournisseur;
+  constructor(private compFour:FournisseurcomponentComponent) { }
 
   ngOnInit() {
+    console.log(this.fournisseur.nom);
+    
+  }
+  retour(){
+    this.compFour.pageDetails(-1);
   }
 
 }

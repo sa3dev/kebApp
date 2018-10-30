@@ -22,6 +22,7 @@ export class FournisseurcomponentComponent implements OnInit {
   //boolean ngIf
   private pageAjout:boolean;
   private listEdit:Boolean[]=[];
+  private pageDetail:boolean;
   //Edit form
   /*private fomEdit: FormGroup;
   private ctrlEditName: FormControl;
@@ -29,11 +30,12 @@ export class FournisseurcomponentComponent implements OnInit {
   private ctrlEditVille:FormControl;
   private ctrlEditCp: FormControl;
   private ctrlEditTel:FormControl;*/
-
+  private fournisseurDetail:Fournisseur;
 
 
   constructor(private service:FournisseurService, private fb: FormBuilder) { 
     this.pageAjout=false;
+    this.pageDetail=false;
   }
 
   ngOnInit() {
@@ -74,6 +76,18 @@ export class FournisseurcomponentComponent implements OnInit {
     });*/
   }
 
+  pageDetails(i:number){
+    console.log("test");
+    if(this.pageDetail){
+      this.pageDetail=false;
+    }else{
+      this.pageDetail=true;
+    }
+    if(i>=0){
+      this.fournisseurDetail=this.listFournisseur[i];
+    }
+    
+  }
   
   edit(i:number){
     
