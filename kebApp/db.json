@@ -166,51 +166,87 @@
       "name": "pommes de terre",
       "price": 33,
       "quantity": 90,
-      "supplier": "MacCain",
-      "property": "olive",
-      "newproperty": "olive"
+      "IDsupplier": 1,
+      "quantityPrev": 100
     },
     {
       "id": 3,
       "name": "steak de bœuf",
       "price": 200,
       "quantity": 30,
-      "supplier": "Henri Boucher"
+      "IDsupplier": 1,
+      "quantityPrev": 80
     },
     {
       "id": 4,
       "name": "tomates",
       "price": 54,
       "quantity": 230,
-      "supplier": "Noël Flantier"
+      "IDsupplier": 2,
+      "quantityPrev": 20
     },
     {
       "name": "fraise",
       "price": 15,
       "quantity": 15,
-      "supplier": "fraison entreprise",
-      "id": 5
+      "IDsupplier": 2,
+      "id": 5,
+      "quantityPrev": 75
     },
     {
-      "name": "concombre",
-      "price": 45,
-      "quantity": 75,
-      "supplier": "con entreprise",
-      "id": 6
+      "name": "fdsfds",
+      "price": 15,
+      "quantity": 15,
+      "IDsupplier": 4,
+      "id": 9,
+      "quantityPrev": 90
     },
     {
       "name": "pomme de terre",
       "price": 50,
       "quantity": 45,
-      "supplier": "p2terre",
-      "id": 19
+      "IDsupplier": 6,
+      "id": 19,
+      "quantityPrev": 100
+    },
+    {
+      "name": "mazdam",
+      "price": "4",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 5,
+      "id": 21
+    },
+    {
+      "name": "Frite fraiche",
+      "price": "2.50",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 3,
+      "id": 22
+    },
+    {
+      "name": "Chedar",
+      "price": "1.25",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 5,
+      "id": 23
+    },
+    {
+      "name": "Chedar mais de qualiter",
+      "price": "2.50",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 5,
+      "id": 24
     }
   ],
   "fournisseurs": [
     {
       "id": 3,
       "nom": "Patata&Co",
-      "adresse": "22 rue de la patate",
+      "adresse": "22 rue de la PATATE",
       "telephone": "0695979999",
       "ville": "tourcoing",
       "cp": "59200"

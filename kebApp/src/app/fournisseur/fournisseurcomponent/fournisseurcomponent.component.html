@@ -24,20 +24,7 @@
       </thead>
       <tbody> 
         <tr  *ngFor="let fournisseur of listFournisseur; let i=index;"><!--tableau boolean-->
-            <!--<td *ngIf="!editF ||editNumber!=i">{{fournisseur.nom}}</td>
-            <td *ngIf="!editF ||editNumber!=i">{{fournisseur.adresse}}</td>
-            <td *ngIf="!editF ||editNumber!=i">{{fournisseur.ville}}</td>
-            <td *ngIf="!editF ||editNumber!=i">{{fournisseur.cp}}</td>
-            <td *ngIf="!editF ||editNumber!=i">{{fournisseur.telephone}}</td> 
-          
-            <td *ngIf="!editF ||editNumber!=i"><button (click)="delete(fournisseur.id)" class="btn btn-danger">X</button> <button (click)="edit(i)" class="btn btn-info">Edit</button></td>
-            <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.nom"></td>
-            <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.adresse"></td>
-            <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.ville"></td>
-            <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.cp"></td>
-            <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.telephone"></td>
-            <td *ngIf="editF && i===editNumber"><button class="btn btn-success">Valider</button><button (click)="edit(i)" class="btn btn-infos">Edit</button></td>
-              -->
+            
             <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.nom}}</td>
             <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.adresse}}</td>
             <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.ville}}</td>
@@ -45,14 +32,14 @@
             <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.telephone}}</td> 
           
             <td *ngIf="!listEdit[i]"><button (click)="delete(fournisseur.id)" class="btn btn-danger">X</button> <button (click)="edit(i)" class="btn btn-info">Edit</button></td>
-           <!-- <form  (ngSubmit)="editFournisseur()" [formGroup]="fomEdit">-->
+          
                 <td *ngIf="listEdit[i]"><input  [value]="fournisseur.nom" [(ngModel)]="fournisseur.nom"></td>
                 <td *ngIf="listEdit[i]"><input [value]="fournisseur.adresse" [(ngModel)]="fournisseur.adresse"></td>
                 <td *ngIf="listEdit[i]"><input  [value]="fournisseur.ville" [(ngModel)]="fournisseur.ville"></td>
                 <td *ngIf="listEdit[i]"><input  [value]="fournisseur.cp" [(ngModel)]="fournisseur.cp"></td>
                 <td *ngIf="listEdit[i]"><input  [value]="fournisseur.telephone" [(ngModel)]="fournisseur.telephone"></td>
                 <td *ngIf="listEdit[i]"><button (click)="editFournisseur(i)" class="btn btn-success" >Valider</button><button (click)="edit(i)" class="btn btn-danger">Anuler</button></td>
-            <!--</form>-->
+            
             
           </tr>
       </tbody>
