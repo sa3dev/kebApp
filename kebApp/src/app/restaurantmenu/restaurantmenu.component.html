@@ -1,4 +1,4 @@
-<h2>Menus du restaurant</h2>
+<h1>Menus du restaurant</h1>
 <table>
   <thead>
     <tr>
@@ -11,14 +11,83 @@
   </thead>
   <tbody>
     <tr *ngFor="let menu of menus">
-      <td *ngIf="edit">{{menu.name}}</td>
-      <input *ngIf="!edit" type="text" (keyup.enter)="updateProduct(id, name, valeurnetréeparl'utilsiateur)" ngModel="name">
-      <td *ngIf="edit">{{menu.costPrice | price}}</td>
-      <input *ngIf="edit" type="text" (keyup.enter)="updateProduct(id, name, valeurnetréeparl'utilsiateur)" ngModel="name">
+      <td>{{menu.name}}</td>
+      <td>{{menu.costPrice | price}}</td>
       <td>{{menu.sellPrice | price}}</td>
       <td>{{menu.sellPrice - menu.costPrice | price }}</td>
       <td>{{menu.ingredients}}&nbsp;</td>
+      <td>
+        <button (click)="deleteMenu(menu.id)">Supprimer</button>
+      </td>
     </tr>
   </tbody>
 </table>
+<button (click)="displayAddMenu()">Ajouter Menu</button>
+<div *ngIf="displayingAddMenu" class="add-menu">
+  <h2>Ajouter un menu</h2>
 
+  <!-- Handling errors -->
+  <div *ngIf="menuName.invalid && (menuName.dirty || menuName.touched)" class="alert alert-danger">
+    <div *ngIf="menuName.errors.required">Le nom du menu est requis.</div>
+  </div>
+  <div *ngIf="costPriceMenu.invalid && (costPriceMenu.dirty || costPriceMenu.touched)" class="alert alert-danger">
+    <div *ngIf="costPriceMenu.errors.required">Le prix de revient est requis.</div>
+    <div *ngIf="sellPriceMenu.errors.minlength">Le prix de revient doit être un nombre.</div>
+  </div>
+  <div *ngIf="sellPriceMenu.invalid && (sellPriceMenu.dirty || sellPriceMenu.touched)" class="alert alert-danger">
+    <div *ngIf="sellPriceMenu.errors.required">Le prix de vente est requis.</div>
+  </div>
+  <div *ngIf="ingredientsMenu.invalid && (ingredientsMenu.dirty || ingredientsMenu.touched)" class="alert alert-danger">
+    <div *ngIf="ingredientsMenu.errors.required">La liste des ingrédients est requise.</div>
+  <!-- </div>
+  <div *ngIf="menuNameTaken" class="alert alert-danger">
+    <div>Ce nom de menu est déjà utilisé !</div>
+  </div> -->
+
+  <!-- Ze Form--> 
+  <form class="form-default mt-4" (ngSubmit)="addMenu()" [formGroup]="addMenuForm" data-toggle="validator">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Nom du menu</label>
+          <input type="text" class="form-control form-control-lg" name="menuName" id="menuName" formControlName="menuName"
+            required>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Coût de revient</label>
+          <input type="number" class="form-control form-control-lg" name="costPriceMenu" id="costPriceMenu" formControlName="costPriceMenu"
+            required>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Coût de vente</label>
+          <input type="number" class="form-control form-control-lg" name="sellPriceMenu" id="sellPriceMenu" formControlName="sellPriceMenu"
+            required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Ingrédients</label>
+          <input type="text" class="form-control form-control-lg" name="ingredientsMenu" id="ingredientsMenu" formControlName="ingredientsMenu"
+            required>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-styled  btn-base-1 mt-4" [disabled]="addMenuForm.invalid">
+      Ajouter ce menu
+    </button>
+  </form>
+</div>
+<!-- </div>
+</div>
+</div>
+</div>
+</div> -->

@@ -71,6 +71,14 @@
       "email": "g@g.gg",
       "password": "mdpmdp",
       "id": 15
+    },
+    {
+      "first_name": "dada",
+      "last_name": "dada",
+      "nick_name": "dada",
+      "email": "dada@dada.dada",
+      "password": "dadada",
+      "id": 16
     }
   ],
   "reservations": [
@@ -137,7 +145,7 @@
   ],
   "menus": [
     {
-      "id":1,
+      "id": 1,
       "name": "Menu burger",
       "costPrice": 600,
       "sellPrice": 850,
@@ -148,7 +156,7 @@
       ]
     },
     {
-      "id":2,
+      "id": 2,
       "name": "Menu kebab galette",
       "costPrice": 550,
       "sellPrice": 800,
@@ -159,7 +167,7 @@
       ]
     },
     {
-      "id":3,
+      "id": 3,
       "name": "Menu kebab faluche",
       "costPrice": 350,
       "sellPrice": 600,
@@ -168,6 +176,24 @@
         "brochette d'agneau",
         "pommes de terre"
       ]
+    },
+    {
+      "costPrice": "15",
+      "sellPrice": "18",
+      "name": "dadada",
+      "ingredients": "salade de tomates, oignons, pommes de test",
+      "id": 4
+    },
+    {
+      "costPrice": 1540,
+      "sellPrice": 8960,
+      "name": "Menu de tes tnumber",
+      "ingredients": [
+        "mon frigidaire",
+        " mon armoire",
+        " ma cafetière"
+      ],
+      "id": 9
     }
   ]
 }

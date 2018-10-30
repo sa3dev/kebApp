@@ -5,21 +5,18 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CoreModule } from './core/core.module';
 import { ProductsService } from './core/products/products.service';
-import { RestaurantmenuComponent } from './restaurantmenu/restaurantmenu.component';
-import { PricePipe } from './shared/pipe-price.pipe';
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    RestaurantmenuComponent,
-    PricePipe
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]

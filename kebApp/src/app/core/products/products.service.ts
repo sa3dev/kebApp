@@ -40,9 +40,10 @@ export class ProductsService {
       this.productUpdated[property] = value;
       console.log(this.productUpdated);
       this.http.put(apiUrlId, this.productUpdated).subscribe(data => console.log(data), error => console.log(error))
-    })
+    }
+    )
   }
-  
+
   /**
    * A function to add a product to our list of products
    * @param product the product of type Product that you want to add to the list of products

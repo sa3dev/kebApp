@@ -13,4 +13,32 @@ export class RestaurantmenuService {
   getListMenus(){
     return this.http.get<Menu[]>(apiURLMenus)
   }
+
+  /**
+   * Add a new menu to the api
+   * @param newmenu new menu created within the restaurantmenu.component's addMenu()
+   */
+
+  addNewMenu(newmenu:Menu){
+    this.http.post(apiURLMenus, newmenu).subscribe(
+      data => {
+        console.log("POST Request is successful ", data);
+      },
+      error => {
+        console.log("Rrror in the addNewMenu function", error);
+      }
+    );
+  }
+
+  deleteThisMenu(id){
+    const url = `${apiURLMenus}/${id}`;
+    this.http.delete(url)
+      .subscribe(data => {
+        console.log("Successful delete", data)
+      },
+        error => {
+        console.log("Error in the deleteThisMenu function", error);
+      }
+    );
+  }
 }
