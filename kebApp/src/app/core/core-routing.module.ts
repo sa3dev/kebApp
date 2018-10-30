@@ -7,6 +7,7 @@ import { RegisterComponent } from './users/register/register.component';
 import { CalendarComponent } from './../calendar/calendar.component';
 import { LoginService } from './users/login/login.service';
 import { ProductsComponent } from './products/products.component';
+import { FournisseurcomponentComponent } from '../fournisseur/fournisseurcomponent/fournisseurcomponent.component';
 
 
 
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'calendar', component: CalendarComponent },
   { path: 'users', canActivate: [LoginService], component: ListusersComponent },
   { path: 'register',canActivate: [LoginService], component: RegisterComponent },
-  { path: 'products', component: ProductsComponent }
+  { path: 'products', component: ProductsComponent },
+  { path: 'fournisseurs', component:FournisseurcomponentComponent}
 ];
 
 @NgModule({

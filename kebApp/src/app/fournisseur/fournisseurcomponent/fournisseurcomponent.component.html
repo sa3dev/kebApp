@@ -1,0 +1,94 @@
+<div *ngIf="!pageDetail">
+  <div>
+    <form (ngSubmit)="researchZ()" [formGroup]="formFournisseur"> 
+        <label for="inputFour">Fournisseurs :</label>
+        <input id="inputFour" formControlName="research" placeholder="recherche">
+        <input type="submit" value="recherche">
+        <input type="button" value ="Ajouter" (click)="ajout()">
+        <input type="button" (click)="refresh()" value="Rafraichir">
+    </form>
+    
+
+  </div>
+  <div *ngIf="listFournisseur.length>0">
+    <table class="text-center">
+      <thead>
+        <tr>
+          <th>Nom</th>
+          <th>Adresse</th>
+          <th>Ville</th>
+          <th>Code Postale</th>
+          <th>Telephone</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody> 
+        <tr  *ngFor="let fournisseur of listFournisseur; let i=index;"><!--tableau boolean-->
+            <!--<td *ngIf="!editF ||editNumber!=i">{{fournisseur.nom}}</td>
+            <td *ngIf="!editF ||editNumber!=i">{{fournisseur.adresse}}</td>
+            <td *ngIf="!editF ||editNumber!=i">{{fournisseur.ville}}</td>
+            <td *ngIf="!editF ||editNumber!=i">{{fournisseur.cp}}</td>
+            <td *ngIf="!editF ||editNumber!=i">{{fournisseur.telephone}}</td> 
+          
+            <td *ngIf="!editF ||editNumber!=i"><button (click)="delete(fournisseur.id)" class="btn btn-danger">X</button> <button (click)="edit(i)" class="btn btn-info">Edit</button></td>
+            <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.nom"></td>
+            <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.adresse"></td>
+            <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.ville"></td>
+            <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.cp"></td>
+            <td *ngIf="editF && i===editNumber"><input [value]="fournisseur.telephone"></td>
+            <td *ngIf="editF && i===editNumber"><button class="btn btn-success">Valider</button><button (click)="edit(i)" class="btn btn-infos">Edit</button></td>
+              -->
+            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.nom}}</td>
+            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.adresse}}</td>
+            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.ville}}</td>
+            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.cp}}</td>
+            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.telephone}}</td> 
+          
+            <td *ngIf="!listEdit[i]"><button (click)="delete(fournisseur.id)" class="btn btn-danger">X</button> <button (click)="edit(i)" class="btn btn-info">Edit</button></td>
+           <!-- <form  (ngSubmit)="editFournisseur()" [formGroup]="fomEdit">-->
+                <td *ngIf="listEdit[i]"><input  [value]="fournisseur.nom" [(ngModel)]="fournisseur.nom"></td>
+                <td *ngIf="listEdit[i]"><input [value]="fournisseur.adresse" [(ngModel)]="fournisseur.adresse"></td>
+                <td *ngIf="listEdit[i]"><input  [value]="fournisseur.ville" [(ngModel)]="fournisseur.ville"></td>
+                <td *ngIf="listEdit[i]"><input  [value]="fournisseur.cp" [(ngModel)]="fournisseur.cp"></td>
+                <td *ngIf="listEdit[i]"><input  [value]="fournisseur.telephone" [(ngModel)]="fournisseur.telephone"></td>
+                <td *ngIf="listEdit[i]"><button (click)="editFournisseur(i)" class="btn btn-success" >Valider</button><button (click)="edit(i)" class="btn btn-danger">Anuler</button></td>
+            <!--</form>-->
+            
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="pageAjout">
+    <form (ngSubmit)="ajouter()" [formGroup]="formAjout">
+      <h2>Ajouter</h2>
+      <div>
+        <label for="idNom">Nom :</label>
+        <input type="text" formControlName="ctrlName">
+      </div>
+      <div>
+          <label>Adresse :</label>
+          <input type="text" formControlName="ctrlAdresse">
+      </div>
+      
+      <div>
+          <label for="idVille">Ville :</label>
+          <input type="text" formControlName="ctrlVille">
+      </div>
+      
+      <div>
+          <label>Code postale :</label>
+          <input type="number" formControlName="ctrlCp">
+      </div>
+      
+      <div>
+          <label>telephone :</label>
+          <input type="number" formControlName="ctrlTelephone">
+      </div>
+      <div>
+        <input type="submit" [disabled]="formAjout.invalid" value="valider" class="btn btn-success">
+      </div>
+    </form>
+  </div>
+  
+</div>
+<app-fournisseurdetails *ngIf="pageDetail" [fournisseur]="fournisseurDetail"></app-fournisseurdetails>
