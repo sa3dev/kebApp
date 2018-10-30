@@ -9,16 +9,31 @@ import { LoginService } from './users/login/login.service';
 import { ProductsComponent } from './products/products.component';
 import { FournisseurcomponentComponent } from '../fournisseur/fournisseurcomponent/fournisseurcomponent.component';
 
+import { StockComponent } from '../stock/stock.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', 
+    redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'calendar', component: CalendarComponent },
   { path: 'users', canActivate: [LoginService], component: ListusersComponent },
   { path: 'register',canActivate: [LoginService], component: RegisterComponent },
   { path: 'products', component: ProductsComponent },
-  { path: 'fournisseurs', component:FournisseurcomponentComponent}
+  { path: 'fournisseurs', component:FournisseurcomponentComponent},
+  
+  { 
+    path: 'users', 
+    canActivate: [LoginService], 
+    component: ListusersComponent 
+  },
+  { 
+    path: 'register',
+    canActivate: [LoginService], 
+    component: RegisterComponent 
+  },
+  { path: 'products', component: ProductsComponent },
+  { path: 'inventaire' , component: StockComponent }
 ];
 
 @NgModule({

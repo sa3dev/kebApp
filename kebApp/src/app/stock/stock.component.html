@@ -1,0 +1,116 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3">
+			<h2>list previsionel</h2>
+			<ul>
+				<li>Pomme de terre : 100</li>
+				<li>Steack de boeuf  : 100</li>
+				<li>Tomate : 100</li>
+				<li>Boisson : 200</li>
+				<li>Pain Burger : 50</li>
+			</ul>
+		</div>
+
+		<div class="col-md-9">
+			<div class="row bouton">
+				<div class="btn btn-success" (click)="onShow()">Liste des produits</div>
+				<div class="btn btn-info" (click)="onShowAdd()" >Ajouter un produit</div>
+				<div class="btn btn-danger" (click)="onShowUpdate()">Editer les produits</div>
+				<div class="btn btn-default"> Imprimer / envoyer commande </div>
+			</div>
+			<div *ngIf="show">
+				<table class="table">
+						<thead>
+							<tr>
+							<th>Nom du produit</th>
+							<th>Prix</th>
+							<th>Quantité</th>
+							<th>Action</th>
+							</tr>
+						</thead>
+						<tr *ngFor="let prod of listProduct" (click)="detail()">
+							<td>{{ prod.name }}</td>
+							<td>{{ prod.price }}</td>
+							<td>{{ prod.quantity}}</td>
+							<td>
+								<button (click)="editProd(prod.id)">Editez</button>
+								<button (click)="deleteProduct(prod.id)">Suppr</button>
+							</td>
+						</tr>
+					</table>
+			</div>
+
+			<hr/>
+
+			<div *ngIf="showAdd">
+				<form  (ngSubmit)="signup()" [formGroup]="loginForm">
+					<div class="form-group">
+						<label for="">Nom produit</label>
+						<input type="text" name="name" class="form-control" 
+						formControlName="name" >
+
+						<!-- <div *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)"
+						class="alert alert-danger">
+		
+							<div *ngIf="f.name.errors.required">
+								Le nom est obligatoire.
+							</div>
+							<div *ngIf="f.name.errors.minlength">
+								Le nom doit avoir au moins 5 caractères.
+							</div>
+						</div> -->
+					</div>
+					<div class="form-group">
+						<label for="">Prix unitaire (en ancien franc ou centime):</label>
+						<input type="number" name="price" class="form-control" 
+						formControlName ="price">
+
+						<!-- <div *ngIf="f.price.invalid && (f.price.dirty || f.price.touched)"
+						class="alert alert-danger">
+		
+							<div *ngIf="f.price.errors.required">
+								Le Prix est obligatoire.
+							</div>
+						</div> -->
+						
+					</div>
+					<div class="form-group">
+						<label for="">Quantité</label>
+						<input type="number" name="quantity" class="form-control" 
+						formControlName ="quantity">
+
+						<!-- <div *ngIf="f.quantity.invalid && (f.quantity.dirty || f.quantity.touched)"
+						class="alert alert-danger">
+		
+							<div *ngIf="f.quantity.errors.required">
+								La quantité est obligatoire.
+							</div>
+						</div> -->
+					</div>
+					<div class="form-group">
+						<label for="">Fournisseur:</label>
+						<input type="text" name="supplier" class="form-control" 
+						formControlName ="supplier">
+
+						<!-- <div *ngIf="f.supplier.invalid && (f.supplier.dirty || f.supplier.touched)"
+						class="alert alert-danger">
+		
+							<div *ngIf="f.supplier.errors.required">
+								Le nom Fournisseur est obligatoire.
+							</div>
+							<div *ngIf="f.supplier.errors.minlength">
+								Le nom Fournisseur doit avoir au moins 5 caractères.
+							</div>
+						</div> -->
+
+					</div>
+					<input type="submit" class="form-control" value="Valider"  >
+					<!-- [disabled]="!loginForm.valid" --> 
+				</form>
+			</div>
+			<div *ngIf="showupdate">
+				<h1>showUpdate</h1>
+			</div>
+		</div>
+	</div>
+</div>

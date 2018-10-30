@@ -18,7 +18,7 @@ export class ProductsComponent implements OnInit {
   products: Product[];
 
   getListProducts() {
-    this.service.getProductsList().subscribe(data => this.products = data);
+    this.service.getProductsList();
   }
   deleteProduct(id) {
     this.service.deleteProduct(id);

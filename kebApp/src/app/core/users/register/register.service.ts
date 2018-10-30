@@ -4,7 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { User } from '../user.model';
 import { Router } from '@angular/router';
 import { Observable, forkJoin } from 'rxjs';
-import {map} from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +15,8 @@ export class RegisterService {
     private httpClient: HttpClient,
     private router: Router
   ) { }
+  
+
 
   /*createUser(user: User) {
     this.httpClient.post(apiURL,
@@ -28,9 +30,10 @@ export class RegisterService {
           console.log("Rrror", error);
         }
       );
-  }*/
+	
+	*/
 
-  getEmail(email):Observable<User[]>{
+  	getEmail(email):Observable<User[]>{
 		const param={
 			params:new HttpParams().set('email', email )
 		}
@@ -52,7 +55,7 @@ export class RegisterService {
 			)
 		)
 	}
-  createUser(user:User) {
+  createUser(user: User) {
   
 		this.httpClient.post(apiURL,
 				user)

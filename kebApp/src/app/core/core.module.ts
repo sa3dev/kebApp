@@ -18,6 +18,9 @@ import { ProductsComponent } from './products/products.component';
 import {FournisseurModule} from '../fournisseur/fournisseur.module';
 
 
+//import stocok Module
+import { StockModule} from '../stock/stock.module';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -26,14 +29,16 @@ import {FournisseurModule} from '../fournisseur/fournisseur.module';
     ReactiveFormsModule,
     FormsModule,
     Calendar1Module,
-    FournisseurModule
+    FournisseurModule,
+    StockModule
   ],
   declarations: [
     ListusersComponent,
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    ProductsComponent
+    ProductsComponent,
+    
 ],
     exports: [CoreRoutingModule, HeaderComponent]
 })

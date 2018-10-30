@@ -41,6 +41,7 @@
       "id": 11
     },
     {
+<<<<<<< HEAD
       "first_name": "José",
       "last_name": "Stall",
       "nick_name": "Rosé",
@@ -57,6 +58,8 @@
       "id": 13
     },
     {
+=======
+>>>>>>> stock
       "first_name": "admin",
       "last_name": "admin",
       "nick_name": "admin",
@@ -116,6 +119,41 @@
       "price": 54,
       "quantity": 230,
       "supplier": "Noël Flantier"
+    },
+    {
+      "name": "fraise",
+      "price": 15,
+      "quantity": 15,
+      "supplier": "fraison entreprise",
+      "id": 5
+    },
+    {
+      "name": "concombre",
+      "price": 45,
+      "quantity": 75,
+      "supplier": "con entreprise",
+      "id": 6
+    },
+    {
+      "name": "fdsfds",
+      "price": 15,
+      "quantity": 15,
+      "supplier": "reoti",
+      "id": 9
+    },
+    {
+      "name": "test12",
+      "price": 54,
+      "quantity": 54,
+      "supplier": "ffd",
+      "id": 18
+    },
+    {
+      "name": "pomme de terre",
+      "price": 50,
+      "quantity": 45,
+      "supplier": "p2terre",
+      "id": 19
     }
   ],
   "fournisseurs": [
