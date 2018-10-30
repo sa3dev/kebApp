@@ -32,7 +32,6 @@
   </div>
   <div *ngIf="costPriceMenu.invalid && (costPriceMenu.dirty || costPriceMenu.touched)" class="alert alert-danger">
     <div *ngIf="costPriceMenu.errors.required">Le prix de revient est requis.</div>
-    <div *ngIf="sellPriceMenu.errors.minlength">Le prix de revient doit être un nombre.</div>
   </div>
   <div *ngIf="sellPriceMenu.invalid && (sellPriceMenu.dirty || sellPriceMenu.touched)" class="alert alert-danger">
     <div *ngIf="sellPriceMenu.errors.required">Le prix de vente est requis.</div>
