@@ -10,20 +10,30 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let menu of menus">
-      <td>{{menu.name}}</td>
-      <td>{{menu.costPrice | price}}</td>
-      <td>{{menu.sellPrice | price}}</td>
-      <td>{{menu.sellPrice - menu.costPrice | price }}</td>
-      <td>{{menu.ingredients}}&nbsp;</td>
-      <td>
-        <button (click)="deleteMenu(menu.id)">Supprimer</button>
-        <button (click)="editMenu(menu.id)">Editer</button>
+    <tr *ngFor="let menu of listMenus; let i = index">
+      <td *ngIf="!editArray[i]">{{menu.name}}</td>
+      <td *ngIf="!editArray[i]">{{menu.costPrice | price}}</td>
+      <td *ngIf="!editArray[i]">{{menu.sellPrice | price}}</td>
+      <td *ngIf="!editArray[i]">{{menu.sellPrice - menu.costPrice | price }}</td>
+      <td *ngIf="!editArray[i]">{{menu.ingredients}}&nbsp;</td>
+      <td *ngIf="!editArray[i]">
+        <button class="btn" (click)="deleteMenu(menu.id)">Supprimer</button>
+        <button class="btn" (click)="editMenu(i)">Editer</button>
       </td>
-    </tr>
+      <!-- edit section-->
+      <td *ngIf="editArray[i]"><input [(ngModel)]="menu.name" value="menu.name"></td>
+      <td *ngIf="editArray[i]"><input [(ngModel)]="menu.costPrice" value="menu.costPrice"></td>
+      <td *ngIf="editArray[i]"> <input [(ngModel)]="menu.sellPrice" value="menu.sellPrice"></td>
+      <td *ngIf="editArray[i]">/</td>
+      <td *ngIf="editArray[i]"><input [(ngModel)]="menu.ingredients" value="menu.ingredients">
+      </td>
+      <td *ngIf="editArray[i]">
+        <button class="btn" (click)="addEdits(i)">Valider</button>
+        <button class="btn" (click)="editMenu(i)">Annuler</button>
+      </td>
   </tbody>
 </table>
-<button (click)="displayAddMenu()">Ajouter Menu</button>
+<button class="btn" (click)="displayAddMenu()">Ajouter Menu</button>
 <div *ngIf="displayingAddMenu" class="add-menu">
   <h2>Ajouter un menu</h2>
 
