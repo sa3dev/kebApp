@@ -76,7 +76,7 @@ export class ProductsService {
 			}
 		); ;
 	}
-	
+
 	UpdateProduct( product: Product ) {
 		const url = `${apiURLProducts}/${product.id}`; 
 			this.http.put(apiURLProducts, product)
