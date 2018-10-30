@@ -5,13 +5,13 @@ import { RouterModule } from '@angular/router';
 import { StockComponent } from './stock.component';
 
 
-
 @NgModule({
   imports: [
     CommonModule,
     ReactiveFormsModule, 
     FormsModule,
   ],
+  exports: [ RouterModule ],
   declarations: [ StockComponent ]
 })
 export class StockModule { }

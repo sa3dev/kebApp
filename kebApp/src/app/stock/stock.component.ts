@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { StockService } from './service/stock.service'; 
 import { Product } from '../core/products/product.model';
 import { ProductsService } from '../core/products/products.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 export class StockComponent implements OnInit {
 
 	listProduct: Product[];
+	productSubsciption: Subscription;
+
 	previsionel : number = 50;
 	show : boolean;
 	showAdd :boolean;
@@ -25,7 +27,7 @@ export class StockComponent implements OnInit {
 	supplier: FormControl;
 
 
-	private loginForm: FormGroup;
+	loginForm: FormGroup;
 	
 
 	constructor(
@@ -36,42 +38,44 @@ export class StockComponent implements OnInit {
 
 	ngOnInit() {
 
-		this.getProducts();
+		this.productSubsciption = this.ProductService.productsubject.subscribe(
+			( products : Product[] ) => {
+				this.listProduct = products
+			}
+		);
+
+		this.ProductService.getProductsList();
+		this.show = true;
 
 		this.name = this.fb.control('' , [ Validators.required, Validators.minLength(2) ]);
 		this.price = this.fb.control('', [Validators.required]);
 		this.quantity = this.fb.control('', [Validators.required,]);
 		this.supplier = this.fb.control('', [Validators.required,Validators.minLength(2)]);
-
-		/*
-			new FormControl('',  [ Validators.required, Validators.minLength(2) ])
-			new FormControl('',  [Validators.required])
-			 new FormControl('',  [Validators.required])
-			 new FormControl('',  [Validators.required,Validators.minLength(2)])
-		*/
+	
 
 		this.loginForm = this.fb.group({
-			name:  this.name ,
-			price: this.price   ,
-			quantity: this.quantity , 
+			name:  this.name,
+			price: this.price,
+			quantity: this.quantity, 
 			supplier: this.supplier
 		});
+		
 	}
 
-	//get f() { return this.loginForm.controls; }
-
-	getProducts(){
-		this.ProductService.getProductsList().subscribe( data => this.listProduct = data );
-		this.show = true;
+	editProd( product: Product ){
+		//this.ProductService.UpdateProduct( product );
+		//this.router.navigate(['']);
 	}
-
-	editProd( id: number ){
-
+	/**
+	 * 
+	 * @param id Delete a product from produst list
+	 */
+	deleteProduct( id: number ){
+		this.ProductService.deleteProduct(id);
 	}
 
 	detail(){
 		console.log('page detail');
-
 		//this.router.navigate([''])
 	}
 
@@ -93,14 +97,34 @@ export class StockComponent implements OnInit {
 		this.showupdate = false;
 	}
 
-	signup(  ){
-		// const product = new Product();
-		// product.name = this.fb.control.name.values;
-		// product.price = this.fb.control.price;
-		// product.quantity = this.fb.control.quantity;
-		// product.supplier = this.fb.control.supplier;
-		console.log( this.name );
-		
+	/**
+	 * Add a product when the forms is completed
+	 */
+	signup(){
+
+		if( this.name.value && this.price.value && this.quantity && this.name ){
+			
+			let prod = new Product();
+			prod.name = this.name.value;
+			prod.price = this.price.value;
+			prod.quantity = this.quantity.value;
+			prod.supplier = this.supplier.value;
+			this.ProductService.addProduct( prod );
+
+			this.show = true;
+			this.showAdd = false;
+			
+			this.loginForm.reset();
+
+
+		}else{
+			console.log('Error dans l ajout');
+		}
 	}
+
+	ngOnDestroy(){
+		this.productSubsciption.unsubscribe();
+	}
+
 
 }

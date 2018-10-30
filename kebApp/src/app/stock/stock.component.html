@@ -31,7 +31,7 @@
 						<tr *ngFor="let prod of listProduct" (click)="detail()">
 							<td>{{ prod.name }}</td>
 							<td>{{ prod.price }}</td>
-							<td>{{prod.quantity}}</td>
+							<td>{{ prod.quantity}}</td>
 							<td>
 								<button (click)="editProd(prod.id)">Editez</button>
 								<button (click)="deleteProduct(prod.id)">Suppr</button>
@@ -46,7 +46,8 @@
 				<form  (ngSubmit)="signup()" [formGroup]="loginForm">
 					<div class="form-group">
 						<label for="">Nom produit</label>
-						<input type="text" class="form-control" FormControlName="name" required>
+						<input type="text" name="name" class="form-control" 
+						formControlName="name" >
 
 						<!-- <div *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)"
 						class="alert alert-danger">
@@ -61,7 +62,8 @@
 					</div>
 					<div class="form-group">
 						<label for="">Prix unitaire (en ancien franc ou centime):</label>
-						<input type="number" class="form-control" FormControlName ="price">
+						<input type="number" name="price" class="form-control" 
+						formControlName ="price">
 
 						<!-- <div *ngIf="f.price.invalid && (f.price.dirty || f.price.touched)"
 						class="alert alert-danger">
@@ -74,7 +76,8 @@
 					</div>
 					<div class="form-group">
 						<label for="">Quantité</label>
-						<input type="number" class="form-control" FormControlName ="quantity">
+						<input type="number" name="quantity" class="form-control" 
+						formControlName ="quantity">
 
 						<!-- <div *ngIf="f.quantity.invalid && (f.quantity.dirty || f.quantity.touched)"
 						class="alert alert-danger">
@@ -86,7 +89,8 @@
 					</div>
 					<div class="form-group">
 						<label for="">Fournisseur:</label>
-						<input type="text" class="form-control" FormControlName ="supplier">
+						<input type="text" name="supplier" class="form-control" 
+						formControlName ="supplier">
 
 						<!-- <div *ngIf="f.supplier.invalid && (f.supplier.dirty || f.supplier.touched)"
 						class="alert alert-danger">
@@ -101,7 +105,7 @@
 
 					</div>
 					<input type="submit" class="form-control" value="Valider"  >
-					<!-- [disabled]="!loginForm.valid" -->
+					<!-- [disabled]="!loginForm.valid" --> 
 				</form>
 			</div>
 			<div *ngIf="showupdate">
