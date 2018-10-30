@@ -1,6 +1,6 @@
 <ng-template #modalContent let-close="close">
   <div class="modal-header">
-    <h5 class="modal-title">Event action occurred</h5>
+    <h5 class="modal-title">Le changement a bien été pris en compte</h5>
     <button type="button" class="close" (click)="close()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -44,7 +44,7 @@
 <br>
 <div [ngSwitch]="view">
   <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" (dayClicked)="clickedDate = $event.day.date" [weekStartsOn]="weekStartsOn"
-    [locale]="locale" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+    [locale]="locale" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="ofTheDay(clickedDate)"
     (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-month-view>
   <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [locale]="locale" [weekStartsOn]="weekStartsOn"
@@ -57,7 +57,7 @@
 <br><br><br>
 <div class="container">
   <h3>
-  Editer les réservations
+  Ajouter une réservation
   <button class="btn btn-primary pull-right" (click)="addEvent()">
     Ajouter une réservation
   </button>
@@ -77,7 +77,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let reservation of events; let index = index">
+    <tr  *ngFor="let reservation of events; let index = index">
       <td>
         <input type="text" class="form-control" [(ngModel)]="reservation.title" (keyup)="refresh.next()">
       </td>

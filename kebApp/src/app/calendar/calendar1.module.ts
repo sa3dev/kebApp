@@ -17,7 +17,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Import for translate calendar in french
 import { registerLocaleData } from '@angular/common';
-import localeFr from '@angular/common/locales/fr'
+import localeFr from '@angular/common/locales/fr';
+import { CalendarDetailComponent } from './calendar-detail/calendar-detail.component'
 
 registerLocaleData(localeFr);
 
@@ -35,7 +36,8 @@ registerLocaleData(localeFr);
     })
   ],
   declarations: [
-    CalendarComponent
+    CalendarComponent,
+    CalendarDetailComponent
   ]
 })
 export class Calendar1Module { }

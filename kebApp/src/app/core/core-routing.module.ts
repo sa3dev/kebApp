@@ -9,6 +9,7 @@ import { LoginService } from './users/login/login.service';
 import { ProductsComponent } from './products/products.component';
 import { FournisseurcomponentComponent } from '../fournisseur/fournisseurcomponent/fournisseurcomponent.component';
 import { RestaurantmenuComponent } from '../restaurantmenu/restaurantmenu.component';
+import { CalendarDetailComponent } from '../calendar/calendar-detail/calendar-detail.component';
 
 import { StockComponent } from '../stock/stock.component';
 
@@ -35,7 +36,8 @@ const routes: Routes = [
   },
   { path: 'products', component: ProductsComponent },
   { path: 'inventaire' , component: StockComponent },
-  { path: 'carte', component: RestaurantmenuComponent }
+  { path: 'carte', component: RestaurantmenuComponent },
+  { path: 'oftheday', component: CalendarDetailComponent}
 ];
 
 @NgModule({
