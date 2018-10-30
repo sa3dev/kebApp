@@ -252,6 +252,14 @@
   ],
   "fournisseurs": [
     {
+      "id": 1,
+      "nom": "kebab&Co",
+      "adresse": "22 rue de la broche",
+      "telephone": "0695979938",
+      "ville": "lievin city gang",
+      "cp": "62800"
+    },
+    {
       "id": 3,
       "nom": "Patata&Co",
       "adresse": "22 rue de la PATATE",
@@ -289,7 +297,7 @@
       "id": 1,
       "name": "Menu burger",
       "costPrice": 600,
-      "sellPrice": 850,
+      "sellPrice": "830",
       "ingredients": [
         "pain burger",
         "steak de boeuf",
@@ -309,25 +317,31 @@
     },
     {
       "id": 3,
-      "name": "Menu kebab faluche",
-      "costPrice": 350,
-      "sellPrice": 600,
-      "ingredients": [
-        "pain faluche",
-        "brochette d'agneau",
-        "pommes de terre"
-      ]
-    },
-    {
       "costPrice": 1540,
-      "sellPrice": 8960,
-      "name": "Menu de tes tnumber",
+      "sellPrice": "150000",
+      "name": "Menu de Boris Vian",
       "ingredients": [
         "mon frigidaire",
         " mon armoire",
         " ma cafetière"
+      ]
+    },
+    {
+      "id": 4,
+      "costPrice": 1740,
+      "sellPrice": 2000,
+      "name": "Menu de test a delete",
+      "ingredients": "jambon, fromage"
+    },
+    {
+      "costPrice": 300,
+      "sellPrice": 600,
+      "name": "Menu franchement bon",
+      "ingredients": [
+        "pain",
+        " air"
       ],
-      "id": 9
+      "id": 5
     }
   ]
 }
