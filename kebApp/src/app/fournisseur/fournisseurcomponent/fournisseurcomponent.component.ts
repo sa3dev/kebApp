@@ -9,31 +9,41 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
 })
 export class FournisseurcomponentComponent implements OnInit {
   private listFournisseur:Fournisseur[]=[];
+  //form research
   private formFournisseur:FormGroup;
   private research: FormControl;
+  // form research
   private formAjout:FormGroup;
   private ctrlName:FormControl;
   private ctrlAdresse: FormControl;
   private ctrlVille: FormControl;
   private ctrlCp: FormControl;
   private ctrlTelephone:FormControl;
-  private pageAjout:boolean
-  private editF:boolean;
-  private editNumber:number;
+  //boolean ngIf
+  private pageAjout:boolean;
+  private listEdit:Boolean[]=[];
+  //Edit form
+  /*private fomEdit: FormGroup;
+  private ctrlEditName: FormControl;
+  private ctrlEditAdresse:FormControl;
+  private ctrlEditVille:FormControl;
+  private ctrlEditCp: FormControl;
+  private ctrlEditTel:FormControl;*/
+
+
 
   constructor(private service:FournisseurService, private fb: FormBuilder) { 
     this.pageAjout=false;
-    this.editF=false;
   }
 
   ngOnInit() {
-    this.getFournisseurs();
-    this.research = this.fb.control('', Validators.required);
+    this.getFournisseurs();//initialise les fournisseurs
+    this.research = this.fb.control('', Validators.required);//research init
     this.formFournisseur = this.fb.group({
       research: this.research,
     });
 
-    this.ctrlName=this.fb.control('',Validators.required);
+    this.ctrlName=this.fb.control('',Validators.required);//ajout init
     this.ctrlAdresse=this.fb.control('',Validators.required);
     this.ctrlVille=this.fb.control('',Validators.required);
     this.ctrlCp=this.fb.control('',Validators.required);
@@ -45,17 +55,55 @@ export class FournisseurcomponentComponent implements OnInit {
       ctrlCp:this.ctrlCp,
       ctrlTelephone:this.ctrlTelephone
     });
+    //init tab Edit
+    for(let i=0; i<this.listFournisseur.length; i++){
+      this.listEdit[i]=false;
+    }
+    /*this.ctrlEditName=this.fb.control('',Validators.required);
+    this.ctrlEditAdresse=this.fb.control('',Validators.required);
+    this.ctrlEditVille=this.fb.control('',Validators.required);
+    this.ctrlEditCp=this.fb.control('',Validators.required);
+    this.ctrlEditTel=this.fb.control('',Validators.required);
+    
+    this.fomEdit=this.fb.group({
+      ctrlEditName : this.ctrlEditName,
+      ctrlEditAdresse:this.ctrlEditAdresse,
+      ctrlEditCp:this.ctrlEditCp,
+      ctrlEditVille:this.ctrlEditVille,
+      ctrlEditTel:this.ctrlEditTel
+    });*/
   }
 
   
   edit(i:number){
-    if(this.editF){
+    
+    if(this.listEdit[i]){
+      this.getFournisseurs();
+      this.listEdit[i]=false;
+    }else{
+      this.listEdit[i]=true;
+    }
+    /*if(this.editF){
       this.editNumber=-1;
       this.editF=false;
     }else{
       this.editNumber=i;
       this.editF=true;
-    }
+    }*/
+  }
+  editFournisseur(i:number){
+   
+    //console.log(this.ctrlEditAdresse.value);
+   
+    this.service.putFournisseur(this.listFournisseur[i]).subscribe(
+      (data)=>{
+        
+        this.listEdit[i]=false;
+      },
+      (error)=>{
+        console.log(error);
+      }
+    )
   }
   refresh(){
     this.getFournisseurs();

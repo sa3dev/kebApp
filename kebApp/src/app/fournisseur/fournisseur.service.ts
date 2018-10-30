@@ -4,6 +4,7 @@ import { Fournisseur } from './fournisseur.model';
 import { apiURLFournisseur } from '../../app/config';
 import { Observable,of } from 'rxjs';
 import {map} from 'rxjs/operators';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -43,6 +44,11 @@ export class FournisseurService {
 
   addFournisseur(fournisseur:Fournisseur){
     return this.httpClient.post(apiURLFournisseur,fournisseur)
+      
+  }
+  putFournisseur(fournisseur: Fournisseur) {
+    let url=apiURLFournisseur+"/"+fournisseur.id;
+    return this.httpClient.put(url,fournisseur);
       
   }
 }
