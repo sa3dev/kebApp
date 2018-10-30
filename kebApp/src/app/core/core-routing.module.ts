@@ -8,6 +8,7 @@ import { CalendarComponent } from './../calendar/calendar.component';
 import { LoginService } from './users/login/login.service';
 import { ProductsComponent } from './products/products.component';
 import { FournisseurcomponentComponent } from '../fournisseur/fournisseurcomponent/fournisseurcomponent.component';
+import { RestaurantmenuComponent } from '../restaurantmenu/restaurantmenu.component';
 
 import { StockComponent } from '../stock/stock.component';
 
@@ -33,7 +34,8 @@ const routes: Routes = [
     component: RegisterComponent 
   },
   { path: 'products', component: ProductsComponent },
-  { path: 'inventaire' , component: StockComponent }
+  { path: 'inventaire' , component: StockComponent },
+  { path: 'carte', component: RestaurantmenuComponent }
 ];
 
 @NgModule({

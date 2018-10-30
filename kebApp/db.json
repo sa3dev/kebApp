@@ -19,14 +19,6 @@
     {
       "first_name": "Guillaume",
       "last_name": "Delory",
-      "nick_name": "Roger",
-      "email": "g.delory62@gmail.com",
-      "password": "mdpmdp",
-      "id": 9
-    },
-    {
-      "first_name": "Guillaume",
-      "last_name": "Delory",
       "nick_name": "Toto",
       "email": "g.delory62@gmail.com",
       "password": "mdpmdp",
@@ -58,14 +50,37 @@
       "id": 13
     },
     {
-=======
->>>>>>> stock
+      "first_name": "Léon",
+      "last_name": "Demeyere",
+      "nick_name": "zizi",
+      "email": "zizi.heyhey@gmail.com",
+      "password": "rikuriku",
+      "id": 14
+    },
+    {
+
       "first_name": "admin",
       "last_name": "admin",
       "nick_name": "admin",
       "email": "admin@gmail.com",
       "password": "123456",
       "id": 5
+    },
+    {
+      "first_name": "José",
+      "last_name": "Vega",
+      "nick_name": "toto",
+      "email": "g@g.gg",
+      "password": "mdpmdp",
+      "id": 15
+    },
+    {
+      "first_name": "dada",
+      "last_name": "dada",
+      "nick_name": "dada",
+      "email": "dada@dada.dada",
+      "password": "dadada",
+      "id": 16
     }
   ],
   "reservations": [
@@ -96,15 +111,24 @@
       "start": "2018-10-29T18:00:00.000Z",
       "draggable": true,
       "capacity": 12
+    },
+    {
+      "id": 644,
+      "title": "Christophe",
+      "start": "2018-10-28T23:00:00.000Z",
+      "draggable": true,
+      "capacity": 7
     }
   ],
   "products": [
     {
       "id": 1,
-      "name": "olive",
-      "price": 60,
-      "quantity": 150,
-      "supplier": "Henri Boucher"
+      "name": "pommes de terre",
+      "price": 33,
+      "quantity": 90,
+      "supplier": "MacCain",
+      "property": "olive",
+      "newproperty": "olive"
     },
     {
       "id": 3,
@@ -188,6 +212,59 @@
       "adresse": "2 rue de la fricandelle",
       "cp": 59100,
       "id": 5
+    }
+  ],
+  "menus": [
+    {
+      "id": 1,
+      "name": "Menu burger",
+      "costPrice": 600,
+      "sellPrice": 850,
+      "ingredients": [
+        "pain burger",
+        "steak de boeuf",
+        "pommes de terre"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Menu kebab galette",
+      "costPrice": 550,
+      "sellPrice": 800,
+      "ingredients": [
+        "pain burger",
+        "steak de boeuf",
+        "pommes de terre"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Menu kebab faluche",
+      "costPrice": 350,
+      "sellPrice": 600,
+      "ingredients": [
+        "pain faluche",
+        "brochette d'agneau",
+        "pommes de terre"
+      ]
+    },
+    {
+      "costPrice": "15",
+      "sellPrice": "18",
+      "name": "dadada",
+      "ingredients": "salade de tomates, oignons, pommes de test",
+      "id": 4
+    },
+    {
+      "costPrice": 1540,
+      "sellPrice": 8960,
+      "name": "Menu de tes tnumber",
+      "ingredients": [
+        "mon frigidaire",
+        " mon armoire",
+        " ma cafetière"
+      ],
+      "id": 9
     }
   ]
 }

@@ -16,6 +16,7 @@ import { Calendar1Module } from '../calendar/calendar1.module';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
 import {FournisseurModule} from '../fournisseur/fournisseur.module';
+import { RestaurantmenuModule } from '../restaurantmenu/restaurantmenu.module';
 
 
 //import stocok Module
@@ -30,7 +31,8 @@ import { StockModule} from '../stock/stock.module';
     FormsModule,
     Calendar1Module,
     FournisseurModule,
-    StockModule
+    StockModule,
+    RestaurantmenuModule
   ],
   declarations: [
     ListusersComponent,

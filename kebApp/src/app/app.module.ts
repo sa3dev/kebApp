@@ -10,17 +10,20 @@ import { ProductsService } from './core/products/products.service';
 // import { DetailStockComponent } from './stock/detail-stock/detail-stock.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
     // StockComponent,
     // MasterStockComponent,
     // DetailStockComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    CoreModule
+    CoreModule,
   ],
   providers: [ProductsService],
   bootstrap: [AppComponent]
