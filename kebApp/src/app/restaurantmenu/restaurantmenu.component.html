@@ -1,40 +1,65 @@
 <h1>Menus du restaurant</h1>
-<table>
-  <thead>
-    <tr>
-      <td>Nom du menu</td>
-      <td>Prix de revient</td>
-      <td>Prix de vente</td>
-      <td>Marge</td>
-      <td>Liste des ingrédients</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let menu of listMenus; let i = index">
-      <td *ngIf="!editArray[i]">{{menu.name}}</td>
-      <td *ngIf="!editArray[i]">{{menu.costPrice | price}}</td>
-      <td *ngIf="!editArray[i]">{{menu.sellPrice | price}}</td>
-      <td *ngIf="!editArray[i]">{{menu.sellPrice - menu.costPrice | price }}</td>
-      <td *ngIf="!editArray[i]">{{menu.ingredients}}&nbsp;</td>
-      <td *ngIf="!editArray[i]">
+
+<!-- Drag & drop test dnd -->
+<h4>Simple Drag-and-Drop</h4>
+<div class="row text-center">
+  <div class="col-sm-3">
+    <div class="card bg-success">
+      <div class="card-title">Available to drag</div>
+      <div class="card-body">
+        <div class="card-text" dnd-draggable [dragEnabled]="true">
+          <div>Drag Me</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <div dnd-droppable class="card bg-primary" (onDropSuccess)="loger($event)">
+      <div class="card-title">Place to drop</div>
+      <div class="card-body">
+        <div *ngIf="simpleDrop">Item was dropped here</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Version card -->
+<div class="card-deck m-5">
+
+  <div class="card" dnd-draggable [dragEnabled]="true" [dragData]="menu.id" *ngFor="let menu of listMenus | async; let i = index">
+    <!-- Photo de la card <img class="card-img-top" data-src="holder.js/100x180/" alt="Card image cap"> -->
+    <div class="card-body">
+      <h4 *ngIf="!editArray[i]" class="card-title">{{menu.name}}</h4>
+      <p *ngIf="!editArray[i]" class="card-text">{{menu.ingredients}}</p>
+      <p *ngIf="!editArray[i]" class="card-text">Prix de vente : {{menu.sellPrice | price}}</p>
+      <p *ngIf="!editArray[i]" class="card-text">Prix de vente : {{menu.costPrice | price}}</p>
+      <p class="card-text text-muted">Marge : {{menu.sellPrice - menu.costPrice | price }}</p>
+      <div *ngIf="!editArray[i]">
         <button class="btn" (click)="deleteMenu(menu.id)">Supprimer</button>
         <button class="btn" (click)="editMenu(i)">Editer</button>
-      </td>
-      <!-- edit section-->
-      <td *ngIf="editArray[i]"><input [(ngModel)]="menu.name" value="menu.name"></td>
-      <td *ngIf="editArray[i]"><input [(ngModel)]="menu.costPrice" value="menu.costPrice"></td>
-      <td *ngIf="editArray[i]"> <input [(ngModel)]="menu.sellPrice" value="menu.sellPrice"></td>
-      <td *ngIf="editArray[i]">/</td>
-      <td *ngIf="editArray[i]"><input [(ngModel)]="menu.ingredients" value="menu.ingredients">
-      </td>
-      <td *ngIf="editArray[i]">
+      </div>
+    </div>
+    <!-- edit section-->
+    <div class="card-body">
+      <h4 class="card-title" *ngIf="editArray[i]"><input [(ngModel)]="menu.name" value="menu.name"></h4>
+      <p class="card-text" *ngIf="editArray[i]"> <input [(ngModel)]="menu.sellPrice" value="menu.sellPrice"></p>
+      <p class="card-text" *ngIf="editArray[i]"><input [(ngModel)]="menu.costPrice" value="menu.costPrice"></p>
+      <p class="card-text" *ngIf="editArray[i]">/</p>
+      <p class="card-text" *ngIf="editArray[i]"><input [(ngModel)]="menu.ingredients" value="menu.ingredients"></p>
+      <div *ngIf="editArray[i]">
         <button class="btn" (click)="addEdits(i)">Valider</button>
         <button class="btn" (click)="editMenu(i)">Annuler</button>
-      </td>
-  </tbody>
-</table>
+      </div>
+    </div>
+    <!-- -->
+  </div>
+</div>
+
 <button class="btn" (click)="displayAddMenu()">Ajouter Menu</button>
-<div *ngIf="displayingAddMenu" class="add-menu">
+<div *ngIf="displayingAddMenu" class="add-menu container">
   <h2>Ajouter un menu</h2>
 
   <!-- Handling errors -->
@@ -92,3 +117,4 @@
       Ajouter ce menu
     </button>
   </form>
+</div>

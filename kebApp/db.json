@@ -290,20 +290,26 @@
     },
     {
       "id": 4,
-      "costPrice": 1740,
-      "sellPrice": 2000,
-      "name": "Menu de test a delete",
-      "ingredients": "jambon, fromage"
+      "costPrice": 1860,
+      "sellPrice": 1900,
+      "name": "Menu de test",
+      "ingredients": [
+        "test 1",
+        " test 2",
+        " test 3"
+      ]
     },
     {
-      "costPrice": 300,
-      "sellPrice": 600,
-      "name": "Menu franchement bon",
+      "id": 6,
+      "costPrice": 650,
+      "sellPrice": 819.9999999999999,
+      "name": "Menu végétarien",
       "ingredients": [
-        "pain",
-        " air"
-      ],
-      "id": 5
+        "Pain",
+        " air",
+        " tofu",
+        " salade"
+      ]      
     }
   ]
 }
