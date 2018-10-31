@@ -19,8 +19,8 @@ export class CalendarService {
 
   getListReservations() {
     this.httpClient.get<Reservation[]>(eventUrl).subscribe(
-      data => {
-        this.events = data ;
+      (events: Reservation[]) => {
+        this.events = events ;
         this.events.map( data => data.start = new Date(data.start));
         this.emitReservations();
       },
@@ -30,9 +30,10 @@ export class CalendarService {
     )
   }
    emitReservations() {
-     console.log('coucou');
-     
      this.reservationsSubject.next(this.events);
+   }
+   emitObservable(){
+    return this.reservationsSubject.asObservable();
    }
 
   createEvent(reservation: Reservation) {
