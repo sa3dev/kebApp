@@ -141,7 +141,7 @@
       "id": 9,
       "quantityPrev": 90
     },
-    { 
+    {
       "name": "concombre",
       "price": 45,
       "quantity": 75,
@@ -188,6 +188,14 @@
       "quantityPrev": 0,
       "IDsupplier": 5,
       "id": 24
+    },
+    {
+      "name": "carotte",
+      "price": "2.50",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 6,
+      "id": 25
     }
   ],
   "fournisseurs": [
