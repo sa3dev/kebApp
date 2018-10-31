@@ -42,63 +42,60 @@
   </div>
 </div>
 <br>
+<div *ngIf="events$ | async; else loading; let events">
 <div [ngSwitch]="view">
-  <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" (dayClicked)="clickedDate = $event.day.date" [weekStartsOn]="weekStartsOn"
-    [locale]="locale"  [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="ofTheDay(clickedDate)"
+  <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" (dayClicked)="clickedDate = $event.day.date"
+    [weekStartsOn]="weekStartsOn" [locale]="locale" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="ofTheDay(clickedDate)"
     (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-month-view>
   <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [locale]="locale" [weekStartsOn]="weekStartsOn"
-    [events]="events"  (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+    [events]="events" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-week-view>
   <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [locale]="locale" [events]="events"
-     (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+    (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
   </mwl-calendar-day-view>
+</div>
 </div>
 <br><br><br>
 <div class="container">
   <h3>
-  Ajouter une réservation
-  <button class="btn btn-primary pull-right" (click)="addEvent()">
     Ajouter une réservation
-  </button>
-  <div class="clearfix"></div>
-</h3>
+    <button class="btn btn-primary pull-right" (click)="addEvent()">
+      Ajouter une réservation
+    </button>
+    <div class="clearfix"></div>
+  </h3>
 
-<table class="table table-bordered">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Nombre de personnes</th>
+        <th>Jour</th>
+        <th>Confirmer</th>
+        <th>Supprimer la réservation</th>
+      </tr>
+    </thead>
 
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Nombre de personnes</th>
-      <th>Jour</th>
-      <th>Confirmer</th>
-      <th>Supprimer la réservation</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor="let reservation of events; let index = index">
-      <td>
-        <input type="text" class="form-control" [(ngModel)]="reservation.title">
-      </td>
-      <td>
-        <input type="number" class="form-control" [(ngModel)]="reservation.capacity">
-      </td>
-      <td>
-        <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="reservation.start"
-          [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
-          placeholder="Not set">
-      </td>
-      <td>
-        <button *ngIf="reservation.id" class="btn btn-success" (click)="onConfirm(reservation)">Modifier</button>
-        <button *ngIf="!reservation.id" class="btn btn-success" (click)="onConfirm(reservation)">Valider</button>
-      </td>
-      <td>
-        <button class="btn btn-danger" (click)="onDelete(reservation.id)">
-          Supprimer
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table> 
+    <tbody>
+      <tr *ngFor="let reservation of events; let index = index">
+        <td *ngIf="!reservation.draggable">
+          <input type="text" class="form-control" [(ngModel)]="reservation.title">
+        </td>
+        <td *ngIf="!reservation.draggable">
+          <input type="number" class="form-control" [(ngModel)]="reservation.capacity">
+        </td>
+        <td *ngIf="!reservation.draggable">
+          <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="reservation.start" [altInput]="true"
+            [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i" placeholder="Not set">
+        </td>
+        <td *ngIf="!reservation.draggable">
+          <button *ngIf="!reservation.draggable" class="btn btn-success" (click)="onAdd(reservation)">Valider</button>
+        </td>
+        <td *ngIf="!reservation.draggable">
+          <button  class="btn btn-danger" disabled (click)="onDelete(reservation.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

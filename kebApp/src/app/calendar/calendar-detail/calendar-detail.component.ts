@@ -21,7 +21,6 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private calendarDetailService: CalendarDetailService,
-    private calendarService: CalendarService
   ) { }
 
   ngOnInit() {
@@ -36,11 +35,27 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
     this.calendarDetailService.getListReservationsOfTheDay(this.reservationDay);
 
    }
+
+  addEvent(): void {
+    this.eventsOfTheDay.push({
+      id: Math.floor(Math.random() * 10000),
+      title: '',
+      start: this.reservationDay,
+      draggable: false,
+      capacity: 1,
+    });
+  }
+
    ngOnDestroy(): void {
     this.reservationSubscription.unsubscribe()
    }
    onEdit(event) {
     this.calendarDetailService.updateEvent(event, this.reservationDay);
+   }
+   onAdd(reservation) {
+     const newReservation: Reservation = reservation;
+     newReservation.draggable = true;
+     this.calendarDetailService.createEvent(reservation, this.reservationDay);
    }
 
    onDelete(id) {
