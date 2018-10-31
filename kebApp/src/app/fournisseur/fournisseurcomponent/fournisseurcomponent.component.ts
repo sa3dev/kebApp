@@ -7,6 +7,10 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
   templateUrl: './fournisseurcomponent.component.html',
   styleUrls: ['./fournisseurcomponent.component.scss']
 })
+/**
+ * Class Fournissseur Component
+ * @author Léon Demeyere
+ */
 export class FournisseurcomponentComponent implements OnInit {
   private listFournisseur:Fournisseur[]=[];
   //form research
@@ -23,21 +27,22 @@ export class FournisseurcomponentComponent implements OnInit {
   private pageAjout:boolean;
   private listEdit:Boolean[]=[];
   private pageDetail:boolean;
-  //Edit form
-  /*private fomEdit: FormGroup;
-  private ctrlEditName: FormControl;
-  private ctrlEditAdresse:FormControl;
-  private ctrlEditVille:FormControl;
-  private ctrlEditCp: FormControl;
-  private ctrlEditTel:FormControl;*/
+  
+  //fournisseur renvoyer au details component
   private fournisseurDetail:Fournisseur;
 
 
+  /**
+   * initialisation des boolean et injection
+   * @param service 
+   * @param fb 
+   */
   constructor(private service:FournisseurService, private fb: FormBuilder) { 
     this.pageAjout=false;
     this.pageDetail=false;
   }
 
+  
   ngOnInit() {
     this.getFournisseurs();//initialise les fournisseurs
     this.research = this.fb.control('', Validators.required);//research init
@@ -61,21 +66,12 @@ export class FournisseurcomponentComponent implements OnInit {
     for(let i=0; i<this.listFournisseur.length; i++){
       this.listEdit[i]=false;
     }
-    /*this.ctrlEditName=this.fb.control('',Validators.required);
-    this.ctrlEditAdresse=this.fb.control('',Validators.required);
-    this.ctrlEditVille=this.fb.control('',Validators.required);
-    this.ctrlEditCp=this.fb.control('',Validators.required);
-    this.ctrlEditTel=this.fb.control('',Validators.required);
-    
-    this.fomEdit=this.fb.group({
-      ctrlEditName : this.ctrlEditName,
-      ctrlEditAdresse:this.ctrlEditAdresse,
-      ctrlEditCp:this.ctrlEditCp,
-      ctrlEditVille:this.ctrlEditVille,
-      ctrlEditTel:this.ctrlEditTel
-    });*/
   }
 
+  /**
+   * permet d'afficher detail fournisseur componenent
+   * @param i 
+   */
   pageDetails(i:number){
     console.log("test");
     if(this.pageDetail){
@@ -89,6 +85,10 @@ export class FournisseurcomponentComponent implements OnInit {
     
   }
   
+  /**
+   * Action button Edit permet de remplir le tableau listEdit d''un boolean à l'élément i
+   * @param i 
+   */
   edit(i:number){
     
     if(this.listEdit[i]){
@@ -97,14 +97,11 @@ export class FournisseurcomponentComponent implements OnInit {
     }else{
       this.listEdit[i]=true;
     }
-    /*if(this.editF){
-      this.editNumber=-1;
-      this.editF=false;
-    }else{
-      this.editNumber=i;
-      this.editF=true;
-    }*/
   }
+  /**
+   * Update fournisseur
+   * @param i 
+   */
   editFournisseur(i:number){
    
     //console.log(this.ctrlEditAdresse.value);
@@ -119,10 +116,16 @@ export class FournisseurcomponentComponent implements OnInit {
       }
     )
   }
+  /**
+   * refresh listFournisseur
+   */
   refresh(){
     this.getFournisseurs();
     this.research.reset();
   }
+  /**
+   * affiche le formulaire ajout
+   */
   ajout(){
     
     if(this.pageAjout){
@@ -132,6 +135,9 @@ export class FournisseurcomponentComponent implements OnInit {
     }
     
   }
+  /**
+   * add fournisseur
+   */
   ajouter(){
     console.log("coucou");
     let fournisseur:Fournisseur=new Fournisseur();
@@ -152,6 +158,9 @@ export class FournisseurcomponentComponent implements OnInit {
     
 
   }
+  /**
+   * research fournisseur
+   */
   researchZ(){
     if(this.research.value===""){
       this.getFournisseurs();
@@ -171,6 +180,9 @@ export class FournisseurcomponentComponent implements OnInit {
     }
     
   }
+  /**
+   * charge fournisseur sur la page
+   */
   getFournisseurs(){
     this.service.getFournisseur().subscribe(
       (data)=>{
@@ -181,6 +193,10 @@ export class FournisseurcomponentComponent implements OnInit {
       }
     );
   }
+  /**
+   * delete fournisseur
+   * @param id 
+   */
   delete(id:string){
     this.service.deleteFournisseur(id).subscribe((data)=>{
       console.log("Adieux");

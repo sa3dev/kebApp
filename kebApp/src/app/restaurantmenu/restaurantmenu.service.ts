@@ -31,7 +31,7 @@ export class RestaurantmenuService {
   }
 
   deleteThisMenu(id){
-    const url = `${apiURLMenus}/${id}`;
+    const url = apiURLMenus + id;
     this.http.delete(url)
       .subscribe(data => {
         console.log("Successful delete", data)
@@ -41,4 +41,10 @@ export class RestaurantmenuService {
       }
     );
   }
+
+  putNewMenu(menu:Menu){
+    var url = apiURLMenus + menu.id;
+    return this.http.put(url, menu)
+  }
+
 }

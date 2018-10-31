@@ -8,22 +8,6 @@ import { Reservation } from './model/event';
 import { Router } from '@angular/router';
 import { CalendarDetailService } from './calendar-detail/service/calendar-detail.service';
 
-const colors: any = {
-  red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
-  },
-  blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF'
-  },
-  yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA'
-  }
-};
-
-
 @Component({
   selector: 'app-calendar',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -38,17 +22,13 @@ export class CalendarComponent implements OnInit {
   weekStartsOn: number = DAYS_OF_WEEK.MONDAY;
   CalendarView = CalendarView;
   dayReservation: Date;
-
-
   viewDate: Date = new Date();
-
   modalData: {
     action: string;
     event: CalendarEvent;
   };
 
 
-  refresh: Subject<any> = new Subject();
 
   events: Reservation[];
   reservationSubscription: Subscription;
@@ -57,11 +37,9 @@ export class CalendarComponent implements OnInit {
 
   constructor(private modal: NgbModal,
     private calendarService: CalendarService,
-    private router: Router,
     private calendarDetail: CalendarDetailService) { }
 
     ngOnInit(){
-      this.refresh.next()
       this.reservationSubscription = this.calendarService.reservationsSubject.subscribe(
         (events: Reservation[]) => {
           this.events = events;
@@ -92,7 +70,6 @@ export class CalendarComponent implements OnInit {
     event.start = newStart;
     event.end = newEnd;
     this.handleEvent('Dropped or resized', event);
-    this.refresh.next();
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
@@ -108,11 +85,10 @@ export class CalendarComponent implements OnInit {
       draggable: true,
       capacity: 1,
     });
-    this.refresh.next();
   }
   onConfirm(reservation) {
     const newReservation :Reservation = reservation;
-    this.calendarService.createEvent(newReservation);    
+    this.calendarService.updateEvent(newReservation);    
   }
 
   onDelete(id) {
@@ -123,6 +99,6 @@ export class CalendarComponent implements OnInit {
   }
   ofTheDay(clickedDate) {
     this.dayReservation = clickedDate;
-    this.calendarDetail.saveTheDate(this.dayReservation)
+    this.calendarDetail.saveTheDate(this.dayReservation);
   }
 }
