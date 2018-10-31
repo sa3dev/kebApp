@@ -1,8 +1,15 @@
+
 <h1 class="text-center py-5">Réservation du jour {{ reservationDay | date: 'dd/MM/yyyy' }}</h1>
-
 <div class="container">
-  <table class="table table-bordered">
 
+    <h3 class="py-3">
+      Ajouter une réservation
+      <button class="btn btn-primary pull-right" (click)="addEvent()">
+        Ajouter une réservation
+      </button>
+    </h3>
+
+  <table class="table table-bordered">
     <thead>
       <tr>
         <th>Id</th>
@@ -32,13 +39,14 @@
             placeholder="Not set">
         </td>
         <td>
-          <button class="btn btn-success" (click)="onEdit(reservation)">Modifier</button>
+        <button *ngIf="reservation.draggable" class="btn btn-primary" (click)="onEdit(reservation)">Modifier</button>
+        <button *ngIf="!reservation.draggable" class="btn btn-success" (click)="onAdd(reservation)">Valider</button>
         </td>
         <td>
-          <button class="btn btn-danger mx-auto" (click)="onDelete(reservation.id)">
-            Supprimer
-          </button>
+          <button *ngIf="reservation.draggable" class="btn btn-danger mx-auto" (click)="onDelete(reservation.id)">Supprimer</button>
+          <button *ngIf="!reservation.draggable" class="btn btn-danger mx-auto" disabled (click)="onDelete(reservation.id)">Supprimer</button>
         </td>
+        
       </tr>
     </tbody>
   </table>
