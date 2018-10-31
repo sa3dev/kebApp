@@ -33,6 +33,10 @@ export class StockComponent implements OnInit {
 	productDetail: Product;
 	productEdit : Product;
 
+	listFournisseur: any ; // type fournisseur a voir si on importe le model ou pas ( clean architecture ?)
+
+	varModifProvisionel = false;
+
 	constructor(
 		private router : Router,
 		private ProductService : ProductsService,
@@ -41,13 +45,12 @@ export class StockComponent implements OnInit {
 		) { }
 
 	ngOnInit() {
-
 		this.productSubsciption = this.stockservice.productsubject.subscribe(
 			( products : Product[] ) => {
 				this.listProduct = products
 			}
-
 		);
+
 		this.stockservice.getProducts();
 
 		this.show = true;
@@ -68,22 +71,34 @@ export class StockComponent implements OnInit {
 		
 	}
 	/**
+	 * Charger le bon produit dans le formulaire pour editer
 	 * 
 	 * @param product update a product
 	 *  
 	 */
 	editProd( /*product: Product*/ i:number  ){
 		this.onShowUpdate();
+
 		this.productEdit=this.listProduct[i];
 
-		this.stockservice.UpdateProduct( this.productEdit );
+		//this.stockservice.UpdateProduct( this.productEdit ).subscribe();
+	}
+
+	editProduct(  ){
+		//console.log(product)
+		
+		this.stockservice.UpdateProduct( this.productEdit ).subscribe(
+			data => console.log(data)
+		);
 	}
 	/**
 	 * 
 	 * @param id Delete a product from produst list
 	 */
 	deleteProduct( id: number ){
-		this.ProductService.deleteProduct(id);
+		this.ProductService.deleteProduct(id).subscribe(
+			()=> this.stockservice.getProducts()
+		);
 	}
 	/**
 	 * Envoi un produit selectionné au composent enfantet passe a true le template detaile d'un produit
@@ -108,6 +123,8 @@ export class StockComponent implements OnInit {
 	 * show the template add forms product
 	 */
 	onShowAdd(){
+		this.chargeNameFournisseur();
+
 		this.showAdd = true;
 		this.show = false;
 		this.showupdate = false;
@@ -133,8 +150,8 @@ export class StockComponent implements OnInit {
 	 * Add a product when the forms is completed
 	 */
 	signup(){
-
-		if( this.name.value && this.price.value && this.quantity && this.name ){
+		
+		if( this.name.value && this.price.value && this.quantity && this.name ){			
 			
 			let prod = new Product();
 			prod.name = this.name.value;
@@ -143,16 +160,14 @@ export class StockComponent implements OnInit {
 			prod.supplier = this.supplier.value;
 			prod.quantityPrev = this.quantityPrev.value;
 			this.ProductService.addProduct( prod ).subscribe(
-				(data)=>{
-					console.log(data)
+				()=>{
+					this.stockservice.getProducts();	
 				}
 			);
-
 			this.show = true;
 			this.showAdd = false;
-			
 			this.loginForm.reset();
-
+			
 
 		}else{
 			console.log('Error dans l ajout');
@@ -166,5 +181,20 @@ export class StockComponent implements OnInit {
 		this.productSubsciption.unsubscribe();
 	}
 
+	modifProvisionel(){
 
+		if( this.varModifProvisionel ){
+
+			this.varModifProvisionel = false;
+			
+		}else 
+		if( this.varModifProvisionel = false){
+			this.varModifProvisionel = true;
+		}
+	}
+
+	chargeNameFournisseur(){
+		this.stockservice.getNameFournisseur().subscribe( data => this.listFournisseur = data
+		 );
+	}
 }
