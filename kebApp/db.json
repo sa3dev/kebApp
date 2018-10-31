@@ -201,7 +201,7 @@
       "id": 9,
       "quantityPrev": 90
     },
-    { 
+    {
       "name": "concombre",
       "price": 45,
       "quantity": 75,
@@ -298,11 +298,7 @@
       "name": "Menu burger",
       "costPrice": 600,
       "sellPrice": "830",
-      "ingredients": [
-        "pain burger",
-        "steak de boeuf",
-        "pommes de terre"
-      ]
+      "ingredients": "pain burger, artichauts, steak de boeuf,pommes de terre"
     },
     {
       "id": 2,
@@ -342,6 +338,30 @@
         " air"
       ],
       "id": 5
+    },
+    {
+      "costPrice": 600,
+      "sellPrice": 800,
+      "name": "Menu tacos",
+      "ingredients": [
+        "tacos",
+        " viande de boeuf",
+        " sauce salsa",
+        " guacamole"
+      ],
+      "id": 6
+    },
+    {
+      "costPrice": 600,
+      "sellPrice": 800,
+      "name": "Menu tacos",
+      "ingredients": [
+        "tacos",
+        " viande de boeuf",
+        " sauce salsa",
+        " guacamole"
+      ],
+      "id": 7
     }
   ]
 }
