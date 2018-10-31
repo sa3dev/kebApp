@@ -2,11 +2,12 @@
 	<div class="row">
 		<div class="col-md-3 border-right">
 			<h2>list previsionel</h2>
-				<button class="btn btn-outline-info btn-sm"  >Ajouter un produit</button>
+				<button class="btn btn-outline-info btn-sm" (click)="onShowAdd()" >Ajouter un produit</button>
 				<button class="btn btn-outline-info btn-sm">modifer</button>
 				<br>
 			<ul *ngFor="let produit of listProduct">
-				<li>{{ produit.name }} : <span class="">{{ produit.quantityPrev }}</span> </li>
+					<li >{{ produit.name }} : </li>
+					<div class="text-right"> {{ produit.quantityPrev }}</div>
 			</ul>
 		</div>
 
@@ -16,8 +17,8 @@
 			</div>
 			<div *ngIf="!pageDetail">
 			<div class="row bouton">
-				<div class="btn btn-success" (click)="onShow()">Liste des produits</div>
-				<div class="btn btn-info" (click)="onShowAdd()" >Ajouter un produit</div>
+				<div class="btn btn-success"(click)="onShow()">Liste des produits</div>
+				<div class="btn btn-info" 	(click)="onShowAdd()" >Ajouter un produit</div>
 				<div class="btn btn-danger" (click)="onShowUpdate()">Editer les produits</div>
 				<div class="btn btn-default"> Imprimer / envoyer commande </div>
 			</div>

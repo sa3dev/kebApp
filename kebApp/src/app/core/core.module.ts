@@ -39,7 +39,7 @@ import { StockModule} from '../stock/stock.module';
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    ProductsComponent,
+    ProductsComponent
     
 ],
     exports: [CoreRoutingModule, HeaderComponent]

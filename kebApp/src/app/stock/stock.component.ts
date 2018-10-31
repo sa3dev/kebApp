@@ -29,12 +29,10 @@ export class StockComponent implements OnInit {
 	quantityPrev : FormControl;
 
 	loginForm: FormGroup;
-	
 	pageDetail : boolean = false;
-
 	productDetail: Product;
-
 	productEdit : Product;
+
 	constructor(
 		private router : Router,
 		private ProductService : ProductsService,
@@ -144,7 +142,11 @@ export class StockComponent implements OnInit {
 			prod.quantity = this.quantity.value;
 			prod.supplier = this.supplier.value;
 			prod.quantityPrev = this.quantityPrev.value;
-			this.ProductService.addProduct( prod );
+			this.ProductService.addProduct( prod ).subscribe(
+				(data)=>{
+					console.log(data)
+				}
+			);
 
 			this.show = true;
 			this.showAdd = false;
