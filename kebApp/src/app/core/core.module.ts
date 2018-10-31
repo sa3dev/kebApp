@@ -18,7 +18,6 @@ import { ProductsComponent } from './products/products.component';
 import {FournisseurModule} from '../fournisseur/fournisseur.module';
 import { RestaurantmenuModule } from '../restaurantmenu/restaurantmenu.module';
 
-
 //import stocok Module
 import { StockModule} from '../stock/stock.module';
 
@@ -39,8 +38,7 @@ import { StockModule} from '../stock/stock.module';
     LoginComponent,
     RegisterComponent,
     HeaderComponent,
-    ProductsComponent,
-    
+    ProductsComponent
 ],
     exports: [CoreRoutingModule, HeaderComponent]
 })
