@@ -83,6 +83,7 @@
   ],
   "reservations": [
     {
+<<<<<<< HEAD
       "id": 801,
       "title": "Dupond",
       "start": "2018-11-02T23:00:00.000Z",
@@ -95,6 +96,13 @@
       "start": "2018-10-30T11:00:00.000Z",
       "draggable": true,
       "capacity": 9
+=======
+      "id": 8677,
+      "title": "Pierre-Emmanuel",
+      "start": "2018-11-01T11:24:00.000Z",
+      "draggable": true,
+      "capacity": 15
+>>>>>>> f35cfefd1301479a45581ea0f2d64480e33da6e1
     },
     {
       "id": 602,
@@ -108,7 +116,11 @@
       "title": "Brahim",
       "start": "2018-10-29T19:24:00.000Z",
       "draggable": true,
+<<<<<<< HEAD
       "capacity": 8
+=======
+      "capacity": 18
+>>>>>>> f35cfefd1301479a45581ea0f2d64480e33da6e1
     },
     {
       "id": 4532,
@@ -178,6 +190,33 @@
       "quantityPrev": 80
     },
     {
+<<<<<<< HEAD
+=======
+      "id": 4,
+      "name": "tomates",
+      "price": 54,
+      "quantity": 230,
+      "IDsupplier": 2,
+      "quantityPrev": 20
+    },
+    {
+      "name": "fraise",
+      "price": 15,
+      "quantity": 15,
+      "IDsupplier": 2,
+      "id": 5,
+      "quantityPrev": 75
+    },
+    {
+      "name": "fdsfds",
+      "price": 15,
+      "quantity": 15,
+      "IDsupplier": 4,
+      "id": 9,
+      "quantityPrev": 90
+    },
+    {
+>>>>>>> f35cfefd1301479a45581ea0f2d64480e33da6e1
       "name": "concombre",
       "price": 45,
       "quantity": 75,
@@ -289,12 +328,17 @@
       "id": 1,
       "name": "Menu burger",
       "costPrice": 600,
+<<<<<<< HEAD
       "sellPrice": 850,
       "ingredients": [
         "pain burger",
         "steak de boeuf",
         "pommes de terre"
       ]
+=======
+      "sellPrice": "830",
+      "ingredients": "pain burger, artichauts, steak de boeuf,pommes de terre"
+>>>>>>> f35cfefd1301479a45581ea0f2d64480e33da6e1
     },
     {
       "id": 2,
@@ -319,6 +363,7 @@
       ]
     },
     {
+<<<<<<< HEAD
       "costPrice": "15",
       "sellPrice": "18",
       "name": "dadada",
@@ -329,12 +374,56 @@
       "costPrice": 1540,
       "sellPrice": 8960,
       "name": "Menu de tes tnumber",
+=======
+      "id": 4,
+      "costPrice": 1860,
+      "sellPrice": 1900,
+      "name": "Menu de test",
+      "ingredients": [
+        "test 1",
+        " test 2",
+        " test 3"
+      ]
+    },
+    {
+      "id": 6,
+      "costPrice": 650,
+      "sellPrice": 819.9999999999999,
+      "name": "Menu végétarien",
+>>>>>>> f35cfefd1301479a45581ea0f2d64480e33da6e1
       "ingredients": [
         "mon frigidaire",
         " mon armoire",
         " ma cafetière"
       ],
+<<<<<<< HEAD
       "id": 9
+=======
+      "id": 5
+    },
+    {
+      "costPrice": 600,
+      "sellPrice": 800,
+      "name": "Menu tacos",
+      "ingredients": [
+        "tacos",
+        " viande de boeuf",
+        " sauce salsa",
+        " guacamole"
+      ],
+      "id": 6
+    },
+    {
+      "costPrice": 600,
+      "sellPrice": 800,
+      "name": "Menu tacos",
+      "ingredients": [
+        "tacos",
+        " viande de boeuf",
+        " sauce salsa",
+        " guacamole"
+      ]  
+>>>>>>> f35cfefd1301479a45581ea0f2d64480e33da6e1
     }
   ]
 }

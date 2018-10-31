@@ -27,7 +27,6 @@ export class ListusersComponent implements OnInit, OnDestroy {
     )
     this.listuserService.getListUsers();    
   }
-
   onDelete(id) {
     this.listuserService.deleteUser(id);
   }
