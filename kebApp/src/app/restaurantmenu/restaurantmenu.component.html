@@ -1,120 +1,113 @@
-<h1>Menus du restaurant</h1>
+<div class="container-fluid mx-3 text-center">
+  <h1>Menus du restaurant</h1>
+  <!-- add menu section-->
+  <button class="btn" (click)="displayAddMenu()">Ajouter Menu</button>
+  <div *ngIf="displayingAddMenu" class="add-menu">
+    <h2>Ajouter un menu</h2>
 
-<!-- Drag & drop test dnd -->
-<h4>Simple Drag-and-Drop</h4>
-<div class="row text-center">
-  <div class="col-sm-3">
-    <div class="card bg-success">
-      <div class="card-title">Available to drag</div>
+    <!-- Handling errors -->
+    <div *ngIf="menuName.invalid && (menuName.dirty || menuName.touched)" class="alert alert-danger">
+      <div *ngIf="menuName.errors.required">Le nom du menu est requis.</div>
+    </div>
+    <div *ngIf="costPriceMenu.invalid && (costPriceMenu.dirty || costPriceMenu.touched)" class="alert alert-danger">
+      <div *ngIf="costPriceMenu.errors.required">Le prix de revient est requis.</div>
+    </div>
+    <div *ngIf="sellPriceMenu.invalid && (sellPriceMenu.dirty || sellPriceMenu.touched)" class="alert alert-danger">
+      <div *ngIf="sellPriceMenu.errors.required">Le prix de vente est requis.</div>
+    </div>
+    <div *ngIf="ingredientsMenu.invalid && (ingredientsMenu.dirty || ingredientsMenu.touched)" class="alert alert-danger">
+      <div *ngIf="ingredientsMenu.errors.required">La liste des ingrédients est requise.</div>
+    </div>
+
+    <!-- Ze Form-->
+    <form class="form-default mt-4" (ngSubmit)="addMenu()" [formGroup]="addMenuForm" data-toggle="validator">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="control-label">Nom du menu</label>
+            <input type="text" class="form-control form-control-lg" name="menuName" id="menuName" formControlName="menuName"
+              required>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="control-label">Coût de revient</label>
+            <input type="number" class="form-control form-control-lg" name="costPriceMenu" id="costPriceMenu"
+              formControlName="costPriceMenu" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="control-label">Coût de vente</label>
+            <input type="number" class="form-control form-control-lg" name="sellPriceMenu" id="sellPriceMenu"
+              formControlName="sellPriceMenu" required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label class="control-label">Ingrédients</label>
+            <select multiple class="d-block" style="width:100%; text-align:center;" class="form-control form-control-lg"
+              name="ingredientsMenu" id="ingredientsMenu" formControlName="ingredientsMenu" required>
+              <option *ngFor="let ingredient of listIngredients | async">{{ingredient.name}}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-styled  btn-base-1 mt-4" [disabled]="addMenuForm.invalid">
+        Ajouter ce menu
+      </button>
+    </form>
+  </div>
+  <!-- Drag & drop test dnd -->
+  <div class="row text-center">
+    <div class="col-sm-4 offset-sm-4">
+      <div dnd-droppable class="card bg-danger" (onDropSuccess)="console.log($event)">
+        <h4 class="card-title my-3">Place to drop
+        </h4>
+        <div class="card-body">
+          <div *ngIf="simpleDrop">Item was dropped here</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Version card -->
+  <div class="row m-auto d-inlineblock">
+    <div class="col-4 p-2 border border-primary" dnd-draggable [dragEnabled]="true" [dragData]="menu.id" *ngFor="let menu of listMenus | async; let i = index">
+      <!-- Photo de la card <img class="card-img-top" data-src="holder.js/100x180/" alt="Card image cap"> -->
+      <div>
+        <h4 *ngIf="!editArray[i]">{{menu.name}}</h4>
+        <p *ngIf="!editArray[i]">{{menu.ingredients}}</p>
+        <p *ngIf="!editArray[i]">Prix de vente : {{menu.sellPrice | price}}</p>
+        <p *ngIf="!editArray[i]">Prix de vente : {{menu.costPrice | price}}</p>
+        <p class="text-muted">Marge : {{menu.sellPrice - menu.costPrice | price }}</p>
+        <div *ngIf="!editArray[i]">
+          <button class="btn btn-primary mx-1" (click)="editMenu(i)">✏️</button>
+          <button class="btn btn-danger mx-1" (click)="deleteMenu(menu.id)">❌</button>
+        </div>
+      </div>
+      <!-- edit section-->
       <div class="card-body">
-        <div class="card-text" dnd-draggable [dragEnabled]="true">
-          <div>Drag Me</div>
+        <h4 class="card-title" *ngIf="editArray[i]"><input [(ngModel)]="menu.name" value="menu.name"></h4>
+        <p class="card-text" *ngIf="editArray[i]"> <input [(ngModel)]="menu.sellPrice" value="menu.sellPrice"></p>
+        <p class="card-text" *ngIf="editArray[i]"><input [(ngModel)]="menu.costPrice" value="menu.costPrice"></p>
+        <p class="card-text" *ngIf="editArray[i]">/</p>
+        <p class="card-text" *ngIf="editArray[i]"><input [(ngModel)]="menu.ingredients" value="menu.ingredients"></p>
+        <div *ngIf="editArray[i]">
+          <button class="btn" (click)="addEdits(i)">Valider</button>
+          <button class="btn" (click)="editMenu(i)">Annuler</button>
         </div>
       </div>
+      <!-- -->
     </div>
   </div>
-  <div class="col-sm-3">
-    <div dnd-droppable class="card bg-primary" (onDropSuccess)="loger($event)">
-      <div class="card-title">Place to drop</div>
-      <div class="card-body">
-        <div *ngIf="simpleDrop">Item was dropped here</div>
-      </div>
-    </div>
-  </div>
-</div>
 
-
-
-
-<!-- Version card -->
-<div class="card-deck m-5">
-
-  <div class="card" dnd-draggable [dragEnabled]="true" [dragData]="menu.id" *ngFor="let menu of listMenus | async; let i = index">
-    <!-- Photo de la card <img class="card-img-top" data-src="holder.js/100x180/" alt="Card image cap"> -->
-    <div class="card-body">
-      <h4 *ngIf="!editArray[i]" class="card-title">{{menu.name}}</h4>
-      <p *ngIf="!editArray[i]" class="card-text">{{menu.ingredients}}</p>
-      <p *ngIf="!editArray[i]" class="card-text">Prix de vente : {{menu.sellPrice | price}}</p>
-      <p *ngIf="!editArray[i]" class="card-text">Prix de vente : {{menu.costPrice | price}}</p>
-      <p class="card-text text-muted">Marge : {{menu.sellPrice - menu.costPrice | price }}</p>
-      <div *ngIf="!editArray[i]">
-        <button class="btn" (click)="deleteMenu(menu.id)">Supprimer</button>
-        <button class="btn" (click)="editMenu(i)">Editer</button>
-      </div>
-    </div>
-    <!-- edit section-->
-    <div class="card-body">
-      <h4 class="card-title" *ngIf="editArray[i]"><input [(ngModel)]="menu.name" value="menu.name"></h4>
-      <p class="card-text" *ngIf="editArray[i]"> <input [(ngModel)]="menu.sellPrice" value="menu.sellPrice"></p>
-      <p class="card-text" *ngIf="editArray[i]"><input [(ngModel)]="menu.costPrice" value="menu.costPrice"></p>
-      <p class="card-text" *ngIf="editArray[i]">/</p>
-      <p class="card-text" *ngIf="editArray[i]"><input [(ngModel)]="menu.ingredients" value="menu.ingredients"></p>
-      <div *ngIf="editArray[i]">
-        <button class="btn" (click)="addEdits(i)">Valider</button>
-        <button class="btn" (click)="editMenu(i)">Annuler</button>
-      </div>
-    </div>
-    <!-- -->
-  </div>
-</div>
-
-<button class="btn" (click)="displayAddMenu()">Ajouter Menu</button>
-<div *ngIf="displayingAddMenu" class="add-menu container">
-  <h2>Ajouter un menu</h2>
-
-  <!-- Handling errors -->
-  <div *ngIf="menuName.invalid && (menuName.dirty || menuName.touched)" class="alert alert-danger">
-    <div *ngIf="menuName.errors.required">Le nom du menu est requis.</div>
-  </div>
-  <div *ngIf="costPriceMenu.invalid && (costPriceMenu.dirty || costPriceMenu.touched)" class="alert alert-danger">
-    <div *ngIf="costPriceMenu.errors.required">Le prix de revient est requis.</div>
-  </div>
-  <div *ngIf="sellPriceMenu.invalid && (sellPriceMenu.dirty || sellPriceMenu.touched)" class="alert alert-danger">
-    <div *ngIf="sellPriceMenu.errors.required">Le prix de vente est requis.</div>
-  </div>
-  <div *ngIf="ingredientsMenu.invalid && (ingredientsMenu.dirty || ingredientsMenu.touched)" class="alert alert-danger">
-    <div *ngIf="ingredientsMenu.errors.required">La liste des ingrédients est requise.</div>
-  </div>
-
-  <!-- Ze Form-->
-  <form class="form-default mt-4" (ngSubmit)="addMenu()" [formGroup]="addMenuForm" data-toggle="validator">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Nom du menu</label>
-          <input type="text" class="form-control form-control-lg" name="menuName" id="menuName" formControlName="menuName"
-            required>
-        </div>
-      </div>
-
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Coût de revient</label>
-          <input type="number" class="form-control form-control-lg" name="costPriceMenu" id="costPriceMenu"
-            formControlName="costPriceMenu" required>
-        </div>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Coût de vente</label>
-          <input type="number" class="form-control form-control-lg" name="sellPriceMenu" id="sellPriceMenu"
-            formControlName="sellPriceMenu" required>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="form-group">
-          <label class="control-label">Ingrédients</label>
-          <input type="text" class="form-control form-control-lg" name="ingredientsMenu" id="ingredientsMenu"
-            formControlName="ingredientsMenu" required>
-        </div>
-      </div>
-    </div>
-
-    <button type="submit" class="btn btn-styled  btn-base-1 mt-4" [disabled]="addMenuForm.invalid">
-      Ajouter ce menu
-    </button>
-  </form>
-</div>
+</div> <!-- end of .container-fluid -->

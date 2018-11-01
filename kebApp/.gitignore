@@ -1,7 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 # manual gitignore
 db.json
-
+kebApp/db.json
+../db.json
 # compiled output
 /dist
 /tmp

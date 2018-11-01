@@ -309,7 +309,17 @@
         " air",
         " tofu",
         " salade"
-      ]      
+      ]
+    },
+    {
+      "costPrice": 200,
+      "sellPrice": 500,
+      "name": "Menu pdt tomates",
+      "ingredients": [
+        "pommes de terre",
+        "tomates"
+      ],
+      "id": 7
     }
   ]
 }
