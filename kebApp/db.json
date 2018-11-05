@@ -180,12 +180,28 @@
       "supplier": "grezier"
     },
     {
-      "name": "pomme de terre",
+      "id": 19,
+      "IDsupplier": null,
+      "name": "pomme ",
       "price": 50,
       "quantity": 45,
-      "IDsupplier": 6,
-      "id": 19,
       "quantityPrev": 100
+    },
+    {
+      "name": "fraise",
+      "price": 50,
+      "quantity": 50,
+      "supplier": "MerguezWay",
+      "quantityPrev": "100",
+      "id": 20
+    },
+    {
+      "name": "choux",
+      "price": 15,
+      "quantity": 15,
+      "supplier": "ConconmbreFournisseur",
+      "quantityPrev": "150",
+      "id": 22
     }
   ],
   "fournisseurs": [
