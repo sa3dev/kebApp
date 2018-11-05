@@ -16,13 +16,8 @@ export class LoginService {
   private user:User;
   constructor(private http: HttpClient, private router: Router) { }
 
-<<<<<<< HEAD
-  canActivate(){
-    
-=======
 
   canActivate() {
->>>>>>> 06af3202ba1409256f82551e1ce23d81c1c9d750
     return this.isLoginSubject.asObservable();
   }
   
@@ -35,12 +30,7 @@ export class LoginService {
     this.http.get<User[]>(apiURL, param).subscribe(
       // If success, we check that there's only one user
       data => {
-<<<<<<< HEAD
-        if(data.length === 1){
-        
-=======
         if (data.length === 1) {
->>>>>>> 06af3202ba1409256f82551e1ce23d81c1c9d750
           this.isLoginSubject.next(true);
           this.router.navigate(['/users']);
         }

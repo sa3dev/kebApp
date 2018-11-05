@@ -87,6 +87,14 @@
       "email": "deee@de.de",
       "password": "vlavla",
       "id": 18
+    },
+    {
+      "first_name": "Léon",
+      "last_name": "Demeyere",
+      "nick_name": "jirlozz",
+      "email": "aaa.AAA@aaa.AAA",
+      "password": "coucou",
+      "id": 19
     }
   ],
   "reservations": [
