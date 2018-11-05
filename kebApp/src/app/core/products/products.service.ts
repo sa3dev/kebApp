@@ -31,17 +31,7 @@ export class ProductsService {
 	 * @param id 
 	 */
 	deleteProduct(id) {
-<<<<<<< HEAD
-		return this.http.delete(apiURLProducts + id).subscribe(
-			data => {
-				console.log(data)
-				this.getProductsList();
-			},
-			error => console.log("Error in delete product method " + error)
-		);
-=======
 		return this.http.delete(apiURLProducts + id);
->>>>>>> stock
 	}
 	/**
 	 * Function to update the property of a value from a certain product (selected by its id)
