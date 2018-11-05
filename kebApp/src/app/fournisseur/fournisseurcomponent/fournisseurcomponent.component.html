@@ -33,12 +33,12 @@
           
             <td *ngIf="!listEdit[i]"><button (click)="delete(fournisseur.id)" class="btn btn-danger">X</button> <button (click)="edit(i)" class="btn btn-info">Edit</button></td>
           
-                <td *ngIf="listEdit[i]"><input  [value]="fournisseur.nom" [(ngModel)]="fournisseur.nom"></td>
-                <td *ngIf="listEdit[i]"><input [value]="fournisseur.adresse" [(ngModel)]="fournisseur.adresse"></td>
-                <td *ngIf="listEdit[i]"><input  [value]="fournisseur.ville" [(ngModel)]="fournisseur.ville"></td>
-                <td *ngIf="listEdit[i]"><input  [value]="fournisseur.cp" [(ngModel)]="fournisseur.cp"></td>
-                <td *ngIf="listEdit[i]"><input  [value]="fournisseur.telephone" [(ngModel)]="fournisseur.telephone"></td>
-                <td *ngIf="listEdit[i]"><button (click)="editFournisseur(i)" class="btn btn-success" >Valider</button><button (click)="edit(i)" class="btn btn-danger">Anuler</button></td>
+            <td *ngIf="listEdit[i]"><input  [value]="fournisseur.nom" [(ngModel)]="fournisseur.nom"></td>
+            <td *ngIf="listEdit[i]"><input  [value]="fournisseur.adresse" [(ngModel)]="fournisseur.adresse"></td>
+            <td *ngIf="listEdit[i]"><input  [value]="fournisseur.ville" [(ngModel)]="fournisseur.ville"></td>
+            <td *ngIf="listEdit[i]"><input  [value]="fournisseur.cp" [(ngModel)]="fournisseur.cp"></td>
+            <td *ngIf="listEdit[i]"><input  [value]="fournisseur.telephone" [(ngModel)]="fournisseur.telephone"></td>
+            <td *ngIf="listEdit[i]"><button (click)="editFournisseur(i)" class="btn btn-success" >Valider</button><button (click)="edit(i)" class="btn btn-danger">Anuler</button></td>
             
             
           </tr>

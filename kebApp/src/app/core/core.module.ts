@@ -41,6 +41,7 @@ import { StockModule} from '../stock/stock.module';
     RegisterComponent,
     HeaderComponent,
     ProductsComponent
+    
 ],
     exports: [CoreRoutingModule, HeaderComponent]
 })
