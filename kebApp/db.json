@@ -19,7 +19,7 @@
     {
       "first_name": "Guillaume",
       "last_name": "Delory",
-      "nick_name": "Tota",
+      "nick_name": "LaTota",
       "email": "g.delory62@gmail.com",
       "password": "mdpmdp",
       "id": 10
@@ -41,12 +41,20 @@
       "id": 15
     },
     {
-      "first_name": "dada",
+      "first_name": "djadja",
       "last_name": "dada",
       "nick_name": "dada",
-      "email": "dada@dada.dad",
+      "email": "dada@dada.da",
       "password": "dadada",
       "id": 16
+    },
+    {
+      "first_name": "Emmanuel",
+      "last_name": "Macron",
+      "nick_name": "Manu",
+      "email": "manu@elysee.fr",
+      "password": "mdpmdp",
+      "id": 17
     }
   ],
   "reservations": [
@@ -122,17 +130,24 @@
     },
     {
       "id": 9098,
-      "title": "ko",
-      "start": "2018-11-07T23:00:00.000Z",
+      "title": "Pierre",
+      "start": "2018-11-08T23:00:00.000Z",
       "draggable": true,
-      "capacity": 5
+      "capacity": 1
     },
     {
       "id": 7731,
       "title": "Pierre",
-      "start": "2018-11-05T08:43:07.492Z",
+      "start": "2018-11-06T08:43:07.492Z",
       "draggable": true,
       "capacity": 5
+    },
+    {
+      "id": 4584,
+      "title": "Nicolas",
+      "start": "2018-11-07T18:34:00.000Z",
+      "draggable": true,
+      "capacity": 10
     }
   ],
   "products": [

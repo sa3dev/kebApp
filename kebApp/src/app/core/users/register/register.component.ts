@@ -21,7 +21,6 @@ export class RegisterComponent implements OnInit {
   public boolIdentifiant:boolean;
   
   constructor(private fb: FormBuilder,
-    private router: Router,
     private registerService: RegisterService, ) { }
 
   ngOnInit() {
@@ -68,22 +67,14 @@ export class RegisterComponent implements OnInit {
               }
             }
             console.log("nop");
-          }else{
-            //if(this.confirmPassword.value===this.password.value){
-              
+          }else{             
               this.registerService.createUser(user);
-             // this.valide=true;
-            /*}else{
-              this.boolMdp=true;
-             
-            }*/
           }
         },
         (error)=>{
           console.log(error);
         }
         );
-      //this.registerService.createUser(user);
     }
   }
 }
