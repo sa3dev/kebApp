@@ -73,24 +73,12 @@
       "id": 15
     },
     {
-      "first_name": "djadja",
+      "first_name": "dada",
       "last_name": "dada",
       "nick_name": "dada",
-<<<<<<< HEAD
       "email": "dada@dada.dada",
-=======
-      "email": "dada@dada.da",
->>>>>>> 06af3202ba1409256f82551e1ce23d81c1c9d750
       "password": "dadada",
       "id": 16
-    },
-    {
-      "first_name": "Emmanuel",
-      "last_name": "Macron",
-      "nick_name": "Manu",
-      "email": "manu@elysee.fr",
-      "password": "mdpmdp",
-      "id": 17
     }
   ],
   "reservations": [
@@ -200,20 +188,21 @@
       "quantityPrev": 100
     },
     {
+      "id": 20,
+      "IDsupplier": null,
       "name": "fraise",
       "price": 50,
       "quantity": 50,
-      "supplier": "MerguezWay",
       "quantityPrev": "100",
-      "id": 20
+      "supplier": "MerguezWay"
     },
     {
-      "name": "choux",
-      "price": 15,
-      "quantity": 15,
-      "supplier": "ConconmbreFournisseur",
-      "quantityPrev": "150",
-      "id": 22
+      "name": "test",
+      "price": 150,
+      "quantity": 12,
+      "supplier": "Patata&Co",
+      "quantityPrev": "50",
+      "id": 21
     }
   ],
   "fournisseurs": [
@@ -260,7 +249,7 @@
   ],
   "menus": [
     {
-      "id": 19,
+      "id": 1,
       "name": "Menu burger",
       "costPrice": 600,
       "sellPrice": 850,
@@ -277,7 +266,6 @@
       "sellPrice": 800,
       "ingredients": [
         "pain burger",
-        "artichauts",
         "steak de boeuf",
         "pommes de terre"
       ]
