@@ -129,9 +129,8 @@ export class StockComponent implements OnInit {
 	 * @param id Delete a product from produst list
 	 */
 	deleteProduct( id: number ){
-		this.ProductService.deleteProduct(id).subscribe(
-			()=> this.stockservice.getProducts()
-		);
+		this.ProductService.deleteProduct(id);
+		//this.stockservice.getProducts()
 	}
 	/**
 	 * Envoi un produit selectionné au composant enfant 
