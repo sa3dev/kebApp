@@ -10,7 +10,6 @@ import { ProductsComponent } from './products/products.component';
 import { FournisseurcomponentComponent } from '../fournisseur/fournisseurcomponent/fournisseurcomponent.component';
 import { RestaurantmenuComponent } from '../restaurantmenu/restaurantmenu.component';
 import { CalendarDetailComponent } from '../calendar/calendar-detail/calendar-detail.component';
-
 import { StockComponent } from '../stock/stock.component';
 
 
@@ -24,8 +23,7 @@ const routes: Routes = [
   { path: 'products', canActivate: [LoginService], component: ProductsComponent },
   { path: 'fournisseurs', canActivate: [LoginService], component:FournisseurcomponentComponent},
   
-  { 
-    path: 'users', 
+  { path: 'users', 
     canActivate: [LoginService], 
     component: ListusersComponent 
   },
