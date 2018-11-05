@@ -31,13 +31,7 @@ export class ProductsService {
 	 * @param id 
 	 */
 	deleteProduct(id) {
-		this.http.delete(apiURLProducts + id).subscribe(
-			data => {
-				console.log(data)
-				this.getProductsList();
-			},
-			error => console.log("Error in delete product method " + error)
-		)
+		return this.http.delete(apiURLProducts + id);
 	}
 	/**
 	 * Function to update the property of a value from a certain product (selected by its id)
@@ -51,8 +45,9 @@ export class ProductsService {
 		return this.http.patch(apiURLProducts + id, {
 			newproperty: value,
 		}).subscribe(
-			data => console.log(data),
+			data => { console.log(data); this.getProductsList(); },
 			error => console.log("Error in the updateProduct method " + error))
+
 	}
 
 	/**
@@ -60,27 +55,15 @@ export class ProductsService {
 	 * @param product the product of type Product that you want to add to the list of products
 	 */
 	addProduct(product: Product) {
-		this.http.post(apiURLProducts, product).subscribe(
-			data => {
-				console.log("POST Request is successful ", data);
-				this.getProductsList();
-			},
-			error => {
-				console.log("Rrror", error);
-			}
-		);;
+		return this.http.post(apiURLProducts, product);
 	}
 
+	/**
+	 * Update the whole product (different then updateProduct(id,property,value))
+	 * @param product the whole Product object to put
+	 */
 	UpdateProduct(product: Product) {
 		const url = `${apiURLProducts}/${product.id}`;
 		this.http.put(apiURLProducts, product)
-			.subscribe(
-				data => {
-					console.log("PUT Request is successful ", data);
-				},
-				error => {
-					console.log("Rrror", error);
-				}
-			);
 	}
 }

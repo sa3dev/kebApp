@@ -107,7 +107,7 @@
         <p class="card-text" *ngIf="editArray[i]">/</p>
         <p class="card-text" *ngIf="editArray[i]">Ingrédients<input [(ngModel)]="menu.ingredients" value="menu.ingredients"></p>
         <div *ngIf="editArray[i]" class="text-center">
-          <button class="btn btn-success" (click)="addEdits(i)">Valider</button>
+          <button class="btn btn-success" (click)="addEdits(menu, i)">Valider</button>
           <button class="btn btn-primary" (click)="editMenu(i)">Annuler</button>
         </div>
       </div>

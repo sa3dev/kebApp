@@ -5,8 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PricePipe implements PipeTransform {
 
-
-
   transform(num) {
 
       const euros = num / 100;

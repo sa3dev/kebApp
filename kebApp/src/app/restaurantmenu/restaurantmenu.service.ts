@@ -34,7 +34,8 @@ export class RestaurantmenuService {
     const url = apiURLMenus + id;
     this.http.delete(url)
       .subscribe(data => {
-        console.log("Successful delete", data)
+        console.log("Successful delete", data);
+        this.getListMenus();
       },
         error => {
         console.log("Error in the deleteThisMenu function", error);
