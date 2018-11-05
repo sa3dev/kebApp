@@ -284,25 +284,19 @@
   ],
   "menus": [
     {
-      "id": 1,
+      "id": 19,
       "name": "Menu burger",
       "costPrice": 600,
       "sellPrice": "830",
-      "ingredients": "pain burger, artichauts, steak de boeuf,pommes de terre"
-    },
-    {
-      "id": 2,
-      "name": "Menu kebab galette",
-      "costPrice": 550,
-      "sellPrice": 800,
       "ingredients": [
         "pain burger",
+        "artichauts",
         "steak de boeuf",
         "pommes de terre"
       ]
     },
     {
-      "id": 3,
+      "id": 33,
       "costPrice": 1540,
       "sellPrice": "150000",
       "name": "Menu de Boris Vian",
@@ -326,7 +320,7 @@
     {
       "id": 5,
       "costPrice": 650,
-      "sellPrice": 819.9999999999999,
+      "sellPrice": 820,
       "name": "Menu végétarien",
       "ingredients": [
         "Pain",
@@ -343,21 +337,10 @@
         "pommes de terre",
         "tomates"
       ],
-      "id": 7
+      "id": 78
     },
     {
-      "costPrice": 600,
-      "sellPrice": 800,
-      "name": "Menu tacos",
-      "ingredients": [
-        "tacos",
-        " viande de boeuf",
-        " sauce salsa",
-        " guacamole"
-      ],
-      "id": 6
-    },
-    {
+      "id": 44,
       "costPrice": 600,
       "sellPrice": 800,
       "name": "Menu tacos",
