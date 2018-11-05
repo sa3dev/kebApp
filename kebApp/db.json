@@ -300,10 +300,21 @@
       "sellPrice": 819.9999999999999,
       "name": "Menu végétarien",
       "ingredients": [
-        "pain",
-        " air"
+        "Pain",
+        " air",
+        " tofu",
+        " salade"
+      ]
+    },
+    {
+      "costPrice": 200,
+      "sellPrice": 500,
+      "name": "Menu pdt tomates",
+      "ingredients": [
+        "pommes de terre",
+        "tomates"
       ],
-      "id": 5
+      "id": 7
     },
     {
       "costPrice": 600,
