@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { StockComponent } from './stock.component';
 import { DetailStockComponent } from './detail-stock/detail-stock.component';
 
+
 @NgModule({
   imports: [
     CommonModule,
@@ -12,6 +13,6 @@ import { DetailStockComponent } from './detail-stock/detail-stock.component';
     FormsModule,
   ],
   exports: [ RouterModule ],
-  declarations: [ StockComponent , DetailStockComponent ]
+  declarations: [ StockComponent , DetailStockComponent]
 })
 export class StockModule { }
