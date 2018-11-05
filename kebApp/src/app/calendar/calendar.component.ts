@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
 import { startOfDay, subDays, isSameDay, isSameMonth, addHours, subHours } from 'date-fns';
-import { Subject, Subscription } from 'rxjs';
+import { Subject, Subscription, Observable } from 'rxjs';
 import { CalendarEvent, CalendarEventTimesChangedEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarService } from './services/calendar.service';
@@ -27,10 +27,8 @@ export class CalendarComponent implements OnInit {
     action: string;
     event: CalendarEvent;
   };
-
-
-
-  events: Reservation[];
+  events$: Observable<Reservation[]>;
+  events: Reservation[]=[];
   reservationSubscription: Subscription;
 
   activeDayIsOpen: boolean = true;
@@ -39,12 +37,13 @@ export class CalendarComponent implements OnInit {
     private calendarService: CalendarService,
     private calendarDetail: CalendarDetailService) { }
 
-    ngOnInit(){
+    ngOnInit(){     
       this.reservationSubscription = this.calendarService.reservationsSubject.subscribe(
         (events: Reservation[]) => {
-          this.events = events;
+          this.events = events;          
       })
-      this.calendarService.getListReservations();      
+      this.calendarService.getListReservations();    
+      this.events$ = this.calendarService.emitObservable()
     }
     
 
@@ -62,13 +61,8 @@ export class CalendarComponent implements OnInit {
     }
   }
 
-  eventTimesChanged({
-    event,
-    newStart,
-    newEnd
-  }: CalendarEventTimesChangedEvent): void {
+  eventTimesChanged({event,newStart}: CalendarEventTimesChangedEvent): void {
     event.start = newStart;
-    event.end = newEnd;
     this.handleEvent('Dropped or resized', event);
   }
 
@@ -79,16 +73,22 @@ export class CalendarComponent implements OnInit {
 
   addEvent(): void {
     this.events.push({
-      id: Math.floor(Math.random()*10000),
+      id: Math.floor(Math.random() * 10000),
       title: '',
       start: new Date(),
-      draggable: true,
+      draggable: false,
       capacity: 1,
     });
   }
   onConfirm(reservation) {
     const newReservation :Reservation = reservation;
+    newReservation.draggable = true;
     this.calendarService.updateEvent(newReservation);    
+  }
+  onAdd(reservation) {
+    const newReservation: Reservation = reservation;
+    newReservation.draggable = true;
+    this.calendarService.createEvent(reservation);
   }
 
   onDelete(id) {
