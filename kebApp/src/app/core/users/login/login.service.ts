@@ -13,14 +13,15 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class LoginService {
   isLoginSubject = new BehaviorSubject<boolean>(false);
-
+  private user:User;
   constructor(private http: HttpClient, private router: Router) { }
   
 
   canActivate(){
+    
     return this.isLoginSubject.asObservable();
   }
-
+  
   logUser(username: string, password: string) {
     
     // We define the params to pass to the .get() in order to see if there is an entry in our API that fits the arguments passed to logUser(). Note that we only do that once we're assured that the user has at least entered a username in the appropriate field  
@@ -31,7 +32,7 @@ export class LoginService {
       // If success, we check that there's only one user
       data => {
         if(data.length === 1){
-console.log(data)
+        
           this.isLoginSubject.next(true);
           this.router.navigate(['/users']);
         }

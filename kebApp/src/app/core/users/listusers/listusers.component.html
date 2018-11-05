@@ -25,7 +25,7 @@
         <td *ngIf="!userEdit[i]"> {{user.email}} </td>
         <td *ngIf="userEdit[i]"><input [value]="user.email" [(ngModel)]="user.email"></td>
         <td *ngIf="!userEdit[i]"><button class="btn btn-success" (click)=onEdit(i)>Editer</button></td>
-        <td *ngIf="userEdit[i]"><button class="btn btn-success" (click)=onUpdate(user)>Valider</button></td>
+        <td *ngIf="userEdit[i]"><button class="btn btn-success" (click)="onUpdate(user, i)">Valider</button></td>
         <td *ngIf="!userEdit[i]"><button class="btn btn-danger" (click)=onDelete(user.id)>Supprimer</button></td>
         <td *ngIf="userEdit[i]"><button class="btn btn-danger" (click)=onEdit(i)>Annuler</button></td>
       </tr>

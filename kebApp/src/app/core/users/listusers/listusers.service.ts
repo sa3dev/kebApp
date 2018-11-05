@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { apiURL } from '../../../config';
 import { User } from '../user.model';
-import { Subject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,19 +32,12 @@ export class ListusersService {
     this.usersSubject.next(this.users);
   }
 
-  updateUser(user: User) {
+  updateUser(user: User):Observable<Object> {
+  
     const url = `${apiURL}/${user.id}`;
-    this.httpClient.put(url,
-      user)
-      .subscribe(
-        data => {
-          console.log("PUT Request is successful ", data);
-          this.getListUsers();
-        },
-        error => {
-          console.log("Rrror", error);
-        }
-      );
+    return this.httpClient.put(url,user);
+      
+   
   }
 
   postUser(user: User) {

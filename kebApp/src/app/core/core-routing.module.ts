@@ -18,13 +18,13 @@ const routes: Routes = [
   { path: '', 
     redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'calendar', component: CalendarComponent },
+  { path: 'calendar', component: CalendarComponent,canActivate: [LoginService] },
   { path: 'users', canActivate: [LoginService], component: ListusersComponent },
   { path: 'register',canActivate: [LoginService], component: RegisterComponent },
-  { path: 'products', component: ProductsComponent },
+  { path: 'products', component: ProductsComponent, canActivate: [LoginService] },
   { path: 'fournisseurs', component:FournisseurcomponentComponent},
   
-  { 
+  /*{ 
     path: 'users', 
     canActivate: [LoginService], 
     component: ListusersComponent 
@@ -33,11 +33,11 @@ const routes: Routes = [
     path: 'register',
     canActivate: [LoginService], 
     component: RegisterComponent 
-  },
-  { path: 'products', component: ProductsComponent },
-  { path: 'inventaire' , component: StockComponent },
-  { path: 'carte', component: RestaurantmenuComponent },
-  { path: 'oftheday', component: CalendarDetailComponent}
+  },*/
+  //{ path: 'products', component: ProductsComponent },
+  { path: 'inventaire' , component: StockComponent, canActivate: [LoginService] },
+  { path: 'carte', component: RestaurantmenuComponent,canActivate: [LoginService] },
+  { path: 'oftheday', component: CalendarDetailComponent,canActivate: [LoginService]}
 ];
 
 @NgModule({

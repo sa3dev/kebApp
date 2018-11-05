@@ -1,4 +1,4 @@
-<div *ngIf="!pageDetail">
+<div *ngIf="!pageDetail" class="component">
   <div>
     <form (ngSubmit)="researchZ()" [formGroup]="formFournisseur"> 
         <label for="inputFour">Fournisseurs :</label>
@@ -10,8 +10,8 @@
     
 
   </div>
-  <div *ngIf="listFournisseur.length>0">
-    <table class="text-center">
+  <div *ngIf="listFournisseur.length>0" class="row justify-content-center">
+    <table class="text-center ">
       <thead>
         <tr>
           <th>Nom</th>
@@ -45,7 +45,7 @@
       </tbody>
     </table>
   </div>
-  <div *ngIf="pageAjout">
+  <div *ngIf="pageAjout" class="row justify-content-center">
     <form (ngSubmit)="ajouter()" [formGroup]="formAjout">
       <h2>Ajouter</h2>
       <div>
