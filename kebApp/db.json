@@ -119,6 +119,20 @@
       "start": "2018-11-07T18:27:00.000Z",
       "draggable": true,
       "capacity": 20
+    },
+    {
+      "id": 9098,
+      "title": "ko",
+      "start": "2018-11-07T23:00:00.000Z",
+      "draggable": true,
+      "capacity": 5
+    },
+    {
+      "id": 7731,
+      "title": "Pierre",
+      "start": "2018-11-05T08:43:07.492Z",
+      "draggable": true,
+      "capacity": 5
     }
   ],
   "products": [
@@ -295,15 +309,14 @@
       ]
     },
     {
-      "id": 6,
+      "id": 5,
       "costPrice": 650,
       "sellPrice": 819.9999999999999,
       "name": "Menu végétarien",
       "ingredients": [
         "pain",
         " air"
-      ],
-      "id": 5
+      ]
     },
     {
       "costPrice": 600,
@@ -326,7 +339,7 @@
         " viande de boeuf",
         " sauce salsa",
         " guacamole"
-      ]  
+      ]
     }
   ]
 }
