@@ -6,9 +6,6 @@ import { Reservation } from '../model/event';
 import { Subject } from 'rxjs';
 
 
-
-
-
 @Injectable({
   providedIn: 'root'
 })
@@ -22,8 +19,8 @@ export class CalendarService {
 
   getListReservations() {
     this.httpClient.get<Reservation[]>(eventUrl).subscribe(
-      data => {
-        this.events = data ;
+      (events: Reservation[]) => {
+        this.events = events ;
         this.events.map( data => data.start = new Date(data.start));
         this.emitReservations();
       },
@@ -35,6 +32,9 @@ export class CalendarService {
    emitReservations() {
      this.reservationsSubject.next(this.events);
    }
+   emitObservable(){
+    return this.reservationsSubject.asObservable();
+   }
 
   createEvent(reservation: Reservation) {
     this.httpClient.post(eventUrl,
@@ -42,17 +42,32 @@ export class CalendarService {
       .subscribe(
         data => {
           console.log("Event Request is successful ", data);
+          this.getListReservations();
         },
         error => {
           console.log("Rrror", error);
         }
       );
   }
+  updateEvent(reservation: Reservation) {
+    const url = `${eventUrl}/${reservation.id}`;
+    this.httpClient.put(url, reservation)
+      .subscribe(
+        data => {
+          console.log("Put Request is successful ", data);
+          this.getListReservations();
+        },
+        error => {
+          console.log("Rrror5", error);
+        }
+      );
+  }
+
   deleteEVent(id: number):void {
     const url = `${eventUrl}/${id}`;
     this.httpClient.delete(url).subscribe(data => {
-      this.getListReservations();
       console.log("réservations supprimé", data)
+      this.getListReservations()
     },
     error => { 
       console.log(error)

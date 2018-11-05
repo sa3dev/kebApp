@@ -36,6 +36,8 @@
       <li class="nav-item">
         <button *ngIf="(isLoggedIn | async)" class="btn btn-outline-secondary"><a class="nav-link" (click)="onLogOut()">Se
             déconnecter</a></button>
+        <button *ngIf="(!isLoggedIn | async)" class="btn btn-outline-primary"><a class="nav-link" (click)="onLogOut()">Se
+            Connecter</a></button>
       </li>
     </ul>
   </div>

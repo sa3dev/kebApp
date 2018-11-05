@@ -12,15 +12,22 @@
         <th scope="col">Supprimer</th>
       </tr>
     </thead>
-    <tbody *ngFor="let user of users">
-      <tr>
-        <th scope="row">{{ user.id }}</th>
-        <td> {{ user.first_name}} </td>
-        <td> {{user.last_name}} </td>
-        <td> {{user.nick_name}} </td>
-        <td> {{user.email}} </td>
-        <td><button class="btn btn-success" (click)=onEdit(user.id)>Editer</button></td>
-        <td><button class="btn btn-danger" (click)=onDelete(user.id)>Supprimer</button></td>
+    <tbody >
+      <tr *ngFor="let user of users , let i = index ">
+        <th *ngIf="!userEdit[i]" scope="row">{{ user.id }}</th>
+        <th *ngIf="userEdit[i]" scope="row">{{ user.id }}</th>
+        <td *ngIf="!userEdit[i]"> {{ user.first_name}} </td>
+        <td *ngIf="userEdit[i]"><input [value]="user.first_name" [(ngModel)]="user.first_name"></td>
+        <td *ngIf="!userEdit[i]"> {{user.last_name}} </td>
+        <td *ngIf="userEdit[i]"><input [value]="user.last_name" [(ngModel)]="user.last_name"></td>
+        <td *ngIf="!userEdit[i]"> {{user.nick_name}} </td>
+        <td *ngIf="userEdit[i]"><input [value]="user.nick_name" [(ngModel)]="user.nick_name"></td>
+        <td *ngIf="!userEdit[i]"> {{user.email}} </td>
+        <td *ngIf="userEdit[i]"><input [value]="user.email" [(ngModel)]="user.email"></td>
+        <td *ngIf="!userEdit[i]"><button class="btn btn-success" (click)=onEdit(i)>Editer</button></td>
+        <td *ngIf="userEdit[i]"><button class="btn btn-success" (click)=onUpdate(user)>Valider</button></td>
+        <td *ngIf="!userEdit[i]"><button class="btn btn-danger" (click)=onDelete(user.id)>Supprimer</button></td>
+        <td *ngIf="userEdit[i]"><button class="btn btn-danger" (click)=onEdit(i)>Annuler</button></td>
       </tr>
     </tbody>
   </table>

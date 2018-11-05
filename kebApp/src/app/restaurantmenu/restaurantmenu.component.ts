@@ -102,12 +102,16 @@ export class RestaurantmenuComponent implements OnInit {
     }
   }
 
-  addEdits(i) {
+  resetInput(){
+    this.menuName = null; 
+  }
+  addEdits(i){
     // on click validate button, we put the modified Menu object at the same place  
     console.log(this.listMenus[i]);
     this.restaurantservice.putNewMenu(this.listMenus[i]).subscribe(
-      (data) => { this.editArray[i] = false },
-      (error) => { console.log(error) }
-    )
+      (data) => {this.editArray[i] = false},
+      (error) => {console.log(error)}
+    );
+    
   }
 }

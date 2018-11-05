@@ -1,10 +1,11 @@
 <div class="container">
+  <!--Details du fournisseur-->
   <h2>Details Fournisseur</h2>
   <h3>{{fournisseur.nom}}</h3>
   <p>{{fournisseur.adresse}} --- {{fournisseur.ville}} --- {{fournisseur.cp}} --- {{fournisseur.telephone}}</p>
-  <button>Ajouter</button>
+  <button (click)="pageAjouts()">Ajouter</button>
   <button (click)="retour()">Retour</button>
-  <table>
+  <table class="text-center" *ngIf="listProducts.length>0"><!--si pas de produit-->
     <thead>
       <tr>
         <th>Produit</th>
@@ -13,9 +14,37 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        
+      <tr *ngFor="let product of listProducts; let i=index;">
+        <!--ligne Tab-->
+        <td *ngIf="!listEdit[i]">{{product.name}}</td>
+        <td *ngIf="!listEdit[i]">{{product.price}}</td>
+        <td *ngIf="!listEdit[i]"><button (click)="delete(product.id)" class="btn btn-danger">X</button> <button (click)="edit(i)" class="btn btn-info">Edit</button></td>
+        <!--Edit ligne tab-->
+        <td *ngIf="listEdit[i]"><input  [value]="product.name" [(ngModel)]="product.name"></td>
+        <td *ngIf="listEdit[i]"><input [value]="product.price" [(ngModel)]="product.price"></td>
+        <td *ngIf="listEdit[i]"><button (click)="editProduct(i)" class="btn btn-success" >Valider</button><button (click)="edit(i)" class="btn btn-danger">Anuler</button></td> 
       </tr>
+   
+            
+          
     </tbody>
   </table>
+  <div *ngIf="pageAjout">
+      <form (ngSubmit)="ajouter()" [formGroup]="formAjout">
+        <h2>Ajouter</h2>
+        <div>
+          <label for="idNom">Nom :</label>
+          <input type="text" formControlName="ctrlName">
+        </div>
+        <div>
+            <label>Prix :</label>
+            <input type="text" formControlName="ctrlPrice">
+        </div>
+        
+        
+        <div>
+          <input type="submit" [disabled]="formAjout.invalid" value="valider" class="btn btn-success">
+        </div>
+      </form>
+    </div>
 </div>

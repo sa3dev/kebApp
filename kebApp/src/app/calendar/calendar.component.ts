@@ -1,28 +1,12 @@
 import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
 import { startOfDay, subDays, isSameDay, isSameMonth, addHours, subHours } from 'date-fns';
-import { Subject, Subscription } from 'rxjs';
+import { Subject, Subscription, Observable } from 'rxjs';
 import { CalendarEvent, CalendarEventTimesChangedEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarService } from './services/calendar.service';
 import { Reservation } from './model/event';
 import { Router } from '@angular/router';
 import { CalendarDetailService } from './calendar-detail/service/calendar-detail.service';
-
-const colors: any = {
-  red: {
-    primary: '#ad2121',
-    secondary: '#FAE3E3'
-  },
-  blue: {
-    primary: '#1e90ff',
-    secondary: '#D1E8FF'
-  },
-  yellow: {
-    primary: '#e3bc08',
-    secondary: '#FDF1BA'
-  }
-};
-
 
 @Component({
   selector: 'app-calendar',
@@ -38,35 +22,28 @@ export class CalendarComponent implements OnInit {
   weekStartsOn: number = DAYS_OF_WEEK.MONDAY;
   CalendarView = CalendarView;
   dayReservation: Date;
-
-
   viewDate: Date = new Date();
-
   modalData: {
     action: string;
     event: CalendarEvent;
   };
-
-
-  refresh: Subject<any> = new Subject();
-
-  events: Reservation[];
+  events$: Observable<Reservation[]>;
+  events: Reservation[]=[];
   reservationSubscription: Subscription;
 
   activeDayIsOpen: boolean = true;
 
   constructor(private modal: NgbModal,
     private calendarService: CalendarService,
-    private router: Router,
     private calendarDetail: CalendarDetailService) { }
 
-    ngOnInit(){
-      this.refresh.next()
+    ngOnInit(){     
       this.reservationSubscription = this.calendarService.reservationsSubject.subscribe(
         (events: Reservation[]) => {
-          this.events = events;
+          this.events = events;          
       })
-      this.calendarService.getListReservations();      
+      this.calendarService.getListReservations();    
+      this.events$ = this.calendarService.emitObservable()
     }
     
 
@@ -84,15 +61,9 @@ export class CalendarComponent implements OnInit {
     }
   }
 
-  eventTimesChanged({
-    event,
-    newStart,
-    newEnd
-  }: CalendarEventTimesChangedEvent): void {
+  eventTimesChanged({event,newStart}: CalendarEventTimesChangedEvent): void {
     event.start = newStart;
-    event.end = newEnd;
     this.handleEvent('Dropped or resized', event);
-    this.refresh.next();
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
@@ -102,17 +73,22 @@ export class CalendarComponent implements OnInit {
 
   addEvent(): void {
     this.events.push({
-      id: Math.floor(Math.random()*10000),
+      id: Math.floor(Math.random() * 10000),
       title: '',
       start: new Date(),
-      draggable: true,
+      draggable: false,
       capacity: 1,
     });
-    this.refresh.next();
   }
   onConfirm(reservation) {
     const newReservation :Reservation = reservation;
-    this.calendarService.createEvent(newReservation);    
+    newReservation.draggable = true;
+    this.calendarService.updateEvent(newReservation);    
+  }
+  onAdd(reservation) {
+    const newReservation: Reservation = reservation;
+    newReservation.draggable = true;
+    this.calendarService.createEvent(reservation);
   }
 
   onDelete(id) {
@@ -123,6 +99,6 @@ export class CalendarComponent implements OnInit {
   }
   ofTheDay(clickedDate) {
     this.dayReservation = clickedDate;
-    this.calendarDetail.saveTheDate(this.dayReservation)
+    this.calendarDetail.saveTheDate(this.dayReservation);
   }
 }

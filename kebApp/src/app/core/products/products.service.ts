@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from './product.model';
 import { apiURLProducts } from "../../config";
-import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs'
 
 @Injectable({
 	providedIn: 'root'
@@ -48,7 +48,7 @@ export class ProductsService {
 	 */
 	updateProduct(id: number, property: string, value) {
 		this.newproperty = property
-		this.http.patch(apiURLProducts + id, {
+		return this.http.patch(apiURLProducts + id, {
 			newproperty: value,
 		}).subscribe(
 			data => console.log(data),

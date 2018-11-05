@@ -11,7 +11,7 @@
     {
       "first_name": "Guillaume",
       "last_name": "Delory",
-      "nick_name": "joseto",
+      "nick_name": "joseta",
       "email": "g.delory62@gmail.com",
       "password": "mdpmdp",
       "id": 8
@@ -19,42 +19,10 @@
     {
       "first_name": "Guillaume",
       "last_name": "Delory",
-      "nick_name": "Toto",
+      "nick_name": "Tota",
       "email": "g.delory62@gmail.com",
       "password": "mdpmdp",
       "id": 10
-    },
-    {
-      "first_name": "Patrick",
-      "last_name": "Chirac",
-      "nick_name": "Patoche",
-      "email": "pat@pat.pat",
-      "password": "mdpmdp",
-      "id": 11
-    },
-    {
-      "first_name": "José",
-      "last_name": "Stall",
-      "nick_name": "Rosé",
-      "email": "g@g.g",
-      "password": "mdpmdp",
-      "id": 12
-    },
-    {
-      "first_name": "Léon",
-      "last_name": "Demeyere",
-      "nick_name": "jirlo",
-      "email": "leon.demeyere@hotmail.fr",
-      "password": "riku!!",
-      "id": 13
-    },
-    {
-      "first_name": "Léon",
-      "last_name": "Demeyere",
-      "nick_name": "zizi",
-      "email": "zizi.heyhey@gmail.com",
-      "password": "rikuriku",
-      "id": 14
     },
     {
       "first_name": "admin",
@@ -66,9 +34,9 @@
     },
     {
       "first_name": "José",
-      "last_name": "Vega",
+      "last_name": "Vegara",
       "nick_name": "toto",
-      "email": "g@g.gg",
+      "email": "g@g.g",
       "password": "mdpmdp",
       "id": 15
     },
@@ -76,88 +44,81 @@
       "first_name": "dada",
       "last_name": "dada",
       "nick_name": "dada",
-      "email": "dada@dada.dada",
+      "email": "dada@dada.dad",
       "password": "dadada",
       "id": 16
     }
   ],
   "reservations": [
     {
-      "id": 801,
-      "title": "Dupond",
-      "start": "2018-11-02T23:00:00.000Z",
+      "id": 8677,
+      "title": "Pierre-Emmanuel",
+      "start": "2018-11-01T11:24:00.000Z",
       "draggable": true,
-      "capacity": 10
+      "capacity": 15
     },
     {
-      "id": 817,
-      "title": "Patrick",
-      "start": "2018-10-30T11:00:00.000Z",
+      "id": 8773,
+      "title": "José",
+      "start": "2018-10-30T18:30:00.000Z",
       "draggable": true,
-      "capacity": 9
+      "capacity": 16
     },
     {
-      "id": 602,
+      "id": 658,
       "title": "Roger",
-      "start": "2018-10-30T11:00:00.000Z",
+      "start": "2018-10-31T18:28:00.000Z",
+      "draggable": true,
+      "capacity": 18
+    },
+    {
+      "id": 3685,
+      "title": "Toto",
+      "start": "2018-10-31T19:29:00.000Z",
+      "draggable": true,
+      "capacity": 11
+    },
+    {
+      "id": 6289,
+      "title": "Paulo",
+      "start": "2018-11-01T19:29:00.000Z",
+      "draggable": true,
+      "capacity": 13
+    },
+    {
+      "id": 8127,
+      "title": "Roger",
+      "start": "2018-10-31T18:33:00.000Z",
       "draggable": true,
       "capacity": 25
     },
     {
-      "id": 213,
-      "title": "Brahim",
-      "start": "2018-10-29T19:24:00.000Z",
-      "draggable": true,
-      "capacity": 8
-    },
-    {
-      "id": 4532,
-      "title": "Pierrot",
-      "start": "2018-10-28T09:08:15.892Z",
-      "draggable": true,
-      "capacity": 2
-    },
-    {
-      "id": 1440,
-      "title": "Christian",
-      "start": "2018-10-30T18:01:00.000Z",
-      "draggable": true,
-      "capacity": 5
-    },
-    {
-      "id": 275,
-      "title": "Philippe",
-      "start": "2018-10-30T11:15:00.000Z",
+      "id": 362,
+      "title": "Toto",
+      "start": "2018-10-31T14:34:58.235Z",
       "draggable": true,
       "capacity": 12
     },
     {
-      "id": 644,
-      "title": "Christophe",
-      "start": "2018-10-28T23:00:00.000Z",
+      "id": 1830,
+      "title": "Guillaume",
+      "start": "2018-11-02T19:00:00.000Z",
       "draggable": true,
-      "capacity": 7
+      "capacity": 9
     },
     {
-      "id": 8677,
-      "title": "Pierre-Emmanuel",
-      "start": "2018-10-31T11:24:00.000Z",
+      "id": 9548,
+      "title": "Claude",
+      "start": "2018-11-03T18:09:00.000Z",
       "draggable": true,
-      "capacity": 7
+      "capacity": 8
     },
     {
-      "id": 4648,
-      "title": "José",
-      "start": "2018-10-30T11:25:33.765Z",
+      "id": 1971,
+      "title": "Pedro",
+      "start": "2018-11-07T18:27:00.000Z",
       "draggable": true,
-      "capacity": 4
-    },
-    {
-      "id": 3504,
-      "title": "Roger",
-      "start": "2018-10-31T19:39:00.000Z",
-      "draggable": true,
-      "capacity": 6
+      "capacity": 20
     }
   ],
   "products": [
@@ -166,64 +127,94 @@
       "name": "pommes de terre",
       "price": 33,
       "quantity": 90,
-      "supplier": "MacCain",
-      "property": "olive",
-      "newproperty": "olive"
+      "IDsupplier": 1,
+      "quantityPrev": 100
     },
     {
       "id": 3,
       "name": "steak de bœuf",
       "price": 200,
       "quantity": 30,
-      "supplier": "Henri Boucher"
+      "IDsupplier": 1,
+      "quantityPrev": 80
     },
     {
       "id": 4,
       "name": "tomates",
       "price": 54,
       "quantity": 230,
-      "supplier": "Noël Flantier"
+      "IDsupplier": 2,
+      "quantityPrev": 20
     },
     {
       "name": "fraise",
       "price": 15,
       "quantity": 15,
-      "supplier": "fraison entreprise",
-      "id": 5
-    },
-    {
-      "name": "concombre",
-      "price": 45,
-      "quantity": 75,
-      "supplier": "con entreprise",
-      "id": 6
+      "IDsupplier": 2,
+      "id": 5,
+      "quantityPrev": 75
     },
     {
       "name": "fdsfds",
       "price": 15,
       "quantity": 15,
-      "supplier": "reoti",
-      "id": 9
+      "IDsupplier": 4,
+      "id": 9,
+      "quantityPrev": 90
     },
     {
-      "name": "test12",
-      "price": 54,
-      "quantity": 54,
-      "supplier": "ffd",
-      "id": 18
+      "name": "concombre",
+      "price": 45,
+      "quantity": 75,
+      "IDsupplier": 3,
+      "id": 6,
+      "quantityPrev": 10
     },
     {
       "name": "pomme de terre",
       "price": 50,
       "quantity": 45,
-      "supplier": "p2terre",
-      "id": 19
+      "IDsupplier": 6,
+      "id": 19,
+      "quantityPrev": 100
+    },
+    {
+      "name": "mazdam",
+      "price": "4",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 5,
+      "id": 21
+    },
+    {
+      "name": "Frite fraiche",
+      "price": "2.50",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 3,
+      "id": 22
+    },
+    {
+      "name": "Chedar",
+      "price": "1.25",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 5,
+      "id": 23
+    },
+    {
+      "name": "Chedar mais de qualiter",
+      "price": "2.50",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 5,
+      "id": 24
     }
   ],
   "fournisseurs": [
     {
       "id": 1,
-      "nom": "kebab&Co",
+      "nom": "Nabab",
       "adresse": "22 rue de la broche",
       "telephone": "0695979938",
       "ville": "lievin city gang",
@@ -232,17 +223,17 @@
     {
       "id": 3,
       "nom": "Patata&Co",
-      "adresse": "22 rue de la patate",
+      "adresse": "22 rue de la PATATE",
       "telephone": "0695979999",
-      "ville": "tourcoing",
+      "ville": "Tourcoing",
       "cp": "59200"
     },
     {
       "id": 4,
       "nom": "said&coWOuah",
-      "adresse": "22 rue de la patate",
+      "adresse": "22 rue de la Frite",
       "telephone": "0695979998",
-      "ville": "roubaix DBZzz",
+      "ville": "roubaix",
       "cp": "59100"
     },
     {
@@ -252,6 +243,14 @@
       "adresse": "2 rue de la fricandelle",
       "cp": 59100,
       "id": 5
+    },
+    {
+      "nom": "metro",
+      "telephone": 952487585,
+      "ville": "watrelos",
+      "adresse": "65 rue watrelos",
+      "cp": 59150,
+      "id": 6
     }
   ],
   "menus": [
@@ -260,11 +259,7 @@
       "name": "Menu burger",
       "costPrice": 600,
       "sellPrice": "830",
-      "ingredients": [
-        "pain burger",
-        "steak de boeuf",
-        "pommes de terre"
-      ]
+      "ingredients": "pain burger, artichauts, steak de boeuf,pommes de terre"
     },
     {
       "id": 2,
@@ -320,6 +315,29 @@
         "tomates"
       ],
       "id": 7
+    },
+    {
+      "costPrice": 600,
+      "sellPrice": 800,
+      "name": "Menu tacos",
+      "ingredients": [
+        "tacos",
+        " viande de boeuf",
+        " sauce salsa",
+        " guacamole"
+      ],
+      "id": 6
+    },
+    {
+      "costPrice": 600,
+      "sellPrice": 800,
+      "name": "Menu tacos",
+      "ingredients": [
+        "tacos",
+        " viande de boeuf",
+        " sauce salsa",
+        " guacamole"
+      ]  
     }
   ]
 }

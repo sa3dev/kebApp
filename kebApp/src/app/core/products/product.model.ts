@@ -5,5 +5,7 @@ export class Product {
     price: number;
     quantity: number;
     supplier: string;
+    IDsupplier: number;
+    quantityPrev:number;
     //previsionel : number;
 }

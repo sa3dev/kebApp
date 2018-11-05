@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CalendarDetailService } from './service/calendar-detail.service';
+import { CalendarService } from '../../calendar/services/calendar.service'
 import { Observable } from 'rxjs';
 import { Reservation } from '../model/event'
 
@@ -15,6 +16,8 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
   reservationDay: Date;
   eventsOfTheDay: Reservation[];
   reservationSubscription: Subscription;
+  private capacityReservation: number = 50;
+  private capacityReserved: number = 0;
 
   constructor(
     private calendarDetailService: CalendarDetailService,
@@ -30,8 +33,32 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
         this.eventsOfTheDay = events;
       })
     this.calendarDetailService.getListReservationsOfTheDay(this.reservationDay);
+
    }
+
+  addEvent(): void {
+    this.eventsOfTheDay.push({
+      id: Math.floor(Math.random() * 10000),
+      title: '',
+      start: this.reservationDay,
+      draggable: false,
+      capacity: 1,
+    });
+  }
+
    ngOnDestroy(): void {
     this.reservationSubscription.unsubscribe()
+   }
+   onEdit(event) {
+    this.calendarDetailService.updateEvent(event, this.reservationDay);
+   }
+   onAdd(reservation) {
+     const newReservation: Reservation = reservation;
+     newReservation.draggable = true;
+     this.calendarDetailService.createEvent(reservation, this.reservationDay);
+   }
+
+   onDelete(id) {
+     this.calendarDetailService.deleteEVent(id, this.reservationDay)
    }
 }
