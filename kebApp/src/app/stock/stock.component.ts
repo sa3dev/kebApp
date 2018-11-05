@@ -28,10 +28,19 @@ export class StockComponent implements OnInit {
 	supplier: FormControl;
 	quantityPrev : FormControl;
 
+	nameMod: FormControl;
+	priceMod: FormControl;
+	quantityMod: FormControl;
+	supplierMod: FormControl;
+	quantityPrevMod : FormControl;
+
 	loginForm: FormGroup;
 	pageDetail : boolean = false;
 	productDetail: Product;
 	productEdit : Product;
+
+	loginFormMod: FormGroup;
+
 
 	listFournisseur: any ; // type fournisseur a voir si on importe le model ou pas ( clean architecture ?)
 
@@ -45,11 +54,7 @@ export class StockComponent implements OnInit {
 		) { }
 
 	ngOnInit() {
-		this.productSubsciption = this.stockservice.productsubject.subscribe(
-			( products : Product[] ) => {
-				this.listProduct = products
-			}
-		);
+		this.chargeListProduct();
 
 		this.stockservice.getProducts();
 
@@ -68,7 +73,22 @@ export class StockComponent implements OnInit {
 			supplier: this.supplier,
 			quantityPrev: this.quantityPrev
 		});
+
+		this.nameMod = this.fb.control('' , [ Validators.required, Validators.minLength(2) ]);
+		this.priceMod = this.fb.control('', [Validators.required]);
+		this.quantityMod = this.fb.control('', [Validators.required,]);
+		this.supplierMod = this.fb.control('', [Validators.required,Validators.minLength(2)]);
+		this.quantityPrevMod = this.fb.control('' , [Validators.required]);
+
 		
+
+		this.loginFormMod = this.fb.group({
+			nameMod:  		  this.nameMod,
+			priceMod: 		  this.priceMod,
+			quantityMod: 	  this.quantityMod, 
+			supplierMod: 	  this.supplierMod,
+			quantityPrevMod: this.quantityPrevMod
+		});
 	}
 	/**
 	 * Charger le bon produit dans le formulaire pour editer
@@ -76,19 +96,36 @@ export class StockComponent implements OnInit {
 	 * @param product update a product
 	 *  
 	 */
-	editProd( /*product: Product*/ i:number  ){
+	editProd( i:number  ){
 		this.onShowUpdate();
 
-		this.productEdit=this.listProduct[i];
+		this.productEdit = this.listProduct[i];
 
-		//this.stockservice.UpdateProduct( this.productEdit ).subscribe();
+		this.nameMod.setValue(this.productEdit.name);
+		this.priceMod.setValue(this.productEdit.price);
+		this.quantityMod.setValue(this.productEdit.quantity);
+		this.supplierMod.setValue(this.productEdit.supplier);
+		this.quantityPrevMod.setValue(this.productEdit.quantityPrev);
 	}
 
-	editProduct(  ){
-		//console.log(product)
-		
-		this.stockservice.UpdateProduct( this.productEdit ).subscribe(
-			data => console.log(data)
+	editProduct(){	
+
+		let prod = new Product();
+		prod.id=this.productEdit.id;
+		prod.IDsupplier=null;
+		prod.name = this.nameMod.value;
+		prod.price =  this.priceMod.value ;
+		prod.quantity = this.quantityMod.value;
+		prod.quantityPrev = this.quantityPrevMod.value;
+		prod.supplier  = this.supplierMod.value;		
+
+		this.stockservice.UpdateProduct( prod ).subscribe(
+			data => {
+				console.log(data);
+				this.stockservice.getProducts();
+				this.onShow();
+
+			}
 		);
 	}
 	/**
@@ -170,7 +207,7 @@ export class StockComponent implements OnInit {
 			
 
 		}else{
-			console.log('Error dans l ajout');
+			console.log("Error dans l'ajout");
 		}
 	}
 
@@ -188,13 +225,23 @@ export class StockComponent implements OnInit {
 			this.varModifProvisionel = false;
 			
 		}else 
-		if( this.varModifProvisionel = false){
-			this.varModifProvisionel = true;
+			if( this.varModifProvisionel = false){
+				this.varModifProvisionel = true;
 		}
 	}
 
 	chargeNameFournisseur(){
-		this.stockservice.getNameFournisseur().subscribe( data => this.listFournisseur = data
+		this.stockservice.getNameFournisseur().subscribe( 
+			data => this.listFournisseur = data
 		 );
+	}
+
+	chargeListProduct(){
+		
+		this.productSubsciption = this.stockservice.productsubject.subscribe(
+			( products : Product[] ) => {
+				this.listProduct = products
+			}
+		);
 	}
 }

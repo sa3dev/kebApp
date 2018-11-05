@@ -1,20 +1,12 @@
 <div class="container-fluid" >
 	<div class="row">
 		<div class="col-md-3 border-right">
-			<h2>list previsionel</h2>
-			<!-- <form (ngSubmit)="researchPrevisionel()" [formGroup]="formPrevisionel"> 
-				<label for="inputFour">Fournisseurs :</label>
-				<input id="inputFour" class="form-control" formControlName="research" placeholder="recherche">
-			</form>
-			<hr> -->
-				<!-- <button class="btn btn-outline-info btn-sm" (click)="onShowAdd()" >Ajouter un produit</button> -->
-
-
+			<h2>List previsionel</h2>
 				<button class="btn btn-outline-info btn-sm" (click)="modifProvisionel()">Modifer Provisionel</button>
 				<br>
-			<div *ngIf="!varModifProvisionel">
-				<ul *ngFor="let produit of listProduct" class="flex">
-					<li >{{ produit.name }} : <span class="text-right"> {{ produit.quantityPrev }}</span></li>			
+			<div *ngIf="!varModifProvisionel"> 
+				<ul *ngFor="let produit of listProduct" class="flex list-group">
+					<li class="list-group-item">{{ produit.name }} : <span class="text-right"> {{ produit.quantityPrev }}</span></li>			
 				</ul>
 			</div>
 			<div *ngIf="varModifProvisionel">
@@ -60,7 +52,8 @@
 			<hr/>
 
 			<div *ngIf="showAdd" >
-				<form  (ngSubmit)="signup()" [formGroup]="loginForm">
+				<form   (ngSubmit)="signup()" [formGroup]="loginForm">
+
 					<div class="form-group">
 						<label for="">Nom produit</label>
 						<input type="text" name="name" class="form-control" 
@@ -94,37 +87,43 @@
 
 			<div *ngIf="showupdate">
 				<h1>Mettre a jour </h1>
-				<form  (ngSubmit)="editProduct()" [formGroup]="loginForm">
+				<form  (ngSubmit)="editProduct()" [formGroup]="loginFormMod">
+					
 					<div class="form-group">
 						<label for="">Nom produit</label>
 						<input type="text" name="name" class="form-control" 
-						formControlName="name" [value]="productEdit.name">
+						formControlName="nameMod" [value]="productEdit.name">
 					</div>
+					
 					<div class="form-group">
 						<label for="">Prix unitaire </label>
 						<input type="number" name="price" class="form-control" 
-						formControlName ="price" [value]="productEdit.price">
+						formControlName ="priceMod" [value]="productEdit.price">
 					</div>
+					
 					<div class="form-group">
 						<label for="">Quantité</label>
 						<input type="number" name="quantity" class="form-control" 
-						formControlName ="quantity" [value]="productEdit.quantity">
+						formControlName ="quantityMod" [value]="productEdit.quantity">
 					</div>
+					
 					<div class="form-group">
 						<label for="">Fournisseur:</label>
 						<input type="text" name="supplier" class="form-control" 
-						formControlName ="supplier" [value]="productEdit.supplier">
+						formControlName ="supplierMod" [value]="productEdit.supplier">
 					</div>
-					<p>{{ productEdit | json }}</p>
 
 					<div class="form-group">
 						<label for="">Quantité en prevision:</label>
 						<input type="text" name="quantityPrev" class="form-control" 
-						formControlName ="quantityPrev" [value]="productEdit.quantityPrev" >
+						formControlName ="quantityPrevMod" [value]="productEdit.quantityPrev" >
 					</div>
+					
 					<input type="submit" class="form-control" value="Valider">
 				</form>
 			</div>
+		
+		
 		</div>
 	</div>
 	
