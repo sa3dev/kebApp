@@ -34,7 +34,7 @@ export class StockService {
 			error => {
 				console.log(error)
 			}
-		);;
+		);
 	}
 
 	/**
