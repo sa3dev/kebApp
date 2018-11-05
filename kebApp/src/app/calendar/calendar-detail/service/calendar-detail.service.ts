@@ -9,7 +9,6 @@ import { map } from 'rxjs/operators';
 
 
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -46,8 +45,19 @@ export class CalendarDetailService {
     )
 
   }
-
-
+  createEvent(reservation: Reservation, date: Date) {
+    this.httpClient.post(eventUrl,
+      reservation)
+      .subscribe(
+        data => {
+          console.log("Event Request is successful ", data);
+          this.getListReservationsOfTheDay(date);
+        },
+        error => {
+          console.log("Rrror", error);
+        }
+      );
+  }
   updateEvent(reservation: Reservation, date: Date) {
     const url = `${eventUrl}/${reservation.id}`;
     this.httpClient.put(url, reservation)

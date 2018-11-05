@@ -3,6 +3,8 @@ import { Menu } from './menu.model';
 import { RestaurantmenuService } from './restaurantmenu.service';
 import { PricePipe } from '../shared/pipe-price.pipe';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {DndModule} from 'ng2-dnd';
+
 
 
 
@@ -22,8 +24,9 @@ export class RestaurantmenuComponent implements OnInit {
   private addMenuForm: FormGroup;
 
   private editArray:boolean[] = [];
-
-  private listMenus: Menu[] = [];
+  public dragData;
+  private listMenus;
+  simpleDrop:any = null;
 
   constructor(private restaurantservice:RestaurantmenuService, private fb:FormBuilder) { }
 
@@ -51,7 +54,13 @@ export class RestaurantmenuComponent implements OnInit {
   }
 
   getListMenus(){
-    this.restaurantservice.getListMenus().subscribe(data => this.listMenus = data);
+    this.listMenus = this.restaurantservice.getListMenus()
+  }
+
+  loger(event){
+    const id = event.dragData;
+    console.log(id);
+    this.restaurantservice.deleteThisMenu(id);
   }
 
   displayAddMenu(){
@@ -85,12 +94,16 @@ export class RestaurantmenuComponent implements OnInit {
     }
   }
 
+  resetInput(){
+    this.menuName = null; 
+  }
   addEdits(i){
     // on click validate button, we put the modified Menu object at the same place  
     console.log(this.listMenus[i]);
     this.restaurantservice.putNewMenu(this.listMenus[i]).subscribe(
       (data) => {this.editArray[i] = false},
       (error) => {console.log(error)}
-    )
+    );
+    
   }
 }

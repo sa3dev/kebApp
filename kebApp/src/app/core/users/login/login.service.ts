@@ -45,7 +45,7 @@ console.log(data)
   }
 
   isLoggedIn() : Observable<boolean> {
-    return this.isLoginSubject.asObservable();
+    return this.isLoginSubject;
    }
 
   logOUt() {
