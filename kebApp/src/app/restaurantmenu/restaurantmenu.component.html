@@ -83,7 +83,7 @@
   <div class="d-flex flex-row justify-content-center flex-wrap w-100 my-5">
     <div class="restaurantcard" dnd-draggable [dragEnabled]="true" [dragData]="menu.id" *ngFor="let menu of listMenus | async; let i = index">
       <!-- Photo de la card <img class="card-img-top" data-src="holder.js/100x180/" alt="Card image cap"> -->
-      <div class="inner-restaurantcard bg-light">
+      <div class="inner-restaurantcard">
         <h4 *ngIf="!editArray[i]">{{menu.name}}</h4>
         <div *ngIf="!editArray[i]">
           <h5>Ingrédients</h5>
