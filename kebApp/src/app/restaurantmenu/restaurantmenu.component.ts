@@ -62,10 +62,10 @@ export class RestaurantmenuComponent implements OnInit {
     this.listMenus = this.restaurantservice.getListMenus()
   }
 
-  loger(event) {
+  deleteDnd(event) {
     const id = event.dragData;
     console.log(id);
-    // this.restaurantservice.deleteThisMenu(id);
+    this.restaurantservice.deleteThisMenu(id);
   }
 
   displayAddMenu() {
