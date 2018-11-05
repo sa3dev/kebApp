@@ -63,13 +63,9 @@ export class CalendarComponent implements OnInit {
 
   eventTimesChanged({event,newStart}: CalendarEventTimesChangedEvent): void {
     event.start = newStart;
-    this.handleEvent('Dropped or resized', event);
+    this.onConfirm(event)
   }
 
-  handleEvent(action: string, event: CalendarEvent): void {
-    this.modalData = { event, action };
-    this.modal.open(this.modalContent, { size: 'lg' });
-  }
 
   addEvent(): void {
     this.events.push({

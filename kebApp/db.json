@@ -65,7 +65,7 @@
       "id": 15
     },
     {
-      "first_name": "dada",
+      "first_name": "djadja",
       "last_name": "dada",
       "nick_name": "dada",
       "email": "dada@dada.dada",
@@ -399,9 +399,20 @@
       ]
     },
     {
-      "id": 61,
+      "id": 4,
+      "costPrice": 1860,
+      "sellPrice": 1900,
+      "name": "Menu de test",
+      "ingredients": [
+        "test 1",
+        " test 2",
+        " test 3"
+      ]
+    },
+    {
+      "id": 5,
       "costPrice": 650,
-      "sellPrice": 819.9999999999999,
+      "sellPrice": 820,
       "name": "Menu végétarien",
       "ingredients": [
         "mon frigidaire",

@@ -18,11 +18,19 @@ const routes: Routes = [
   { path: '', 
     redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+<<<<<<< HEAD
   { path: 'calendar', component: CalendarComponent,canActivate: [LoginService] },
   { path: 'users', canActivate: [LoginService], component: ListusersComponent },
   { path: 'register',canActivate: [LoginService], component: RegisterComponent },
   { path: 'products', component: ProductsComponent, canActivate: [LoginService] },
   { path: 'fournisseurs', component:FournisseurcomponentComponent},
+=======
+  { path: 'calendar', canActivate: [LoginService], component: CalendarComponent },
+  { path: 'users', canActivate: [LoginService], component: ListusersComponent },
+  { path: 'register',canActivate: [LoginService], component: RegisterComponent },
+  { path: 'products', canActivate: [LoginService], component: ProductsComponent },
+  { path: 'fournisseurs', canActivate: [LoginService], component:FournisseurcomponentComponent},
+>>>>>>> 06af3202ba1409256f82551e1ce23d81c1c9d750
   
   /*{ 
     path: 'users', 
@@ -33,11 +41,19 @@ const routes: Routes = [
     path: 'register',
     canActivate: [LoginService], 
     component: RegisterComponent 
+<<<<<<< HEAD
   },*/
   //{ path: 'products', component: ProductsComponent },
   { path: 'inventaire' , component: StockComponent, canActivate: [LoginService] },
   { path: 'carte', component: RestaurantmenuComponent,canActivate: [LoginService] },
   { path: 'oftheday', component: CalendarDetailComponent,canActivate: [LoginService]}
+=======
+  },
+  { path: 'products', canActivate: [LoginService], component: ProductsComponent },
+  { path: 'inventaire', canActivate: [LoginService], component: StockComponent },
+  { path: 'carte', canActivate: [LoginService], component: RestaurantmenuComponent },
+  { path: 'oftheday', canActivate: [LoginService], component: CalendarDetailComponent}
+>>>>>>> 06af3202ba1409256f82551e1ce23d81c1c9d750
 ];
 
 @NgModule({
