@@ -32,7 +32,7 @@ export class LoginService {
       data => {
         if (data.length === 1) {
           this.isLoginSubject.next(true);
-          this.router.navigate(['/users']);
+          this.router.navigate(['/calendar']);
         }
         else {
           this.isLoginSubject.next(false);
