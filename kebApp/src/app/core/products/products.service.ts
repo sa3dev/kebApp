@@ -45,8 +45,9 @@ export class ProductsService {
 		return this.http.patch(apiURLProducts + id, {
 			newproperty: value,
 		}).subscribe(
-			data => console.log(data),
+			data => { console.log(data); this.getProductsList(); },
 			error => console.log("Error in the updateProduct method " + error))
+
 	}
 
 	/**
@@ -61,8 +62,8 @@ export class ProductsService {
 	 * Update the whole product (different then updateProduct(id,property,value))
 	 * @param product the whole Product object to put
 	 */
-	UpdateProduct( product: Product ) {
-		const url = `${apiURLProducts}/${product.id}`; 
+	UpdateProduct(product: Product) {
+		const url = `${apiURLProducts}/${product.id}`;
 		this.http.put(apiURLProducts, product)
-    }
+	}
 }

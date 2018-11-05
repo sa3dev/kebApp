@@ -67,7 +67,7 @@ export class CalendarDetailService {
           this.getListReservationsOfTheDay(date)
         },
         error => {
-          console.log("Rrror5", error);
+          console.log("Rrror", error);
         }
       );
   }
