@@ -6,16 +6,8 @@
 				<br>
 			<div *ngIf="!varModifProvisionel"> 
 				<ul *ngFor="let produit of listProduct" class="flex list-group">
-					<li class="list-group-item">{{ produit.name }} : <span class="text-right"> {{ produit.quantityPrev }}</span></li>			
+					<li class="list-group-item">{{ produit.name }} : <span class="text-right text-success"> {{ produit.quantityPrev }}</span></li>			
 				</ul>
-			</div>
-			<div *ngIf="varModifProvisionel">
-				<form >
-					<input type="text">
-					<input type="text">
-					<input type="text">
-					<input type="text">
-				</form>
 			</div>
 		</div>
 

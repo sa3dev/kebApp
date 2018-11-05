@@ -180,15 +180,6 @@
       "supplier": "grezier"
     },
     {
-      "id": 6,
-      "IDsupplier": null,
-      "name": "r2d2",
-      "price": 50,
-      "quantity": 1,
-      "quantityPrev": "20",
-      "supplier": "sithway"
-    },
-    {
       "name": "pomme de terre",
       "price": 50,
       "quantity": 45,
@@ -221,14 +212,6 @@
       "telephone": "0695979998",
       "ville": "roubaix DBZzz",
       "cp": "59100"
-    },
-    {
-      "nom": "fromage du chnord qui pue",
-      "telephone": "0695982210",
-      "ville": "roubaix",
-      "adresse": "2 rue de la fricandelle",
-      "cp": 59100,
-      "id": 5
     },
     {
       "nom": "MerguezWay",
