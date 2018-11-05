@@ -202,6 +202,38 @@
       "supplier": "Patata&Co",
       "quantityPrev": "150",
       "id": 21
+    },
+    {
+      "name": "Frite fraiche",
+      "price": "2.50",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 3,
+      "id": 22
+    },
+    {
+      "name": "Chedar",
+      "price": "1.25",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 5,
+      "id": 23
+    },
+    {
+      "name": "Chedar mais de qualiter",
+      "price": "2.50",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 5,
+      "id": 24
+    },
+    {
+      "name": "psx",
+      "price": 23,
+      "quantity": 12,
+      "supplier": "DAdada",
+      "quantityPrev": "5",
+      "id": 25
     }
   ],
   "fournisseurs": [
@@ -283,12 +315,13 @@
     {
       "costPrice": 1540,
       "sellPrice": 8960,
-      "name": "Menu de tes tnumber",
+      "name": "Menu de Boris Vian",
       "ingredients": [
         "mon frigidaire",
         " mon armoire",
         " ma cafetière"
-      ]
+      ],
+      "id": 52
     }
   ]
 }
