@@ -159,11 +159,7 @@ export class StockComponent implements OnInit {
 			prod.quantity = this.quantity.value;
 			prod.supplier = this.supplier.value;
 			prod.quantityPrev = this.quantityPrev.value;
-			this.ProductService.addProduct( prod ).subscribe(
-				()=>{
-					this.stockservice.getProducts();	
-				}
-			);
+			this.ProductService.addProduct( prod );
 			this.show = true;
 			this.showAdd = false;
 			this.loginForm.reset();

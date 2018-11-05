@@ -73,29 +73,28 @@
       "id": 15
     },
     {
-      "first_name": "djadja",
+      "first_name": "dada",
       "last_name": "dada",
       "nick_name": "dada",
       "email": "dada@dada.dada",
       "password": "dadada",
       "id": 16
-    },
-    {
-      "first_name": "Emmanuel",
-      "last_name": "Macron",
-      "nick_name": "Manu",
-      "email": "manu@elysee.fr",
-      "password": "mdpmdp",
-      "id": 17
     }
   ],
   "reservations": [
     {
-      "id": 8677,
-      "title": "Pierre-Emmanuel",
-      "start": "2018-11-01T11:24:00.000Z",
+      "id": 801,
+      "title": "Dupond",
+      "start": "2018-11-02T23:00:00.000Z",
       "draggable": true,
-      "capacity": 15
+      "capacity": 10
+    },
+    {
+      "id": 817,
+      "title": "Patrick",
+      "start": "2018-10-30T11:00:00.000Z",
+      "draggable": true,
+      "capacity": 9
     },
     {
       "id": 602,
@@ -164,27 +163,21 @@
   "products": [
     {
       "id": 1,
-      "name": "pommes de terre",
-      "price": 33,
-      "quantity": 90,
-      "IDsupplier": 1,
-      "quantityPrev": 100
+      "IDsupplier": null,
+      "name": "Pomme ",
+      "price": 15,
+      "quantity": 520,
+      "quantityPrev": "125",
+      "supplier": "Froutniret"
     },
     {
       "id": 3,
-      "name": "steak de bœuf",
-      "price": 200,
-      "quantity": 30,
-      "IDsupplier": 1,
-      "quantityPrev": 80
-    },
-    {
-      "name": "concombre",
-      "price": 45,
-      "quantity": 75,
-      "IDsupplier": 3,
-      "id": 6,
-      "quantityPrev": 10
+      "IDsupplier": null,
+      "name": "merguez Royale",
+      "price": 90,
+      "quantity": 500,
+      "quantityPrev": "250",
+      "supplier": "grezier"
     },
     {
       "name": "pomme de terre",
@@ -193,54 +186,6 @@
       "IDsupplier": 6,
       "id": 19,
       "quantityPrev": 100
-    },
-    {
-      "name": "fraise",
-      "price": 54,
-      "quantity": 54,
-      "supplier": "fraise",
-      "quantityPrev": "44",
-      "id": 20
-    },
-    {
-      "name": "fraisier",
-      "price": 548,
-      "quantity": 54,
-      "supplier": "",
-      "quantityPrev": "150",
-      "id": 22
-    },
-    {
-      "name": "merguez",
-      "price": 45,
-      "quantity": 20,
-      "supplier": "",
-      "quantityPrev": "125",
-      "id": 23
-    },
-    {
-      "name": "merguez Royal",
-      "price": 80,
-      "quantity": 150,
-      "supplier": "test",
-      "quantityPrev": "250",
-      "id": 24
-    },
-    {
-      "name": "test15h36",
-      "price": 150,
-      "quantity": 125,
-      "supplier": "MerguezWay",
-      "quantityPrev": "150",
-      "id": 25
-    },
-    {
-      "name": "test",
-      "price": 545,
-      "quantity": 5454,
-      "supplier": "",
-      "quantityPrev": "545",
-      "id": 26
     }
   ],
   "fournisseurs": [
@@ -269,25 +214,25 @@
       "cp": "59100"
     },
     {
-      "nom": "fromage du chnord qui pue",
-      "telephone": "0695982210",
-      "ville": "roubaix",
-      "adresse": "2 rue de la fricandelle",
-      "cp": 59100,
-      "id": 5
-    },
-    {
       "nom": "MerguezWay",
       "telephone": 23456789,
       "ville": "Creteil",
       "adresse": "45 rue de landalouse",
       "cp": 75000,
       "id": 6
+    },
+    {
+      "nom": "ConconmbreFournisseur",
+      "telephone": 333333333,
+      "ville": "Combrai",
+      "adresse": "12 rue du combre",
+      "cp": 59000,
+      "id": 7
     }
   ],
   "menus": [
     {
-      "id": 19,
+      "id": 1,
       "name": "Menu burger",
       "costPrice": 600,
       "sellPrice": 850,
@@ -304,16 +249,15 @@
       "sellPrice": 800,
       "ingredients": [
         "pain burger",
-        "artichauts",
         "steak de boeuf",
         "pommes de terre"
       ]
     },
     {
-      "id": 33,
-      "costPrice": 1540,
-      "sellPrice": "150000",
-      "name": "Menu de Boris Vian",
+      "id": 3,
+      "name": "Menu kebab faluche",
+      "costPrice": 350,
+      "sellPrice": 600,
       "ingredients": [
         "pain faluche",
         "brochette d'agneau",
@@ -321,48 +265,14 @@
       ]
     },
     {
-      "id": 4,
-      "costPrice": 1860,
-      "sellPrice": 1900,
-      "name": "Menu de test",
-      "ingredients": [
-        "test 1",
-        " test 2",
-        " test 3"
-      ]
-    },
-    {
-      "id": 5,
-      "costPrice": 650,
-      "sellPrice": 820,
-      "name": "Menu végétarien",
+      "costPrice": 1540,
+      "sellPrice": 8960,
+      "name": "Menu de tes tnumber",
       "ingredients": [
         "mon frigidaire",
         " mon armoire",
         " ma cafetière"
       ]
-    },
-    {
-      "costPrice": 200,
-      "sellPrice": 500,
-      "name": "Menu pdt tomates",
-      "ingredients": [
-        "pommes de terre",
-        "tomates"
-      ],
-      "id": 78
-    },
-    {
-      "id": 44,
-      "costPrice": 600,
-      "sellPrice": 800,
-      "name": "Menu tacos",
-      "ingredients": [
-        "tacos",
-        " viande de boeuf",
-        " sauce salsa",
-        " guacamole"
-      ] 
     }
   ]
 }
