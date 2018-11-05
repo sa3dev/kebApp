@@ -314,7 +314,7 @@
     },
     {
       "costPrice": 1540,
-      "sellPrice": 8960,
+      "sellPrice": "5000",
       "name": "Menu de Boris Vian",
       "ingredients": [
         "mon frigidaire",
