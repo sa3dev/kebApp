@@ -2,7 +2,7 @@
 	<div class="row">
 		<div class="col-md-3 border-right">
 			<h2>List previsionel</h2>
-				<button class="btn btn-outline-info btn-sm" (click)="modifProvisionel()">Modifer Provisionel</button>
+				<button class="btn btn-outline-info btn-sm" (click)="modifProvisionel()">Modifer Provisionel (a faire) </button>
 				<br>
 			<div *ngIf="!varModifProvisionel"> 
 				<ul *ngFor="let produit of listProduct" class="flex list-group">
@@ -19,7 +19,7 @@
 			<div class="row bouton">
 				<div class="btn btn-success"(click)="onShow()">Liste des produits</div>
 				<div class="btn btn-info" 	(click)="onShowAdd()" >Ajouter un produit</div>
-				<div class="btn btn-danger"> Imprimer / envoyer commande </div>
+				<div class="btn btn-danger"> Imprimer / envoyer commande (a faire) </div>
 			</div>
 			<div *ngIf="show">
 				<table class="table">
