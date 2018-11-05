@@ -65,7 +65,7 @@ export class RestaurantmenuComponent implements OnInit {
   loger(event) {
     const id = event.dragData;
     console.log(id);
-    this.restaurantservice.deleteThisMenu(id);
+    // this.restaurantservice.deleteThisMenu(id);
   }
 
   displayAddMenu() {
