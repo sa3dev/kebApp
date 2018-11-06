@@ -47,38 +47,6 @@
       "email": "leon.demeyere@hotmail.fr",
       "password": "riku!!",
       "id": 13
-    },
-    {
-      "first_name": "Léon",
-      "last_name": "Demeyere",
-      "nick_name": "zizi",
-      "email": "zizi.heyhey@gmail.com",
-      "password": "rikuriku",
-      "id": 14
-    },
-    {
-      "first_name": "admin",
-      "last_name": "admin",
-      "nick_name": "admin",
-      "email": "admin@gmail.com",
-      "password": "123456",
-      "id": 5
-    },
-    {
-      "first_name": "José",
-      "last_name": "Vega",
-      "nick_name": "toto",
-      "email": "g@g.gg",
-      "password": "mdpmdp",
-      "id": 15
-    },
-    {
-      "first_name": "dada",
-      "last_name": "dada",
-      "nick_name": "dada",
-      "email": "dada@dada.dada",
-      "password": "dadada",
-      "id": 16
     }
   ],
   "reservations": [
@@ -162,46 +130,73 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": 20,
       "IDsupplier": null,
-      "name": "Pomme ",
-      "price": 15,
-      "quantity": 520,
-      "quantityPrev": "125",
-      "supplier": "Froutniret"
-    },
-    {
-      "id": 3,
-      "IDsupplier": null,
-      "name": "merguez Royale",
-      "price": 90,
-      "quantity": 500,
-      "quantityPrev": "250",
-      "supplier": "grezier"
-    },
-    {
-      "id": 19,
-      "IDsupplier": null,
-      "name": "pomme ",
-      "price": 50,
-      "quantity": 45,
-      "quantityPrev": 100
-    },
-    {
-      "name": "fraise",
+      "name": "Fraise",
       "price": 50,
       "quantity": 50,
-      "supplier": "MerguezWay",
       "quantityPrev": "100",
-      "id": 20
+      "supplier": "said&coWOuah"
     },
     {
-      "name": "carotte",
-      "price": 15,
-      "quantity": 15,
-      "supplier": "Patata&Co",
+      "id": 21,
+      "IDsupplier": null,
+      "name": "Haricots",
+      "price": 20,
+      "quantity": 52,
+      "quantityPrev": "250",
+      "supplier": "ConconmbreFournisseur"
+    },
+    {
+      "name": "mandarine",
+      "price": 50,
+      "quantity": 50,
+      "supplier": "said&coWOuah",
+      "quantityPrev": "120",
+      "id": 22
+    },
+    {
+      "id": 23,
+      "IDsupplier": null,
+      "name": "marron de bruxelle",
+      "price": 250,
+      "quantity": 210,
+      "quantityPrev": "500",
+      "supplier": "ConconmbreFournisseur"
+    },
+    {
+      "id": 24,
+      "IDsupplier": null,
+      "name": "15h37",
+      "price": 50,
+      "quantity": 50,
+      "quantityPrev": "500",
+      "supplier": "ConconmbreFournisseur"
+    },
+    {
+      "name": "cge",
+      "price": 12.36,
+      "quantity": 12,
+      "supplier": "said&coWOuah",
       "quantityPrev": "150",
-      "id": 21
+      "id": 25
+    },
+    {
+      "name": "cge bis",
+      "price": 14,
+      "quantity": 145,
+      "supplier": "kebab&Co",
+      "quantityPrev": "",
+      "id": 26
+    },
+    {
+      "id": 27,
+      "IDsupplier": null,
+      "name": "15h55",
+      "price": 20,
+      "quantity": 20,
+      "quantityPrev": "150",
+      "supplier": "ConconmbreFournisseur"
     }
   ],
   "fournisseurs": [
@@ -212,14 +207,6 @@
       "telephone": "0695979938",
       "ville": "roncq",
       "cp": "59250"
-    },
-    {
-      "id": 3,
-      "nom": "Patata&Co",
-      "adresse": "22 rue de la patate",
-      "telephone": "0695979999",
-      "ville": "tourcoing",
-      "cp": "59200"
     },
     {
       "id": 4,

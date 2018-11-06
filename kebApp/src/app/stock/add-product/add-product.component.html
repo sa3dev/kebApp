@@ -1,0 +1,40 @@
+<div *ngIf="produit == null"> 	<h2>Ajouter produit</h2> </div>
+<div *ngIf="produit != null"> 	<h2>Modifier produit</h2> </div>
+
+	<form  (ngSubmit)="signup()" [formGroup]="loginForm">
+		
+		<div class="form-group">
+			<label for="">Nom produit</label>
+			<input type="text" name="name" class="form-control" 
+			formControlName="name" >
+		</div>
+
+		<div class="form-group">
+			<label for="">Prix unitaire (en ancien franc ou centime):</label>
+			<input type="number" name="price" class="form-control" 
+			formControlName ="price">
+		</div>
+
+		<div class="form-group">
+			<label for="">Quantité</label>
+			<input type="number" name="quantity" class="form-control" 
+			formControlName ="quantity">
+		</div> 
+
+		<div class="form-group">
+			<label for="">Fournisseur:</label>
+			<select class="custom-select" formControlName ="supplier">
+				<option class="form-control" [value]="fourn.nom" *ngFor="let fourn of listFournisseur; let i = index" >{{ fourn.nom }}</option>
+			</select>
+		</div>
+	
+		<div class="form-group">
+			<label for="">Quantité en prevision:</label>
+			<input type="text" name="quantityPrev" class="form-control" 
+			formControlName ="quantityPrev">
+		</div>
+
+		<input type="submit" class="form-control" value="Valider">
+	</form>
+
+	

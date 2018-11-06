@@ -1,0 +1,805 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>keb-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">keb-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ListusersComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/core/users/listusers/listusers.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-listusers</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>listusers.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./listusers.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#userEdit">userEdit</a>
+                            </li>
+                            <li>
+                                <a href="#users">users</a>
+                            </li>
+                            <li>
+                                <a href="#usersSubscription">usersSubscription</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#onDelete">onDelete</a>
+                            </li>
+                            <li>
+                                <a href="#onEdit">onEdit</a>
+                            </li>
+                            <li>
+                                <a href="#onUpdate">onUpdate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(listuserService: <a href="../injectables/ListusersService.html">ListusersService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>listuserService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ListusersService.html" target="_self" >ListusersService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnDestroy"></a>
+                        <span class="name">
+                            <b>
+                            ngOnDestroy
+                            </b>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:39</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onDelete"></a>
+                        <span class="name">
+                            <b>
+                            onDelete
+                            </b>
+                            <a href="#onDelete"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onDelete(id: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onEdit"></a>
+                        <span class="name">
+                            <b>
+                            onEdit
+                            </b>
+                            <a href="#onEdit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onEdit(i: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>i</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="onUpdate"></a>
+                        <span class="name">
+                            <b>
+                            onUpdate
+                            </b>
+                            <a href="#onUpdate"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>onUpdate(user: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:36</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>user</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="userEdit"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            userEdit
+                            </b>
+                            <a href="#userEdit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>userEdit:     <code>Boolean[]</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Boolean[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="users"></a>
+                        <span class="name">
+                            <b>
+                            users
+                            </b>
+                            <a href="#users"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>users:     <code><a href="../classes/User.html" target="_self" >User[]</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/User.html" target="_self" >User[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="usersSubscription"></a>
+                        <span class="name">
+                            <b>
+                            usersSubscription
+                            </b>
+                            <a href="#usersSubscription"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>usersSubscription:     <code>Subscription</code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription</code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:14</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
+import { ListusersService } from &#x27;./listusers.service&#x27;;
+import { User } from &#x27;../user.model&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+
+@Component({
+  selector: &#x27;app-listusers&#x27;,
+  templateUrl: &#x27;./listusers.component.html&#x27;,
+  styleUrls: [&#x27;./listusers.component.scss&#x27;]
+})
+export class ListusersComponent implements OnInit, OnDestroy {
+
+  users: User[]&#x3D;[];
+  usersSubscription: Subscription;
+  private userEdit: Boolean[] &#x3D; [];
+
+  constructor(private listuserService: ListusersService) { }
+
+  ngOnInit() {
+    this.usersSubscription &#x3D; this.listuserService.usersSubject.subscribe(
+      (users: User[]) &#x3D;&gt; {
+        this.users &#x3D; users;
+        for (let i &#x3D; 0; i &lt; this.users.length; i++) {
+          this.userEdit[i] &#x3D; false;
+      }
+    }
+    )
+    this.listuserService.getListUsers();    
+  }
+  onDelete(id) {
+    this.listuserService.deleteUser(id);
+  }
+  onEdit(i) {
+    this.userEdit[i] &#x3D;&#x3D;&#x3D; false ? this.userEdit[i] &#x3D; true: this.userEdit[i] &#x3D; false;
+  }
+  onUpdate(user) {
+    this.listuserService.updateUser(user)
+  }
+  ngOnDestroy() {
+    this.usersSubscription.unsubscribe();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container pt-5&quot;&gt;
+  &lt;h1 class&#x3D;&quot;p-5&quot;&gt;Liste des utilisateurs &lt;/h1&gt;
+  &lt;table class&#x3D;&quot;table&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;#&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Prénom&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Nom&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Identifiant&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Email&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Editer&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Supprimer&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody &gt;
+      &lt;tr *ngFor&#x3D;&quot;let user of users , let i &#x3D; index &quot;&gt;
+        &lt;th *ngIf&#x3D;&quot;!userEdit[i]&quot; scope&#x3D;&quot;row&quot;&gt;{{ user.id }}&lt;/th&gt;
+        &lt;th *ngIf&#x3D;&quot;userEdit[i]&quot; scope&#x3D;&quot;row&quot;&gt;{{ user.id }}&lt;/th&gt;
+        &lt;td *ngIf&#x3D;&quot;!userEdit[i]&quot;&gt; {{ user.first_name}} &lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;userEdit[i]&quot;&gt;&lt;input [value]&#x3D;&quot;user.first_name&quot; [(ngModel)]&#x3D;&quot;user.first_name&quot;&gt;&lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;!userEdit[i]&quot;&gt; {{user.last_name}} &lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;userEdit[i]&quot;&gt;&lt;input [value]&#x3D;&quot;user.last_name&quot; [(ngModel)]&#x3D;&quot;user.last_name&quot;&gt;&lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;!userEdit[i]&quot;&gt; {{user.nick_name}} &lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;userEdit[i]&quot;&gt;&lt;input [value]&#x3D;&quot;user.nick_name&quot; [(ngModel)]&#x3D;&quot;user.nick_name&quot;&gt;&lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;!userEdit[i]&quot;&gt; {{user.email}} &lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;userEdit[i]&quot;&gt;&lt;input [value]&#x3D;&quot;user.email&quot; [(ngModel)]&#x3D;&quot;user.email&quot;&gt;&lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;!userEdit[i]&quot;&gt;&lt;button class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;onEdit(i)&gt;Editer&lt;/button&gt;&lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;userEdit[i]&quot;&gt;&lt;button class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;onUpdate(user)&gt;Valider&lt;/button&gt;&lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;!userEdit[i]&quot;&gt;&lt;button class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;onDelete(user.id)&gt;Supprimer&lt;/button&gt;&lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;userEdit[i]&quot;&gt;&lt;button class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;onEdit(i)&gt;Annuler&lt;/button&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container pt-5">  <h1 class="p-5">Liste des utilisateurs </h1>  <table class="table">    <thead>      <tr>        <th scope="col">#</th>        <th scope="col">Prénom</th>        <th scope="col">Nom</th>        <th scope="col">Identifiant</th>        <th scope="col">Email</th>        <th scope="col">Editer</th>        <th scope="col">Supprimer</th>      </tr>    </thead>    <tbody >      <tr *ngFor="let user of users , let i = index ">        <th *ngIf="!userEdit[i]" scope="row">{{ user.id }}</th>        <th *ngIf="userEdit[i]" scope="row">{{ user.id }}</th>        <td *ngIf="!userEdit[i]"> {{ user.first_name}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.first_name" [(ngModel)]="user.first_name"></td>        <td *ngIf="!userEdit[i]"> {{user.last_name}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.last_name" [(ngModel)]="user.last_name"></td>        <td *ngIf="!userEdit[i]"> {{user.nick_name}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.nick_name" [(ngModel)]="user.nick_name"></td>        <td *ngIf="!userEdit[i]"> {{user.email}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.email" [(ngModel)]="user.email"></td>        <td *ngIf="!userEdit[i]"><button class="btn btn-success" (click)=onEdit(i)>Editer</button></td>        <td *ngIf="userEdit[i]"><button class="btn btn-success" (click)=onUpdate(user)>Valider</button></td>        <td *ngIf="!userEdit[i]"><button class="btn btn-danger" (click)=onDelete(user.id)>Supprimer</button></td>        <td *ngIf="userEdit[i]"><button class="btn btn-danger" (click)=onEdit(i)>Annuler</button></td>      </tr>    </tbody>  </table></div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarDetailComponent', 'selector': 'app-calendar-detail'},{'name': 'DetailStockComponent', 'selector': 'app-detail-stock'},{'name': 'FournisseurcomponentComponent', 'selector': 'app-fournisseurcomponent'},{'name': 'FournisseurdetailsComponent', 'selector': 'app-fournisseurdetails'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ListusersComponent', 'selector': 'app-listusers'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantmenuComponent', 'selector': 'app-restaurantmenu'},{'name': 'StockComponent', 'selector': 'app-stock'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ListusersComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ListusersComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

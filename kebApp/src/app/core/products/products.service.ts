@@ -31,17 +31,7 @@ export class ProductsService {
 	 * @param id 
 	 */
 	deleteProduct(id) {
-<<<<<<< HEAD
-		return this.http.delete(apiURLProducts + id).subscribe(
-			data => {
-				console.log(data)
-				this.getProductsList();
-			},
-			error => console.log("Error in delete product method " + error)
-		);
-=======
 		return this.http.delete(apiURLProducts + id);
->>>>>>> stock
 	}
 	/**
 	 * Function to update the property of a value from a certain product (selected by its id)
@@ -52,9 +42,7 @@ export class ProductsService {
 	 */
 	updateProduct(id: number, property: string, value) {
 		this.newproperty = property
-		return this.http.patch(apiURLProducts + id, {
-			newproperty: value,
-		}).subscribe(
+		return this.http.patch(apiURLProducts + id, {newproperty: value, }).subscribe(
 			data => console.log(data),
 			error => console.log("Error in the updateProduct method " + error))
 	}
@@ -65,7 +53,7 @@ export class ProductsService {
 	 */
 	addProduct(product: Product) {
 		return this.http.post(apiURLProducts, product);
-	}
+	} 
 
 	/**
 	 * Update the whole product (different then updateProduct(id,property,value))
