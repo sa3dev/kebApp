@@ -63,14 +63,6 @@
       "email": "admin@gmail.com",
       "password": "123456",
       "id": 5
-    },
-    {
-      "first_name": "dada",
-      "last_name": "dada",
-      "nick_name": "dada",
-      "email": "dada@dada.dada",
-      "password": "dadada",
-      "id": 16
     }
   ],
   "reservations": [
@@ -98,7 +90,7 @@
     {
       "id": 213,
       "title": "Brahim",
-      "start": "2018-11-05T19:24:00.000Z",
+      "start": "2018-11-07T19:24:00.000Z",
       "draggable": true,
       "capacity": 8
     },
@@ -114,12 +106,12 @@
       "title": "Christian",
       "start": "2018-11-08T18:01:00.000Z",
       "draggable": true,
-      "capacity": 5
+      "capacity": 8
     },
     {
       "id": 362,
       "title": "Toto",
-      "start": "2018-11-05T14:34:58.235Z",
+      "start": "2018-11-07T14:34:58.235Z",
       "draggable": true,
       "capacity": 5
     },

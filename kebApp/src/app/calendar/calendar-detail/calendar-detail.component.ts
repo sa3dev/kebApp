@@ -1,8 +1,6 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { CalendarDetailService } from './service/calendar-detail.service';
 import { CalendarService } from '../../calendar/services/calendar.service'
-import { Observable } from 'rxjs';
 import { Reservation } from '../model/event'
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -21,7 +19,7 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
   private capacityReserved: number = 0;
 
   constructor(
-    private calendarDetailService: CalendarDetailService,
+    private calendarService: CalendarService,
     private route: ActivatedRoute,
     private router: Router
   ) { }
@@ -32,11 +30,11 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
     if (this.reservationDay === undefined ) {
       this.reservationDay = new Date();
     };
-    this.reservationSubscription = this.calendarDetailService.reservationsSubject.subscribe(
+    this.reservationSubscription = this.calendarService.reservationsSubject.subscribe(
       (events: Reservation[]) => {
         this.eventsOfTheDay = events;
       })
-    this.calendarDetailService.getListReservationsOfTheDay(this.reservationDay);
+    this.calendarService.getListReservationsOfTheDay(this.reservationDay);
 
    }
 
@@ -54,15 +52,15 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
     this.reservationSubscription.unsubscribe()
    }
    onEdit(event) {
-    this.calendarDetailService.updateEvent(event, this.reservationDay);
+    this.calendarService.updateEventOfTheDay(event, this.reservationDay);
    }
    onAdd(reservation) {
      const newReservation: Reservation = reservation;
      newReservation.draggable = true;
-     this.calendarDetailService.createEvent(reservation, this.reservationDay);
+     this.calendarService.createEventOfTheDay(reservation, this.reservationDay);
    }
 
    onDelete(id) {
-     this.calendarDetailService.deleteEVent(id, this.reservationDay)
+     this.calendarService.deleteEVentOfTheDay(id, this.reservationDay)
    }
 }

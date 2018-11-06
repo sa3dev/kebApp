@@ -4,11 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './users/login/login.component';
 import { ListusersComponent } from './users/listusers/listusers.component';
 import { RegisterComponent } from './users/register/register.component';
-import { CalendarComponent } from './../calendar/calendar.component';
 import { ProductsComponent } from './products/products.component';
 import { FournisseurcomponentComponent } from '../fournisseur/fournisseurcomponent/fournisseurcomponent.component';
 import { RestaurantmenuComponent } from '../restaurantmenu/restaurantmenu.component';
-import { CalendarDetailComponent } from '../calendar/calendar-detail/calendar-detail.component';
 import { StockComponent } from '../stock/stock.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 

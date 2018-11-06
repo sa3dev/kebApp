@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Import the features component
-import { CalendarComponent } from './calendar.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarDetailComponent } from './calendar-detail/calendar-detail.component'
 
 // Import Forms modules and ReactiveFormsModule
 import { FormsModule } from '@angular/forms';
@@ -18,8 +19,8 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 // Import for translate calendar in french
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
-import { CalendarDetailComponent } from './calendar-detail/calendar-detail.component'
 import { CalendarRoutingModule } from './calendar-routing.module';
+import { CalendarService } from './services/calendar.service';
 
 
 registerLocaleData(localeFr);
@@ -41,7 +42,8 @@ registerLocaleData(localeFr);
   declarations: [
     CalendarComponent,
     CalendarDetailComponent
-  ]
+  ],
+  providers: [CalendarService]
 })
 export class CalendarModule { }
 
