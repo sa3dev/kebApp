@@ -10,10 +10,13 @@ import { Observable, Subject } from 'rxjs';
 export class RestaurantmenuService {
 
   constructor(private http:HttpClient) { }
+
   menusSubject = new Subject<Menu[]>();
   menus:Menu[] = [];
 
-
+  /**
+   * Get call to which we subscribe to send to our menusSubject the value returned by our get. 
+   */
   getListMenus(){
     this.http.get<Menu[]>(apiURLMenus).subscribe(
       data => {this.emitMenus(data)},
@@ -21,14 +24,18 @@ export class RestaurantmenuService {
     )
   }
 
+  /**
+   * Function used to .next an Menu[] to menusSubject
+   * @param data array of Menu send to our menusSubject
+   */
   emitMenus(data:Menu[]){
     this.menusSubject.next(data);
   }
+
   /**
    * Add a new menu to the api
    * @param newmenu new menu created within the restaurantmenu.component's addMenu()
    */
-
   addNewMenu(newmenu:Menu){
     this.http.post(apiURLMenus, newmenu).subscribe(
       data => {
@@ -41,6 +48,10 @@ export class RestaurantmenuService {
     );
   }
 
+  /**
+   * Delete method to... delete a menu. We add a this.getListMenus() to refresh the list of menus after the delete has been a success. 
+   * @param id id of the menu to delete 
+   */
   deleteThisMenu(id){
     const url = apiURLMenus + id;
     this.http.delete(url)
@@ -54,6 +65,10 @@ export class RestaurantmenuService {
     );
   }
 
+  /**
+   * Simple method that put the updated menu at the previous place in the BDD (via url).
+   * @param menu menu to patch
+   */
   putNewMenu(menu:Menu){
     var url = apiURLMenus + menu.id;
     return this.http.put(url, menu)
