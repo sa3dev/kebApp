@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Fournisseur } from './fournisseur.model';
 import { apiURLFournisseur, apiURLProducts } from '../../app/config';
-import { Observable,of } from 'rxjs';
+import { Observable,of, BehaviorSubject } from 'rxjs';
 import {map} from 'rxjs/operators';
 import { identifierModuleUrl } from '@angular/compiler';
 import { Product } from '../core/products/product.model';
@@ -14,18 +14,31 @@ import { Product } from '../core/products/product.model';
  * fournisseur Service
  */
 export class FournisseurService {
-
+  private listFournisseur = new BehaviorSubject<Fournisseur[]>([]);
   /**
    * 
    * @param httpClient 
    */
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { 
+    this.getHttpFournisseur();
+  }
 
   /**
    * getFournisseur
    */
-  getFournisseur():Observable<Fournisseur[]>{
-    return this.httpClient.get<Fournisseur[]>(apiURLFournisseur);
+  getHttpFournisseur(){
+    this.httpClient.get<Fournisseur[]>(apiURLFournisseur).subscribe(
+      (data)=>{
+        
+        this.listFournisseur.next(data);
+        
+        console.log(this.listFournisseur.value.length);
+      },
+      (error)=>console.log(error)
+    );
+  }
+  getFournisseur():BehaviorSubject<Fournisseur[]>{
+    return this.listFournisseur;
   }
   /**
    * delete fournisseur 
@@ -33,9 +46,40 @@ export class FournisseurService {
    */
   deleteFournisseur(id:string){
     //const url = `${apiURLFournisseur}/${id}`
+    this.listFournisseur.next(this.getFournisseur().value.filter((fournisseur:Fournisseur)=>{
+      if(fournisseur.id.toString()==id){
+        return false;
+      }else{
+        return true;
+      }
+    }));
    let url=apiURLFournisseur+"/"+id;
    console.log(url);
-    return this.httpClient.delete(url);
+    this.httpClient.delete(url).subscribe(
+      (data)=>{
+        
+        console.log(data);
+      },
+      (error)=>console.log(error)
+    );
+    
+    /*this.getFournisseur().pipe(
+      map(
+      (fournisseurs:Fournisseur[])=>{
+        return fournisseurs.filter(
+          (fournisseur:Fournisseur)=>{
+            if(fournisseur.id.toString()===id){
+              console.log("false");
+              return false;
+            }else{
+              console.log("true");
+              return true;
+            }
+          })
+          
+      }
+        )
+        );*/ 
   }
 
   /**
@@ -44,13 +88,13 @@ export class FournisseurService {
    */
   researchFournisseur(value:string):Observable<Fournisseur[]>{
     value=value.toLowerCase();
- 
+    
     return this.getFournisseur().pipe<Fournisseur[]>(
       map(
         (fournisseurs: Fournisseur[])=>{
           return fournisseurs.filter((fournisseur:Fournisseur)=>{
             
-            if(fournisseur.nom.toLowerCase()==value|| fournisseur.adresse.toLowerCase()===value || fournisseur.cp==value || fournisseur.telephone===value || fournisseur.ville.toLowerCase()===value ){
+            if(fournisseur.nom.toLowerCase().includes(value)|| fournisseur.adresse.toLowerCase().includes(value) || fournisseur.cp.toString().includes(value) || fournisseur.telephone.toString().includes(value) || fournisseur.ville.toLowerCase().includes(value )){
               console.log("nom"+fournisseur.nom)
               return true;
             }else{
@@ -76,16 +120,38 @@ export class FournisseurService {
    * @param fournisseur 
    */
   addFournisseur(fournisseur:Fournisseur){
-    return this.httpClient.post(apiURLFournisseur,fournisseur)
+    
+    
+    this.httpClient.post(apiURLFournisseur,fournisseur).subscribe(
+      (data)=>{
+        let listFournisseur:Fournisseur[]=this.listFournisseur.value;
+        listFournisseur.push(data as Fournisseur);
+        
+      },
+      (error)=>{
+        console.log(error);
+        
+      }
+    ); 
       
   }
   /**
    *  put fournisseur
    * @param fournisseur 
    */
-  putFournisseur(fournisseur: Fournisseur) {
-    let url=apiURLFournisseur+"/"+fournisseur.id;
-    return this.httpClient.put(url,fournisseur);
+  putFournisseur(i:number) {
+    let fournisseur:Fournisseur=this.listFournisseur.value[i];
+    let url=apiURLFournisseur+"/"+fournisseur.id.toString();
+    
+     this.httpClient.put(url,this.listFournisseur.value[i]).subscribe(
+      (data)=>{
+        console.log(data);
+        
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );
       
   }
   /**
@@ -95,7 +161,6 @@ export class FournisseurService {
   deleteProduct(id:number){
     //const url = `${apiURLFournisseur}/${id}`
    let url=apiURLProducts+"/"+id;
-   console.log(url);
     return this.httpClient.delete(url);
   }
   /**

@@ -8,11 +8,11 @@ import { Observable } from 'rxjs';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  isLoggedIn : Observable<boolean>;
+ private isLoggedIn : boolean;
 
 
   constructor(public loginService:LoginService) { 
-    this.isLoggedIn = loginService.isLoggedIn();
+    loginService.isLoggedIn().subscribe((data) => this.isLoggedIn = data);
 
   }
   onLogOut(){

@@ -18,13 +18,13 @@ const routes: Routes = [
   { path: '', 
     redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'calendar', component: CalendarComponent,canActivate: [LoginService] },
+  { path: 'calendar', canActivate: [LoginService], component: CalendarComponent },
   { path: 'users', canActivate: [LoginService], component: ListusersComponent },
   { path: 'register',canActivate: [LoginService], component: RegisterComponent },
-  { path: 'products', component: ProductsComponent, canActivate: [LoginService] },
+  { path: 'products', canActivate: [LoginService], component: ProductsComponent },
   { path: 'fournisseurs', component:FournisseurcomponentComponent},
   
-  /*{ 
+ /* { 
     path: 'users', 
     canActivate: [LoginService], 
     component: ListusersComponent 
@@ -34,10 +34,10 @@ const routes: Routes = [
     canActivate: [LoginService], 
     component: RegisterComponent 
   },*/
-  //{ path: 'products', component: ProductsComponent },
-  { path: 'inventaire' , component: StockComponent, canActivate: [LoginService] },
-  { path: 'carte', component: RestaurantmenuComponent,canActivate: [LoginService] },
-  { path: 'oftheday', component: CalendarDetailComponent,canActivate: [LoginService]}
+  { path: 'products', canActivate: [LoginService], component: ProductsComponent },
+  { path: 'inventaire', canActivate: [LoginService], component: StockComponent },
+  { path: 'carte', canActivate: [LoginService], component: RestaurantmenuComponent },
+  { path: 'oftheday', canActivate: [LoginService], component: CalendarDetailComponent}
 ];
 
 @NgModule({
