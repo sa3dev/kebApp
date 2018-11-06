@@ -334,6 +334,15 @@
         "Chedar mais de qualiter"
       ],
       "id": 54
+    },
+    {
+      "costPrice": 40,
+      "sellPrice": 100,
+      "name": "Menu pomme",
+      "ingredients": [
+        "Pomme"
+      ],
+      "id": 55
     }
   ]
 }
