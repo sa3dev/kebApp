@@ -50,7 +50,7 @@ export class FournisseurService {
         (fournisseurs: Fournisseur[])=>{
           return fournisseurs.filter((fournisseur:Fournisseur)=>{
             
-            if(fournisseur.nom.toLowerCase()==value|| fournisseur.adresse.toLowerCase()===value || fournisseur.cp==value || fournisseur.telephone===value || fournisseur.ville.toLowerCase()===value ){
+            if(fournisseur.nom.toLowerCase().includes(value)|| fournisseur.adresse.toLowerCase().includes(value) || fournisseur.cp.toString().includes(value) || fournisseur.telephone===value || fournisseur.ville.toLowerCase().includes(value) ){
               console.log("nom"+fournisseur.nom)
               return true;
             }else{

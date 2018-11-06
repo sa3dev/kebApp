@@ -1,11 +1,9 @@
 import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
-import { startOfDay, subDays, isSameDay, isSameMonth, addHours, subHours } from 'date-fns';
-import { Subject, Subscription, Observable } from 'rxjs';
+import { isSameDay, isSameMonth} from 'date-fns';
+import {  Subscription, Observable } from 'rxjs';
 import { CalendarEvent, CalendarEventTimesChangedEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarService } from './services/calendar.service';
 import { Reservation } from './model/event';
-import { Router } from '@angular/router';
 import { CalendarDetailService } from './calendar-detail/service/calendar-detail.service';
 
 @Component({
@@ -33,7 +31,7 @@ export class CalendarComponent implements OnInit {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal,
+  constructor(
     private calendarService: CalendarService,
     private calendarDetail: CalendarDetailService) { }
 

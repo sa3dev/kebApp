@@ -34,8 +34,8 @@
 						<td (click)="detail(i)">{{ prod.name }}</td>
 						<td (click)="detail(i)" >{{ prod.quantity}}</td>
 						<td>
-							<button (click)="editProd( i )">Editez</button>
-							<button (click)="deleteProduct(prod.id)">Suppr</button>
+							<button class="btn" (click)="editProd( i )">Editer</button>
+							<button class="btn" (click)="deleteProduct(prod.id)">Suppr</button>
 						</td>
 					</tr>
 				</table>
