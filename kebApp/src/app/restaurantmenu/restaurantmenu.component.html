@@ -1,7 +1,8 @@
 <div class="mx-3">
   <h1>Menus du restaurant</h1>
   <!-- add menu section-->
-  <button class="btn" (click)="displayAddMenu()">Ajouter Menu</button>
+  <button *ngIf="!displayingAddMenu" class="btn" (click)="displayAddMenu()">Ajouter Menu</button>
+  <button *ngIf="displayingAddMenu" class="btn" (click)="displayAddMenu()">Fermer</button>
   <div *ngIf="displayingAddMenu" class="add-menu">
     <h2>Ajouter un menu</h2>
 
@@ -81,7 +82,7 @@
 
   <!-- Version card -->
   <div class="d-flex flex-row justify-content-center flex-wrap w-100 my-5">
-    <div class="restaurantcard" dnd-draggable [dragEnabled]="true" [dragData]="menu.id" *ngFor="let menu of listMenus | async; let i = index">
+    <div class="restaurantcard" dnd-draggable [dragEnabled]="true" [dragData]="menu.id" *ngFor="let menu of listMenus; let i = index">
       <!-- Photo de la card <img class="card-img-top" data-src="holder.js/100x180/" alt="Card image cap"> -->
       <div class="inner-restaurantcard">
         <h4 *ngIf="!editArray[i]">{{menu.name}}</h4>

@@ -36,7 +36,7 @@ const routes: Routes = [
   },
   { path: 'products', canActivate: [LoginService], component: ProductsComponent },
   { path: 'inventaire', canActivate: [LoginService], component: StockComponent },
-  { path: 'carte', canActivate: [LoginService], component: RestaurantmenuComponent },
+  { path: 'carte', component: RestaurantmenuComponent },
   { path: 'oftheday', canActivate: [LoginService], component: CalendarDetailComponent}
 ];
 

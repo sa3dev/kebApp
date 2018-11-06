@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Menu } from './menu.model';
 import { apiURLMenus } from '../config';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,20 @@ import { apiURLMenus } from '../config';
 export class RestaurantmenuService {
 
   constructor(private http:HttpClient) { }
+  menusSubject = new Subject<Menu[]>();
+  menus:Menu[] = [];
+
 
   getListMenus(){
-    return this.http.get<Menu[]>(apiURLMenus)
+    this.http.get<Menu[]>(apiURLMenus).subscribe(
+      data => {this.emitMenus(data)},
+      error => console.log(error)
+    )
   }
 
+  emitMenus(data:Menu[]){
+    this.menusSubject.next(data);
+  }
   /**
    * Add a new menu to the api
    * @param newmenu new menu created within the restaurantmenu.component's addMenu()
@@ -23,6 +33,7 @@ export class RestaurantmenuService {
     this.http.post(apiURLMenus, newmenu).subscribe(
       data => {
         console.log("POST Request is successful ", data);
+        this.getListMenus();
       },
       error => {
         console.log("Rrror in the addNewMenu function", error);
