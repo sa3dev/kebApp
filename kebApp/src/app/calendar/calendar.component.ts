@@ -5,6 +5,7 @@ import { CalendarEvent, CalendarEventTimesChangedEvent, CalendarView, DAYS_OF_WE
 import { CalendarService } from './services/calendar.service';
 import { Reservation } from './model/event';
 import { CalendarDetailService } from './calendar-detail/service/calendar-detail.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-calendar',
@@ -33,7 +34,8 @@ export class CalendarComponent implements OnInit {
 
   constructor(
     private calendarService: CalendarService,
-    private calendarDetail: CalendarDetailService) { }
+    private calendarDetail: CalendarDetailService,
+    private router: Router) { }
 
     ngOnInit(){     
       this.reservationSubscription = this.calendarService.reservationsSubject.subscribe(
@@ -91,8 +93,7 @@ export class CalendarComponent implements OnInit {
   ngOnDestroy(){
     this.reservationSubscription.unsubscribe();
   }
-  ofTheDay(clickedDate) {
-    this.dayReservation = clickedDate;
-    this.calendarDetail.saveTheDate(this.dayReservation);
+  ofTheDay(clickedDate: Date) {
+    this.router.navigate(['reservation/', clickedDate.toJSON()])
   }
 }

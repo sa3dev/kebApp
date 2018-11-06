@@ -18,14 +18,9 @@ export class CalendarDetailService {
   reservationsSubject = new Subject<Reservation[]>();
 
   constructor(
-    private router: Router,
     private httpClient: HttpClient
   ) { }
 
-  saveTheDate(date: Date) {
-    this.reservationDate = date;
-    this.router.navigate(['/oftheday'])
-  }
 
   getListReservationsOfTheDay(value: Date) {
     this.httpClient.get<Reservation[]>(eventUrl).pipe(

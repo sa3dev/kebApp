@@ -4,6 +4,7 @@ import { CalendarDetailService } from './service/calendar-detail.service';
 import { CalendarService } from '../../calendar/services/calendar.service'
 import { Observable } from 'rxjs';
 import { Reservation } from '../model/event'
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 
@@ -21,10 +22,13 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private calendarDetailService: CalendarDetailService,
+    private route: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
-    this.reservationDay = this.calendarDetailService.reservationDate;
+    console.log(this.route.snapshot.params['start']);
+    this.reservationDay = new Date(this.route.snapshot.params['start']);
     if (this.reservationDay === undefined ) {
       this.reservationDay = new Date();
     };

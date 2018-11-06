@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 
 // Import Calendar modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { CalendarModule as angularCalendar, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import 'flatpickr/dist/flatpickr.css';
@@ -19,6 +19,7 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 import { CalendarDetailComponent } from './calendar-detail/calendar-detail.component'
+import { CalendarRoutingModule } from './calendar-routing.module';
 
 
 registerLocaleData(localeFr);
@@ -27,11 +28,12 @@ registerLocaleData(localeFr);
 @NgModule({
   imports: [
     CommonModule,
+    CalendarRoutingModule,
     NgbModalModule,
     FlatpickrModule.forRoot(),
     FormsModule, 
     BrowserAnimationsModule,
-    CalendarModule.forRoot({
+    angularCalendar.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory
     })
@@ -41,5 +43,5 @@ registerLocaleData(localeFr);
     CalendarDetailComponent
   ]
 })
-export class Calendar1Module { }
+export class CalendarModule { }
 

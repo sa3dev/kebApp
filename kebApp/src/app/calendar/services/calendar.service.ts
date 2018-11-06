@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { eventUrl } from '../../config';
 import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { Reservation } from '../model/event';
 import { Subject } from 'rxjs';
 
