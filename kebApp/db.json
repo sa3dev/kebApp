@@ -314,6 +314,7 @@
     {
       "id": 1,
       "name": "Menu burger",
+      "urlImg":"https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       "costPrice": 600,
       "sellPrice": 850,
       "ingredients": [
@@ -324,7 +325,8 @@
     },
     {
       "id": 2,
-      "name": "Menu kebab galette",
+      "name": "Menu Dürum",
+      "urlImg":"https://media-cdn.tripadvisor.com/media/photo-s/0b/bb/43/1d/doner-deli-tortilla-wrap.jpg",
       "costPrice": 550,
       "sellPrice": 800,
       "ingredients": ["pain pita","steak de boeuf","pommes de terre"]
@@ -332,6 +334,7 @@
     {
       "id": 3,
       "name": "Menu kebab faluche",
+      "urlImg":"http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/4s/6j/p04s6jkr.jpg",
       "costPrice": 350,
       "sellPrice": 600,
       "ingredients": [
@@ -341,8 +344,9 @@
       ]
     },
     {
-      "costPrice": "154000",
-      "sellPrice": "500000",
+      "costPrice": 1540,
+      "sellPrice": 8960,
+      "urlImg":"https://images.pexels.com/photos/302889/pexels-photo-302889.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       "name": "Menu de Boris Vian",
       "ingredients": [
         "mon frigidaire",
@@ -350,6 +354,28 @@
         " ma cafetière"
       ],
       "id": 52
+    },
+    {
+      "costPrice": 300,
+      "sellPrice": 500,
+      "urlImg":"https://images.pexels.com/photos/616837/pexels-photo-616837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "name": "Menu végétarien",
+      "ingredients": [
+        "Pomme"
+      ],
+      "id": 53
+    },
+    {
+      "costPrice": 500,
+      "sellPrice": 700,
+      "urlImg":"https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "name": "Menu gros",
+      "ingredients": [
+        "merguez Royale",
+        "Frite fraiche",
+        "Chedar mais de qualiter"
+      ],
+      "id": 54
     }
   ]
 }
