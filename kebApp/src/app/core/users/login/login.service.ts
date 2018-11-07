@@ -12,14 +12,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginService {
-  isLoginSubject = new BehaviorSubject<boolean>(false);
+  isLoginSubject = new BehaviorSubject<User>(null);
 
   constructor(private http: HttpClient, private router: Router) { }
 
-
-  canActivate() {
-    return this.isLoginSubject.asObservable();
-  }
 
   logUser(username: string, password: string) {
 
@@ -31,24 +27,24 @@ export class LoginService {
       // If success, we check that there's only one user
       data => {
         if (data.length === 1) {
-          this.isLoginSubject.next(true);
-          this.router.navigate(['/calendar']);
+          this.isLoginSubject.next(data[0]);
+          this.router.navigate(['/users']);
         }
         else {
-          this.isLoginSubject.next(false);
+          this.isLoginSubject.next(null);
         }
       },
       // If error, we keep isAuth to false and log the error
-      (error) => { this.isLoginSubject.next(false); console.log("Error during login : " + error) }
+      (error) => { this.isLoginSubject.next(null); console.log("Error during login : " + error) }
     );
   }
 
-  isLoggedIn(): Observable<boolean> {
+  isLoggedIn(): Observable<User> {
     return this.isLoginSubject;
   }
 
   logOUt() {
-    this.isLoginSubject.next(false);
+    this.isLoginSubject.next(null);
     this.router.navigate(['/login']);
   }
 

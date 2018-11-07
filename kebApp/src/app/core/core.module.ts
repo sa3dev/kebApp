@@ -12,13 +12,11 @@ import { CoreRoutingModule } from './core-routing.module';
 
 // Import Forms modules and other services but do not forget f****** ReactiveFormsModule
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { Calendar1Module } from '../calendar/calendar1.module';
+import { CalendarModule } from '../calendar/calendar.module';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
 import {FournisseurModule} from '../fournisseur/fournisseur.module';
 import { RestaurantmenuModule } from '../restaurantmenu/restaurantmenu.module';
-
-
 
 //import stocok Module
 import { StockModule} from '../stock/stock.module';
@@ -30,7 +28,7 @@ import { StockModule} from '../stock/stock.module';
     CoreRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    Calendar1Module,
+    CalendarModule,
     FournisseurModule,
     StockModule,
     RestaurantmenuModule

@@ -1,10 +1,10 @@
-import { Calendar1Module } from './calendar1.module';
+import { CalendarModule } from './calendar.module';
 
 describe('CalendarModule', () => {
-  let calendarModule: Calendar1Module;
+  let calendarModule: CalendarModule;
 
   beforeEach(() => {
-    calendarModule = new Calendar1Module();
+    calendarModule = new CalendarModule();
   });
 
   it('should create an instance', () => {
