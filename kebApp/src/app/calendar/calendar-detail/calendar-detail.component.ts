@@ -22,7 +22,6 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
   constructor(
     private calendarService: CalendarService,
     private route: ActivatedRoute,
-    private router: Router
   ) { }
 
   ngOnInit() {

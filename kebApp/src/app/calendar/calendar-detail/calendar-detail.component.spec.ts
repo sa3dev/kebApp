@@ -8,7 +8,7 @@ import { FlatpickrModule } from 'angularx-flatpickr';
 import { CalendarService } from '../services/calendar.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CalendarRoutingModule } from '../calendar-routing.module';
-import { CalendarComponent } from '../calendar/calendar.component';
+import { CoreRoutingModule } from 'src/app/core/core-routing.module';
 
 
 
@@ -20,12 +20,13 @@ describe('CalendarDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ 
-      CalendarDetailComponent,
-      CalendarComponent ],
+      CalendarDetailComponent
+     ],
       imports: [
         FormsModule,
         ReactiveFormsModule,
         HttpClientModule,
+        CoreRoutingModule,
         CalendarRoutingModule,
         FlatpickrModule.forRoot(),
         angularCalendar.forRoot({
@@ -34,7 +35,7 @@ describe('CalendarDetailComponent', () => {
         })
       ],
       providers: [
-        CalendarService,
+        CalendarService
       ]
     })
     .compileComponents();

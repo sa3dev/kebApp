@@ -163,7 +163,7 @@
     {
       "id": 3504,
       "title": "Roger",
-      "start": "2018-11-14T19:39:00.000Z",
+      "start": "2018-11-07T19:39:00.000Z",
       "draggable": true,
       "capacity": 6
     },
@@ -215,6 +215,13 @@
       "start": "2018-11-15T08:58:43.563Z",
       "draggable": true,
       "capacity": 1
+    },
+    {
+      "id": 7372,
+      "title": "Pedro",
+      "start": "2018-11-14T19:00:00.000Z",
+      "draggable": true,
+      "capacity": 6
     }
   ],
   "products": [
@@ -433,11 +440,7 @@
       "name": "Menu kebab galette",
       "costPrice": 550,
       "sellPrice": 800,
-      "ingredients": [
-        "pain pita",
-        "steak de boeuf",
-        "pommes de terre"
-      ]
+      "ingredients": "pain pita,stede boeuf,pommes de terre"
     },
     {
       "id": 3,

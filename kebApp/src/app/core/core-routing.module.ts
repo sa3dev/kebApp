@@ -11,8 +11,7 @@ import { AuthGuardService } from './services/auth/auth-guard.service';
 
 
 const routes: Routes = [
-  { path: '', 
-    redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'users', canActivate: [AuthGuardService], component: ListusersComponent },
   { path: 'register',canActivate: [AuthGuardService], component: RegisterComponent },
@@ -31,12 +30,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [
-    AuthGuardService
-  ],
-  exports: [
-    RouterModule
-  ],
+  providers: [AuthGuardService],
+  exports: [RouterModule],
   declarations: []
 })
 export class CoreRoutingModule { }
