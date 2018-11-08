@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'users', canActivate: [AuthGuardService], component: ListusersComponent },
   { path: 'register',canActivate: [AuthGuardService], component: RegisterComponent },
   { path: 'products', canActivate: [AuthGuardService], component: ProductsComponent },
-  { path: 'fournisseurs', canActivate: [AuthGuardService], component:FournisseurcomponentComponent},
+  { path: 'fournisseurs',loadChildren:'../fournisseur/fournisseur.module#FournisseurModule'},
   
   { path: 'users', 
     canActivate: [AuthGuardService], 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import{FournisseurService} from '../fournisseur.service';
 import { Fournisseur } from '../fournisseur.model';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { BehaviorSubject, Observable } from 'rxjs';
 @Component({
   selector: 'app-fournisseurcomponent',
   templateUrl: './fournisseurcomponent.component.html',
@@ -12,6 +13,7 @@ import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms'
  * @author Léon Demeyere
  */
 export class FournisseurcomponentComponent implements OnInit {
+  private listFournisseurObsarvable:Observable<Fournisseur[]>;
   private listFournisseur:Fournisseur[]=[];
   //form research
   private formFournisseur:FormGroup;
@@ -40,10 +42,12 @@ export class FournisseurcomponentComponent implements OnInit {
   constructor(private service:FournisseurService, private fb: FormBuilder) { 
     this.pageAjout=false;
     this.pageDetail=false;
+    this.listFournisseurObsarvable=new Observable<Fournisseur[]> ();
   }
 
   
   ngOnInit() {
+    
     this.getFournisseurs();//initialise les fournisseurs
     this.research = this.fb.control('', Validators.required);//research init
     this.formFournisseur = this.fb.group({
@@ -54,7 +58,7 @@ export class FournisseurcomponentComponent implements OnInit {
     this.ctrlAdresse=this.fb.control('',Validators.required);
     this.ctrlVille=this.fb.control('',Validators.required);
     this.ctrlCp=this.fb.control('',Validators.required);
-    this.ctrlTelephone=this.fb.control('',Validators.required);
+    this.ctrlTelephone=this.fb.control('',[Validators.required, Validators.minLength(10)]);
     this.formAjout = this.fb.group({
       ctrlName:this.ctrlName,
       ctrlAdresse:this.ctrlAdresse,
@@ -92,7 +96,7 @@ export class FournisseurcomponentComponent implements OnInit {
   edit(i:number){
     
     if(this.listEdit[i]){
-     
+      
       this.listEdit[i]=false;
     }else{
       this.listEdit[i]=true;
@@ -106,15 +110,16 @@ export class FournisseurcomponentComponent implements OnInit {
    
     //console.log(this.ctrlEditAdresse.value);
    
-    this.service.putFournisseur(this.listFournisseur[i]).subscribe(
+    this.service.putFournisseur(i);/*.subscribe(
       (data)=>{
-        
+        console.log(data);
         this.listEdit[i]=false;
       },
       (error)=>{
         console.log(error);
       }
-    )
+    )*/
+    this.edit(i);
   }
   /**
    * refresh listFournisseur
@@ -126,7 +131,7 @@ export class FournisseurcomponentComponent implements OnInit {
   /**
    * affiche le formulaire ajout
    */
-  ajout(){
+ viewAjout(){
     
     if(this.pageAjout){
       this.pageAjout=false;
@@ -146,27 +151,30 @@ export class FournisseurcomponentComponent implements OnInit {
     fournisseur.ville=this.ctrlVille.value;
     fournisseur.adresse=this.ctrlAdresse.value;
     fournisseur.cp=this.ctrlCp.value;
-    this.service.addFournisseur(fournisseur).subscribe(
+    this.service.addFournisseur(fournisseur)/*.subscribe(
       (data)=>{
+        console.log(data);
         this.getFournisseurs();
         this.pageAjout=false;
       },
       (error)=>{
         console.log(error);
       }
-    );
-    
+    );*/
+    this.viewAjout();
 
   }
   /**
    * research fournisseur
    */
   researchZ(){
+    
     if(this.research.value===""){
       this.getFournisseurs();
     }else{
       console.log("researchZ() : "+ this.research.value);
-    this.service.researchFournisseur(this.research.value).subscribe(
+      this.listFournisseurObsarvable=this.service.researchFournisseur(this.research.value);
+   /* this.service.researchFournisseur(this.research.value).subscribe(
       (data:Fournisseur[])=>{
         console.log("ici");
         console.log("ici: "+ data);
@@ -175,7 +183,7 @@ export class FournisseurcomponentComponent implements OnInit {
       (error)=>{
         console.log(error);
       }
-    );
+    );*/
     console.log(this.research.value);
     }
     
@@ -184,27 +192,31 @@ export class FournisseurcomponentComponent implements OnInit {
    * charge fournisseur sur la page
    */
   getFournisseurs(){
-    this.service.getFournisseur().subscribe(
+    /*this.service.getFournisseur().subscribe(
       (data)=>{
         this.listFournisseur=data;
       },
       (error)=>{
         console.log(error);
       }
-    );
+    );*/
+
+    this.listFournisseurObsarvable=this.service.getFournisseur();
   }
   /**
    * delete fournisseur
    * @param id 
    */
   delete(id:string){
-    this.service.deleteFournisseur(id).subscribe((data)=>{
+    
+    this.service.deleteFournisseur(id);/*.subscribe((data)=>{
       console.log("Adieux");
       this.getFournisseurs();
     },
     (error)=>{
       console.log(error);
-    })
+    })*/
+    
   }
 
 }

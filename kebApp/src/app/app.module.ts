@@ -11,7 +11,7 @@ import { ProductsService } from './core/products/products.service';
 @NgModule({
   declarations: [
     AppComponent,
-    AppComponent
+    
   ],
   imports: [
     BrowserModule,
