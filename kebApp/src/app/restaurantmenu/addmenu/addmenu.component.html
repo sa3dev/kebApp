@@ -24,7 +24,7 @@
     <!-- The Form-->
     <form class="form-default mt-4" [formGroup]="addMenuForm" data-toggle="validator">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="form-group">
             <mat-form-field class="example-full-width">
               <label class="control-label">Nom du menu</label>
@@ -34,7 +34,7 @@
           </div>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="form-group">
             <mat-form-field class="example-full-width">
               <label class="control-label">Coût de revient</label>
@@ -43,10 +43,7 @@
             </mat-form-field>
           </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="form-group">
             <mat-form-field class="example-full-width">
               <label class="control-label">Coût de vente</label>
@@ -55,8 +52,10 @@
             </mat-form-field>
           </div>
         </div>
+      </div>
 
-        <div class="col-md-6">
+      <div class="row">
+        <div class="col-md-4">
           <div class="form-group">
             <mat-form-field class="example-full-width">
               <label class="control-label">URL Image</label>
@@ -65,13 +64,12 @@
             </mat-form-field>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4 py-2">
           <div class="form-group">
             <mat-form-field>
               <label class="control-label">Ingrédients</label>
-              <mat-select placeholder="Ingrédients" name="ingredientsMenu" id="ingredientsMenu" formControlName="ingredientsMenu" multiple>
+              <mat-select placeholder="Ingrédients" name="ingredientsMenu" id="ingredientsMenu" formControlName="ingredientsMenu"
+                multiple>
                 <mat-option *ngFor="let ingredient of listIngredients" matInput value="{{ingredient.name}}">{{ingredient.name}}</mat-option>
               </mat-select>
             </mat-form-field>
@@ -79,10 +77,12 @@
         </div>
 
 
-        <!-- <button type="submit" (click)="addMenu()" class="btn btn-success mt-4" [disabled]="addMenuForm.invalid"> -->
-        <button type="submit" (click)="addMenu()" class="btn btn-success mt-4">
-        Ajouter ce menu
-        </button>
+        <div class="col-md-4">
+          <!-- <button type="submit" (click)="addMenu()" class="btn btn-success mt-4" [disabled]="addMenuForm.invalid"> -->
+          <button type="submit" (click)="addMenu()" class="btn btn-success btn-lg mt-4">
+            Ajouter ce menu
+          </button>
+        </div>
       </div>
     </form>
   </div> <!-- end of container-->

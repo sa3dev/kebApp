@@ -26,8 +26,9 @@ export class RestaurantmenuComponent implements OnInit {
   // Variables to get and display list of menus and products which are considered as menus' ingredients
   public menuSubscription: Subscription;
   private listMenus: Menu[] = [];
+  private listIngredients: Observable<Product[]>;
 
-  constructor(private restaurantservice: RestaurantmenuService) { }
+  constructor(private restaurantservice: RestaurantmenuService, private produitservice: ProductsService) { }
 
   /**
    * On init :
@@ -38,9 +39,11 @@ export class RestaurantmenuComponent implements OnInit {
     // 1. Get the menus
     this.restaurantservice.getListMenus();
     this.menuSubscription = this.restaurantservice.menusSubject.subscribe(
-      data => this.listMenus = data,
+      data => { this.listMenus = data; },
       error => console.log(error)
     )
+    // ... and ingredients for the edit menu
+    this.listIngredients = this.produitservice.getProductsList()
 
     // 2. Populate array with false (we don't want to display the edit inputs)
     for (var i = 0; i < this.listMenus.length; i++) {
@@ -53,14 +56,16 @@ export class RestaurantmenuComponent implements OnInit {
   }
 
   /**
-   * Called when the drop on the dropzone is successful to delete the menu dropped by using its id.
+   * Called when the drop on the dropzone is successful to delete the menu dropped by using its id. 
+   * Note : the function is only consoleloging the id of the menu we would seen deleted for this feature was useless 
+   * (there 's already a delete button much easier to use).
    * @param event 
    */
   deleteMenuOnDnd(event) {
     const id = event.dragData;
     console.log(id);
-    this.restaurantservice.deleteThisMenu(id);
-    this.restaurantservice.getListMenus();
+    // this.restaurantservice.deleteThisMenu(id);
+    // this.restaurantservice.getListMenus();
   }
 
   /**
@@ -93,14 +98,14 @@ export class RestaurantmenuComponent implements OnInit {
    * @param i the index of the menu to modify
    */
   addEdits(menu, i) {
-    console.log(menu);
+    console.log(menu.ingredients)
     this.restaurantservice.putNewMenu(menu).subscribe(
-      (data) => { this.editArray[i] = false },
+      (data) => { console.log(data); this.editArray[i] = false },
       (error) => { console.log(error) }
     );
   }
 
-  log(event){
+  log(event) {
     console.log(event);
   }
 }

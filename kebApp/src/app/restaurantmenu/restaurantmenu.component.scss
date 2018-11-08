@@ -9,7 +9,8 @@
     margin: 0 auto;
     padding: 0 1rem;
     h4{
-        color: #DC3545
+        color: #DC3545;
+        padding:1rem 0 .7rem 0;
     }
     .menu-buttons{
         right:0px;
@@ -48,7 +49,11 @@
 }
 img{
     width:100%;
-    // height:auto;
+    // min-height:200px;
     overflow: hidden;
+    height: auto;
     border-radius: 3px;
+}
+small{
+    display: block;
 }
