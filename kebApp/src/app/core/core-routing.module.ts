@@ -18,16 +18,9 @@ const routes: Routes = [
   { path: 'register',canActivate: [AuthGuardService], component: RegisterComponent },
   { path: 'products', canActivate: [AuthGuardService], component: ProductsComponent },
   { path: 'fournisseurs',loadChildren:'../fournisseur/fournisseur.module#FournisseurModule'},
-  
-  { path: 'users', 
-    canActivate: [AuthGuardService], 
-    component: ListusersComponent 
-  },
-  { 
-    path: 'register',
-    canActivate: [AuthGuardService], 
-    component: RegisterComponent 
-  },
+  { path: 'reservation', loadChildren:'../calendar/calendar.module#CalendarModule'},
+  { path: 'users', canActivate: [AuthGuardService], component: ListusersComponent },
+  { path: 'register', canActivate: [AuthGuardService], component: RegisterComponent },
   { path: 'products', canActivate: [AuthGuardService], component: ProductsComponent },
   { path: 'inventaire', canActivate: [AuthGuardService], component: StockComponent },
   { path: 'carte', canActivate: [AuthGuardService], component: RestaurantmenuComponent },

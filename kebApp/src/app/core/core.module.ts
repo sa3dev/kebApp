@@ -15,7 +15,6 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CalendarModule } from '../calendar/calendar.module';
 import { HeaderComponent } from './header/header.component';
 import { ProductsComponent } from './products/products.component';
-import {FournisseurModule} from '../fournisseur/fournisseur.module';
 import { RestaurantmenuModule } from '../restaurantmenu/restaurantmenu.module';
 
 //import stocok Module

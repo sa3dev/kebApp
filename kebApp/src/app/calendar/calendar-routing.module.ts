@@ -6,15 +6,13 @@ import { AuthGuardService } from '../core/services/auth/auth-guard.service';
 
 
 const routes: Routes = [
-  { path: 'reservations',   component: CalendarComponent },
+  { path: 'reservations', canActivate: [AuthGuardService], component: CalendarComponent },
   { path: 'reservation/:start', component: CalendarDetailComponent }
 
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forChild(routes)
-  ],
-  declarations: []
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
 export class CalendarRoutingModule { }
