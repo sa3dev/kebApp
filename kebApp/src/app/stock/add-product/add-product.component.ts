@@ -1,4 +1,4 @@
-import { Component, OnInit , Output, Input , OnChanges} from '@angular/core';
+import { Component, OnInit ,Input } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 import { StockService } from './../service/stock.service';
@@ -7,7 +7,6 @@ import { ProductsService } from './../../core/products/products.service';
 import { Product } from './../../core/products/product.model';
 import { Fournisseur } from 'src/app/fournisseur/fournisseur.model';
 import { Router } from '@angular/router';
-import { EventEmitter } from 'events';
 import { StockComponent } from '../stock.component';
 
 
@@ -18,8 +17,6 @@ import { StockComponent } from '../stock.component';
 	styleUrls: ['./add-product.component.scss']
 })
 export class AddProductComponent implements OnInit {
-	// @Output() show = new EventEmitter();
-	// @Output() showAdd = new EventEmitter();
 
 	@Input() produit : Product=null;
 
@@ -51,11 +48,11 @@ export class AddProductComponent implements OnInit {
 		}
 		else
 		{
-			this.name = this.fb.control(this.produit.name , [Validators.required, Validators.minLength(2)]);
-			this.price = this.fb.control(this.produit.price, [Validators.required]);
-			this.quantity = this.fb.control(this.produit.quantity, [Validators.required,]);
-			this.supplier = this.fb.control(this.produit.supplier, [Validators.required,Validators.minLength(2)]);
-			this.quantityPrev = this.fb.control(this.produit.quantityPrev, [Validators.required]);
+			this.name 			= this.fb.control( this.produit.name , [Validators.required, Validators.minLength(2)]);
+			this.price 			= this.fb.control( this.produit.price, [Validators.required]);
+			this.quantity 		= this.fb.control( this.produit.quantity, [Validators.required,]);
+			this.supplier 		= this.fb.control( this.produit.supplier, [Validators.required,Validators.minLength(2)]);
+			this.quantityPrev   = this.fb.control( this.produit.quantityPrev, [Validators.required]);
 	
 		}
 		this.loginForm = this.fb.group({
@@ -66,13 +63,9 @@ export class AddProductComponent implements OnInit {
 			quantityPrev: this.quantityPrev
 		});
 	}
-	
-	ngOnChange(){
-		console.log("changement")
-	}
 
 	/**
-	 * Add a product when the forms is completed
+	 * Add a product when the forms is completed or edit if we have a product
 	 */
 	signup(){
 		if(this.produit == null) {  this.add() } else {  this.edit(); }
@@ -108,7 +101,7 @@ export class AddProductComponent implements OnInit {
 	*/
 	edit(){
 		let prod = new Product();
-		prod.id=this.produit.id;
+		prod.id = 			this.produit.id;
 		prod.IDsupplier=	null;
 		prod.name = 		this.name.value;
 		prod.price =  		this.price.value ;
@@ -130,7 +123,7 @@ export class AddProductComponent implements OnInit {
 			data => { 
 				this.listFournisseur = data ;
 			}
-		 );
+		);
 	}
 
 }

@@ -71,14 +71,14 @@ export class StockService {
 			error => {
 			  console.log("Error", error);
 			}
-		  );
-		}
+		);
+	}
 
-		/**
-		 * Get the fournisseur's list 
-		 * 
-		 */
-		getNameFournisseur(){
-			return this.httpClient.get<Fournisseur[]>(apiURLFournisseur);
-		}
+	/**
+	 * Get the fournisseur's list 
+	 * 
+	 */
+	getNameFournisseur(){
+		return this.httpClient.get<Fournisseur[]>(apiURLFournisseur);
+	}
 }
