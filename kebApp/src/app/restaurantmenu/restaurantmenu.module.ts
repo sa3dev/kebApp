@@ -5,6 +5,8 @@ import { PricePipe } from '../shared/pipe-price.pipe';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {DndModule} from 'ng2-dnd';
+import { AddmenuComponent } from './addmenu/addmenu.component';
+
 
 
 
@@ -15,6 +17,6 @@ import {DndModule} from 'ng2-dnd';
     FormsModule,
     DndModule.forRoot()
   ],
-  declarations: [RestaurantmenuComponent, PricePipe]
+  declarations: [RestaurantmenuComponent, AddmenuComponent, PricePipe]
 })
 export class RestaurantmenuModule { }

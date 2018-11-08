@@ -43,7 +43,7 @@ export class RegisterComponent implements OnInit {
     });
   }
   signup() {
-    
+    console.log("ici");
     if (this.passwordCtrl.value === this.passwordCheckCtrl.value && this.loginForm.valid) {
       const user = new User();
       user.first_name = this.firstNameCtrl.value;

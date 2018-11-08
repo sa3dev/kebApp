@@ -5,7 +5,6 @@ import { LoginComponent } from './users/login/login.component';
 import { ListusersComponent } from './users/listusers/listusers.component';
 import { RegisterComponent } from './users/register/register.component';
 import { ProductsComponent } from './products/products.component';
-import { FournisseurcomponentComponent } from '../fournisseur/fournisseurcomponent/fournisseurcomponent.component';
 import { RestaurantmenuComponent } from '../restaurantmenu/restaurantmenu.component';
 import { StockComponent } from '../stock/stock.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
@@ -18,7 +17,7 @@ const routes: Routes = [
   { path: 'users', canActivate: [AuthGuardService], component: ListusersComponent },
   { path: 'register',canActivate: [AuthGuardService], component: RegisterComponent },
   { path: 'products', canActivate: [AuthGuardService], component: ProductsComponent },
-  { path: 'fournisseurs', canActivate: [AuthGuardService], component:FournisseurcomponentComponent},
+  { path: 'fournisseurs',loadChildren:'../fournisseur/fournisseur.module#FournisseurModule'},
   
   { path: 'users', 
     canActivate: [AuthGuardService], 

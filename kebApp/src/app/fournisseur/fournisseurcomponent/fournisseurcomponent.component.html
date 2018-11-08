@@ -1,17 +1,17 @@
-<div *ngIf="!pageDetail">
-  <div>
+<div  class="component"><!--*ngIf="!pageDetail"-->
+  <div class="research">
     <form (ngSubmit)="researchZ()" [formGroup]="formFournisseur"> 
         <label for="inputFour">Fournisseurs :</label>
         <input id="inputFour" formControlName="research" placeholder="recherche">
-        <input type="submit" value="recherche">
-        <input type="button" value ="Ajouter" (click)="ajout()">
-        <input type="button" (click)="refresh()" value="Rafraichir">
+        <input type="submit" value="recherche" class="btn ">
+        <input type="button" value ="Ajouter" (click)="viewAjout()" class="btn btn-success">
+        <input type="button" (click)="refresh()" value="Rafraichir" class="btn btn-warning">
     </form>
     
 
   </div>
-  <div *ngIf="listFournisseur.length>0">
-    <table class="text-center">
+  <div *ngIf="listFournisseurObsarvable !== undefined " class="row justify-content-center">
+    <table class="text-center ">
       <thead>
         <tr>
           <th>Nom</th>
@@ -23,13 +23,13 @@
         </tr>
       </thead>
       <tbody> 
-        <tr  *ngFor="let fournisseur of listFournisseur; let i=index;"><!--tableau boolean-->
+        <tr  *ngFor="let fournisseur of listFournisseurObsarvable |async; let i=index;"><!--tableau boolean-->
             
-            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.nom}}</td>
-            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.adresse}}</td>
-            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.ville}}</td>
-            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.cp}}</td>
-            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.telephone}}</td> 
+            <td [routerLink]="['detailsFournisseur',fournisseur.id]" *ngIf="!listEdit[i]">{{fournisseur.nom}}</td>
+            <td [routerLink]="['detailsFournisseur',fournisseur.id]" *ngIf="!listEdit[i]">{{fournisseur.adresse}}</td>
+            <td [routerLink]="['detailsFournisseur',fournisseur.id]" *ngIf="!listEdit[i]">{{fournisseur.ville}}</td>
+            <td [routerLink]="['detailsFournisseur',fournisseur.id]" *ngIf="!listEdit[i]">{{fournisseur.cp}}</td>
+            <td [routerLink]="['detailsFournisseur',fournisseur.id]" *ngIf="!listEdit[i]">{{fournisseur.telephone}}</td> 
           
             <td *ngIf="!listEdit[i]"><button (click)="delete(fournisseur.id)" class="btn btn-danger">X</button> <button (click)="edit(i)" class="btn btn-info">Edit</button></td>
           
@@ -45,7 +45,24 @@
       </tbody>
     </table>
   </div>
-  <div *ngIf="pageAjout">
+  <div *ngIf="pageAjout" class="row justify-content-center"> 
+    <div *ngIf="ctrlName.invalid && (ctrlName.dirty || ctrlName.touched)" class="alert alert-danger">
+      <div *ngIf="ctrlName.errors.required">Le Nom est requis.</div>
+    </div>
+    <div *ngIf="ctrlAdresse.invalid && (ctrlAdresse.dirty || ctrlAdresse.touched)" class="alert alert-danger">
+        <div *ngIf="ctrlAdresse.errors.required">L'adresse est requis.</div>
+    </div>
+    <div *ngIf="ctrlVille.invalid && (ctrlVille.dirty || ctrlVille.touched)" class="alert alert-danger">
+        <div *ngIf="ctrlVille.errors.required">Le nom de la ville est requis.</div>
+    </div>
+    <div *ngIf="ctrlCp.invalid && (ctrlCp.dirty || ctrlCp.touched)" class="alert alert-danger">
+          <div *ngIf="ctrlCp.errors.required">Le Code postale est requis.</div>
+    </div>
+    <div *ngIf="ctrlTelephone.invalid && (ctrlTelephone.dirty || ctrlTelephone.touched)" class="alert alert-danger">
+        <div *ngIf="ctrlTelephone.errors.required">Le telephone est requis.</div>
+        <div *ngIf="ctrlTelephone.errors.minlength">le telephone doit contenir 10 chiffres.</div>
+    </div>
+    
     <form (ngSubmit)="ajouter()" [formGroup]="formAjout">
       <h2>Ajouter</h2>
       <div>
@@ -69,7 +86,7 @@
       
       <div>
           <label>telephone :</label>
-          <input type="number" formControlName="ctrlTelephone">
+          <input type="text" formControlName="ctrlTelephone">
       </div>
       <div>
         <input type="submit" [disabled]="formAjout.invalid" value="valider" class="btn btn-success">
@@ -78,4 +95,7 @@
   </div>
   
 </div>
-<app-fournisseurdetails *ngIf="pageDetail" [fournisseur]="fournisseurDetail"></app-fournisseurdetails>
+<div>
+
+</div>
+<!--<app-fournisseurdetails *ngIf="pageDetail" [fournisseur]="fournisseurDetail"></app-fournisseurdetails>-->

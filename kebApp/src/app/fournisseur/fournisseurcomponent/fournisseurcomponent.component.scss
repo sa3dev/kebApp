@@ -1,0 +1,19 @@
+.component{
+    text-align: center;
+    
+}
+.research{
+    margin-bottom: 2.5rem;
+}
+@font-face{
+    font-family: "fontTest";
+    src: url("../../../assets/fonts/VarelaRound-Regular.ttf") format("ttf");
+    
+}
+@font-face{
+    font-family: "fontTest2";
+    src: url("../../../assets/fonts/Pacifico-Regular.ttf") format("ttf");
+}
+label{
+    font-family: "fontTest2", sans-serif; 
+}

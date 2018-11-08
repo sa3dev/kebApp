@@ -31,10 +31,22 @@ export class ListusersComponent implements OnInit, OnDestroy {
     this.listuserService.deleteUser(id);
   }
   onEdit(i) {
+    
     this.userEdit[i] === false ? this.userEdit[i] = true: this.userEdit[i] = false;
   }
-  onUpdate(user) {
-    this.listuserService.updateUser(user)
+  onUpdate(user, i:number) {
+    
+    this.listuserService.updateUser(user).subscribe(
+      data => {
+        console.log("PUT Request is successful ", data);
+        this.userEdit[i]=false;
+      },
+      error => {
+        console.log("Rrror", error);
+    
+      }
+    );;
+   
   }
   ngOnDestroy() {
     this.usersSubscription.unsubscribe();
