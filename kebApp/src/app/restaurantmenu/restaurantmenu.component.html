@@ -16,7 +16,7 @@
     </div>
     <div class="restaurantcard" dnd-draggable [dragEnabled]="draggingOk" [dragData]="menu.id" *ngFor="let menu of listMenus; let i = index">
       <!-- Photo de la card <img class="card-img-top" data-src="holder.js/100x180/" alt="Card image cap"> -->
-      <img src="{{menu.urlImg}}" class="img-fluid" alt="">
+      <img src="{{menu.imgurl}}" class="img-fluid" alt="">
       <div class="inner-restaurantcard">
         <h4 class="my-3" *ngIf="!editArray[i]">{{menu.name}}</h4>
         <div *ngIf="!editArray[i]">
@@ -47,12 +47,20 @@
           <p *ngIf="editArray[i]">Prix de revient : <input class="form-control" [(ngModel)]="menu.costPrice" value="menu.costPrice"></p>
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <p *ngIf="editArray[i]">/</p>
-        </div>
+        </div> -->
 
         <div class="form-group">
-          <p *ngIf="editArray[i]">Ingrédients<input class="form-control" [(ngModel)]="menu.ingredients" value="menu.ingredients"></p>
+          <!-- <p *ngIf="editArray[i]">Ingrédients
+            
+            <input class="form-control" ></p> -->
+          <mat-form-field *ngIf="editArray[i]">
+            <mat-select placeholder="Ingrédients" multiple>
+              <mat-option *ngFor="let ingredient of menu.ingredients" value="ingredient">{{ingredient}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+          
         </div>
 
         <div *ngIf="editArray[i]" class="my-3">

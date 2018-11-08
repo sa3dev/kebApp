@@ -20,6 +20,7 @@ import { RestaurantmenuModule } from '../restaurantmenu/restaurantmenu.module';
 
 
 
+
 //import stocok Module
 import { StockModule} from '../stock/stock.module';
 
@@ -34,6 +35,7 @@ import { StockModule} from '../stock/stock.module';
     FournisseurModule,
     StockModule,
     RestaurantmenuModule
+
   ],
   declarations: [
     ListusersComponent,
