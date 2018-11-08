@@ -17,6 +17,7 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
   reservationSubscription: Subscription;
   private capacityReservation: number = 50;
   private capacityReserved: number = 0;
+  
 
   constructor(
     private calendarService: CalendarService,
@@ -25,7 +26,6 @@ export class CalendarDetailComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    console.log(this.route.snapshot.params['start']);
     this.reservationDay = new Date(this.route.snapshot.params['start']);
     if (this.reservationDay === undefined ) {
       this.reservationDay = new Date();
