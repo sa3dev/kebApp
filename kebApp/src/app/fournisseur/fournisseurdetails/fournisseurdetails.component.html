@@ -1,11 +1,11 @@
 <div class="container">
   <!--Details du fournisseur-->
-  <h2>Details Fournisseur</h2>
+  <h2>Details Fournisseur id:{{id}}</h2>
   <h3>{{fournisseur.nom}}</h3>
   <p>{{fournisseur.adresse}} --- {{fournisseur.ville}} --- {{fournisseur.cp}} --- {{fournisseur.telephone}}</p>
   <button (click)="pageAjouts()">Ajouter</button>
-  <button (click)="retour()">Retour</button>
-  <table class="text-center" *ngIf="listProducts.length>0"><!--si pas de produit-->
+  <button (click)="back()" >Retour</button><!--[routerLink]="['../../']"-->
+  <table class="text-center" *ngIf="listProducts !==undefined"><!--si pas de produit-->
     <thead>
       <tr>
         <th>Produit</th>
@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of listProducts; let i=index;">
+      <tr *ngFor="let product of listProducts |async; let i=index;">
         <!--ligne Tab-->
         <td *ngIf="!listEdit[i]">{{product.name}}</td>
         <td *ngIf="!listEdit[i]">{{product.price}}</td>

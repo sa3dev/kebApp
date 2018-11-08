@@ -15,6 +15,7 @@ import { Product } from '../core/products/product.model';
  */
 export class FournisseurService {
   private listFournisseur = new BehaviorSubject<Fournisseur[]>([]);
+  private listProduct = new BehaviorSubject<Product[]>([]);
   /**
    * 
    * @param httpClient 
@@ -39,6 +40,11 @@ export class FournisseurService {
   }
   getFournisseur():BehaviorSubject<Fournisseur[]>{
     return this.listFournisseur;
+  }
+  getFournisseurId(i:number):Observable<Fournisseur>{
+    return this.httpClient.get<Fournisseur>(apiURLFournisseur+"/"+i);
+    
+    
   }
   /**
    * delete fournisseur 
@@ -112,8 +118,18 @@ export class FournisseurService {
    * get Products whith idFournisseur
    * @param id 
    */
-  getProducts(id:number):Observable<Product[]>{
-    return this.httpClient.get<Product[]>(apiURLProducts+"?IDsupplier="+id);
+  getHttpProducts(id:number){
+   this.httpClient.get<Product[]>(apiURLProducts+"?IDsupplier="+id).subscribe(
+     (data)=>{
+       this.listProduct.next(data);
+     },
+     (error)=>{
+       console.log(error);
+     }
+   );
+  }
+  getListProduct(){
+    return this.listProduct;
   }
   /**
    * add fournisseur
@@ -126,6 +142,7 @@ export class FournisseurService {
       (data)=>{
         let listFournisseur:Fournisseur[]=this.listFournisseur.value;
         listFournisseur.push(data as Fournisseur);
+        
         
       },
       (error)=>{
@@ -161,23 +178,42 @@ export class FournisseurService {
   deleteProduct(id:number){
     //const url = `${apiURLFournisseur}/${id}`
    let url=apiURLProducts+"/"+id;
-    return this.httpClient.delete(url);
+   this.listProduct.next(this.listProduct.value.filter(
+     (product:Product)=>{
+       if(id!==product.id){
+         return true;
+       }else{
+         return false;
+       }
+     }
+   ))
+    this.httpClient.delete(url).subscribe(
+      (error)=>{
+        console.log(error);
+      }
+    );
   }
   /**
    *  add product
    * @param product 
    */
   addProduct(product:Product){
-    return this.httpClient.post(apiURLProducts, product);
+    this.httpClient.post(apiURLProducts, product).subscribe(
+      (data)=>{
+        let listProd:Product[] =this.listProduct.value
+        listProd.push(data as Product);
+      },
+      (error)=>console.log(error)
+    );
   }
 
   /**
    * update product
    * @param product 
    */
-  putProduct(product: Product) {
+  putProduct(i:number) {
+    let product:Product=this.listProduct.value[i];
     let url=apiURLProducts+"/"+product.id;
-    return this.httpClient.put(url,product);
-      
+   this.httpClient.put(url,product).subscribe();  
   }
 }

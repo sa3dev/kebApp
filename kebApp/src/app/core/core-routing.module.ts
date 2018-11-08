@@ -14,16 +14,7 @@ import { CalendarDetailComponent } from '../calendar/calendar-detail/calendar-de
 import { StockComponent } from '../stock/stock.component';
 
 
-const routes: Routes = [
-  { path: '', 
-    redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'calendar', canActivate: [LoginService], component: CalendarComponent },
-  { path: 'users', canActivate: [LoginService], component: ListusersComponent },
-  { path: 'register',canActivate: [LoginService], component: RegisterComponent },
-  { path: 'products', canActivate: [LoginService], component: ProductsComponent },
-  { path: 'fournisseurs', component:FournisseurcomponentComponent},
-  
+ 
  /* { 
     path: 'users', 
     canActivate: [LoginService], 
@@ -34,6 +25,16 @@ const routes: Routes = [
     canActivate: [LoginService], 
     component: RegisterComponent 
   },*/
+
+const routes: Routes = [
+  { path: '', 
+    redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'calendar', canActivate: [LoginService], component: CalendarComponent },
+  { path: 'users', canActivate: [LoginService], component: ListusersComponent },
+  { path: 'register',canActivate: [LoginService], component: RegisterComponent },
+  { path: 'products', canActivate: [LoginService], component: ProductsComponent },
+  { path: 'fournisseurs',loadChildren:'../fournisseur/fournisseur.module#FournisseurModule'},
   { path: 'products', canActivate: [LoginService], component: ProductsComponent },
   { path: 'inventaire', canActivate: [LoginService], component: StockComponent },
   { path: 'carte', canActivate: [LoginService], component: RestaurantmenuComponent },

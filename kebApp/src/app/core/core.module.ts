@@ -31,7 +31,7 @@ import { StockModule} from '../stock/stock.module';
     ReactiveFormsModule,
     FormsModule,
     Calendar1Module,
-    FournisseurModule,
+    //FournisseurModule,
     StockModule,
     RestaurantmenuModule
   ],

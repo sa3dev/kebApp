@@ -1,4 +1,4 @@
-<div *ngIf="!pageDetail" class="component">
+<div  class="component"><!--*ngIf="!pageDetail"-->
   <div class="research">
     <form (ngSubmit)="researchZ()" [formGroup]="formFournisseur"> 
         <label for="inputFour">Fournisseurs :</label>
@@ -25,11 +25,11 @@
       <tbody> 
         <tr  *ngFor="let fournisseur of listFournisseurObsarvable |async; let i=index;"><!--tableau boolean-->
             
-            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.nom}}</td>
-            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.adresse}}</td>
-            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.ville}}</td>
-            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.cp}}</td>
-            <td (click)="pageDetails(i)" *ngIf="!listEdit[i]">{{fournisseur.telephone}}</td> 
+            <td [routerLink]="['detailsFournisseur',fournisseur.id]" *ngIf="!listEdit[i]">{{fournisseur.nom}}</td>
+            <td [routerLink]="['detailsFournisseur',fournisseur.id]" *ngIf="!listEdit[i]">{{fournisseur.adresse}}</td>
+            <td [routerLink]="['detailsFournisseur',fournisseur.id]" *ngIf="!listEdit[i]">{{fournisseur.ville}}</td>
+            <td [routerLink]="['detailsFournisseur',fournisseur.id]" *ngIf="!listEdit[i]">{{fournisseur.cp}}</td>
+            <td [routerLink]="['detailsFournisseur',fournisseur.id]" *ngIf="!listEdit[i]">{{fournisseur.telephone}}</td> 
           
             <td *ngIf="!listEdit[i]"><button (click)="delete(fournisseur.id)" class="btn btn-danger">X</button> <button (click)="edit(i)" class="btn btn-info">Edit</button></td>
           
@@ -98,4 +98,4 @@
 <div>
 
 </div>
-<app-fournisseurdetails *ngIf="pageDetail" [fournisseur]="fournisseurDetail"></app-fournisseurdetails>
+<!--<app-fournisseurdetails *ngIf="pageDetail" [fournisseur]="fournisseurDetail"></app-fournisseurdetails>-->

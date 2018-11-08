@@ -16,7 +16,7 @@ import { ProductsService } from './core/products/products.service';
     // StockComponent,
     // MasterStockComponent,
     // DetailStockComponent,
-    AppComponent
+    //AppComponent
   ],
   imports: [
     BrowserModule,

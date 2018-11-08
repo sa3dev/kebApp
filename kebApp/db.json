@@ -307,11 +307,35 @@
     },
     {
       "name": "frite",
-      "price": "2.30",
+      "price": "1.51",
       "quantity": 0,
       "quantityPrev": 0,
       "IDsupplier": 1,
       "id": 25
+    },
+    {
+      "name": "patate",
+      "price": "2.5",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 6,
+      "id": 26
+    },
+    {
+      "name": "cheddar",
+      "price": "2.50",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 1,
+      "id": 27
+    },
+    {
+      "name": "woooooooozzzowz",
+      "price": "22.22",
+      "quantity": 0,
+      "quantityPrev": 0,
+      "IDsupplier": 1,
+      "id": 28
     }
   ],
   "fournisseurs": [
@@ -386,6 +410,30 @@
       "adresse": "ot",
       "cp": 5555555,
       "id": 11
+    },
+    {
+      "nom": "coucou",
+      "telephone": "6666666666666",
+      "ville": "lill",
+      "adresse": "2 rue de lile",
+      "cp": 59555,
+      "id": 12
+    },
+    {
+      "nom": "zazazaz",
+      "telephone": "06556566565",
+      "ville": "ezeze",
+      "adresse": "z",
+      "cp": 1,
+      "id": 13
+    },
+    {
+      "nom": "aaaa",
+      "telephone": "66666666666666",
+      "ville": "aaaa",
+      "adresse": "aaa",
+      "cp": 451221,
+      "id": 14
     }
   ],
   "menus": [
