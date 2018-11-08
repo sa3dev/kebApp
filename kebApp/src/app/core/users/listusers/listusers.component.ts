@@ -3,8 +3,6 @@ import { ListusersService } from './listusers.service';
 import { User } from '../user.model';
 import { Subscription } from 'rxjs';
 
-
-
 @Component({
   selector: 'app-listusers',
   templateUrl: './listusers.component.html',
@@ -12,7 +10,7 @@ import { Subscription } from 'rxjs';
 })
 export class ListusersComponent implements OnInit, OnDestroy {
 
-  users: User[] = [];
+  users: User[]=[];
   usersSubscription: Subscription;
   private userEdit: Boolean[] = [];
 

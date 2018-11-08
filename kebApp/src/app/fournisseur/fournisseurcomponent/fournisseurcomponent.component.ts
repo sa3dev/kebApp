@@ -92,7 +92,7 @@ export class FournisseurcomponentComponent implements OnInit {
   edit(i:number){
     
     if(this.listEdit[i]){
-      this.getFournisseurs();
+     
       this.listEdit[i]=false;
     }else{
       this.listEdit[i]=true;

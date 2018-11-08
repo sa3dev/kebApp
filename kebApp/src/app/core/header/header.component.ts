@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../users/login/login.service';
-import { Observable } from 'rxjs';
+import { User } from '../users/user.model'
+import { Observable, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
- private isLoggedIn : boolean;
+  isLoggedIn : User;
+  thisUser: Observable<User> = this.loginService.isLoginSubject;
 
 
   constructor(public loginService:LoginService) { 

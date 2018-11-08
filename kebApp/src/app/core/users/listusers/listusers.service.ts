@@ -19,7 +19,7 @@ export class ListusersService {
   getListUsers() {
      this.httpClient.get<User[]>(apiURL).subscribe(
        data => {
-         this.users = data ;
+        this.users = data ;
         this.emitUsers() ;
         },
        error => {

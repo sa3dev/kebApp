@@ -1,12 +1,10 @@
-import { Component, ChangeDetectionStrategy, ViewChild, TemplateRef, OnInit } from '@angular/core';
-import { startOfDay, subDays, isSameDay, isSameMonth, addHours, subHours } from 'date-fns';
-import { Subject, Subscription, Observable } from 'rxjs';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { isSameDay, isSameMonth} from 'date-fns';
+import { Subscription, Observable } from 'rxjs';
 import { CalendarEvent, CalendarEventTimesChangedEvent, CalendarView, DAYS_OF_WEEK } from 'angular-calendar';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { CalendarService } from './services/calendar.service';
-import { Reservation } from './model/event';
+import { CalendarService } from '../services/calendar.service';
+import { Reservation } from '../model/event';
 import { Router } from '@angular/router';
-import { CalendarDetailService } from './calendar-detail/service/calendar-detail.service';
 
 @Component({
   selector: 'app-calendar',
@@ -15,27 +13,20 @@ import { CalendarDetailService } from './calendar-detail/service/calendar-detail
   styleUrls: ['./calendar.component.scss']
 })
 export class CalendarComponent implements OnInit {
-  @ViewChild('modalContent')
-  modalContent: TemplateRef<any>;
   locale: string = 'fr';
   view: CalendarView = CalendarView.Month;
   weekStartsOn: number = DAYS_OF_WEEK.MONDAY;
   CalendarView = CalendarView;
   dayReservation: Date;
   viewDate: Date = new Date();
-  modalData: {
-    action: string;
-    event: CalendarEvent;
-  };
   events$: Observable<Reservation[]>;
   events: Reservation[]=[];
   reservationSubscription: Subscription;
-
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal,
+  constructor(
     private calendarService: CalendarService,
-    private calendarDetail: CalendarDetailService) { }
+    private router: Router) { }
 
     ngOnInit(){     
       this.reservationSubscription = this.calendarService.reservationsSubject.subscribe(
@@ -93,8 +84,7 @@ export class CalendarComponent implements OnInit {
   ngOnDestroy(){
     this.reservationSubscription.unsubscribe();
   }
-  ofTheDay(clickedDate) {
-    this.dayReservation = clickedDate;
-    this.calendarDetail.saveTheDate(this.dayReservation);
+  ofTheDay(clickedDate: Date) {
+    this.router.navigate(['reservation/', clickedDate.toJSON()])
   }
 }

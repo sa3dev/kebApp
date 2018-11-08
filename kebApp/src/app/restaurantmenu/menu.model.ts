@@ -6,4 +6,5 @@ export class Menu{
     ingredients:Product[];
     costPrice:number;
     sellPrice:number;
+    imgurl:string;
 }
