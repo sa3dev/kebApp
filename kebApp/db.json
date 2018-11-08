@@ -42,7 +42,7 @@
     },
     {
       "first_name": "Léon",
-      "last_name": "Demeyere",
+      "last_name": "De meyere",
       "nick_name": "jirlo",
       "email": "leon.demeyere@hotmail.fr",
       "password": "riku!!",
@@ -278,13 +278,11 @@
     },
     {
       "id": 24,
-      "IDsupplier": null,
+      "IDsupplier": 5,
       "name": "Cheddar mais de qualité",
       "price": "2.50",
       "quantity": 0,
-      "quantityPrev": 0,
-      "IDsupplier": 5,
-      "id": 24
+      "quantityPrev": 0
     },
     {
       "name": "frite",
@@ -421,7 +419,7 @@
     {
       "id": 1,
       "name": "Menu burger",
-      "urlImg":"https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "urlImg": "https://images.pexels.com/photos/1251198/pexels-photo-1251198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       "costPrice": 600,
       "sellPrice": 850,
       "ingredients": [
@@ -435,12 +433,16 @@
       "name": "Menu kebab galette",
       "costPrice": 550,
       "sellPrice": 800,
-      "ingredients": ["pain pita","steak de boeuf","pommes de terre"]
+      "ingredients": [
+        "pain pita",
+        "steak de boeuf",
+        "pommes de terre"
+      ]
     },
     {
       "id": 3,
       "name": "Menu kebab faluche",
-      "urlImg":"http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/4s/6j/p04s6jkr.jpg",
+      "urlImg": "http://ichef.bbci.co.uk/wwfeatures/wm/live/1280_640/images/live/p0/4s/6j/p04s6jkr.jpg",
       "costPrice": 350,
       "sellPrice": 600,
       "ingredients": [
@@ -463,7 +465,7 @@
     {
       "costPrice": 200,
       "sellPrice": 500,
-      "urlImg":"https://images.pexels.com/photos/616837/pexels-photo-616837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "urlImg": "https://images.pexels.com/photos/616837/pexels-photo-616837.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       "name": "Menu végétarien",
       "ingredients": [
         "Pomme"
@@ -473,7 +475,7 @@
     {
       "costPrice": 500,
       "sellPrice": 700,
-      "urlImg":"https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+      "urlImg": "https://images.pexels.com/photos/929137/pexels-photo-929137.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
       "name": "Menu gros",
       "ingredients": [
         "tacos",
