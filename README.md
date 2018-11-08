@@ -1,4 +1,5 @@
 # KebApp                                                  
+![Willy-sensei](https://course.oc-static.com/courses/4668271/4668271_teaser_picture_1532326491.jpg)
 
 ## Pitch
 Application pour un restaurant qui gère les réservations de ses clients et gère ses stocks ou ses factures. Pour chaque réservation, on crée un compte client pour l'associer à sa réservation et compter le nombre de fois qu'il est venu. Une réservation contient le nombre de personnes et les menus qu'ils prenennt. Ces derniers influent sur l'état du stock, lequel permet, en lien avec la liste des fournisseurs, de générer des commandes en-deça d'un certain seuil.
