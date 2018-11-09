@@ -68,6 +68,25 @@
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#listFournisseur">listFournisseur</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#listProduct">listProduct</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
 
                 <tr>
                     <td class="col-md-4">
@@ -93,7 +112,16 @@
                                 <a href="#getFournisseur">getFournisseur</a>
                             </li>
                             <li>
-                                <a href="#getProducts">getProducts</a>
+                                <a href="#getFournisseurId">getFournisseurId</a>
+                            </li>
+                            <li>
+                                <a href="#getHttpFournisseur">getHttpFournisseur</a>
+                            </li>
+                            <li>
+                                <a href="#getHttpProducts">getHttpProducts</a>
+                            </li>
+                            <li>
+                                <a href="#getListProduct">getListProduct</a>
                             </li>
                             <li>
                                 <a href="#putFournisseur">putFournisseur</a>
@@ -127,7 +155,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:16</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:18</a></div>
                             </td>
                         </tr>
 
@@ -192,7 +220,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:78</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="138" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:138</a></div>
                             </td>
                         </tr>
 
@@ -231,7 +259,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -263,7 +291,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:105</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="200" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:200</a></div>
                             </td>
                         </tr>
 
@@ -302,7 +330,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -334,7 +362,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:53</a></div>
                             </td>
                         </tr>
 
@@ -373,7 +401,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -405,7 +433,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:95</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="178" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:178</a></div>
                             </td>
                         </tr>
 
@@ -444,7 +472,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -476,18 +504,16 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:41</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>getFournisseur</p>
-</div>
 
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Fournisseur.html" target="_self" >Observable&lt;Fournisseur[]&gt;</a></code>
+                                <b>Returns : </b>    <code><a href="../classes/Fournisseur.html" target="_self" >BehaviorSubject&lt;Fournisseur[]&gt;</a></code>
 
                             </div>
                     </td>
@@ -498,25 +524,134 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="getProducts"></a>
+                        <a name="getFournisseurId"></a>
                         <span class="name">
                             <b>
-                            getProducts
+                            getFournisseurId
                             </b>
-                            <a href="#getProducts"><span class="icon ion-ios-link"></span></a>
+                            <a href="#getFournisseurId"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>getProducts(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+<code>getFournisseurId(i: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:71</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="44" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:44</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>i</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="../classes/Fournisseur.html" target="_self" >Observable&lt;Fournisseur&gt;</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getHttpFournisseur"></a>
+                        <span class="name">
+                            <b>
+                            getHttpFournisseur
+                            </b>
+                            <a href="#getHttpFournisseur"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getHttpFournisseur()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>getFournisseur</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getHttpProducts"></a>
+                        <span class="name">
+                            <b>
+                            getHttpProducts
+                            </b>
+                            <a href="#getHttpProducts"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getHttpProducts(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:121</a></div>
                             </td>
                         </tr>
 
@@ -555,12 +690,50 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="../classes/Product.html" target="_self" >Observable&lt;Product[]&gt;</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                                 <div class="io-description">
                                     
                                 </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getListProduct"></a>
+                        <span class="name">
+                            <b>
+                            getListProduct
+                            </b>
+                            <a href="#getListProduct"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getListProduct()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="131" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:131</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
                     </td>
                 </tr>
             </tbody>
@@ -580,14 +753,14 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>putFournisseur(fournisseur: <a href="../classes/Fournisseur.html">Fournisseur</a>)</code>
+<code>putFournisseur(i: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:86</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="159" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:159</a></div>
                             </td>
                         </tr>
 
@@ -609,9 +782,9 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>fournisseur</td>
+                                                        <td>i</td>
                                                         <td>
-                                                                    <code><a href="../classes/Fournisseur.html" target="_self" >Fournisseur</a></code>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                                         </td>
                                                     
                                                     <td>
@@ -626,7 +799,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -651,14 +824,14 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>putProduct(product: <a href="../classes/Product.html">Product</a>)</code>
+<code>putProduct(i: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="113" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:113</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="214" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:214</a></div>
                             </td>
                         </tr>
 
@@ -680,9 +853,9 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>product</td>
+                                                        <td>i</td>
                                                         <td>
-                                                                    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
                                                         </td>
                                                     
                                                     <td>
@@ -697,7 +870,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
                                 <div class="io-description">
@@ -729,7 +902,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:95</a></div>
                             </td>
                         </tr>
 
@@ -780,6 +953,80 @@
         </table>
 </section>
 
+            <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listFournisseur"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            listFournisseur
+                            </b>
+                            <a href="#listFournisseur"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>listFournisseur:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new BehaviorSubject&lt;Fournisseur[]&gt;([])</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listProduct"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            listProduct
+                            </b>
+                            <a href="#listProduct"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>listProduct:     <code></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new BehaviorSubject&lt;Product[]&gt;([])</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/fournisseur/fournisseur.service.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
 
     </div>
 
@@ -789,7 +1036,7 @@
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { Fournisseur } from &#x27;./fournisseur.model&#x27;;
 import { apiURLFournisseur, apiURLProducts } from &#x27;../../app/config&#x27;;
-import { Observable,of } from &#x27;rxjs&#x27;;
+import { Observable,of, BehaviorSubject } from &#x27;rxjs&#x27;;
 import {map} from &#x27;rxjs/operators&#x27;;
 import { identifierModuleUrl } from &#x27;@angular/compiler&#x27;;
 import { Product } from &#x27;../core/products/product.model&#x27;;
@@ -801,18 +1048,37 @@ import { Product } from &#x27;../core/products/product.model&#x27;;
  * fournisseur Service
  */
 export class FournisseurService {
-
+  private listFournisseur &#x3D; new BehaviorSubject&lt;Fournisseur[]&gt;([]);
+  private listProduct &#x3D; new BehaviorSubject&lt;Product[]&gt;([]);
   /**
    * 
    * @param httpClient 
    */
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient:HttpClient) { 
+    this.getHttpFournisseur();
+  }
 
   /**
    * getFournisseur
    */
-  getFournisseur():Observable&lt;Fournisseur[]&gt;{
-    return this.httpClient.get&lt;Fournisseur[]&gt;(apiURLFournisseur);
+  getHttpFournisseur(){
+    this.httpClient.get&lt;Fournisseur[]&gt;(apiURLFournisseur).subscribe(
+      (data)&#x3D;&gt;{
+        
+        this.listFournisseur.next(data);
+        
+        console.log(this.listFournisseur.value.length);
+      },
+      (error)&#x3D;&gt;console.log(error)
+    );
+  }
+  getFournisseur():BehaviorSubject&lt;Fournisseur[]&gt;{
+    return this.listFournisseur;
+  }
+  getFournisseurId(i:number):Observable&lt;Fournisseur&gt;{
+    return this.httpClient.get&lt;Fournisseur&gt;(apiURLFournisseur+&quot;/&quot;+i);
+    
+    
   }
   /**
    * delete fournisseur 
@@ -820,9 +1086,40 @@ export class FournisseurService {
    */
   deleteFournisseur(id:string){
     //const url &#x3D; &#x60;${apiURLFournisseur}/${id}&#x60;
+    this.listFournisseur.next(this.getFournisseur().value.filter((fournisseur:Fournisseur)&#x3D;&gt;{
+      if(fournisseur.id.toString()&#x3D;&#x3D;id){
+        return false;
+      }else{
+        return true;
+      }
+    }));
    let url&#x3D;apiURLFournisseur+&quot;/&quot;+id;
    console.log(url);
-    return this.httpClient.delete(url);
+    this.httpClient.delete(url).subscribe(
+      (data)&#x3D;&gt;{
+        
+        console.log(data);
+      },
+      (error)&#x3D;&gt;console.log(error)
+    );
+    
+    /*this.getFournisseur().pipe(
+      map(
+      (fournisseurs:Fournisseur[])&#x3D;&gt;{
+        return fournisseurs.filter(
+          (fournisseur:Fournisseur)&#x3D;&gt;{
+            if(fournisseur.id.toString()&#x3D;&#x3D;&#x3D;id){
+              console.log(&quot;false&quot;);
+              return false;
+            }else{
+              console.log(&quot;true&quot;);
+              return true;
+            }
+          })
+          
+      }
+        )
+        );*/ 
   }
 
   /**
@@ -831,13 +1128,13 @@ export class FournisseurService {
    */
   researchFournisseur(value:string):Observable&lt;Fournisseur[]&gt;{
     value&#x3D;value.toLowerCase();
- 
+    
     return this.getFournisseur().pipe&lt;Fournisseur[]&gt;(
       map(
         (fournisseurs: Fournisseur[])&#x3D;&gt;{
           return fournisseurs.filter((fournisseur:Fournisseur)&#x3D;&gt;{
             
-            if(fournisseur.nom.toLowerCase().includes(value)|| fournisseur.adresse.toLowerCase().includes(value) || fournisseur.cp.toString().includes(value) || fournisseur.telephone&#x3D;&#x3D;&#x3D;value || fournisseur.ville.toLowerCase().includes(value) ){
+            if(fournisseur.nom.toLowerCase().includes(value)|| fournisseur.adresse.toLowerCase().includes(value) || fournisseur.cp.toString().includes(value) || fournisseur.telephone.toString().includes(value) || fournisseur.ville.toLowerCase().includes(value )){
               console.log(&quot;nom&quot;+fournisseur.nom)
               return true;
             }else{
@@ -855,24 +1152,57 @@ export class FournisseurService {
    * get Products whith idFournisseur
    * @param id 
    */
-  getProducts(id:number):Observable&lt;Product[]&gt;{
-    return this.httpClient.get&lt;Product[]&gt;(apiURLProducts+&quot;?IDsupplier&#x3D;&quot;+id);
+  getHttpProducts(id:number){
+   this.httpClient.get&lt;Product[]&gt;(apiURLProducts+&quot;?IDsupplier&#x3D;&quot;+id).subscribe(
+     (data)&#x3D;&gt;{
+       this.listProduct.next(data);
+     },
+     (error)&#x3D;&gt;{
+       console.log(error);
+     }
+   );
+  }
+  getListProduct(){
+    return this.listProduct;
   }
   /**
    * add fournisseur
    * @param fournisseur 
    */
   addFournisseur(fournisseur:Fournisseur){
-    return this.httpClient.post(apiURLFournisseur,fournisseur)
+    
+    
+    this.httpClient.post(apiURLFournisseur,fournisseur).subscribe(
+      (data)&#x3D;&gt;{
+        let listFournisseur:Fournisseur[]&#x3D;this.listFournisseur.value;
+        listFournisseur.push(data as Fournisseur);
+        
+        
+      },
+      (error)&#x3D;&gt;{
+        console.log(error);
+        
+      }
+    ); 
       
   }
   /**
    *  put fournisseur
    * @param fournisseur 
    */
-  putFournisseur(fournisseur: Fournisseur) {
-    let url&#x3D;apiURLFournisseur+&quot;/&quot;+fournisseur.id;
-    return this.httpClient.put(url,fournisseur);
+  putFournisseur(i:number) {
+    let fournisseur:Fournisseur&#x3D;this.listFournisseur.value[i];
+    let url&#x3D;apiURLFournisseur+&quot;/&quot;+fournisseur.id.toString();
+    
+     this.httpClient.put(url,this.listFournisseur.value[i]).subscribe(
+      (data)&#x3D;&gt;{
+        console.log(data);
+        
+      },
+      (error)&#x3D;&gt;{
+        console.log(error);
+      }
+    );
       
   }
   /**
@@ -882,25 +1212,43 @@ export class FournisseurService {
   deleteProduct(id:number){
     //const url &#x3D; &#x60;${apiURLFournisseur}/${id}&#x60;
    let url&#x3D;apiURLProducts+&quot;/&quot;+id;
-   console.log(url);
-    return this.httpClient.delete(url);
+   this.listProduct.next(this.listProduct.value.filter(
+     (product:Product)&#x3D;&gt;{
+       if(id!&#x3D;&#x3D;product.id){
+         return true;
+       }else{
+         return false;
+       }
+     }
+   ))
+    this.httpClient.delete(url).subscribe(
+      (error)&#x3D;&gt;{
+        console.log(error);
+      }
+    );
   }
   /**
    *  add product
    * @param product 
    */
   addProduct(product:Product){
-    return this.httpClient.post(apiURLProducts, product);
+    this.httpClient.post(apiURLProducts, product).subscribe(
+      (data)&#x3D;&gt;{
+        let listProd:Product[] &#x3D;this.listProduct.value
+        listProd.push(data as Product);
+      },
+      (error)&#x3D;&gt;console.log(error)
+    );
   }
 
   /**
    * update product
    * @param product 
    */
-  putProduct(product: Product) {
+  putProduct(i:number) {
+    let product:Product&#x3D;this.listProduct.value[i];
     let url&#x3D;apiURLProducts+&quot;/&quot;+product.id;
-    return this.httpClient.put(url,product);
-      
+   this.httpClient.put(url,product).subscribe();  
   }
 }
 </code></pre>

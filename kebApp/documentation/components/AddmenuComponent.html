@@ -1,0 +1,1007 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>keb-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">keb-app documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search">
+</div>
+            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>AddmenuComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/restaurantmenu/addmenu/addmenu.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-addmenu</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>addmenu.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./addmenu.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#addMenuForm">addMenuForm</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#costPriceMenu">costPriceMenu</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#displayingAddMenu">displayingAddMenu</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#imgurl">imgurl</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#ingredientsMenu">ingredientsMenu</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#listIngredients">listIngredients</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#menuName">menuName</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#sellPriceMenu">sellPriceMenu</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#addMenu">addMenu</a>
+                            </li>
+                            <li>
+                                <a href="#displayAddMenu">displayAddMenu</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#resetInput">resetInput</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, restaurantservice: <a href="../injectables/RestaurantmenuService.html">RestaurantmenuService</a>, productservice: <a href="../injectables/ProductsService.html">ProductsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:15</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>restaurantservice</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/RestaurantmenuService.html" target="_self" >RestaurantmenuService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>productservice</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/ProductsService.html" target="_self" >ProductsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addMenu"></a>
+                        <span class="name">
+                            <b>
+                            addMenu
+                            </b>
+                            <a href="#addMenu"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>addMenu()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="67" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:67</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Add a new Menu created inside the function by associating each property of the Menu model with those specified in the form. We make some operations to the right side of the assignement to keep it a number and a price in our format. 
+Prices should be &quot;coded&quot; in cents but the user usually enters them as plain euros. Hence we use a pipe that converts our coded prices in cents to euros.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayAddMenu"></a>
+                        <span class="name">
+                            <b>
+                            displayAddMenu
+                            </b>
+                            <a href="#displayAddMenu"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>displayAddMenu()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Function used to handle the display of the interface allowing to add a menu to the database </p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:32</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="resetInput"></a>
+                        <span class="name">
+                            <b>
+                            resetInput
+                            </b>
+                            <a href="#resetInput"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>resetInput()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:86</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Reset the inputs added by the user so s.he doesn&#39;t have to erase all by himself </p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addMenuForm"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            addMenuForm
+                            </b>
+                            <a href="#addMenuForm"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>addMenuForm:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="costPriceMenu"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            costPriceMenu
+                            </b>
+                            <a href="#costPriceMenu"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>costPriceMenu:     <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:23</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayingAddMenu"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            displayingAddMenu
+                            </b>
+                            <a href="#displayingAddMenu"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>displayingAddMenu:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>false</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:30</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="imgurl"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            imgurl
+                            </b>
+                            <a href="#imgurl"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>imgurl:     <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:26</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ingredientsMenu"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            ingredientsMenu
+                            </b>
+                            <a href="#ingredientsMenu"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>ingredientsMenu:     <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:25</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listIngredients"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            listIngredients
+                            </b>
+                            <a href="#listIngredients"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>listIngredients:     <code><a href="../classes/Product.html" target="_self" >Product[]</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="../classes/Product.html" target="_self" >Product[]</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:19</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="menuName"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            menuName
+                            </b>
+                            <a href="#menuName"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>menuName:     <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="sellPriceMenu"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            sellPriceMenu
+                            </b>
+                            <a href="#sellPriceMenu"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>sellPriceMenu:     <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/restaurantmenu/addmenu/addmenu.component.ts:24</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { FormControl, FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
+import { RestaurantmenuService } from &#x27;../restaurantmenu.service&#x27;;
+import { ProductsService } from &#x27;src/app/core/products/products.service&#x27;;
+import { Menu } from &#x27;../menu.model&#x27;;
+import { Observable } from &#x27;rxjs&#x27;;
+import { Product } from &#x27;src/app/core/products/product.model&#x27;;
+
+
+@Component({
+  selector: &#x27;app-addmenu&#x27;,
+  templateUrl: &#x27;./addmenu.component.html&#x27;,
+  styleUrls: [&#x27;./addmenu.component.scss&#x27;]
+})
+export class AddmenuComponent implements OnInit {
+
+  constructor(private fb: FormBuilder, private restaurantservice: RestaurantmenuService, private productservice: ProductsService) { }
+
+  private listIngredients: Product[];
+
+  // We declare forms element
+  private menuName: FormControl;
+  private costPriceMenu: FormControl;
+  private sellPriceMenu: FormControl;
+  private ingredientsMenu: FormControl;
+  private imgurl: FormControl;
+  private addMenuForm: FormGroup;
+
+  // The boolean to show or hide
+  private displayingAddMenu: boolean &#x3D; false;
+
+  ngOnInit() {
+    // 2. Init the form
+    this.menuName &#x3D; this.fb.control(&#x27;&#x27;, Validators.required);
+    this.costPriceMenu &#x3D; this.fb.control(&#x27;&#x27;, Validators.required);
+    this.sellPriceMenu &#x3D; this.fb.control(&#x27;&#x27;, Validators.required);
+    this.ingredientsMenu &#x3D; this.fb.control(&#x27;&#x27;, Validators.required);
+    this.imgurl &#x3D; this.fb.control(&#x27;&#x27;);
+
+    this.addMenuForm &#x3D; this.fb.group({
+      menuName: this.menuName,
+      costPriceMenu: this.costPriceMenu,
+      sellPriceMenu: this.sellPriceMenu,
+      ingredientsMenu: this.ingredientsMenu,
+      imgurl: this.imgurl
+    });
+  }
+
+  /**
+ * Function used to handle the display of the interface allowing to add a menu to the database 
+ */
+  displayAddMenu() {
+    if (this.displayingAddMenu &#x3D;&#x3D; false) {
+      this.displayingAddMenu &#x3D; true;
+      // Get the list of ingredients/products
+      this.productservice.getProductsList().subscribe(data &#x3D;&gt; this.listIngredients &#x3D; data)
+
+    } else if (this.displayingAddMenu) {
+      this.displayingAddMenu &#x3D; false;
+    }
+  }
+
+  /**
+ * Add a new Menu created inside the function by associating each property of the Menu model with those specified in the form. We make some operations to the right side of the assignement to keep it a number and a price in our format. 
+ * Prices should be &quot;coded&quot; in cents but the user usually enters them as plain euros. Hence we use a pipe that converts our coded prices in cents to euros.
+ */
+  addMenu() {
+    // We create the menu to send to the addNewMenu method
+    const newMenu &#x3D; new Menu();
+    newMenu.costPrice &#x3D; +this.costPriceMenu.value * 100;
+    newMenu.sellPrice &#x3D; +this.sellPriceMenu.value * 100;
+    newMenu.name &#x3D; this.menuName.value;
+    newMenu.imgurl &#x3D; this.imgurl.value;
+    newMenu.ingredients &#x3D; this.ingredientsMenu.value;
+    // We send it, reset our input and hide the interface to add a menu
+    // console.log(newMenu.ingredients);
+    console.log(this.ingredientsMenu.value);
+    this.restaurantservice.addNewMenu(newMenu);
+    // this.resetInput();
+    // this.displayingAddMenu &#x3D; false;
+  }
+
+  /**
+ * Reset the inputs added by the user so s.he doesn&#x27;t have to erase all by himself 
+ */
+  resetInput() {
+    this.addMenuForm.reset();
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container my-4&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;button *ngIf&#x3D;&quot;!displayingAddMenu&quot; class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;displayAddMenu()&quot;&gt;Ajouter un menu&lt;/button&gt;
+    &lt;button *ngIf&#x3D;&quot;displayingAddMenu&quot; class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;displayAddMenu()&quot;&gt;Fermer&lt;/button&gt;
+    &lt;button *ngIf&#x3D;&quot;displayingAddMenu&quot; class&#x3D;&quot;btn btn-primary mx-4&quot; (click)&#x3D;&quot;resetInput()&quot;&gt;Reset&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div *ngIf&#x3D;&quot;displayingAddMenu&quot; class&#x3D;&quot;add-menu my-4&quot;&gt;
+    &lt;h2&gt;Ajouter un menu&lt;/h2&gt;
+
+    &lt;!-- Handling errors --&gt;
+    &lt;div *ngIf&#x3D;&quot;menuName.invalid &amp;&amp; (menuName.dirty || menuName.touched)&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;
+      &lt;div *ngIf&#x3D;&quot;menuName.errors.required&quot;&gt;Le nom du menu est requis.&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;costPriceMenu.invalid &amp;&amp; (costPriceMenu.dirty || costPriceMenu.touched)&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;
+      &lt;div *ngIf&#x3D;&quot;costPriceMenu.errors.required&quot;&gt;Le prix de revient est requis.&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;sellPriceMenu.invalid &amp;&amp; (sellPriceMenu.dirty || sellPriceMenu.touched)&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;
+      &lt;div *ngIf&#x3D;&quot;sellPriceMenu.errors.required&quot;&gt;Le prix de vente est requis.&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div *ngIf&#x3D;&quot;ingredientsMenu.invalid &amp;&amp; (ingredientsMenu.dirty || ingredientsMenu.touched)&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;
+      &lt;div *ngIf&#x3D;&quot;ingredientsMenu.errors.required&quot;&gt;La liste des ingrédients est requise.&lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- The Form--&gt;
+    &lt;form class&#x3D;&quot;form-default mt-4&quot; [formGroup]&#x3D;&quot;addMenuForm&quot; data-toggle&#x3D;&quot;validator&quot;&gt;
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt;
+              &lt;label class&#x3D;&quot;control-label&quot;&gt;Nom du menu&lt;/label&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control form-control-lg&quot; matInput name&#x3D;&quot;menuName&quot; id&#x3D;&quot;menuName&quot;
+                formControlName&#x3D;&quot;menuName&quot; required&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt;
+              &lt;label class&#x3D;&quot;control-label&quot;&gt;Coût de revient&lt;/label&gt;
+              &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control form-control-lg&quot; matInput name&#x3D;&quot;costPriceMenu&quot; id&#x3D;&quot;costPriceMenu&quot;
+                formControlName&#x3D;&quot;costPriceMenu&quot; required&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt;
+              &lt;label class&#x3D;&quot;control-label&quot;&gt;Coût de vente&lt;/label&gt;
+              &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control form-control-lg&quot; matInput name&#x3D;&quot;sellPriceMenu&quot; id&#x3D;&quot;sellPriceMenu&quot;
+                formControlName&#x3D;&quot;sellPriceMenu&quot; required&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class&#x3D;&quot;row&quot;&gt;
+        &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt;
+              &lt;label class&#x3D;&quot;control-label&quot;&gt;URL Image&lt;/label&gt;
+              &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control form-control-lg&quot; matInput name&#x3D;&quot;imgurl&quot; id&#x3D;&quot;imgurl&quot;
+                formControlName&#x3D;&quot;imgurl&quot; required&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class&#x3D;&quot;col-md-4 py-2&quot;&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;mat-form-field&gt;
+              &lt;label class&#x3D;&quot;control-label&quot;&gt;Ingrédients&lt;/label&gt;
+              &lt;mat-select placeholder&#x3D;&quot;Ingrédients&quot; name&#x3D;&quot;ingredientsMenu&quot; id&#x3D;&quot;ingredientsMenu&quot; formControlName&#x3D;&quot;ingredientsMenu&quot;
+                multiple&gt;
+                &lt;mat-option *ngFor&#x3D;&quot;let ingredient of listIngredients&quot; matInput value&#x3D;&quot;{{ingredient.name}}&quot;&gt;{{ingredient.name}}&lt;/mat-option&gt;
+              &lt;/mat-select&gt;
+            &lt;/mat-form-field&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+
+
+        &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+          &lt;!-- &lt;button type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;addMenu()&quot; class&#x3D;&quot;btn btn-success mt-4&quot; [disabled]&#x3D;&quot;addMenuForm.invalid&quot;&gt; --&gt;
+          &lt;button type&#x3D;&quot;submit&quot; (click)&#x3D;&quot;addMenu()&quot; class&#x3D;&quot;btn btn-success btn-lg mt-4&quot;&gt;
+            Ajouter ce menu
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt; &lt;!-- end of container--&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="container my-4">  <div class="row">    <button *ngIf="!displayingAddMenu" class="btn btn-primary" (click)="displayAddMenu()">Ajouter un menu</button>    <button *ngIf="displayingAddMenu" class="btn btn-primary" (click)="displayAddMenu()">Fermer</button>    <button *ngIf="displayingAddMenu" class="btn btn-primary mx-4" (click)="resetInput()">Reset</button>  </div>  <div *ngIf="displayingAddMenu" class="add-menu my-4">    <h2>Ajouter un menu</h2>    <!-- Handling errors -->    <div *ngIf="menuName.invalid && (menuName.dirty || menuName.touched)" class="alert alert-danger">      <div *ngIf="menuName.errors.required">Le nom du menu est requis.</div>    </div>    <div *ngIf="costPriceMenu.invalid && (costPriceMenu.dirty || costPriceMenu.touched)" class="alert alert-danger">      <div *ngIf="costPriceMenu.errors.required">Le prix de revient est requis.</div>    </div>    <div *ngIf="sellPriceMenu.invalid && (sellPriceMenu.dirty || sellPriceMenu.touched)" class="alert alert-danger">      <div *ngIf="sellPriceMenu.errors.required">Le prix de vente est requis.</div>    </div>    <div *ngIf="ingredientsMenu.invalid && (ingredientsMenu.dirty || ingredientsMenu.touched)" class="alert alert-danger">      <div *ngIf="ingredientsMenu.errors.required">La liste des ingrédients est requise.</div>    </div>    <!-- The Form-->    <form class="form-default mt-4" [formGroup]="addMenuForm" data-toggle="validator">      <div class="row">        <div class="col-md-4">          <div class="form-group">            <mat-form-field class="example-full-width">              <label class="control-label">Nom du menu</label>              <input type="text" class="form-control form-control-lg" matInput name="menuName" id="menuName"                formControlName="menuName" required>            </mat-form-field>          </div>        </div>        <div class="col-md-4">          <div class="form-group">            <mat-form-field class="example-full-width">              <label class="control-label">Coût de revient</label>              <input type="number" class="form-control form-control-lg" matInput name="costPriceMenu" id="costPriceMenu"                formControlName="costPriceMenu" required>            </mat-form-field>          </div>        </div>        <div class="col-md-4">          <div class="form-group">            <mat-form-field class="example-full-width">              <label class="control-label">Coût de vente</label>              <input type="number" class="form-control form-control-lg" matInput name="sellPriceMenu" id="sellPriceMenu"                formControlName="sellPriceMenu" required>            </mat-form-field>          </div>        </div>      </div>      <div class="row">        <div class="col-md-4">          <div class="form-group">            <mat-form-field class="example-full-width">              <label class="control-label">URL Image</label>              <input type="text" class="form-control form-control-lg" matInput name="imgurl" id="imgurl"                formControlName="imgurl" required>            </mat-form-field>          </div>        </div>        <div class="col-md-4 py-2">          <div class="form-group">            <mat-form-field>              <label class="control-label">Ingrédients</label>              <mat-select placeholder="Ingrédients" name="ingredientsMenu" id="ingredientsMenu" formControlName="ingredientsMenu"                multiple>                <mat-option *ngFor="let ingredient of listIngredients" matInput value="{{ingredient.name}}">{{ingredient.name}}</mat-option>              </mat-select>            </mat-form-field>          </div>        </div>        <div class="col-md-4">          <!-- <button type="submit" (click)="addMenu()" class="btn btn-success mt-4" [disabled]="addMenuForm.invalid"> -->          <button type="submit" (click)="addMenu()" class="btn btn-success btn-lg mt-4">            Ajouter ce menu          </button>        </div>      </div>    </form>  </div> <!-- end of container--></div>'
+    var COMPONENTS = [{'name': 'AddProductComponent', 'selector': 'app-add-product'},{'name': 'AddmenuComponent', 'selector': 'app-addmenu'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarDetailComponent', 'selector': 'app-calendar-detail'},{'name': 'DetailStockComponent', 'selector': 'app-detail-stock'},{'name': 'FournisseurcomponentComponent', 'selector': 'app-fournisseurcomponent'},{'name': 'FournisseurdetailsComponent', 'selector': 'app-fournisseurdetails'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ListusersComponent', 'selector': 'app-listusers'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantmenuComponent', 'selector': 'app-restaurantmenu'},{'name': 'RoutfournisseurComponent', 'selector': 'app-routfournisseur'},{'name': 'StockComponent', 'selector': 'app-stock'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AddmenuComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AddmenuComponent.html';
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <script src="../js/menu-wc.js"></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

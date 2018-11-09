@@ -92,9 +92,6 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#canActivate">canActivate</a>
-                            </li>
-                            <li>
                                 <a href="#isLoggedIn">isLoggedIn</a>
                             </li>
                             <li>
@@ -185,44 +182,6 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="canActivate"></a>
-                        <span class="name">
-                            <b>
-                            canActivate
-                            </b>
-                            <a href="#canActivate"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>canActivate()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/users/login/login.service.ts:20</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
                         <a name="isLoggedIn"></a>
                         <span class="name">
                             <b>
@@ -241,7 +200,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/core/users/login/login.service.ts:46</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/core/users/login/login.service.ts:42</a></div>
                             </td>
                         </tr>
 
@@ -250,7 +209,7 @@
                     <td class="col-md-4">
 
                             <div class="io-description">
-                                <b>Returns : </b>    <code>Observable&lt;boolean&gt;</code>
+                                <b>Returns : </b>    <code><a href="../classes/User.html" target="_self" >Observable&lt;User&gt;</a></code>
 
                             </div>
                     </td>
@@ -279,7 +238,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/core/users/login/login.service.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/core/users/login/login.service.ts:46</a></div>
                             </td>
                         </tr>
 
@@ -317,7 +276,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/core/users/login/login.service.ts:24</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/core/users/login/login.service.ts:20</a></div>
                             </td>
                         </tr>
 
@@ -404,7 +363,7 @@
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>new BehaviorSubject&lt;boolean&gt;(false)</code>
+                            <i>Default value : </i><code>new BehaviorSubject&lt;User&gt;(null)</code>
                         </td>
                     </tr>
                         <tr>
@@ -436,14 +395,10 @@ import { BehaviorSubject, Observable } from &#x27;rxjs&#x27;;
   providedIn: &#x27;root&#x27;
 })
 export class LoginService {
-  isLoginSubject &#x3D; new BehaviorSubject&lt;boolean&gt;(false);
+  isLoginSubject &#x3D; new BehaviorSubject&lt;User&gt;(null);
 
   constructor(private http: HttpClient, private router: Router) { }
 
-
-  canActivate() {
-    return this.isLoginSubject.asObservable();
-  }
 
   logUser(username: string, password: string) {
 
@@ -455,24 +410,24 @@ export class LoginService {
       // If success, we check that there&#x27;s only one user
       data &#x3D;&gt; {
         if (data.length &#x3D;&#x3D;&#x3D; 1) {
-          this.isLoginSubject.next(true);
+          this.isLoginSubject.next(data[0]);
           this.router.navigate([&#x27;/users&#x27;]);
         }
         else {
-          this.isLoginSubject.next(false);
+          this.isLoginSubject.next(null);
         }
       },
       // If error, we keep isAuth to false and log the error
-      (error) &#x3D;&gt; { this.isLoginSubject.next(false); console.log(&quot;Error during login : &quot; + error) }
+      (error) &#x3D;&gt; { this.isLoginSubject.next(null); console.log(&quot;Error during login : &quot; + error) }
     );
   }
 
-  isLoggedIn(): Observable&lt;boolean&gt; {
+  isLoggedIn(): Observable&lt;User&gt; {
     return this.isLoginSubject;
   }
 
   logOUt() {
-    this.isLoginSubject.next(false);
+    this.isLoginSubject.next(null);
     this.router.navigate([&#x27;/login&#x27;]);
   }
 

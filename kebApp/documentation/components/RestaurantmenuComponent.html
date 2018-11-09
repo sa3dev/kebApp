@@ -124,27 +124,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#addMenuForm">addMenuForm</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#costPriceMenu">costPriceMenu</a>
-                            </li>
-                            <li>
-                                <a href="#displayingAddMenu">displayingAddMenu</a>
-                            </li>
-                            <li>
                                     <span class="modifier">Public</span>
                                 <a href="#dragData">dragData</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#editArray">editArray</a>
+                                <a href="#draggingOk">draggingOk</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
-                                <a href="#ingredientsMenu">ingredientsMenu</a>
+                                <a href="#editArray">editArray</a>
                             </li>
                             <li>
                                     <span class="modifier">Private</span>
@@ -155,15 +144,8 @@
                                 <a href="#listMenus">listMenus</a>
                             </li>
                             <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#menuName">menuName</a>
-                            </li>
-                            <li>
-                                <a href="#menus">menus</a>
-                            </li>
-                            <li>
-                                    <span class="modifier">Private</span>
-                                <a href="#sellPriceMenu">sellPriceMenu</a>
+                                    <span class="modifier">Public</span>
+                                <a href="#menuSubscription">menuSubscription</a>
                             </li>
                             <li>
                                 <a href="#simpleDrop">simpleDrop</a>
@@ -184,28 +166,22 @@
                                 <a href="#addEdits">addEdits</a>
                             </li>
                             <li>
-                                <a href="#addMenu">addMenu</a>
-                            </li>
-                            <li>
-                                <a href="#deleteDnd">deleteDnd</a>
-                            </li>
-                            <li>
                                 <a href="#deleteMenu">deleteMenu</a>
                             </li>
                             <li>
-                                <a href="#displayAddMenu">displayAddMenu</a>
+                                <a href="#deleteMenuOnDnd">deleteMenuOnDnd</a>
                             </li>
                             <li>
                                 <a href="#editMenu">editMenu</a>
                             </li>
                             <li>
-                                <a href="#getListMenus">getListMenus</a>
+                                <a href="#log">log</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
-                                <a href="#resetInput">resetInput</a>
                             </li>
                         </ul>
                     </td>
@@ -225,12 +201,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(restaurantservice: <a href="../injectables/RestaurantmenuService.html">RestaurantmenuService</a>, fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, productservice: <a href="../injectables/ProductsService.html">ProductsService</a>)</code>
+<code>constructor(restaurantservice: <a href="../injectables/RestaurantmenuService.html">RestaurantmenuService</a>, produitservice: <a href="../injectables/ProductsService.html">ProductsService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:34</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -260,19 +236,7 @@
                                                     
                                                 </tr>
                                                 <tr>
-                                                        <td>fb</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                                <tr>
-                                                        <td>productservice</td>
+                                                        <td>produitservice</td>
                                                   
                                                         <td>
                                                                     <code><a href="../injectables/ProductsService.html" target="_self" >ProductsService</a></code>
@@ -316,20 +280,181 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>addEdits(i: )</code>
+<code>addEdits(menu: , i: )</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:108</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:100</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>On click validate button, we put the modified Menu object at the same place  </p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>menu</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>the menu to add</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>i</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>the index of the menu to modify</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteMenu"></a>
+                        <span class="name">
+                            <b>
+                            deleteMenu
+                            </b>
+                            <a href="#deleteMenu"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>deleteMenu(id: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:75</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Delete the menu with specified id.</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>id</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>id of the menu to delete</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="deleteMenuOnDnd"></a>
+                        <span class="name">
+                            <b>
+                            deleteMenuOnDnd
+                            </b>
+                            <a href="#deleteMenuOnDnd"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>deleteMenuOnDnd(event: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="64" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:64</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>Called when the drop on the dropzone is successful to delete the menu dropped by using its id. 
+Note : the function is only consoleloging the id of the menu we would seen deleted for this feature was useless 
+(there &#39;s already a delete button much easier to use).</p>
+</div>
 
                             <div class="io-description">
                                     <b>Parameters :</b>
@@ -342,7 +467,7 @@
                                         </thead>
                                         <tbody>
                                                 <tr>
-                                                        <td>i</td>
+                                                        <td>event</td>
                                                     
                                                     <td>
                                                             No
@@ -370,36 +495,71 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="addMenu"></a>
+                        <a name="editMenu"></a>
                         <span class="name">
                             <b>
-                            addMenu
+                            editMenu
                             </b>
-                            <a href="#addMenu"><span class="icon ion-ios-link"></span></a>
+                            <a href="#editMenu"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>addMenu()</code>
+<code>editMenu(i: )</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:82</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="84" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:84</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>On click to the edit button, the boolean at index i goes to true if false and vice versa to show/hide edit inputs. 
+We apply the same logic to show/hide the drag&#39;n drop while editing. Otherwise, user would be able to use the mouse to navigate throught the input field.</p>
+</div>
 
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>i</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>the menu&#39;s index from the for loop that needs to display the edit actions</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
+                                <div class="io-description">
+                                    
+                                </div>
                     </td>
                 </tr>
             </tbody>
@@ -408,25 +568,25 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="deleteDnd"></a>
+                        <a name="log"></a>
                         <span class="name">
                             <b>
-                            deleteDnd
+                            log
                             </b>
-                            <a href="#deleteDnd"><span class="icon ion-ios-link"></span></a>
+                            <a href="#log"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>deleteDnd(event: )</code>
+<code>log(event: )</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:65</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="108" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:108</a></div>
                             </td>
                         </tr>
 
@@ -473,193 +633,25 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="deleteMenu"></a>
+                        <a name="ngOnDestroy"></a>
                         <span class="name">
                             <b>
-                            deleteMenu
+                            ngOnDestroy
                             </b>
-                            <a href="#deleteMenu"><span class="icon ion-ios-link"></span></a>
+                            <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>deleteMenu(id: )</code>
+<code>ngOnDestroy()</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="91" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:91</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>id</td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="displayAddMenu"></a>
-                        <span class="name">
-                            <b>
-                            displayAddMenu
-                            </b>
-                            <a href="#displayAddMenu"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>displayAddMenu()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:71</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="editMenu"></a>
-                        <span class="name">
-                            <b>
-                            editMenu
-                            </b>
-                            <a href="#editMenu"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>editMenu(i: )</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:95</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>i</td>
-                                                    
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                            <div>
-                            </div>
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                                <div class="io-description">
-                                    
-                                </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="getListMenus"></a>
-                        <span class="name">
-                            <b>
-                            getListMenus
-                            </b>
-                            <a href="#getListMenus"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>getListMenus()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="61" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:61</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:54</a></div>
                             </td>
                         </tr>
 
@@ -697,51 +689,19 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:38</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="resetInput"></a>
-                        <span class="name">
-                            <b>
-                            resetInput
-                            </b>
-                            <a href="#resetInput"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>resetInput()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="105" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:105</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
+                            <div class="io-description"><p>On init :</p>
+<ol>
+<li>We get the list of menus by subscribing to the subject defined in the restaurantmenu.service.ts. We store the recieved data in our listMenus.</li>
+<li>We make sure each edit input is hidden by populating the array responsible for their display with enough false (x false for x menus in listMenus)</li>
+</ol>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -758,115 +718,6 @@
         <h3 id="inputs">
             Properties
         </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="addMenuForm"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            addMenuForm
-                            </b>
-                            <a href="#addMenuForm"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>addMenuForm:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:28</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="costPriceMenu"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            costPriceMenu
-                            </b>
-                            <a href="#costPriceMenu"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>costPriceMenu:     <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:25</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="displayingAddMenu"></a>
-                        <span class="name">
-                            <b>
-                            displayingAddMenu
-                            </b>
-                            <a href="#displayingAddMenu"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>displayingAddMenu:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:23</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
         <table class="table table-sm table-bordered">
             <tbody>
                 <tr>
@@ -889,7 +740,47 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:31</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:22</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="draggingOk"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Private</span>
+                            draggingOk
+                            </b>
+                            <a href="#draggingOk"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>draggingOk:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>true</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -929,42 +820,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:30</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ingredientsMenu"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            ingredientsMenu
-                            </b>
-                            <a href="#ingredientsMenu"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>ingredientsMenu:     <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:27</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -999,7 +855,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:29</a></div>
                             </td>
                         </tr>
 
@@ -1022,70 +878,7 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>listMenus:     <code></code>
-</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="32" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:32</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="menuName"></a>
-                        <span class="name">
-                            <b>
-                                <span class="modifier">Private</span>
-                            menuName
-                            </b>
-                            <a href="#menuName"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>menuName:     <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
-
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:24</a></div>
-                            </td>
-                        </tr>
-
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="menus"></a>
-                        <span class="name">
-                            <b>
-                            menus
-                            </b>
-                            <a href="#menus"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>menus:     <code><a href="../classes/Menu.html" target="_self" >Menu[]</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>listMenus:     <code><a href="../classes/Menu.html" target="_self" >Menu[]</a></code>
 </code>
                     </td>
                 </tr>
@@ -1095,9 +888,14 @@
 
                         </td>
                     </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:28</a></div>
                             </td>
                         </tr>
 
@@ -1108,31 +906,31 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="sellPriceMenu"></a>
+                        <a name="menuSubscription"></a>
                         <span class="name">
                             <b>
-                                <span class="modifier">Private</span>
-                            sellPriceMenu
+                                <span class="modifier">Public</span>
+                            menuSubscription
                             </b>
-                            <a href="#sellPriceMenu"><span class="icon ion-ios-link"></span></a>
+                            <a href="#menuSubscription"><span class="icon ion-ios-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <span class="modifier-icon icon ion-ios-reset"></span><code>sellPriceMenu:     <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+                        <span class="modifier-icon icon ion-ios-reset"></span><code>menuSubscription:     <code>Subscription</code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormControl" target="_blank" >FormControl</a></code>
+                            <i>Type : </i>    <code>Subscription</code>
 
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -1171,7 +969,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:34</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/restaurantmenu/restaurantmenu.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -1184,19 +982,14 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, OnDestroy } from &#x27;@angular/core&#x27;;
 import { Menu } from &#x27;./menu.model&#x27;;
 import { RestaurantmenuService } from &#x27;./restaurantmenu.service&#x27;;
 import { PricePipe } from &#x27;../shared/pipe-price.pipe&#x27;;
-import { FormControl, FormBuilder, FormGroup, Validators } from &#x27;@angular/forms&#x27;;
 import { DndModule } from &#x27;ng2-dnd&#x27;;
 import { ProductsService } from &#x27;../core/products/products.service&#x27;;
 import { Product } from &#x27;../core/products/product.model&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
-
-
-
-
+import { Observable, Subscription } from &#x27;rxjs&#x27;;
 
 
 @Component({
@@ -1204,224 +997,221 @@ import { Observable } from &#x27;rxjs&#x27;;
   templateUrl: &#x27;./restaurantmenu.component.html&#x27;,
   styleUrls: [&#x27;./restaurantmenu.component.scss&#x27;]
 })
+
 export class RestaurantmenuComponent implements OnInit {
-
-  displayingAddMenu: boolean &#x3D; false;
-  private menuName: FormControl;
-  private costPriceMenu: FormControl;
-  private sellPriceMenu: FormControl;
-  private ingredientsMenu: FormControl;
-  private addMenuForm: FormGroup;
-
+  // The boolean to show or hide
   private editArray: boolean[] &#x3D; [];
+
+  // Variable to dragData with DnD
   public dragData;
-  private listMenus;
-  private listIngredients: Observable&lt;Product[]&gt;;
   simpleDrop: any &#x3D; null;
+  private draggingOk: boolean &#x3D; true;
 
-  constructor(private restaurantservice: RestaurantmenuService, private fb: FormBuilder, private productservice: ProductsService) { }
+  // Variables to get and display list of menus and products which are considered as menus&#x27; ingredients
+  public menuSubscription: Subscription;
+  private listMenus: Menu[] &#x3D; [];
+  private listIngredients: Observable&lt;Product[]&gt;;
 
-  menus: Menu[]
+  constructor(private restaurantservice: RestaurantmenuService, private produitservice: ProductsService) { }
 
+  /**
+   * On init :
+   * 1. We get the list of menus by subscribing to the subject defined in the restaurantmenu.service.ts. We store the recieved data in our listMenus.
+   * 2. We make sure each edit input is hidden by populating the array responsible for their display with enough false (x false for x menus in listMenus)
+   */
   ngOnInit() {
-    // Get the menus
-    this.getListMenus();
-    // Init the form
-    this.menuName &#x3D; this.fb.control(&#x27;&#x27;, Validators.required);
-    this.costPriceMenu &#x3D; this.fb.control(&#x27;&#x27;, Validators.required);
-    this.sellPriceMenu &#x3D; this.fb.control(&#x27;&#x27;, Validators.required);
-    this.ingredientsMenu &#x3D; this.fb.control(&#x27;&#x27;, Validators.required);
-    this.addMenuForm &#x3D; this.fb.group({
-      menuName: this.menuName,
-      costPriceMenu: this.costPriceMenu,
-      sellPriceMenu: this.sellPriceMenu,
-      ingredientsMenu: this.ingredientsMenu,
-    })
+    // 1. Get the menus
+    this.restaurantservice.getListMenus();
+    this.menuSubscription &#x3D; this.restaurantservice.menusSubject.subscribe(
+      data &#x3D;&gt; { this.listMenus &#x3D; data; },
+      error &#x3D;&gt; console.log(error)
+    )
+    // ... and ingredients for the edit menu
+    this.listIngredients &#x3D; this.produitservice.getProductsList()
 
-    // Populate array with false (we don&#x27;t want to display the edit inputs)
+    // 2. Populate array with false (we don&#x27;t want to display the edit inputs)
     for (var i &#x3D; 0; i &lt; this.listMenus.length; i++) {
       this.editArray.push(false);
     }
   }
 
-  getListMenus() {
-    this.listMenus &#x3D; this.restaurantservice.getListMenus()
+  ngOnDestroy() {
+    this.menuSubscription.unsubscribe();
   }
 
-  deleteDnd(event) {
+  /**
+   * Called when the drop on the dropzone is successful to delete the menu dropped by using its id. 
+   * Note : the function is only consoleloging the id of the menu we would seen deleted for this feature was useless 
+   * (there &#x27;s already a delete button much easier to use).
+   * @param event 
+   */
+  deleteMenuOnDnd(event) {
     const id &#x3D; event.dragData;
     console.log(id);
-    this.restaurantservice.deleteThisMenu(id);
+    // this.restaurantservice.deleteThisMenu(id);
+    // this.restaurantservice.getListMenus();
   }
 
-  displayAddMenu() {
-    if (this.displayingAddMenu &#x3D;&#x3D; false) {
-      this.displayingAddMenu &#x3D; true;
-      // Get the list of ingredients/products
-      this.listIngredients &#x3D; this.productservice.getProductsList()
-
-    } else if (this.displayingAddMenu) {
-      this.displayingAddMenu &#x3D; false;
-    }
-  }
-
-  addMenu() {
-    const newMenu &#x3D; new Menu();
-    newMenu.costPrice &#x3D; +this.costPriceMenu.value * 100;
-    newMenu.sellPrice &#x3D; +this.sellPriceMenu.value * 100;
-    newMenu.name &#x3D; this.menuName.value;
-    newMenu.ingredients &#x3D; this.ingredientsMenu.value;
-    this.restaurantservice.addNewMenu(newMenu);
-  }
-
+  /**
+   * Delete the menu with specified id.
+   * @param id id of the menu to delete
+   */
   deleteMenu(id) {
     this.restaurantservice.deleteThisMenu(id);
   }
 
+  /**
+   * On click to the edit button, the boolean at index i goes to true if false and vice versa to show/hide edit inputs. 
+   * We apply the same logic to show/hide the drag&#x27;n drop while editing. Otherwise, user would be able to use the mouse to navigate throught the input field.
+   * @param i the menu&#x27;s index from the for loop that needs to display the edit actions
+   */
   editMenu(i) {
-    // on click to the edit button, the boolean at index i goes to true if false and vice versa to show/hide edit inputs
     if (this.editArray[i]) {
-      this.getListMenus();
+      this.restaurantservice.getListMenus();
       this.editArray[i] &#x3D; false;
+      this.draggingOk &#x3D; true;
     } else {
       this.editArray[i] &#x3D; true;
+      this.draggingOk &#x3D; false;
     }
   }
 
-  resetInput(){
-    this.menuName &#x3D; null; 
-  }
-  addEdits(i){
-    // on click validate button, we put the modified Menu object at the same place  
-    console.log(this.listMenus[i]);
-    this.restaurantservice.putNewMenu(this.listMenus[i]).subscribe(
-      (data) &#x3D;&gt; {this.editArray[i] &#x3D; false},
-      (error) &#x3D;&gt; {console.log(error)}
+  /**
+   * On click validate button, we put the modified Menu object at the same place  
+   * @param menu the menu to add
+   * @param i the index of the menu to modify
+   */
+  addEdits(menu, i) {
+    console.log(menu.ingredients)
+    this.restaurantservice.putNewMenu(menu).subscribe(
+      (data) &#x3D;&gt; { console.log(data); this.editArray[i] &#x3D; false },
+      (error) &#x3D;&gt; { console.log(error) }
     );
-    
+  }
+
+  log(event) {
+    console.log(event);
   }
 }
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;mx-3&quot;&gt;
-  &lt;h1&gt;Menus du restaurant&lt;/h1&gt;
-  &lt;!-- add menu section--&gt;
-  &lt;button class&#x3D;&quot;btn&quot; (click)&#x3D;&quot;displayAddMenu()&quot;&gt;Ajouter Menu&lt;/button&gt;
-  &lt;div *ngIf&#x3D;&quot;displayingAddMenu&quot; class&#x3D;&quot;add-menu&quot;&gt;
-    &lt;h2&gt;Ajouter un menu&lt;/h2&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container-fluid my-4&quot;&gt;
+  &lt;h1 class&#x3D;&quot;text-center&quot;&gt;Menus du restaurant&lt;/h1&gt;
+  &lt;p class&#x3D;&quot;text-center&quot;&gt;Faites glisser un menu dans la poubelle sur la droite pour le supprimer.&lt;small class&#x3D;&quot;text-center text-muted&quot;&gt;Photos
+      non contractuelles car volées sans autorisation sur Internet ©&lt;/small&gt;&lt;/p&gt;
+  &lt;!--**-- AddMenu section --**--&gt;
+  &lt;app-addmenu&gt;&lt;/app-addmenu&gt;
 
-    &lt;!-- Handling errors --&gt;
-    &lt;div *ngIf&#x3D;&quot;menuName.invalid &amp;&amp; (menuName.dirty || menuName.touched)&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;
-      &lt;div *ngIf&#x3D;&quot;menuName.errors.required&quot;&gt;Le nom du menu est requis.&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div *ngIf&#x3D;&quot;costPriceMenu.invalid &amp;&amp; (costPriceMenu.dirty || costPriceMenu.touched)&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;
-      &lt;div *ngIf&#x3D;&quot;costPriceMenu.errors.required&quot;&gt;Le prix de revient est requis.&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div *ngIf&#x3D;&quot;sellPriceMenu.invalid &amp;&amp; (sellPriceMenu.dirty || sellPriceMenu.touched)&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;
-      &lt;div *ngIf&#x3D;&quot;sellPriceMenu.errors.required&quot;&gt;Le prix de vente est requis.&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div *ngIf&#x3D;&quot;ingredientsMenu.invalid &amp;&amp; (ingredientsMenu.dirty || ingredientsMenu.touched)&quot; class&#x3D;&quot;alert alert-danger&quot;&gt;
-      &lt;div *ngIf&#x3D;&quot;ingredientsMenu.errors.required&quot;&gt;La liste des ingrédients est requise.&lt;/div&gt;
-    &lt;/div&gt;
-
-    &lt;!-- Ze Form--&gt;
-    &lt;form class&#x3D;&quot;form-default mt-4&quot; (ngSubmit)&#x3D;&quot;addMenu()&quot; [formGroup]&#x3D;&quot;addMenuForm&quot; data-toggle&#x3D;&quot;validator&quot;&gt;
-      &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
-          &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;label class&#x3D;&quot;control-label&quot;&gt;Nom du menu&lt;/label&gt;
-            &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control form-control-lg&quot; name&#x3D;&quot;menuName&quot; id&#x3D;&quot;menuName&quot; formControlName&#x3D;&quot;menuName&quot;
-              required&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
-          &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;label class&#x3D;&quot;control-label&quot;&gt;Coût de revient&lt;/label&gt;
-            &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control form-control-lg&quot; name&#x3D;&quot;costPriceMenu&quot; id&#x3D;&quot;costPriceMenu&quot;
-              formControlName&#x3D;&quot;costPriceMenu&quot; required&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;div class&#x3D;&quot;row&quot;&gt;
-        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
-          &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;label class&#x3D;&quot;control-label&quot;&gt;Coût de vente&lt;/label&gt;
-            &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control form-control-lg&quot; name&#x3D;&quot;sellPriceMenu&quot; id&#x3D;&quot;sellPriceMenu&quot;
-              formControlName&#x3D;&quot;sellPriceMenu&quot; required&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;col-md-6&quot;&gt;
-          &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;label class&#x3D;&quot;control-label&quot;&gt;Ingrédients&lt;/label&gt;
-            &lt;select multiple class&#x3D;&quot;d-block&quot; style&#x3D;&quot;width:100%; text-align:center;&quot; class&#x3D;&quot;form-control form-control-lg&quot;
-              name&#x3D;&quot;ingredientsMenu&quot; id&#x3D;&quot;ingredientsMenu&quot; formControlName&#x3D;&quot;ingredientsMenu&quot; required&gt;
-              &lt;option *ngFor&#x3D;&quot;let ingredient of listIngredients | async&quot;&gt;{{ingredient.name}}&lt;/option&gt;
-            &lt;/select&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;btn btn-styled  btn-base-1 mt-4&quot; [disabled]&#x3D;&quot;addMenuForm.invalid&quot;&gt;
-        Ajouter ce menu
-      &lt;/button&gt;
-    &lt;/form&gt;
-  &lt;/div&gt;
-  &lt;!-- Drag &amp; drop test dnd --&gt;
-  &lt;div class&#x3D;&quot;row text-center&quot;&gt;
-    &lt;div class&#x3D;&quot;col-sm-4 offset-sm-4&quot;&gt;
-      &lt;div dnd-droppable class&#x3D;&quot;card bg-danger&quot; (onDropSuccess)&#x3D;&quot;deleteDnd($event)&quot;&gt;
-        &lt;h4 class&#x3D;&quot;card-title my-3&quot;&gt;Place to drop
-        &lt;/h4&gt;
-        &lt;div class&#x3D;&quot;card-body&quot;&gt;
-          &lt;div *ngIf&#x3D;&quot;simpleDrop&quot;&gt;Item was dropped here&lt;/div&gt;
-        &lt;/div&gt;
+  &lt;!--**-- Cards --**--&gt;
+  &lt;div class&#x3D;&quot;d-flex flex-row justify-content-center align-items-start flex-wrap w-100 my-5 position-relative&quot;&gt;
+    &lt;div class&#x3D;&quot;dropzone position-absolute&quot;&gt;
+      &lt;div dnd-droppable (onDropSuccess)&#x3D;&quot;log($event); simpleDrop &#x3D; $event&quot;&gt;
+        &lt;img src&#x3D;&quot;assets/svg/bin.svg&quot; id&#x3D;&quot;svg-bin&quot;&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-  &lt;/div&gt;
-
-
-
-
-  &lt;!-- Version card --&gt;
-  &lt;div class&#x3D;&quot;d-flex flex-row justify-content-center flex-wrap w-100 my-5&quot;&gt;
-    &lt;div class&#x3D;&quot;restaurantcard&quot; dnd-draggable [dragEnabled]&#x3D;&quot;true&quot; [dragData]&#x3D;&quot;menu.id&quot; *ngFor&#x3D;&quot;let menu of listMenus | async; let i &#x3D; index&quot;&gt;
+    &lt;div class&#x3D;&quot;restaurantcard&quot; dnd-draggable [dragEnabled]&#x3D;&quot;draggingOk&quot; [dragData]&#x3D;&quot;menu.id&quot; *ngFor&#x3D;&quot;let menu of listMenus; let i &#x3D; index&quot;&gt;
       &lt;!-- Photo de la card &lt;img class&#x3D;&quot;card-img-top&quot; data-src&#x3D;&quot;holder.js/100x180/&quot; alt&#x3D;&quot;Card image cap&quot;&gt; --&gt;
-      &lt;div class&#x3D;&quot;inner-restaurantcard bg-light&quot;&gt;
-        &lt;h4 *ngIf&#x3D;&quot;!editArray[i]&quot;&gt;{{menu.name}}&lt;/h4&gt;
-        &lt;div *ngIf&#x3D;&quot;!editArray[i]&quot;&gt;
-          &lt;h5&gt;Ingrédients&lt;/h5&gt;
-          &lt;ul&gt;
-            &lt;li *ngFor&#x3D;&quot;let ingredient of menu.ingredients&quot;&gt;{{ingredient}}&lt;/li&gt;
-          &lt;/ul&gt;
-        &lt;/div&gt;
-        &lt;p *ngIf&#x3D;&quot;!editArray[i]&quot;&gt;Prix de vente : {{menu.sellPrice | price}}&lt;/p&gt;
-        &lt;p *ngIf&#x3D;&quot;!editArray[i]&quot;&gt;Prix de revient : {{menu.costPrice | price}}&lt;/p&gt;
-        &lt;p *ngIf&#x3D;&quot;!editArray[i]&quot; class&#x3D;&quot;text-muted&quot;&gt;Marge : {{menu.sellPrice - menu.costPrice | price }}&lt;/p&gt;
-        &lt;div *ngIf&#x3D;&quot;!editArray[i]&quot; class&#x3D;&quot;text-center mt-3&quot;&gt;
-          &lt;button class&#x3D;&quot;btn btn-primary mx-1&quot; (click)&#x3D;&quot;editMenu(i)&quot;&gt;✏️&lt;/button&gt;
-          &lt;button class&#x3D;&quot;btn btn-danger mx-1&quot; (click)&#x3D;&quot;deleteMenu(menu.id)&quot;&gt;❌&lt;/button&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;!-- edit section--&gt;
+      &lt;img src&#x3D;&quot;{{menu.imgurl}}&quot; class&#x3D;&quot;img-fluid&quot; alt&#x3D;&quot;&quot;&gt;
       &lt;div class&#x3D;&quot;inner-restaurantcard&quot;&gt;
-        &lt;h4 class&#x3D;&quot;card-title&quot; *ngIf&#x3D;&quot;editArray[i]&quot;&gt;&lt;input [(ngModel)]&#x3D;&quot;menu.name&quot; value&#x3D;&quot;menu.name&quot;&gt;&lt;/h4&gt;
-        &lt;p class&#x3D;&quot;card-text&quot; *ngIf&#x3D;&quot;editArray[i]&quot;&gt;Prix de vente : &lt;input [(ngModel)]&#x3D;&quot;menu.sellPrice&quot; value&#x3D;&quot;menu.sellPrice&quot;&gt;&lt;/p&gt;
-        &lt;p class&#x3D;&quot;card-text&quot; *ngIf&#x3D;&quot;editArray[i]&quot;&gt;Prix de revient : &lt;input [(ngModel)]&#x3D;&quot;menu.costPrice&quot; value&#x3D;&quot;menu.costPrice&quot;&gt;&lt;/p&gt;
-        &lt;p class&#x3D;&quot;card-text&quot; *ngIf&#x3D;&quot;editArray[i]&quot;&gt;/&lt;/p&gt;
-        &lt;p class&#x3D;&quot;card-text&quot; *ngIf&#x3D;&quot;editArray[i]&quot;&gt;Ingrédients&lt;input [(ngModel)]&#x3D;&quot;menu.ingredients&quot; value&#x3D;&quot;menu.ingredients&quot;&gt;&lt;/p&gt;
-        &lt;div *ngIf&#x3D;&quot;editArray[i]&quot; class&#x3D;&quot;text-center&quot;&gt;
-          &lt;button class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;&quot;addEdits(i)&quot;&gt;Valider&lt;/button&gt;
-          &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;editMenu(i)&quot;&gt;Annuler&lt;/button&gt;
+        &lt;div class&#x3D;&quot;container&quot;&gt;
+          &lt;h4 class&#x3D;&quot;my-2&quot; *ngIf&#x3D;&quot;!editArray[i]&quot;&gt;{{menu.name}}&lt;/h4&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-sm-6&quot;&gt;
+              &lt;div *ngIf&#x3D;&quot;!editArray[i]&quot;&gt;
+                &lt;h5 class&#x3D;&quot;square-before&quot;&gt;&amp;nbsp;Ingrédients&lt;/h5&gt;
+                &lt;ul&gt;
+                  &lt;li *ngFor&#x3D;&quot;let ingredient of menu.ingredients&quot;&gt;{{ingredient}}&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;col-sm-6&quot;&gt;
+              &lt;h5 *ngIf&#x3D;&quot;!editArray[i]&quot; class&#x3D;&quot; square-before&quot;&gt;&amp;nbsp;Prix&lt;/h5&gt;
+              &lt;p *ngIf&#x3D;&quot;!editArray[i]&quot;&gt;Prix de vente : {{menu.sellPrice | price}}&lt;/p&gt;
+              &lt;p *ngIf&#x3D;&quot;!editArray[i]&quot;&gt;Prix de revient : {{menu.costPrice | price}}&lt;/p&gt;
+              &lt;p *ngIf&#x3D;&quot;!editArray[i]&quot; class&#x3D;&quot;font-weight-bold&quot;&gt;Marge : {{menu.sellPrice - menu.costPrice |
+                price }}&lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div *ngIf&#x3D;&quot;!editArray[i]&quot; class&#x3D;&quot;mt-3 menu-buttons&quot;&gt;
+              &lt;button class&#x3D;&quot;btn btn-primary&quot; (click)&#x3D;&quot;editMenu(i)&quot;&gt;
+                &lt;mat-icon&gt;edit&lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;btn btn-danger mx-2&quot; (click)&#x3D;&quot;deleteMenu(menu.id)&quot;&gt;
+                &lt;mat-icon&gt;delete&lt;/mat-icon&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
       &lt;/div&gt;
-      &lt;!-- --&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
 
+
+
+
+
+
+
+
+
+      &lt;!--**-- Edit section --**--&gt;
+      &lt;div class&#x3D;&quot;inner-restaurantcard&quot;&gt;
+        &lt;div class&#x3D;&quot;container&quot;&gt;
+          &lt;div class&#x3D;&quot;form-group&quot;&gt;
+            &lt;h5 *ngIf&#x3D;&quot;editArray[i]&quot;&gt;
+              &lt;mat-form-field class&#x3D;&quot;example-full-width&quot;&gt;
+                &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control form-control-lg&quot; matInput [(ngModel)]&#x3D;&quot;menu.name&quot; value&#x3D;&quot;menu.name&quot;
+                  required&gt;
+              &lt;/mat-form-field&gt;
+            &lt;/h5&gt;
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;div class&#x3D;&quot;col-sm-6&quot;&gt;
+              &lt;!-- costPrice --&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;mat-form-field *ngIf&#x3D;&quot;editArray[i]&quot;&gt;
+                  &lt;label for&#x3D;&quot;sellPriceMenu&quot;&gt;Prix de vente&lt;/label&gt;
+                  &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; matInput [(ngModel)]&#x3D;&quot;menu.sellPrice&quot; value&#x3D;&quot;menu.sellPrice&quot;
+                    required&gt;
+                &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;!-- sellPrice --&gt;
+            &lt;div class&#x3D;&quot;col-sm-6&quot;&gt;
+              &lt;div class&#x3D;&quot;form-group&quot;&gt;
+                &lt;mat-form-field *ngIf&#x3D;&quot;editArray[i]&quot;&gt;
+                  &lt;label for&#x3D;&quot;costPriceMenu&quot;&gt;Prix de revient&lt;/label&gt;
+                  &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; matInput [(ngModel)]&#x3D;&quot;menu.costPrice&quot; value&#x3D;&quot;menu.costPrice&quot;
+                    required&gt;
+                &lt;/mat-form-field&gt;
+              &lt;/div&gt;
+            &lt;/div&gt;
+
+          &lt;/div&gt;
+          &lt;div class&#x3D;&quot;row&quot;&gt;
+            &lt;!-- ingredients --&gt;
+            &lt;div *ngIf&#x3D;&quot;editArray[i]&quot; class&#x3D;&quot;col-sm-6&quot;&gt;
+              &lt;button class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;&quot;addEdits(menu, i)&quot;&gt;
+                &lt;mat-icon&gt;done&lt;/mat-icon&gt;
+              &lt;/button&gt;
+              &lt;button class&#x3D;&quot;btn btn-primary mx-2&quot; (click)&#x3D;&quot;editMenu(i)&quot;&gt;
+                &lt;mat-icon&gt;undo&lt;/mat-icon&gt;
+              &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;form-group col-sm-6&quot;&gt;
+              &lt;mat-form-field *ngIf&#x3D;&quot;editArray[i]&quot;&gt;
+                &lt;mat-select placeholder&#x3D;&quot;Ingrédients&quot; [(ngModel)]&#x3D;&quot;menu.ingredients&quot; multiple&gt;
+                  &lt;mat-option *ngFor&#x3D;&quot;let ingredient of listIngredients | async&quot; value&#x3D;{{ingredient.name}}&gt;{{ingredient.name}}&lt;/mat-option&gt;
+                &lt;/mat-select&gt;
+              &lt;/mat-form-field&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt; &lt;!-- end of .restaurantcard--&gt;
+  &lt;/div&gt;
 &lt;/div&gt; &lt;!-- end of .container-fluid --&gt;</code></pre>
     </div>
 
@@ -1450,8 +1240,8 @@ export class RestaurantmenuComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="mx-3">  <h1>Menus du restaurant</h1>  <!-- add menu section-->  <button class="btn" (click)="displayAddMenu()">Ajouter Menu</button>  <div *ngIf="displayingAddMenu" class="add-menu">    <h2>Ajouter un menu</h2>    <!-- Handling errors -->    <div *ngIf="menuName.invalid && (menuName.dirty || menuName.touched)" class="alert alert-danger">      <div *ngIf="menuName.errors.required">Le nom du menu est requis.</div>    </div>    <div *ngIf="costPriceMenu.invalid && (costPriceMenu.dirty || costPriceMenu.touched)" class="alert alert-danger">      <div *ngIf="costPriceMenu.errors.required">Le prix de revient est requis.</div>    </div>    <div *ngIf="sellPriceMenu.invalid && (sellPriceMenu.dirty || sellPriceMenu.touched)" class="alert alert-danger">      <div *ngIf="sellPriceMenu.errors.required">Le prix de vente est requis.</div>    </div>    <div *ngIf="ingredientsMenu.invalid && (ingredientsMenu.dirty || ingredientsMenu.touched)" class="alert alert-danger">      <div *ngIf="ingredientsMenu.errors.required">La liste des ingrédients est requise.</div>    </div>    <!-- Ze Form-->    <form class="form-default mt-4" (ngSubmit)="addMenu()" [formGroup]="addMenuForm" data-toggle="validator">      <div class="row">        <div class="col-md-6">          <div class="form-group">            <label class="control-label">Nom du menu</label>            <input type="text" class="form-control form-control-lg" name="menuName" id="menuName" formControlName="menuName"              required>          </div>        </div>        <div class="col-md-6">          <div class="form-group">            <label class="control-label">Coût de revient</label>            <input type="number" class="form-control form-control-lg" name="costPriceMenu" id="costPriceMenu"              formControlName="costPriceMenu" required>          </div>        </div>      </div>      <div class="row">        <div class="col-md-6">          <div class="form-group">            <label class="control-label">Coût de vente</label>            <input type="number" class="form-control form-control-lg" name="sellPriceMenu" id="sellPriceMenu"              formControlName="sellPriceMenu" required>          </div>        </div>        <div class="col-md-6">          <div class="form-group">            <label class="control-label">Ingrédients</label>            <select multiple class="d-block" style="width:100%; text-align:center;" class="form-control form-control-lg"              name="ingredientsMenu" id="ingredientsMenu" formControlName="ingredientsMenu" required>              <option *ngFor="let ingredient of listIngredients | async">{{ingredient.name}}</option>            </select>          </div>        </div>      </div>      <button type="submit" class="btn btn-styled  btn-base-1 mt-4" [disabled]="addMenuForm.invalid">        Ajouter ce menu      </button>    </form>  </div>  <!-- Drag & drop test dnd -->  <div class="row text-center">    <div class="col-sm-4 offset-sm-4">      <div dnd-droppable class="card bg-danger" (onDropSuccess)="deleteDnd($event)">        <h4 class="card-title my-3">Place to drop        </h4>        <div class="card-body">          <div *ngIf="simpleDrop">Item was dropped here</div>        </div>      </div>    </div>  </div>  <!-- Version card -->  <div class="d-flex flex-row justify-content-center flex-wrap w-100 my-5">    <div class="restaurantcard" dnd-draggable [dragEnabled]="true" [dragData]="menu.id" *ngFor="let menu of listMenus | async; let i = index">      <!-- Photo de la card <img class="card-img-top" data-src="holder.js/100x180/" alt="Card image cap"> -->      <div class="inner-restaurantcard bg-light">        <h4 *ngIf="!editArray[i]">{{menu.name}}</h4>        <div *ngIf="!editArray[i]">          <h5>Ingrédients</h5>          <ul>            <li *ngFor="let ingredient of menu.ingredients">{{ingredient}}</li>          </ul>        </div>        <p *ngIf="!editArray[i]">Prix de vente : {{menu.sellPrice | price}}</p>        <p *ngIf="!editArray[i]">Prix de revient : {{menu.costPrice | price}}</p>        <p *ngIf="!editArray[i]" class="text-muted">Marge : {{menu.sellPrice - menu.costPrice | price }}</p>        <div *ngIf="!editArray[i]" class="text-center mt-3">          <button class="btn btn-primary mx-1" (click)="editMenu(i)">✏️</button>          <button class="btn btn-danger mx-1" (click)="deleteMenu(menu.id)">❌</button>        </div>      </div>      <!-- edit section-->      <div class="inner-restaurantcard">        <h4 class="card-title" *ngIf="editArray[i]"><input [(ngModel)]="menu.name" value="menu.name"></h4>        <p class="card-text" *ngIf="editArray[i]">Prix de vente : <input [(ngModel)]="menu.sellPrice" value="menu.sellPrice"></p>        <p class="card-text" *ngIf="editArray[i]">Prix de revient : <input [(ngModel)]="menu.costPrice" value="menu.costPrice"></p>        <p class="card-text" *ngIf="editArray[i]">/</p>        <p class="card-text" *ngIf="editArray[i]">Ingrédients<input [(ngModel)]="menu.ingredients" value="menu.ingredients"></p>        <div *ngIf="editArray[i]" class="text-center">          <button class="btn btn-success" (click)="addEdits(i)">Valider</button>          <button class="btn btn-primary" (click)="editMenu(i)">Annuler</button>        </div>      </div>      <!-- -->    </div>  </div></div> <!-- end of .container-fluid --></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarDetailComponent', 'selector': 'app-calendar-detail'},{'name': 'DetailStockComponent', 'selector': 'app-detail-stock'},{'name': 'FournisseurcomponentComponent', 'selector': 'app-fournisseurcomponent'},{'name': 'FournisseurdetailsComponent', 'selector': 'app-fournisseurdetails'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ListusersComponent', 'selector': 'app-listusers'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantmenuComponent', 'selector': 'app-restaurantmenu'},{'name': 'StockComponent', 'selector': 'app-stock'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container-fluid my-4">  <h1 class="text-center">Menus du restaurant</h1>  <p class="text-center">Faites glisser un menu dans la poubelle sur la droite pour le supprimer.<small class="text-center text-muted">Photos      non contractuelles car volées sans autorisation sur Internet ©</small></p>  <!--**-- AddMenu section --**-->  <app-addmenu></app-addmenu>  <!--**-- Cards --**-->  <div class="d-flex flex-row justify-content-center align-items-start flex-wrap w-100 my-5 position-relative">    <div class="dropzone position-absolute">      <div dnd-droppable (onDropSuccess)="log($event); simpleDrop = $event">        <img src="assets/svg/bin.svg" id="svg-bin">      </div>    </div>    <div class="restaurantcard" dnd-draggable [dragEnabled]="draggingOk" [dragData]="menu.id" *ngFor="let menu of listMenus; let i = index">      <!-- Photo de la card <img class="card-img-top" data-src="holder.js/100x180/" alt="Card image cap"> -->      <img src="{{menu.imgurl}}" class="img-fluid" alt="">      <div class="inner-restaurantcard">        <div class="container">          <h4 class="my-2" *ngIf="!editArray[i]">{{menu.name}}</h4>          <div class="row">            <div class="col-sm-6">              <div *ngIf="!editArray[i]">                <h5 class="square-before">&nbsp;Ingrédients</h5>                <ul>                  <li *ngFor="let ingredient of menu.ingredients">{{ingredient}}</li>                </ul>              </div>            </div>            <div class="col-sm-6">              <h5 *ngIf="!editArray[i]" class=" square-before">&nbsp;Prix</h5>              <p *ngIf="!editArray[i]">Prix de vente : {{menu.sellPrice | price}}</p>              <p *ngIf="!editArray[i]">Prix de revient : {{menu.costPrice | price}}</p>              <p *ngIf="!editArray[i]" class="font-weight-bold">Marge : {{menu.sellPrice - menu.costPrice |                price }}</p>            </div>          </div>          <div class="row">            <div *ngIf="!editArray[i]" class="mt-3 menu-buttons">              <button class="btn btn-primary" (click)="editMenu(i)">                <mat-icon>edit</mat-icon>              </button>              <button class="btn btn-danger mx-2" (click)="deleteMenu(menu.id)">                <mat-icon>delete</mat-icon>              </button>            </div>          </div>        </div>      </div>      <!--**-- Edit section --**-->      <div class="inner-restaurantcard">        <div class="container">          <div class="form-group">            <h5 *ngIf="editArray[i]">              <mat-form-field class="example-full-width">                <input type="text" class="form-control form-control-lg" matInput [(ngModel)]="menu.name" value="menu.name"                  required>              </mat-form-field>            </h5>          </div>          <div class="row">            <div class="col-sm-6">              <!-- costPrice -->              <div class="form-group">                <mat-form-field *ngIf="editArray[i]">                  <label for="sellPriceMenu">Prix de vente</label>                  <input type="number" class="form-control" matInput [(ngModel)]="menu.sellPrice" value="menu.sellPrice"                    required>                </mat-form-field>              </div>            </div>            <!-- sellPrice -->            <div class="col-sm-6">              <div class="form-group">                <mat-form-field *ngIf="editArray[i]">                  <label for="costPriceMenu">Prix de revient</label>                  <input type="number" class="form-control" matInput [(ngModel)]="menu.costPrice" value="menu.costPrice"                    required>                </mat-form-field>              </div>            </div>          </div>          <div class="row">            <!-- ingredients -->            <div *ngIf="editArray[i]" class="col-sm-6">              <button class="btn btn-success" (click)="addEdits(menu, i)">                <mat-icon>done</mat-icon>              </button>              <button class="btn btn-primary mx-2" (click)="editMenu(i)">                <mat-icon>undo</mat-icon>              </button>            </div>            <div class="form-group col-sm-6">              <mat-form-field *ngIf="editArray[i]">                <mat-select placeholder="Ingrédients" [(ngModel)]="menu.ingredients" multiple>                  <mat-option *ngFor="let ingredient of listIngredients | async" value={{ingredient.name}}>{{ingredient.name}}</mat-option>                </mat-select>              </mat-form-field>            </div>          </div>        </div>      </div>    </div> <!-- end of .restaurantcard-->  </div></div> <!-- end of .container-fluid --></div>'
+    var COMPONENTS = [{'name': 'AddProductComponent', 'selector': 'app-add-product'},{'name': 'AddmenuComponent', 'selector': 'app-addmenu'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarDetailComponent', 'selector': 'app-calendar-detail'},{'name': 'DetailStockComponent', 'selector': 'app-detail-stock'},{'name': 'FournisseurcomponentComponent', 'selector': 'app-fournisseurcomponent'},{'name': 'FournisseurdetailsComponent', 'selector': 'app-fournisseurdetails'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ListusersComponent', 'selector': 'app-listusers'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantmenuComponent', 'selector': 'app-restaurantmenu'},{'name': 'RoutfournisseurComponent', 'selector': 'app-routfournisseur'},{'name': 'StockComponent', 'selector': 'app-stock'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'RestaurantmenuComponent'};
 </script>

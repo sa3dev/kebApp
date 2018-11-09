@@ -22,41 +22,53 @@
 <text text-anchor="start" x="429.7258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
 <g id="clust1" class="cluster">
 <title>cluster_StockModule</title>
-<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="92.5,-70 92.5,-195 403.5,-195 403.5,-70 92.5,-70"/>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="9.5,-70 9.5,-195 486.5,-195 486.5,-70 9.5,-70"/>
 </g>
 <g id="clust2" class="cluster">
 <title>cluster_StockModule_declarations</title>
-<polygon fill="none" stroke="#000000" points="100.5,-78 100.5,-130 395.5,-130 395.5,-78 100.5,-78"/>
+<polygon fill="none" stroke="#000000" points="17.5,-78 17.5,-130 478.5,-130 478.5,-78 17.5,-78"/>
 </g>
-<!-- DetailStockComponent -->
+<!-- AddProductComponent -->
 <g id="node1" class="node">
-<title>DetailStockComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="387.4284,-122 239.5716,-122 239.5716,-86 387.4284,-86 387.4284,-122"/>
-<text text-anchor="middle" x="313.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">DetailStockComponent</text>
+<title>AddProductComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="470.9874,-122 322.0126,-122 322.0126,-86 470.9874,-86 470.9874,-122"/>
+<text text-anchor="middle" x="396.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AddProductComponent</text>
 </g>
 <!-- StockModule -->
-<g id="node3" class="node">
+<g id="node4" class="node">
 <title>StockModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="285.4387,-187 282.4387,-191 261.4387,-191 258.4387,-187 193.5613,-187 193.5613,-151 285.4387,-151 285.4387,-187"/>
-<text text-anchor="middle" x="239.5" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">StockModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="276.4387,-187 273.4387,-191 252.4387,-191 249.4387,-187 184.5613,-187 184.5613,-151 276.4387,-151 276.4387,-187"/>
+<text text-anchor="middle" x="230.5" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">StockModule</text>
+</g>
+<!-- AddProductComponent&#45;&gt;StockModule -->
+<g id="edge1" class="edge">
+<title>AddProductComponent&#45;&gt;StockModule</title>
+<path fill="none" stroke="#000000" d="M396.5,-122.1061C396.5,-141.3391 396.5,-169 396.5,-169 396.5,-169 286.2997,-169 286.2997,-169"/>
+<polygon fill="#000000" stroke="#000000" points="286.2997,-165.5001 276.2997,-169 286.2996,-172.5001 286.2997,-165.5001"/>
+</g>
+<!-- DetailStockComponent -->
+<g id="node2" class="node">
+<title>DetailStockComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="304.4284,-122 156.5716,-122 156.5716,-86 304.4284,-86 304.4284,-122"/>
+<text text-anchor="middle" x="230.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">DetailStockComponent</text>
 </g>
 <!-- DetailStockComponent&#45;&gt;StockModule -->
-<g id="edge1" class="edge">
+<g id="edge2" class="edge">
 <title>DetailStockComponent&#45;&gt;StockModule</title>
-<path fill="none" stroke="#000000" d="M262.5025,-122.1061C262.5025,-122.1061 262.5025,-140.991 262.5025,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="259.0025,-140.9909 262.5025,-150.991 266.0025,-140.991 259.0025,-140.9909"/>
+<path fill="none" stroke="#000000" d="M230.5,-122.1061C230.5,-122.1061 230.5,-140.991 230.5,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="227.0001,-140.9909 230.5,-150.991 234.0001,-140.991 227.0001,-140.9909"/>
 </g>
 <!-- StockComponent -->
-<g id="node2" class="node">
+<g id="node3" class="node">
 <title>StockComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="222.2204,-122 108.7796,-122 108.7796,-86 222.2204,-86 222.2204,-122"/>
-<text text-anchor="middle" x="165.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">StockComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="139.2204,-122 25.7796,-122 25.7796,-86 139.2204,-86 139.2204,-122"/>
+<text text-anchor="middle" x="82.5" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">StockComponent</text>
 </g>
 <!-- StockComponent&#45;&gt;StockModule -->
-<g id="edge2" class="edge">
+<g id="edge3" class="edge">
 <title>StockComponent&#45;&gt;StockModule</title>
-<path fill="none" stroke="#000000" d="M207.9457,-122.1061C207.9457,-122.1061 207.9457,-140.991 207.9457,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="204.4457,-140.9909 207.9457,-150.991 211.4457,-140.991 204.4457,-140.9909"/>
+<path fill="none" stroke="#000000" d="M82.5,-122.1061C82.5,-141.3391 82.5,-169 82.5,-169 82.5,-169 174.4832,-169 174.4832,-169"/>
+<polygon fill="#000000" stroke="#000000" points="174.4832,-172.5001 184.4832,-169 174.4831,-165.5001 174.4832,-172.5001"/>
 </g>
 </g>
 </svg>

@@ -38,7 +38,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>DetailStockComponent</li>
+  <li>RoutfournisseurComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -47,9 +47,6 @@
         </li>
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
-        </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
         </li>
         <li >
             <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
@@ -61,7 +58,7 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/stock/detail-stock/detail-stock.component.ts</code>
+    <code>src/app/fournisseur/routfournisseur/routfournisseur.component.ts</code>
 </p>
 
 
@@ -91,20 +88,16 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-detail-stock</code></td>
-            </tr>
-
-            <tr>
-                <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>detail-stock.component.scss</code></td>
+                <td class="col-md-9"><code>app-routfournisseur</code></td>
             </tr>
 
 
 
             <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./detail-stock.component.html</code></td>
+                <td class="col-md-3">template</td>
+                <td class="col-md-9"><pre class="line-numbers"><code class="language-html">&lt;router-outlet&gt;&lt;/router-outlet&gt;</code></pre></td>
             </tr>
+
 
 
         </tbody>
@@ -127,27 +120,10 @@
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
                             </li>
-                            <li>
-                                <a href="#retourStock">retourStock</a>
-                            </li>
                         </ul>
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Inputs</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#dataProduct">dataProduct</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
@@ -162,73 +138,20 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(compStock: <a href="../components/StockComponent.html">StockComponent</a>)</code>
+<code>constructor()</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/stock/detail-stock/detail-stock.component.ts:12</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/fournisseur/routfournisseur/routfournisseur.component.ts:8</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>compStock</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="../components/StockComponent.html" target="_self" >StockComponent</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            No
-                                                    </td>
-                                                    
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
             </tbody>
         </table>
 </section>
 
-    <section>
-    <h3 id="inputs">Inputs</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-2">
-                        <a name="dataProduct"></a>
-                        <code>dataProduct</code>
-                    </td>
-                    <td class="col-md-10">
-                            <p>
-                            <em>Type :</em>    <code><a href="../classes/Product.html" target="_self" >Product</a></code>
 
-                            </p>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-2" colspan="2">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/stock/detail-stock/detail-stock.component.ts:12</a></div>
-                            </td>
-                        </tr>
-            </tbody>
-        </table>
-</section>
 
 
 
@@ -259,45 +182,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/stock/detail-stock/detail-stock.component.ts:16</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="retourStock"></a>
-                        <span class="name">
-                            <b>
-                            retourStock
-                            </b>
-                            <a href="#retourStock"><span class="icon ion-ios-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>retourStock()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/stock/detail-stock/detail-stock.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/fournisseur/routfournisseur/routfournisseur.component.ts:12</a></div>
                             </td>
                         </tr>
 
@@ -320,54 +205,24 @@
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Input } from &#x27;@angular/core&#x27;;
-import { Product } from &#x27;src/app/core/products/product.model&#x27;;
-import { StockComponent } from &#x27;../stock.component&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 @Component({
-	selector: &#x27;app-detail-stock&#x27;,
-	templateUrl: &#x27;./detail-stock.component.html&#x27;,
-	styleUrls: [&#x27;./detail-stock.component.scss&#x27;]
+  selector: &#x27;app-routfournisseur&#x27;,
+  template: &#x27;&lt;router-outlet&gt;&lt;/router-outlet&gt;&#x27;,
+  
 })
-export class DetailStockComponent implements OnInit {
+export class RoutfournisseurComponent implements OnInit {
 
-	@Input() dataProduct: Product; // un seul produit recuperer du parent
+  constructor() { }
 
-	constructor( private compStock: StockComponent ) { }
+  ngOnInit() {
+  }
 
-	ngOnInit() {
-	}
-
-	retourStock(){
-		this.compStock.pageDetail &#x3D; false;
-	}
 }
 </code></pre>
     </div>
 
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;container&quot;&gt;
-	&lt;h2&gt;Détail du produit &lt;/h2&gt;
-
-	&lt;table class&#x3D;&quot;table table-bordered&quot;&gt;
-		&lt;thead&gt;
-			&lt;tr&gt;
-			&lt;th&gt;Nom du produit&lt;/th&gt;
-			&lt;th&gt;Prix&lt;/th&gt;
-			&lt;th&gt;Quantité&lt;/th&gt;
-			&lt;th&gt;Fournisseurs n°&lt;/th&gt;
-			&lt;/tr&gt;
-		&lt;/thead&gt;
-		&lt;tr (click)&#x3D;&quot;retourStock()&quot;&gt;
-			&lt;td&gt; {{ dataProduct.name  }}&lt;/td&gt;
-			&lt;td&gt; {{ dataProduct.price  }}&lt;/td&gt;
-			&lt;td&gt; {{ dataProduct.quantity  }} &lt;/td&gt;
-			&lt;td&gt; {{ dataProduct.supplier }} &lt;/td&gt;
-		&lt;/tr&gt;	
-	&lt;/table&gt;
-	&lt;button (click)&#x3D;&quot;retourStock()&quot;&gt; Retour &lt;/button&gt;
-&lt;/div&gt;</code></pre>
-    </div>
 
     <div class="tab-pane fade " id="c-tree">
         <div id="tree-container"></div>
@@ -394,10 +249,10 @@ export class DetailStockComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container">	<h2>Détail du produit </h2>	<table class="table table-bordered">		<thead>			<tr>			<th>Nom du produit</th>			<th>Prix</th>			<th>Quantité</th>			<th>Fournisseurs n°</th>			</tr>		</thead>		<tr (click)="retourStock()">			<td> {{ dataProduct.name  }}</td>			<td> {{ dataProduct.price  }}</td>			<td> {{ dataProduct.quantity  }} </td>			<td> {{ dataProduct.supplier }} </td>		</tr>		</table>	<button (click)="retourStock()"> Retour </button></div></div>'
+        var COMPONENT_TEMPLATE = '<div><router-outlet></router-outlet></div>'
     var COMPONENTS = [{'name': 'AddProductComponent', 'selector': 'app-add-product'},{'name': 'AddmenuComponent', 'selector': 'app-addmenu'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarDetailComponent', 'selector': 'app-calendar-detail'},{'name': 'DetailStockComponent', 'selector': 'app-detail-stock'},{'name': 'FournisseurcomponentComponent', 'selector': 'app-fournisseurcomponent'},{'name': 'FournisseurdetailsComponent', 'selector': 'app-fournisseurdetails'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ListusersComponent', 'selector': 'app-listusers'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantmenuComponent', 'selector': 'app-restaurantmenu'},{'name': 'RoutfournisseurComponent', 'selector': 'app-routfournisseur'},{'name': 'StockComponent', 'selector': 'app-stock'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'DetailStockComponent'};
+    var ACTUAL_COMPONENT = {'name': 'RoutfournisseurComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -431,7 +286,7 @@ export class DetailStockComponent implements OnInit {
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'DetailStockComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'RoutfournisseurComponent.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

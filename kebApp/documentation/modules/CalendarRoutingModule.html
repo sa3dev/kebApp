@@ -37,7 +37,7 @@
 
 <ol class="breadcrumb">
   <li>Modules</li>
-  <li>CoreRoutingModule</li>
+  <li>CalendarRoutingModule</li>
 </ol>
 
 
@@ -57,7 +57,7 @@
             <h3>File</h3>
         </p>
         <p class="comment">
-            <code>src/app/core/core-routing.module.ts</code>
+            <code>src/app/calendar/calendar-routing.module.ts</code>
         </p>
 
 
@@ -72,65 +72,29 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
-import { CommonModule } from &#x27;@angular/common&#x27;;
-import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
-import { LoginComponent } from &#x27;./users/login/login.component&#x27;;
-import { ListusersComponent } from &#x27;./users/listusers/listusers.component&#x27;;
-import { RegisterComponent } from &#x27;./users/register/register.component&#x27;;
-import { ProductsComponent } from &#x27;./products/products.component&#x27;;
-import { RestaurantmenuComponent } from &#x27;../restaurantmenu/restaurantmenu.component&#x27;;
-import { StockComponent } from &#x27;../stock/stock.component&#x27;;
-import { AuthGuardService } from &#x27;./services/auth/auth-guard.service&#x27;;
+import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
+/**
+ * Now we import the 2 components of this feature module and the AuthGuardService 
+*/
+import { CalendarComponent } from &#x27;./calendar/calendar.component&#x27;;
+import { CalendarDetailComponent } from &#x27;./calendar-detail/calendar-detail.component&#x27;;
+import { AuthGuardService } from &#x27;../core/services/auth/auth-guard.service&#x27;;
 
+/**
+ * here we create the routes
+ */
 
 const routes: Routes &#x3D; [
-  { path: &#x27;&#x27;, redirectTo: &#x27;login&#x27;, pathMatch: &#x27;full&#x27; },
-  { path: &#x27;login&#x27;, component: LoginComponent },
-&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
-  { path: &#x27;users&#x27;, canActivate: [AuthGuardService], component: ListusersComponent },
-  { path: &#x27;register&#x27;,canActivate: [AuthGuardService], component: RegisterComponent },
-  { path: &#x27;products&#x27;, canActivate: [AuthGuardService], component: ProductsComponent },
-  { path: &#x27;fournisseurs&#x27;,loadChildren:&#x27;../fournisseur/fournisseur.module#FournisseurModule&#x27;},
-  { path: &#x27;reservation&#x27;, loadChildren:&#x27;../calendar/calendar.module#CalendarModule&#x27;},
-  { path: &#x27;users&#x27;, canActivate: [AuthGuardService], component: ListusersComponent },
-  { path: &#x27;register&#x27;, canActivate: [AuthGuardService], component: RegisterComponent },
-  { path: &#x27;products&#x27;, canActivate: [AuthGuardService], component: ProductsComponent },
-  { path: &#x27;inventaire&#x27;, canActivate: [AuthGuardService], component: StockComponent },
-  { path: &#x27;carte&#x27;, canActivate: [AuthGuardService], component: RestaurantmenuComponent },
-&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;
-  { path: &#x27;calendar&#x27;, canActivate: [LoginService], component: CalendarComponent },
-  { path: &#x27;users&#x27;, canActivate: [LoginService], component: ListusersComponent },
-  { path: &#x27;register&#x27;,canActivate: [LoginService], component: RegisterComponent },
-  { path: &#x27;products&#x27;, canActivate: [LoginService], component: ProductsComponent },
-  { path: &#x27;fournisseurs&#x27;, canActivate: [LoginService], component:FournisseurcomponentComponent},
-  
-  { 
-    path: &#x27;users&#x27;, 
-    canActivate: [LoginService], 
-    component: ListusersComponent 
-  },
-  { 
-    path: &#x27;register&#x27;,
-    canActivate: [LoginService], 
-    component: RegisterComponent 
-  },
-  { path: &#x27;products&#x27;, canActivate: [LoginService], component: ProductsComponent },
-  { path: &#x27;inventaire&#x27;,  component: StockComponent }, /* canActivate: [ LoginService ]  */
-  { path: &#x27;carte&#x27;, canActivate: [LoginService], component: RestaurantmenuComponent },
-  { path: &#x27;oftheday&#x27;, canActivate: [LoginService], component: CalendarDetailComponent}
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; stock
+  { path: &#x27;reservations&#x27;, canActivate: [AuthGuardService], component: CalendarComponent },
+  { path: &#x27;reservation/:start&#x27;, component: CalendarDetailComponent }
+
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule.forRoot(routes)
-  ],
-  providers: [AuthGuardService],
-  exports: [RouterModule],
-  declarations: []
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
-export class CoreRoutingModule { }
+export class CalendarRoutingModule { }
 </code></pre>
     </div>
 </div>
@@ -166,7 +130,7 @@ export class CoreRoutingModule { }
        <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
             var COMPODOC_CURRENT_PAGE_CONTEXT = 'module';
-            var COMPODOC_CURRENT_PAGE_URL = 'CoreRoutingModule.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'CalendarRoutingModule.html';
        </script>
 
        <script src="../js/libs/custom-elements.min.js"></script>

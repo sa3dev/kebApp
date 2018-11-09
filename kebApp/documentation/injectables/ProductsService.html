@@ -215,7 +215,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/core/products/products.service.ts:54</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/core/products/products.service.ts:57</a></div>
                             </td>
                         </tr>
 
@@ -543,7 +543,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="62" class="link-to-prism">src/app/core/products/products.service.ts:62</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/core/products/products.service.ts:65</a></div>
                             </td>
                         </tr>
 
@@ -755,9 +755,12 @@ export class ProductsService {
 	 */
 	updateProduct(id: number, property: string, value) {
 		this.newproperty &#x3D; property
-		return this.http.patch(apiURLProducts + id, { newproperty: value, }).subscribe(
-			data &#x3D;&gt; console.log(data),
+		return this.http.patch(apiURLProducts + id, {
+			newproperty: value,
+		}).subscribe(
+			data &#x3D;&gt; { console.log(data); this.getProductsList(); },
 			error &#x3D;&gt; console.log(&quot;Error in the updateProduct method &quot; + error))
+
 	}
 
 	/**
@@ -766,16 +769,16 @@ export class ProductsService {
 	 */
 	addProduct(product: Product) {
 		return this.http.post(apiURLProducts, product);
-	}
+	} 
 
 	/**
 	 * Update the whole product (different then updateProduct(id,property,value))
 	 * @param product the whole Product object to put
 	 */
-	UpdateProduct( product: Product ) {
-		const url &#x3D; &#x60;${apiURLProducts}/${product.id}&#x60;; 
+	UpdateProduct(product: Product) {
+		const url &#x3D; &#x60;${apiURLProducts}/${product.id}&#x60;;
 		this.http.put(apiURLProducts, product)
-    }
+	}
 }
 </code></pre>
     </div>

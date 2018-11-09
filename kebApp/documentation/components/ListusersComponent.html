@@ -253,7 +253,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:39</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:51</a></div>
                             </td>
                         </tr>
 
@@ -452,14 +452,14 @@
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>onUpdate(user: )</code>
+<code>onUpdate(user: , i: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/core/users/listusers/listusers.component.ts:37</a></div>
                             </td>
                         </tr>
 
@@ -473,12 +473,27 @@
                                         <thead>
                                             <tr>
                                                 <td>Name</td>
+                                                    <td>Type</td>
                                                 <td>Optional</td>
                                             </tr>
                                         </thead>
                                         <tbody>
                                                 <tr>
                                                         <td>user</td>
+                                                        <td>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                </tr>
+                                                <tr>
+                                                        <td>i</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
                                                     
                                                     <td>
                                                             No
@@ -661,10 +676,22 @@ export class ListusersComponent implements OnInit, OnDestroy {
     this.listuserService.deleteUser(id);
   }
   onEdit(i) {
+    
     this.userEdit[i] &#x3D;&#x3D;&#x3D; false ? this.userEdit[i] &#x3D; true: this.userEdit[i] &#x3D; false;
   }
-  onUpdate(user) {
-    this.listuserService.updateUser(user)
+  onUpdate(user, i:number) {
+    
+    this.listuserService.updateUser(user).subscribe(
+      data &#x3D;&gt; {
+        console.log(&quot;PUT Request is successful &quot;, data);
+        this.userEdit[i]&#x3D;false;
+      },
+      error &#x3D;&gt; {
+        console.log(&quot;Rrror&quot;, error);
+    
+      }
+    );;
+   
   }
   ngOnDestroy() {
     this.usersSubscription.unsubscribe();
@@ -701,7 +728,7 @@ export class ListusersComponent implements OnInit, OnDestroy {
         &lt;td *ngIf&#x3D;&quot;!userEdit[i]&quot;&gt; {{user.email}} &lt;/td&gt;
         &lt;td *ngIf&#x3D;&quot;userEdit[i]&quot;&gt;&lt;input [value]&#x3D;&quot;user.email&quot; [(ngModel)]&#x3D;&quot;user.email&quot;&gt;&lt;/td&gt;
         &lt;td *ngIf&#x3D;&quot;!userEdit[i]&quot;&gt;&lt;button class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;onEdit(i)&gt;Editer&lt;/button&gt;&lt;/td&gt;
-        &lt;td *ngIf&#x3D;&quot;userEdit[i]&quot;&gt;&lt;button class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;onUpdate(user)&gt;Valider&lt;/button&gt;&lt;/td&gt;
+        &lt;td *ngIf&#x3D;&quot;userEdit[i]&quot;&gt;&lt;button class&#x3D;&quot;btn btn-success&quot; (click)&#x3D;&quot;onUpdate(user, i)&quot;&gt;Valider&lt;/button&gt;&lt;/td&gt;
         &lt;td *ngIf&#x3D;&quot;!userEdit[i]&quot;&gt;&lt;button class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;onDelete(user.id)&gt;Supprimer&lt;/button&gt;&lt;/td&gt;
         &lt;td *ngIf&#x3D;&quot;userEdit[i]&quot;&gt;&lt;button class&#x3D;&quot;btn btn-danger&quot; (click)&#x3D;onEdit(i)&gt;Annuler&lt;/button&gt;&lt;/td&gt;
       &lt;/tr&gt;
@@ -736,8 +763,8 @@ export class ListusersComponent implements OnInit, OnDestroy {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="container pt-5">  <h1 class="p-5">Liste des utilisateurs </h1>  <table class="table">    <thead>      <tr>        <th scope="col">#</th>        <th scope="col">Prénom</th>        <th scope="col">Nom</th>        <th scope="col">Identifiant</th>        <th scope="col">Email</th>        <th scope="col">Editer</th>        <th scope="col">Supprimer</th>      </tr>    </thead>    <tbody >      <tr *ngFor="let user of users , let i = index ">        <th *ngIf="!userEdit[i]" scope="row">{{ user.id }}</th>        <th *ngIf="userEdit[i]" scope="row">{{ user.id }}</th>        <td *ngIf="!userEdit[i]"> {{ user.first_name}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.first_name" [(ngModel)]="user.first_name"></td>        <td *ngIf="!userEdit[i]"> {{user.last_name}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.last_name" [(ngModel)]="user.last_name"></td>        <td *ngIf="!userEdit[i]"> {{user.nick_name}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.nick_name" [(ngModel)]="user.nick_name"></td>        <td *ngIf="!userEdit[i]"> {{user.email}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.email" [(ngModel)]="user.email"></td>        <td *ngIf="!userEdit[i]"><button class="btn btn-success" (click)=onEdit(i)>Editer</button></td>        <td *ngIf="userEdit[i]"><button class="btn btn-success" (click)=onUpdate(user)>Valider</button></td>        <td *ngIf="!userEdit[i]"><button class="btn btn-danger" (click)=onDelete(user.id)>Supprimer</button></td>        <td *ngIf="userEdit[i]"><button class="btn btn-danger" (click)=onEdit(i)>Annuler</button></td>      </tr>    </tbody>  </table></div></div>'
-    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarDetailComponent', 'selector': 'app-calendar-detail'},{'name': 'DetailStockComponent', 'selector': 'app-detail-stock'},{'name': 'FournisseurcomponentComponent', 'selector': 'app-fournisseurcomponent'},{'name': 'FournisseurdetailsComponent', 'selector': 'app-fournisseurdetails'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ListusersComponent', 'selector': 'app-listusers'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantmenuComponent', 'selector': 'app-restaurantmenu'},{'name': 'StockComponent', 'selector': 'app-stock'}];
+        var COMPONENT_TEMPLATE = '<div><div class="container pt-5">  <h1 class="p-5">Liste des utilisateurs </h1>  <table class="table">    <thead>      <tr>        <th scope="col">#</th>        <th scope="col">Prénom</th>        <th scope="col">Nom</th>        <th scope="col">Identifiant</th>        <th scope="col">Email</th>        <th scope="col">Editer</th>        <th scope="col">Supprimer</th>      </tr>    </thead>    <tbody >      <tr *ngFor="let user of users , let i = index ">        <th *ngIf="!userEdit[i]" scope="row">{{ user.id }}</th>        <th *ngIf="userEdit[i]" scope="row">{{ user.id }}</th>        <td *ngIf="!userEdit[i]"> {{ user.first_name}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.first_name" [(ngModel)]="user.first_name"></td>        <td *ngIf="!userEdit[i]"> {{user.last_name}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.last_name" [(ngModel)]="user.last_name"></td>        <td *ngIf="!userEdit[i]"> {{user.nick_name}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.nick_name" [(ngModel)]="user.nick_name"></td>        <td *ngIf="!userEdit[i]"> {{user.email}} </td>        <td *ngIf="userEdit[i]"><input [value]="user.email" [(ngModel)]="user.email"></td>        <td *ngIf="!userEdit[i]"><button class="btn btn-success" (click)=onEdit(i)>Editer</button></td>        <td *ngIf="userEdit[i]"><button class="btn btn-success" (click)="onUpdate(user, i)">Valider</button></td>        <td *ngIf="!userEdit[i]"><button class="btn btn-danger" (click)=onDelete(user.id)>Supprimer</button></td>        <td *ngIf="userEdit[i]"><button class="btn btn-danger" (click)=onEdit(i)>Annuler</button></td>      </tr>    </tbody>  </table></div></div>'
+    var COMPONENTS = [{'name': 'AddProductComponent', 'selector': 'app-add-product'},{'name': 'AddmenuComponent', 'selector': 'app-addmenu'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CalendarComponent', 'selector': 'app-calendar'},{'name': 'CalendarDetailComponent', 'selector': 'app-calendar-detail'},{'name': 'DetailStockComponent', 'selector': 'app-detail-stock'},{'name': 'FournisseurcomponentComponent', 'selector': 'app-fournisseurcomponent'},{'name': 'FournisseurdetailsComponent', 'selector': 'app-fournisseurdetails'},{'name': 'HeaderComponent', 'selector': 'app-header'},{'name': 'ListusersComponent', 'selector': 'app-listusers'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'ProductsComponent', 'selector': 'app-products'},{'name': 'RegisterComponent', 'selector': 'app-register'},{'name': 'RestaurantmenuComponent', 'selector': 'app-restaurantmenu'},{'name': 'RoutfournisseurComponent', 'selector': 'app-routfournisseur'},{'name': 'StockComponent', 'selector': 'app-stock'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ListusersComponent'};
 </script>

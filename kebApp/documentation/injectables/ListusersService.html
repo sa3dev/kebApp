@@ -197,7 +197,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/core/users/listusers/listusers.service.ts:63</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/core/users/listusers/listusers.service.ts:56</a></div>
                             </td>
                         </tr>
 
@@ -342,7 +342,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/core/users/listusers/listusers.service.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="43" class="link-to-prism">src/app/core/users/listusers/listusers.service.ts:43</a></div>
                             </td>
                         </tr>
 
@@ -448,7 +448,7 @@
                             <div>
                             </div>
                             <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+                                <b>Returns : </b>    <code>Observable&lt;Object&gt;</code>
 
                             </div>
                                 <div class="io-description">
@@ -547,7 +547,7 @@
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 import { apiURL } from &#x27;../../../config&#x27;;
 import { User } from &#x27;../user.model&#x27;;
-import { Subject } from &#x27;rxjs&#x27;;
+import { Subject, Observable } from &#x27;rxjs&#x27;;
 
 @Injectable({
   providedIn: &#x27;root&#x27;
@@ -564,7 +564,7 @@ export class ListusersService {
   getListUsers() {
      this.httpClient.get&lt;User[]&gt;(apiURL).subscribe(
        data &#x3D;&gt; {
-         this.users &#x3D; data ;
+        this.users &#x3D; data ;
         this.emitUsers() ;
         },
        error &#x3D;&gt; {
@@ -577,19 +577,12 @@ export class ListusersService {
     this.usersSubject.next(this.users);
   }
 
-  updateUser(user: User) {
+  updateUser(user: User):Observable&lt;Object&gt; {
+  
     const url &#x3D; &#x60;${apiURL}/${user.id}&#x60;;
-    this.httpClient.put(url,
-      user)
-      .subscribe(
-        data &#x3D;&gt; {
-          console.log(&quot;PUT Request is successful &quot;, data);
-          this.getListUsers();
-        },
-        error &#x3D;&gt; {
-          console.log(&quot;Rrror&quot;, error);
-        }
-      );
+    return this.httpClient.put(url,user);
+      
+   
   }
 
   postUser(user: User) {
