@@ -1,34 +1,37 @@
 .restaurantcard{
-    width: 20%;
+    width: 28%;
     margin: 1rem;
-    // padding: 2rem 0;
-
-    // border: 2px solid royalblue;
-    display: flex;
-    align-content: center;
-    flex-direction: column;
-    
-    // background-color: rgba(224, 190, 96, 0.1);
-    box-shadow: 1px 1px 2px grey;
-    
+    box-shadow: 0px 0px 2px grey;
     border-radius: 5px;
-}
-li{
-    list-style-type: circle;
 }
 .inner-restaurantcard{
     width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
     h4{
-        color: #DC3545
+        color: #DC3545;
+        padding:1rem 0 .7rem 0;
     }
-    h5:before{
+    .menu-buttons{
+        right:0px;
+        bottom: 0px;
+    }
+    .square-before:before{
         display:inline-block;
         height:5px;
         width:5px;
         background-color: #DC3545;
         content:"";
+    }
+    p{
+        font-size: 0.9rem;
+    }
+    ul{
+        font-size: 0.9rem;
+        padding-left:5px;
+        li{
+            list-style-type: circle;
+        }
     }
         p{
             margin: 0;
@@ -46,14 +49,11 @@ li{
 }
 img{
     width:100%;
-    height:200px;
-    display: inline-block;
+    // min-height:200px;
+    overflow: hidden;
+    height: auto;
     border-radius: 3px;
 }
-// input{
-//     border:none;
-//     padding: 2px 4px;
-//     margin: 2px;
-//     background-color: rgba(0,0,0,0.01);
-//     box-shadow: 1px 1px 1px lightgrey;
-// }
+small{
+    display: block;
+}

@@ -16,14 +16,14 @@ export class AddmenuComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private restaurantservice: RestaurantmenuService, private productservice: ProductsService) { }
 
-  private listIngredients: Observable<Product[]>;
-  
+  private listIngredients: Product[];
+
   // We declare forms element
   private menuName: FormControl;
   private costPriceMenu: FormControl;
   private sellPriceMenu: FormControl;
   private ingredientsMenu: FormControl;
-  private urlImg: FormControl;
+  private imgurl: FormControl;
   private addMenuForm: FormGroup;
 
   // The boolean to show or hide
@@ -35,13 +35,14 @@ export class AddmenuComponent implements OnInit {
     this.costPriceMenu = this.fb.control('', Validators.required);
     this.sellPriceMenu = this.fb.control('', Validators.required);
     this.ingredientsMenu = this.fb.control('', Validators.required);
-    this.urlImg = this.fb.control('');
+    this.imgurl = this.fb.control('');
+
     this.addMenuForm = this.fb.group({
       menuName: this.menuName,
       costPriceMenu: this.costPriceMenu,
       sellPriceMenu: this.sellPriceMenu,
       ingredientsMenu: this.ingredientsMenu,
-      urlImg: this.urlImg
+      imgurl: this.imgurl
     });
   }
 
@@ -52,7 +53,7 @@ export class AddmenuComponent implements OnInit {
     if (this.displayingAddMenu == false) {
       this.displayingAddMenu = true;
       // Get the list of ingredients/products
-      this.listIngredients = this.productservice.getProductsList()
+      this.productservice.getProductsList().subscribe(data => this.listIngredients = data)
 
     } else if (this.displayingAddMenu) {
       this.displayingAddMenu = false;
@@ -69,16 +70,19 @@ export class AddmenuComponent implements OnInit {
     newMenu.costPrice = +this.costPriceMenu.value * 100;
     newMenu.sellPrice = +this.sellPriceMenu.value * 100;
     newMenu.name = this.menuName.value;
+    newMenu.imgurl = this.imgurl.value;
     newMenu.ingredients = this.ingredientsMenu.value;
     // We send it, reset our input and hide the interface to add a menu
+    // console.log(newMenu.ingredients);
+    console.log(this.ingredientsMenu.value);
     this.restaurantservice.addNewMenu(newMenu);
-    this.resetInput();
-    this.displayingAddMenu = false;
+    // this.resetInput();
+    // this.displayingAddMenu = false;
   }
 
-    /**
-   * Reset the inputs added by the user so s.he doesn't have to erase all by himself 
-   */
+  /**
+ * Reset the inputs added by the user so s.he doesn't have to erase all by himself 
+ */
   resetInput() {
     this.addMenuForm.reset();
   }

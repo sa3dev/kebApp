@@ -31,6 +31,7 @@ import { StockModule} from '../stock/stock.module';
     
     StockModule,
     RestaurantmenuModule
+
   ],
   declarations: [
     ListusersComponent,
