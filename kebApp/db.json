@@ -285,7 +285,7 @@
     },
     {
       "id": 24,
-      "IDsupplier": 5,
+      "IDsupplier": null,
       "name": "Cheddar mais de qualité",
       "price": "2.50",
       "quantity": 0,
