@@ -9,10 +9,11 @@ import { AddmenuComponent } from './addmenu/addmenu.component';
 
 
 // import Angular Material
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule, MatPaginatorModule, MatSortModule, MatInputModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { RouterModule } from '@angular/router';
+import { RestaurantmenuRoutingModule } from './restaurantmenu-routing.module';
 
 
 @NgModule({
@@ -21,7 +22,6 @@ import { MatTableModule, MatPaginatorModule, MatSortModule, MatInputModule, MatT
     ReactiveFormsModule,
     FormsModule,
     DndModule.forRoot(),
-    BrowserAnimationsModule,
     MatSelectModule,
     MatFormFieldModule,
     MatTableModule,
@@ -35,8 +35,10 @@ import { MatTableModule, MatPaginatorModule, MatSortModule, MatInputModule, MatT
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    RestaurantmenuRoutingModule
   ],
-  declarations: [RestaurantmenuComponent, AddmenuComponent, PricePipe]
+  declarations: [RestaurantmenuComponent, AddmenuComponent, PricePipe],
+  exports: [RouterModule, FormsModule, AddmenuComponent,RestaurantmenuComponent]
 })
 export class RestaurantmenuModule { }
