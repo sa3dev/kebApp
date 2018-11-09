@@ -6,6 +6,7 @@ import { apiURLProducts, apiURLFournisseur } from '../../config';
 
 import { Subject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { Fournisseur } from 'src/app/fournisseur/fournisseur.model';
 
 
 @Injectable({
@@ -49,7 +50,7 @@ export class StockService {
 	}
 	
 	/**
-	 * Permet d'asynchroniser la liste des produit 
+	 * Permet d'asynchroniser la liste des produit et de renvoyer la prochaine valeur 
 	 */
 	emitProduct(){
 		this.productsubject.next(this.products); 
@@ -70,14 +71,14 @@ export class StockService {
 			error => {
 			  console.log("Error", error);
 			}
-		  );
-		}
+		);
+	}
 
-		/**
-		 * Get the fournisseur's list 
-		 * 
-		 */
-		getNameFournisseur(){
-			return this.httpClient.get(apiURLFournisseur);
-		}
+	/**
+	 * Get the fournisseur's list 
+	 * 
+	 */
+	getNameFournisseur(){
+		return this.httpClient.get<Fournisseur[]>(apiURLFournisseur);
+	}
 }

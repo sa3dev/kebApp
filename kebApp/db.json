@@ -226,7 +226,7 @@
   ],
   "products": [
     {
-      "id": 1,
+      "id": 20,
       "IDsupplier": null,
       "name": "Compote de pomme",
       "price": 15,
@@ -235,35 +235,45 @@
       "supplier": "Froutniret"
     },
     {
-      "id": 3,
+      "id": 21,
       "IDsupplier": null,
-      "name": "merguez Royale",
-      "price": 90,
-      "quantity": 500,
+      "name": "Haricots",
+      "price": 20,
+      "quantity": 52,
       "quantityPrev": "250",
-      "supplier": "grezier"
+      "supplier": "ConconmbreFournisseur"
     },
     {
-      "id": 19,
-      "IDsupplier": null,
-      "name": "pomme ",
-      "price": 50,
-      "quantity": 45,
-      "quantityPrev": 100
-    },
-    {
-      "name": "fraise",
+      "name": "mandarine",
       "price": 50,
       "quantity": 50,
-      "supplier": "MerguezWay",
-      "quantityPrev": "100",
-      "id": 20
+      "supplier": "said&coWOuah",
+      "quantityPrev": "120",
+      "id": 22
     },
     {
-      "name": "carotte",
-      "price": 15,
-      "quantity": 15,
-      "supplier": "Patata&Co",
+      "id": 23,
+      "IDsupplier": null,
+      "name": "marron de bruxelle",
+      "price": 250,
+      "quantity": 210,
+      "quantityPrev": "500",
+      "supplier": "ConconmbreFournisseur"
+    },
+    {
+      "id": 24,
+      "IDsupplier": null,
+      "name": "15h37",
+      "price": 50,
+      "quantity": 50,
+      "quantityPrev": "500",
+      "supplier": "ConconmbreFournisseur"
+    },
+    {
+      "name": "cge",
+      "price": 12.36,
+      "quantity": 12,
+      "supplier": "said&coWOuah",
       "quantityPrev": "150",
       "id": 21
     },

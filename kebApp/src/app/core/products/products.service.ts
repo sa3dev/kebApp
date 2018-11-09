@@ -56,7 +56,7 @@ export class ProductsService {
 	 */
 	addProduct(product: Product) {
 		return this.http.post(apiURLProducts, product);
-	}
+	} 
 
 	/**
 	 * Update the whole product (different then updateProduct(id,property,value))

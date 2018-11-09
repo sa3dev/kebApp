@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../core/products/product.model';
 import { ProductsService } from '../core/products/products.service';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { StockService } from './service/stock.service';
+import { Fournisseur } from '../fournisseur/fournisseur.model';
 
 
 @Component({
@@ -16,33 +17,27 @@ export class StockComponent implements OnInit {
 
 	listProduct: Product[];
 	productSubsciption: Subscription;
-
 	previsionel : number ;
+
+	// show of template 
 	show : boolean;
 	showAdd :boolean;
+
 	showupdate :boolean;
-	
-	// Form ajout 
-	loginForm: FormGroup;
-	name: FormControl;
-	price: FormControl;
-	quantity: FormControl;
-	supplier: FormControl;
-	quantityPrev : FormControl;
-	
+
 	// Form edit
-	loginFormMod: FormGroup;
-	nameMod: FormControl;
-	priceMod: FormControl;
-	quantityMod: FormControl;
-	supplierMod: FormControl;
+	loginFormMod: 	  FormGroup;
+	nameMod: 		  FormControl;
+	priceMod: 		  FormControl;
+	quantityMod: 	  FormControl;
+	supplierMod: 	  FormControl;
 	quantityPrevMod : FormControl;
 
-	pageDetail : boolean = false;
+	pageDetail :   boolean = false;
 	productDetail: Product;
-	productEdit : Product;
+	productEdit :  Product;
 
-	listFournisseur: any ; // type fournisseur a voir si on importe le model ou pas ( clean architecture ?)
+	listFournisseur: Fournisseur[]= [] ; 
 
 	varModifProvisionel = false;
 
@@ -58,27 +53,11 @@ export class StockComponent implements OnInit {
 		this.stockservice.getProducts();
 		this.show = true;
 
-		this.name = this.fb.control('' , [ Validators.required, Validators.minLength(2) ]);
-		this.price = this.fb.control('', [Validators.required]);
-		this.quantity = this.fb.control('', [Validators.required,]);
-		this.supplier = this.fb.control('', [Validators.required,Validators.minLength(2)]);
-		this.quantityPrev = this.fb.control('' , [Validators.required]);
-
-		this.loginForm = this.fb.group({
-			name:  this.name,
-			price: this.price,
-			quantity: this.quantity, 
-			supplier: this.supplier,
-			quantityPrev: this.quantityPrev
-		});
-
 		this.nameMod = this.fb.control('' , [ Validators.required, Validators.minLength(2) ]);
 		this.priceMod = this.fb.control('', [Validators.required]);
 		this.quantityMod = this.fb.control('', [Validators.required,]);
 		this.supplierMod = this.fb.control('', [Validators.required,Validators.minLength(2)]);
 		this.quantityPrevMod = this.fb.control('' , [Validators.required]);
-
-		
 
 		this.loginFormMod = this.fb.group({
 			nameMod:  		  this.nameMod,
@@ -88,6 +67,7 @@ export class StockComponent implements OnInit {
 			quantityPrevMod: this.quantityPrevMod
 		});
 	}
+	
 	/**
 	 * Charger le bon produit dans le formulaire pour editer
 	 * 
@@ -97,12 +77,14 @@ export class StockComponent implements OnInit {
 	editProd( i:number  ){
 		this.onShowUpdate();
 		this.productEdit = this.listProduct[i];
+		//les valeur des mes champs du formulaire vide seront les memes que le produit dont j'ai cliqué
 		this.nameMod.setValue(this.productEdit.name);
 		this.priceMod.setValue(this.productEdit.price);
 		this.quantityMod.setValue(this.productEdit.quantity);
 		this.supplierMod.setValue(this.productEdit.supplier);
 		this.quantityPrevMod.setValue(this.productEdit.quantityPrev);
 	}
+
 	/**
 	 * Update the product
 	 */
@@ -114,7 +96,7 @@ export class StockComponent implements OnInit {
 		prod.price =  this.priceMod.value ;
 		prod.quantity = this.quantityMod.value;
 		prod.quantityPrev = this.quantityPrevMod.value;
-		prod.supplier  = this.supplierMod.value;		
+		prod.supplier  = this.supplierMod.value;	
 		this.stockservice.UpdateProduct( prod ).subscribe(
 			data => {
 				console.log(data);
@@ -125,12 +107,14 @@ export class StockComponent implements OnInit {
 		);
 	}
 	/**
+	 * Delete a product from product list
 	 * 
-	 * @param id Delete a product from produst list
+	 * @param id The id product that will be deleted
 	 */
 	deleteProduct( id: number ){
-		this.ProductService.deleteProduct(id);
-		//this.stockservice.getProducts()
+		this.ProductService.deleteProduct(id).subscribe(
+			() => this.stockservice.getProducts()
+		);
 	}
 	/**
 	 * Envoi un produit selectionné au composant enfant 
@@ -139,6 +123,7 @@ export class StockComponent implements OnInit {
 	 * @param i 
 	 */
 	detail( i : number ){
+
 		if( this.pageDetail ){
 			this.pageDetail = false;
 		}else if( this.pageDetail === false ){
@@ -173,26 +158,6 @@ export class StockComponent implements OnInit {
 	}
 
 	/**
-	 * Add a product when the forms is completed
-	 */
-	signup(){
-		if( this.name.value && this.price.value && this.quantity && this.name ){			
-			let prod = new Product();
-			prod.name = this.name.value;
-			prod.price = this.price.value;
-			prod.quantity = this.quantity.value;
-			prod.supplier = this.supplier.value;
-			prod.quantityPrev = this.quantityPrev.value;
-			this.ProductService.addProduct( prod );
-			this.show = true;
-			this.showAdd = false;
-			this.loginForm.reset();
-		}else{
-			console.log("Error dans l'ajout");
-		}
-	}
-
-	/**
 	 * the unsunscriber method 
 	 */
 	ngOnDestroy(){
@@ -210,7 +175,9 @@ export class StockComponent implements OnInit {
 
 	chargeNameFournisseur(){
 		this.stockservice.getNameFournisseur().subscribe( 
-			data => this.listFournisseur = data
+			data => {  
+				this.listFournisseur = data;
+			}
 		 );
 	}
 

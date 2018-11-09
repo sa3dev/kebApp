@@ -13,6 +13,7 @@ import { AuthGuardService } from './services/auth/auth-guard.service';
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+<<<<<<< HEAD
   { path: 'users', canActivate: [AuthGuardService], component: ListusersComponent },
   { path: 'register',canActivate: [AuthGuardService], component: RegisterComponent },
   { path: 'products', canActivate: [AuthGuardService], component: ProductsComponent },
@@ -23,6 +24,28 @@ const routes: Routes = [
   { path: 'products', canActivate: [AuthGuardService], component: ProductsComponent },
   { path: 'inventaire', canActivate: [AuthGuardService], component: StockComponent },
   { path: 'carte', canActivate: [AuthGuardService], component: RestaurantmenuComponent },
+=======
+  { path: 'calendar', canActivate: [LoginService], component: CalendarComponent },
+  { path: 'users', canActivate: [LoginService], component: ListusersComponent },
+  { path: 'register',canActivate: [LoginService], component: RegisterComponent },
+  { path: 'products', canActivate: [LoginService], component: ProductsComponent },
+  { path: 'fournisseurs', canActivate: [LoginService], component:FournisseurcomponentComponent},
+  
+  { 
+    path: 'users', 
+    canActivate: [LoginService], 
+    component: ListusersComponent 
+  },
+  { 
+    path: 'register',
+    canActivate: [LoginService], 
+    component: RegisterComponent 
+  },
+  { path: 'products', canActivate: [LoginService], component: ProductsComponent },
+  { path: 'inventaire',  component: StockComponent }, /* canActivate: [ LoginService ]  */
+  { path: 'carte', canActivate: [LoginService], component: RestaurantmenuComponent },
+  { path: 'oftheday', canActivate: [LoginService], component: CalendarDetailComponent}
+>>>>>>> stock
 ];
 
 @NgModule({
