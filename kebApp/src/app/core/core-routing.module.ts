@@ -5,7 +5,6 @@ import { LoginComponent } from './users/login/login.component';
 import { ListusersComponent } from './users/listusers/listusers.component';
 import { RegisterComponent } from './users/register/register.component';
 import { ProductsComponent } from './products/products.component';
-import { RestaurantmenuComponent } from '../restaurantmenu/restaurantmenu.component';
 import { StockComponent } from '../stock/stock.component';
 import { AuthGuardService } from './services/auth/auth-guard.service';
 
@@ -22,7 +21,7 @@ const routes: Routes = [
   { path: 'register', canActivate: [AuthGuardService], component: RegisterComponent },
   { path: 'products', canActivate: [AuthGuardService], component: ProductsComponent },
   { path: 'inventaire', canActivate: [AuthGuardService], component: StockComponent },
-  { path: 'carte', canActivate: [AuthGuardService], component: RestaurantmenuComponent },
+  { path: 'carte', loadChildren: '../restaurantmenu/restaurantmenu.module#RestaurantmenuModule' }
 ];
 
 @NgModule({
